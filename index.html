@@ -15,7 +15,15 @@
     <meta property="og:url" content="https://earthas.co">
     <meta property="og:locale" content="es_CO">
     <meta property="og:site_name" content="Earth Analytics Solutions">
+    <meta property="og:image" content="https://earthas.co/assets/og-image.png">
+    <meta property="og:image:secure_url" content="https://earthas.co/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="EAS · Earth Analytics Solutions — Ingeniería del terreno">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EAS · Earth Analytics Solutions">
+    <meta name="twitter:description" content="Construye con la certeza del terreno. Geotecnia, pavimentos, topografía y diagnóstico de infraestructura en Norte de Santander.">
+    <meta name="twitter:image" content="https://earthas.co/assets/og-image.png">
     <title>EAS · Earth Analytics Solutions — Ingeniería del terreno para construir con certeza</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,22 +35,98 @@
     {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
+        "@id": "https://earthas.co/#organization",
         "name": "Earth Analytics Solutions",
         "alternateName": "EAS",
         "description": "Consultoría técnica en ingeniería civil: geotecnia, pavimentos, topografía, laboratorio y diagnóstico de infraestructura.",
         "url": "https://earthas.co",
+        "logo": "https://earthas.co/assets/eas.png",
+        "image": "https://earthas.co/assets/og-image.png",
         "email": "gerencia@earthas.co",
-        "areaServed": {
-            "@type": "AdministrativeArea",
-            "name": "Norte de Santander, Colombia"
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "Norte de Santander",
+            "addressCountry": "CO"
         },
-        "serviceType": [
-            "Estudios geotécnicos",
-            "Diseño de pavimentos",
-            "Topografía y modelación del terreno",
+        "areaServed": [
+            {"@type": "AdministrativeArea", "name": "Norte de Santander, Colombia"},
+            {"@type": "City", "name": "Cúcuta"},
+            {"@type": "City", "name": "Pamplona"},
+            {"@type": "City", "name": "Ocaña"},
+            {"@type": "City", "name": "Villa del Rosario"}
+        ],
+        "knowsAbout": [
+            "Geotecnia",
+            "Estudios de suelos",
+            "Pavimentos",
+            "Topografía con dron",
+            "NSR-10",
+            "INVÍAS",
             "Diagnóstico de patologías",
-            "Laboratorio de suelos",
-            "Consultoría técnica"
+            "Estabilidad de taludes",
+            "Capacidad portante",
+            "CBR de subrasante"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Paquetes EAS",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Visita técnica rápida", "description": "Diagnóstico preliminar en sitio con registro fotográfico y recomendaciones generales."}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Estudio de suelos básico", "description": "Para viviendas pequeñas: exploración, ensayos básicos, capacidad portante e informe firmado."}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Estudio geotécnico completo", "description": "Para edificaciones medianas y comerciales: SPT, laboratorio, geología, capacidad portante, asentamientos, drenaje, cimentación."}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lote inteligente · viabilidad geotécnica", "description": "Para lotes antes de comprar o urbanizar: topografía con dron, geología, zonas críticas, riesgos."}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pavimento y subrasante", "description": "CBR, caracterización, tránsito, diseño estructural y drenaje vial."}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Control de calidad en obra", "description": "Densidades, control de compactación, ensayos de laboratorio e informes periódicos."}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Diagnóstico de falla", "description": "Visita, levantamiento de daños, hipótesis técnica, recomendaciones y plan de estudios complementarios."}}
+            ]
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Por qué necesito un estudio de suelos antes de construir?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Porque el comportamiento del terreno define cómo cimentar, qué cargas admite, cómo manejar el agua y qué riesgos de asentamiento existen. La NSR-10 exige estudio geotécnico para proyectos sujetos a la norma sismo resistente colombiana."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué incluye un estudio geotécnico de EAS?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Exploración (apiques, sondeos SPT o perforaciones), ensayos de laboratorio, análisis de capacidad portante y asentamientos, recomendaciones de cimentación, manejo de aguas, condiciones constructivas, e informe técnico firmado profesionalmente."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿En qué zonas trabaja EAS?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sede en Norte de Santander, Colombia. Cobertura principal en Cúcuta, Villa del Rosario, Pamplona, Ocaña y la región. Atendemos proyectos en otras zonas según alcance."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cuánto demora un estudio geotécnico?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Depende del alcance: una visita técnica preliminar es inmediata; un estudio básico de vivienda toma 2-3 semanas; un estudio completo con sondeos profundos puede tomar 4-6 semanas incluyendo laboratorio."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿EAS hace solo el estudio o también acompaña la obra?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ambas. Hacemos estudios para diseño y también acompañamiento técnico durante la ejecución: control de compactación, recibo de capas, segunda opinión geotécnica, revisión de cimentaciones y respuesta a interventoría."
+                }
+            }
         ]
     }
     </script>
@@ -100,8 +184,9 @@
                 </h1>
 
                 <p class="hero-subtitle">
-                    Estudios geotécnicos, pavimentos, topografía y diagnóstico con respaldo profesional.
-                    Cotización en línea en menos de <strong>15 minutos</strong>.
+                    Geociencias, geotecnia e ingeniería del terreno desde <strong>Colombia para toda
+                    Latinoamérica</strong>. 10 líneas técnicas con tecnología, normativa internacional
+                    y respaldo profesional. Cotización en línea en menos de <strong>15 minutos</strong>.
                 </p>
 
                 <div class="hero-actions">
@@ -115,11 +200,11 @@
 
                 <!-- Stats compactos en línea -->
                 <ul class="command-stats">
-                    <li><strong>15+</strong><span>PROYECTOS</span></li>
-                    <li><strong>06</strong><span>SECTORES</span></li>
-                    <li><strong>08</strong><span>MUNICIPIOS</span></li>
-                    <li><strong>24H</strong><span>RESPUESTA</span></li>
-                    <li><strong>NSR-10</strong><span>CUMPLIMIENTO</span></li>
+                    <li><strong>20+</strong><span>PROYECTOS ENTREGADOS</span></li>
+                    <li><strong>10</strong><span>LÍNEAS TÉCNICAS</span></li>
+                    <li><strong>LATAM</strong><span>ALCANCE OPERATIVO</span></li>
+                    <li><strong>24H</strong><span>TIEMPO RESPUESTA</span></li>
+                    <li><strong>ISO</strong><span>NORMATIVA INT.</span></li>
                 </ul>
             </div>
 
@@ -291,7 +376,119 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════
-         02 · PROBLEMA · escenarios cliente
+         02 · SOBRE EAS · identidad de marca
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="sobre-eas" class="band band--paper about-band">
+        <div class="container">
+            <div class="about-grid">
+
+                <!-- Columna izquierda · narrativa -->
+                <div class="about-narrative">
+                    <span class="pre-title">[ SOBRE EAS · IDENTIDAD ]</span>
+                    <h2 class="section-title">
+                        Una firma de ingeniería del terreno<br>
+                        construida con <em class="ink-neon">estándares globales</em>.
+                    </h2>
+                    <p class="about-lead">
+                        <strong>Earth Analytics Solutions</strong> nace en 2024 como respuesta a una
+                        demanda concreta: proyectos de construcción y desarrollo territorial que
+                        necesitan ingeniería técnica seria, no documentos genéricos. Especialistas
+                        en geociencias, geotecnia e ingeniería civil con enfoque multidisciplinario.
+                    </p>
+                    <p class="about-lead">
+                        Operamos desde <strong>Colombia hacia toda Latinoamérica</strong> con
+                        tecnología de campo (drones RPAS, GNSS RTK, geofísica), software de modelación
+                        (HEC-RAS, MODFLOW, GeoStudio) y normativa internacional (NSR-10, ASTM, ISO).
+                        Cada entregable se firma con responsabilidad profesional.
+                    </p>
+                    <ul class="about-bullets">
+                        <li><strong>Multidisciplinariedad real</strong> · 10 líneas técnicas con un solo enfoque integrador.</li>
+                        <li><strong>Tecnología + tradición</strong> · ingeniería clásica con herramientas geoespaciales.</li>
+                        <li><strong>Compromiso ambiental</strong> · sostenibilidad como criterio, no como anexo.</li>
+                        <li><strong>Trazabilidad completa</strong> · cadena de custodia desde el campo hasta el resultado firmado.</li>
+                    </ul>
+                </div>
+
+                <!-- Columna derecha · ficha de marca -->
+                <aside class="about-card" aria-label="Ficha técnica de marca">
+                    <div class="about-card__header">
+                        <span class="about-card__label">FICHA DE MARCA</span>
+                        <span class="about-card__id">EAS · 2026</span>
+                    </div>
+                    <dl class="about-card__data">
+                        <div class="about-card__row">
+                            <dt>Razón social</dt>
+                            <dd>Earth Analytics Solutions</dd>
+                        </div>
+                        <div class="about-card__row">
+                            <dt>Establecimiento</dt>
+                            <dd class="about-card__neon">2024</dd>
+                        </div>
+                        <div class="about-card__row">
+                            <dt>Sede operativa</dt>
+                            <dd>Colombia · Norte de Santander</dd>
+                        </div>
+                        <div class="about-card__row">
+                            <dt>Alcance</dt>
+                            <dd class="about-card__cyan">LATAM · Op. remota + presencial</dd>
+                        </div>
+                        <div class="about-card__row">
+                            <dt>Enfoque</dt>
+                            <dd>Geociencias · Geotecnia · Ingeniería del terreno</dd>
+                        </div>
+                        <div class="about-card__row">
+                            <dt>Líneas técnicas</dt>
+                            <dd class="about-card__neon">10 documentadas</dd>
+                        </div>
+                        <div class="about-card__row">
+                            <dt>Normativa</dt>
+                            <dd>NSR-10 · ASTM · INVIAS · ISO 9001 / 14001</dd>
+                        </div>
+                        <div class="about-card__row">
+                            <dt>Idiomas entrega</dt>
+                            <dd>Español · Inglés (LATAM)</dd>
+                        </div>
+                    </dl>
+                </aside>
+
+            </div>
+
+            <!-- Tres pilares de marca · misión, visión, compromiso -->
+            <div class="about-pillars">
+                <article class="about-pillar">
+                    <span class="about-pillar__num">01</span>
+                    <h3 class="about-pillar__title">Misión</h3>
+                    <p>
+                        Liderar las geociencias y la ingeniería civil en LATAM mediante <strong>innovación,
+                        calidad y sostenibilidad</strong>, entregando soluciones técnicas que sustenten
+                        decisiones constructivas reales y defendibles.
+                    </p>
+                </article>
+                <article class="about-pillar">
+                    <span class="about-pillar__num">02</span>
+                    <h3 class="about-pillar__title">Visión</h3>
+                    <p>
+                        Ser <strong>referencia regional</strong> en ingeniería del terreno, integrando
+                        tecnología, ciencia y compromiso ambiental. Una firma que define el estándar
+                        para el sector en cada proyecto que toca.
+                    </p>
+                </article>
+                <article class="about-pillar">
+                    <span class="about-pillar__num">03</span>
+                    <h3 class="about-pillar__title">Compromiso</h3>
+                    <p>
+                        Cada estudio es <strong>responsabilidad técnica firmada</strong>. Auditable
+                        por terceros, trazable desde la muestra de campo, defendible ante interventoría.
+                        Sin atajos, sin "criterios de la casa".
+                    </p>
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         03 · PROBLEMA · escenarios cliente
          ═══════════════════════════════════════════════════════════════ -->
     <section id="problema" class="band band--paper">
         <div class="container">
@@ -366,18 +563,20 @@
          ═══════════════════════════════════════════════════════════════ -->
     <section id="servicios" class="band band--paper band--alt">
         <div class="container">
-            <header class="section-head">
-                <span class="pre-title">[ NUESTROS SERVICIOS ]</span>
-                <h2 class="section-title">Soluciones técnicas, no solo PDFs.</h2>
+            <header class="section-head section-head--wide">
+                <span class="pre-title">[ PORTAFOLIO TÉCNICO · 10 LÍNEAS ]</span>
+                <h2 class="section-title">Diez líneas técnicas. <em class="ink-neon">Una sola ingeniería</em> del terreno.</h2>
                 <p class="section-lead">
-                    Cuatro áreas que cubren el ciclo completo: del análisis del terreno al
-                    acompañamiento en obra. Integramos ingeniería clásica con tecnología geoespacial.
+                    El ciclo completo de las geociencias aplicadas — del primer apique al último
+                    entregable firmado. Cada línea integra <strong>exploración, laboratorio,
+                    modelación y entrega</strong>; se contrata por separado o coordinada con las
+                    demás según lo requiera el proyecto.
                 </p>
             </header>
 
-            <div class="services-grid services-grid--4">
+            <div class="services-grid services-grid--5 home-lines">
 
-                <article class="service-card">
+                <a href="servicios/geotecnia.html" class="service-card home-line-card">
                     <div class="service-icon" aria-hidden="true">
                         <svg viewBox="0 0 48 48" fill="none">
                             <rect x="6" y="10" width="36" height="6" stroke="currentColor" stroke-width="2"/>
@@ -387,18 +586,58 @@
                             <circle cx="14" cy="38" r="2" fill="currentColor"/>
                         </svg>
                     </div>
-                    <span class="service-num">01</span>
-                    <h3>Geotecnia y suelos</h3>
-                    <p>Sondeos SPT, apiques, ensayos de laboratorio, capacidad portante, asentamientos y diseño de cimentación.</p>
-                    <ul class="service-bullets">
-                        <li>Estudios de suelos NSR-10</li>
-                        <li>Análisis sísmico</li>
-                        <li>Recomendaciones de cimentación</li>
-                    </ul>
-                    <a href="#capabilities" class="service-link">VER ALCANCE COMPLETO <span>→</span></a>
-                </article>
+                    <span class="service-num">L-01</span>
+                    <h3>Investigación y exploración geotécnica</h3>
+                    <p>Sondeos SPT, capacidad portante, asentamientos, cimentaciones.</p>
+                    <span class="service-link">VER LÍNEA <span>→</span></span>
+                </a>
 
-                <article class="service-card">
+                <a href="servicios/exploracion-sismica.html" class="service-card home-line-card">
+                    <div class="service-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M4 28 Q14 8 24 28 T44 28" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M4 36 Q14 16 24 36 T44 36" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"/>
+                            <circle cx="14" cy="42" r="2" fill="currentColor"/>
+                            <circle cx="24" cy="42" r="2" fill="currentColor"/>
+                            <circle cx="34" cy="42" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="service-num">L-02</span>
+                    <h3>Exploración geofísica del subsuelo</h3>
+                    <p>Refracción sísmica, MASW, geoeléctrica, ReMi, gravimetría.</p>
+                    <span class="service-link">VER LÍNEA <span>→</span></span>
+                </a>
+
+                <a href="servicios/hidrologia.html" class="service-card home-line-card">
+                    <div class="service-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M4 18 Q12 14 20 18 T36 18 T44 18" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M4 28 Q12 24 20 28 T36 28 T44 28" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <path d="M4 38 Q12 34 20 38 T36 38 T44 38" stroke="currentColor" stroke-width="1" fill="none"/>
+                        </svg>
+                    </div>
+                    <span class="service-num">L-03</span>
+                    <h3>Ingeniería de aguas superficiales</h3>
+                    <p>Cuencas, drenajes, ríos, llanuras de inundación, HEC-RAS.</p>
+                    <span class="service-link">VER LÍNEA <span>→</span></span>
+                </a>
+
+                <a href="servicios/hidrogeologia.html" class="service-card home-line-card">
+                    <div class="service-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <line x1="4" y1="14" x2="44" y2="14" stroke="currentColor" stroke-width="2"/>
+                            <line x1="4" y1="24" x2="44" y2="24" stroke="currentColor" stroke-width="1" stroke-dasharray="3 2"/>
+                            <rect x="20" y="6" width="8" height="36" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="24" cy="36" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="service-num">L-04</span>
+                    <h3>Aguas subterráneas y acuíferos</h3>
+                    <p>Pozos, pruebas de bombeo, modelación MODFLOW, calidad de agua.</p>
+                    <span class="service-link">VER LÍNEA <span>→</span></span>
+                </a>
+
+                <a href="servicios/pavimentos.html" class="service-card home-line-card">
                     <div class="service-icon" aria-hidden="true">
                         <svg viewBox="0 0 48 48" fill="none">
                             <path d="M4 36 L44 36" stroke="currentColor" stroke-width="2"/>
@@ -408,18 +647,13 @@
                             <line x1="28" y1="36" x2="34" y2="36" stroke="currentColor" stroke-width="3"/>
                         </svg>
                     </div>
-                    <span class="service-num">02</span>
-                    <h3>Vías y pavimentos</h3>
-                    <p>Subrasante, CBR, diseño de pavimento flexible, rígido y placa huella. Diagnóstico y rehabilitación vial.</p>
-                    <ul class="service-bullets">
-                        <li>CBR y caracterización</li>
-                        <li>Diseño estructural de pavimentos</li>
-                        <li>Control de compactación en obra</li>
-                    </ul>
-                    <a href="#capabilities" class="service-link">VER ALCANCE COMPLETO <span>→</span></a>
-                </article>
+                    <span class="service-num">L-05</span>
+                    <h3>Diseño de pavimentos e infraestructura vial</h3>
+                    <p>CBR, flexible, rígido, placa huella, diagnóstico, rehabilitación.</p>
+                    <span class="service-link">VER LÍNEA <span>→</span></span>
+                </a>
 
-                <article class="service-card">
+                <a href="servicios/topografia-gis.html" class="service-card home-line-card">
                     <div class="service-icon" aria-hidden="true">
                         <svg viewBox="0 0 48 48" fill="none">
                             <path d="M6 38 Q14 28 24 32 T42 22" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -428,18 +662,59 @@
                             <line x1="24" y1="17" x2="24" y2="32" stroke="currentColor" stroke-width="1"/>
                         </svg>
                     </div>
-                    <span class="service-num">03</span>
-                    <h3>Topografía y dron</h3>
-                    <p>Levantamientos GNSS RTK, ortofotos, modelos digitales del terreno, curvas de nivel y mapas de pendientes.</p>
-                    <ul class="service-bullets">
-                        <li>GNSS RTK · MAGNA-SIRGAS</li>
-                        <li>Fotogrametría con dron</li>
-                        <li>MDT y mapas temáticos</li>
-                    </ul>
-                    <a href="#capabilities" class="service-link">VER ALCANCE COMPLETO <span>→</span></a>
-                </article>
+                    <span class="service-num">L-06</span>
+                    <h3>Topografía digital y análisis geoespacial</h3>
+                    <p>GNSS RTK, dron RPAS, ortofoto, MDT, GIS, batimetría.</p>
+                    <span class="service-link">VER LÍNEA <span>→</span></span>
+                </a>
 
-                <article class="service-card">
+                <a href="servicios/laboratorio.html" class="service-card home-line-card">
+                    <div class="service-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M18 6 L18 22 L10 38 H38 L30 22 L30 6 Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <line x1="14" y1="6" x2="34" y2="6" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="20" cy="30" r="1.5" fill="currentColor"/>
+                            <circle cx="26" cy="34" r="1.5" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="service-num">L-07</span>
+                    <h3>Laboratorio de geomateriales y control de obra</h3>
+                    <p>Granulometría, Atterberg, Proctor, CBR, densidades, corte.</p>
+                    <span class="service-link">VER LÍNEA <span>→</span></span>
+                </a>
+
+                <a href="servicios/riesgo-ambiente.html" class="service-card home-line-card">
+                    <div class="service-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M8 40 L18 22 L26 32 L36 14 L44 28" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <line x1="4" y1="40" x2="44" y2="40" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="18" cy="22" r="2" fill="currentColor"/>
+                            <circle cx="36" cy="14" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="service-num">L-08</span>
+                    <h3>Gestión geotécnica del riesgo y ambiente</h3>
+                    <p>Zonificación de amenazas, EIA, PMA, mitigación, restauración.</p>
+                    <span class="service-link">VER LÍNEA <span>→</span></span>
+                </a>
+
+                <a href="servicios/estructuras.html" class="service-card home-line-card home-line-card--secondary">
+                    <div class="service-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <rect x="10" y="10" width="28" height="28" stroke="currentColor" stroke-width="2"/>
+                            <line x1="10" y1="22" x2="38" y2="22" stroke="currentColor" stroke-width="1"/>
+                            <line x1="10" y1="30" x2="38" y2="30" stroke="currentColor" stroke-width="1"/>
+                            <line x1="22" y1="10" x2="22" y2="38" stroke="currentColor" stroke-width="1"/>
+                            <line x1="30" y1="10" x2="30" y2="38" stroke="currentColor" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <span class="service-num">L-09</span>
+                    <h3>Consultoría estructural aplicada</h3>
+                    <p>Revisión, segunda opinión, conceptos coordinados con cimentación.</p>
+                    <span class="service-link">VER LÍNEA <span>→</span></span>
+                </a>
+
+                <a href="servicios/diagnostico.html" class="service-card home-line-card">
                     <div class="service-icon" aria-hidden="true">
                         <svg viewBox="0 0 48 48" fill="none">
                             <rect x="10" y="8" width="28" height="32" stroke="currentColor" stroke-width="2"/>
@@ -449,17 +724,22 @@
                             <path d="M16 32 L24 28 L26 34 L34 30" stroke="currentColor" stroke-width="2" fill="none"/>
                         </svg>
                     </div>
-                    <span class="service-num">04</span>
-                    <h3>Diagnóstico y consultoría</h3>
-                    <p>Patologías, fallas estructurales, segunda opinión técnica, acompañamiento en obra y revisión de estudios existentes.</p>
-                    <ul class="service-bullets">
-                        <li>Diagnóstico de causas probables</li>
-                        <li>Aliado técnico permanente</li>
-                        <li>Geología aplicada y riesgos</li>
-                    </ul>
-                    <a href="#capabilities" class="service-link">VER ALCANCE COMPLETO <span>→</span></a>
-                </article>
+                    <span class="service-num">L-10</span>
+                    <h3>Diagnóstico forense geotécnico</h3>
+                    <p>Causa raíz de grietas, hundimientos, taludes y muros desplazados.</p>
+                    <span class="service-link">VER LÍNEA <span>→</span></span>
+                </a>
 
+            </div>
+
+            <!-- CTA al portafolio completo -->
+            <div class="home-lines-cta">
+                <a href="servicios.html" class="btn btn--primary btn--xl">
+                    EXPLORAR PORTAFOLIO COMPLETO <span class="btn-arrow">▶</span>
+                </a>
+                <p class="home-lines-cta__note">
+                    Cada línea con su dossier técnico: alcance, ensayos, normas, proceso y entregables.
+                </p>
             </div>
         </div>
     </section>
