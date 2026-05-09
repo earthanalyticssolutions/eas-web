@@ -1,0 +1,28 @@
+# Cloudflare Workers Static Assets · archivos a excluir del deploy
+# Funciona como .gitignore pero para wrangler
+
+# Git metadata
+.git/**
+.gitignore
+.gitattributes
+
+# Wrangler artefactos
+.wrangler/**
+wrangler.jsonc
+wrangler.toml
+
+# Documentación y configs no usadas en runtime
+*.md
+DEPLOY-CLOUDFLARE.md
+README.md
+vercel.json
+
+# Editor / OS
+.vscode/**
+.idea/**
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Este archivo
+.assetsignore
