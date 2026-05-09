@@ -45,7 +45,7 @@
 
         <!-- MOTIF HIDROLÓGICO · ondas fluviales + hidrograma + flujo -->
         <div class="line-hero__motif motif-hydro" aria-hidden="true">
-            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none">
                 <!-- Grid de ejes (axis-style) -->
                 <g>
                     <line class="grid-axis" x1="0" y1="500" x2="1400" y2="500"/>
@@ -57,30 +57,30 @@
                 </g>
 
                 <!-- Etiquetas de ejes -->
-                <text class="axis-label" x="20" y="495">CAUDAL · m³/s</text>
-                <text class="axis-label" x="1320" y="520" text-anchor="end">TIEMPO →</text>
+                <text class="axis-label" x="20" y="495" fill="rgba(127,233,255,0.4)">CAUDAL · m³/s</text>
+                <text class="axis-label" x="1320" y="520" text-anchor="end" fill="rgba(127,233,255,0.4)">TIEMPO →</text>
 
-                <!-- 3 ondas fluviales sinusoidales -->
-                <path class="wave wave--1" d="M -50 230 Q 120 200, 280 230 T 600 230 T 920 230 T 1240 230 T 1560 230"/>
-                <path class="wave wave--2" d="M -50 290 Q 140 260, 320 290 T 660 290 T 980 290 T 1300 290 T 1620 290"/>
-                <path class="wave wave--3" d="M -50 360 Q 160 330, 360 360 T 760 360 T 1100 360 T 1450 360"/>
-                <path class="wave wave--neon" d="M -50 165 Q 200 145, 400 165 T 800 165 T 1200 165 T 1600 165"/>
+                <!-- 4 ondas fluviales sinusoidales (solo stroke) -->
+                <path fill="none" class="wave wave--1" d="M -50 230 Q 120 200, 280 230 T 600 230 T 920 230 T 1240 230 T 1560 230"/>
+                <path fill="none" class="wave wave--2" d="M -50 290 Q 140 260, 320 290 T 660 290 T 980 290 T 1300 290 T 1620 290"/>
+                <path fill="none" class="wave wave--3" d="M -50 360 Q 160 330, 360 360 T 760 360 T 1100 360 T 1450 360"/>
+                <path fill="none" class="wave wave--neon" d="M -50 165 Q 200 145, 400 165 T 800 165 T 1200 165 T 1600 165"/>
 
-                <!-- Hidrograma (curva de descarga) en costado derecho -->
-                <path class="hydrograph" d="M 880 500 L 880 460 Q 920 460, 950 380 Q 980 280, 1000 220 Q 1020 280, 1050 380 Q 1080 450, 1120 480 L 1180 490 L 1180 500 Z"/>
-                <circle class="hydrograph-peak" cx="1000" cy="220" r="4"/>
-                <text class="axis-label" x="1000" y="195" text-anchor="middle" style="fill:rgba(255,152,0,0.65)">Q-PICO</text>
+                <!-- Hidrograma (curva de descarga) — solo stroke, sin fill area -->
+                <path fill="none" class="hydrograph" d="M 880 480 Q 920 480, 950 400 Q 980 300, 1000 240 Q 1020 300, 1050 400 Q 1080 460, 1120 485 L 1180 488"/>
+                <circle class="hydrograph-peak" cx="1000" cy="240" r="4" fill="rgba(255,152,0,1)"/>
+                <text class="axis-label" x="1000" y="220" text-anchor="middle" fill="rgba(255,152,0,0.6)">Q-PICO</text>
 
                 <!-- Partículas de flujo (4 puntos pequeños) -->
                 <g>
-                    <circle class="flow flow--1" cx="200" cy="230" r="2.5"/>
-                    <circle class="flow flow--2" cx="200" cy="290" r="2"/>
-                    <circle class="flow flow--3" cx="200" cy="360" r="2.5"/>
-                    <circle class="flow flow--4" cx="200" cy="165" r="2"/>
+                    <circle class="flow flow--1" cx="200" cy="230" r="2.5" fill="rgba(127,233,255,1)"/>
+                    <circle class="flow flow--2" cx="200" cy="290" r="2" fill="rgba(127,233,255,1)"/>
+                    <circle class="flow flow--3" cx="200" cy="360" r="2.5" fill="rgba(127,233,255,1)"/>
+                    <circle class="flow flow--4" cx="200" cy="165" r="2" fill="rgba(127,233,255,1)"/>
                 </g>
 
                 <!-- Etiqueta del hidrograma -->
-                <text class="axis-label" x="1180" y="505" text-anchor="end" style="fill:rgba(255,152,0,0.55)">HIDROGRAMA</text>
+                <text class="axis-label" x="1180" y="505" text-anchor="end" fill="rgba(255,152,0,0.5)">HIDROGRAMA</text>
             </svg>
         </div>
 

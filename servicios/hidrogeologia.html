@@ -45,52 +45,52 @@
 
         <!-- MOTIF HIDROGEOLÓGICO · napa freática + percolación + cono de pozo -->
         <div class="line-hero__motif motif-aquifer" aria-hidden="true">
-            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-                <!-- Capas del subsuelo (zona vadosa, saturada, basamento) -->
-                <rect class="layer layer--soil" x="0" y="180" width="1400" height="120"/>
-                <rect class="layer layer--saturated" x="0" y="300" width="1400" height="200"/>
-                <rect class="layer layer--bedrock" x="0" y="500" width="1400" height="100"/>
+            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <!-- Capas del subsuelo (rect con fill explícito, muy sutil) -->
+                <rect class="layer layer--saturated" x="0" y="300" width="1400" height="200" fill="rgba(127,233,255,0.04)"/>
 
                 <!-- Etiquetas de capas -->
-                <text class="layer-label" x="40" y="240">ZONA NO SATURADA</text>
-                <text class="layer-label" x="40" y="400" style="fill:rgba(127,233,255,0.55)">ACUÍFERO</text>
-                <text class="layer-label" x="40" y="540">BASAMENTO</text>
+                <text class="layer-label" x="40" y="240" fill="rgba(255,255,255,0.32)">ZONA NO SATURADA</text>
+                <text class="layer-label" x="40" y="400" fill="rgba(127,233,255,0.5)">ACUÍFERO</text>
+                <text class="layer-label" x="40" y="540" fill="rgba(255,255,255,0.32)">BASAMENTO</text>
 
-                <!-- Línea de la napa freática (water table) ondulada -->
-                <path class="water-table" d="M 0 305 Q 200 300, 400 308 Q 600 314, 800 305 Q 1000 298, 1200 308 T 1400 305"/>
-                <text class="water-table-label" x="1380" y="295" text-anchor="end">NIVEL FREÁTICO</text>
+                <!-- Línea de la napa freática (water table) ondulada — solo stroke -->
+                <path fill="none" class="water-table" d="M 0 305 Q 200 300, 400 308 Q 600 314, 800 305 Q 1000 298, 1200 308 T 1400 305"/>
+                <text class="water-table-label" x="1380" y="295" text-anchor="end" fill="rgba(127,233,255,0.6)">NIVEL FREÁTICO</text>
 
-                <!-- 5 gotas de percolación (cayendo desde superficie hacia napa) -->
+                <!-- 5 gotas de percolación (ellipse con fill cyan) -->
                 <g>
-                    <ellipse class="drop drop--1" cx="220" cy="195" rx="3" ry="5"/>
-                    <ellipse class="drop drop--2" cx="380" cy="195" rx="3" ry="5"/>
-                    <ellipse class="drop drop--3" cx="540" cy="195" rx="3" ry="5"/>
-                    <ellipse class="drop drop--4" cx="900" cy="195" rx="3" ry="5"/>
-                    <ellipse class="drop drop--5" cx="1100" cy="195" rx="3" ry="5"/>
+                    <ellipse class="drop drop--1" cx="220" cy="195" rx="3" ry="5" fill="rgba(127,233,255,1)"/>
+                    <ellipse class="drop drop--2" cx="380" cy="195" rx="3" ry="5" fill="rgba(127,233,255,1)"/>
+                    <ellipse class="drop drop--3" cx="540" cy="195" rx="3" ry="5" fill="rgba(127,233,255,1)"/>
+                    <ellipse class="drop drop--4" cx="900" cy="195" rx="3" ry="5" fill="rgba(127,233,255,1)"/>
+                    <ellipse class="drop drop--5" cx="1100" cy="195" rx="3" ry="5" fill="rgba(127,233,255,1)"/>
                 </g>
 
                 <!-- Pozo central con casing y cono de abatimiento -->
                 <g>
-                    <!-- Cono de abatimiento (curva de descenso) -->
-                    <path class="cone" d="M 600 305 Q 700 320, 720 380 L 720 460 L 680 460 L 680 380 Q 685 340, 600 320"/>
-                    <path class="cone" d="M 800 305 Q 700 320, 680 380 L 680 460 L 720 460 L 720 380 Q 715 340, 800 320"/>
+                    <!-- Cono de abatimiento (V invertida punteada) — solo stroke -->
+                    <path fill="none" class="cone" d="M 600 305 L 690 460"/>
+                    <path fill="none" class="cone" d="M 800 305 L 710 460"/>
 
-                    <!-- Pozo casing -->
-                    <rect class="well-casing" x="688" y="160" width="24" height="320"/>
-                    <line class="well-casing" x1="688" y1="160" x2="712" y2="160" stroke-width="3"/>
+                    <!-- Pozo casing (rect con fill muy tenue) -->
+                    <rect class="well-casing" x="694" y="160" width="12" height="300" fill="rgba(255,152,0,0.08)" stroke="rgba(255,152,0,0.55)" stroke-width="1.5"/>
 
-                    <!-- Pantalla del pozo (zona ranurada en acuífero) -->
-                    <line class="well-screen" x1="688" y1="320" x2="688" y2="460"/>
-                    <line class="well-screen" x1="712" y1="320" x2="712" y2="460"/>
+                    <!-- Pantalla del pozo (líneas verticales ranuradas) -->
+                    <line class="well-screen" x1="694" y1="320" x2="694" y2="460"/>
+                    <line class="well-screen" x1="706" y1="320" x2="706" y2="460"/>
 
-                    <text class="layer-label" x="730" y="155" style="fill:rgba(255,152,0,0.65)">POZO-01 · 80m</text>
+                    <text class="layer-label" x="720" y="155" fill="rgba(255,152,0,0.6)">POZO-01 · 80m</text>
                 </g>
 
-                <!-- Flechas de flujo subterráneo (3 flechas horizontales en el acuífero) -->
+                <!-- Flechas de flujo subterráneo (líneas + triangulitos) -->
                 <g>
-                    <path class="flow-arrow flow-arrow--1" d="M 200 380 L 280 380 L 275 376 M 280 380 L 275 384"/>
-                    <path class="flow-arrow flow-arrow--2" d="M 1050 420 L 1130 420 L 1125 416 M 1130 420 L 1125 424"/>
-                    <path class="flow-arrow flow-arrow--3" d="M 350 460 L 430 460 L 425 456 M 430 460 L 425 464"/>
+                    <line class="flow-arrow flow-arrow--1" x1="200" y1="380" x2="280" y2="380" stroke-width="1"/>
+                    <polygon class="flow-arrow flow-arrow--1" points="280,377 286,380 280,383" fill="rgba(127,233,255,0.5)"/>
+                    <line class="flow-arrow flow-arrow--2" x1="1050" y1="420" x2="1130" y2="420" stroke-width="1"/>
+                    <polygon class="flow-arrow flow-arrow--2" points="1130,417 1136,420 1130,423" fill="rgba(127,233,255,0.5)"/>
+                    <line class="flow-arrow flow-arrow--3" x1="350" y1="460" x2="430" y2="460" stroke-width="1"/>
+                    <polygon class="flow-arrow flow-arrow--3" points="430,457 436,460 430,463" fill="rgba(127,233,255,0.5)"/>
                 </g>
             </svg>
         </div>

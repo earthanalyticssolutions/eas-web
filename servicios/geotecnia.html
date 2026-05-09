@@ -47,7 +47,7 @@
 
         <!-- MOTIF GEOTÉCNICO · capas estratigráficas + sondeos pulsantes + scan -->
         <div class="line-hero__motif motif-geo" aria-hidden="true">
-            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none">
                 <!-- Grid técnico de fondo -->
                 <g>
                     <line class="grid-mark" x1="200" y1="0" x2="200" y2="600"/>
@@ -58,39 +58,36 @@
                     <line class="grid-mark-strong" x1="0" y1="450" x2="1400" y2="450"/>
                 </g>
 
-                <!-- Relleno sutil de zona "saturada" -->
-                <path class="stratum--fill" d="M 0 380 Q 350 360, 700 390 T 1400 380 L 1400 600 L 0 600 Z"/>
-
-                <!-- 4 capas estratigráficas onduladas -->
-                <path class="stratum stratum--1" d="M 0 200 Q 350 180, 700 210 T 1400 200"/>
-                <path class="stratum stratum--2" d="M 0 280 Q 350 265, 700 295 T 1400 285"/>
-                <path class="stratum stratum--3" d="M 0 380 Q 350 360, 700 390 T 1400 380"/>
-                <path class="stratum stratum--4" d="M 0 470 Q 350 450, 700 480 T 1400 465"/>
+                <!-- 4 capas estratigráficas onduladas (solo stroke) -->
+                <path fill="none" class="stratum stratum--1" d="M 0 200 Q 350 180, 700 210 T 1400 200"/>
+                <path fill="none" class="stratum stratum--2" d="M 0 280 Q 350 265, 700 295 T 1400 285"/>
+                <path fill="none" class="stratum stratum--3" d="M 0 380 Q 350 360, 700 390 T 1400 380"/>
+                <path fill="none" class="stratum stratum--4" d="M 0 470 Q 350 450, 700 480 T 1400 465"/>
 
                 <!-- Etiquetas de capas (lado derecho) -->
-                <text class="borehole-label" x="1310" y="195" text-anchor="end" style="fill:rgba(127,233,255,0.45)">RELLENO</text>
-                <text class="borehole-label" x="1310" y="275" text-anchor="end" style="fill:rgba(127,233,255,0.45)">ARCILLA · CL</text>
-                <text class="borehole-label" x="1310" y="375" text-anchor="end" style="fill:rgba(255,152,0,0.50)">ARENA · SM</text>
-                <text class="borehole-label" x="1310" y="460" text-anchor="end" style="fill:rgba(127,233,255,0.45)">ROCA</text>
+                <text class="borehole-label" x="1310" y="195" text-anchor="end" fill="rgba(127,233,255,0.40)">RELLENO</text>
+                <text class="borehole-label" x="1310" y="275" text-anchor="end" fill="rgba(127,233,255,0.40)">ARCILLA · CL</text>
+                <text class="borehole-label" x="1310" y="375" text-anchor="end" fill="rgba(255,152,0,0.45)">ARENA · SM</text>
+                <text class="borehole-label" x="1310" y="460" text-anchor="end" fill="rgba(127,233,255,0.40)">ROCA</text>
 
-                <!-- 3 sondeos SPT verticales con cap, label y tip pulsante -->
+                <!-- 3 sondeos SPT verticales -->
                 <g>
                     <line class="borehole" x1="280" y1="100" x2="280" y2="500"/>
-                    <rect class="borehole-cap" x="270" y="96" width="20" height="7"/>
-                    <text class="borehole-label" x="295" y="93">SPT-01 · N=15</text>
-                    <circle class="borehole-tip" cx="280" cy="500" r="3"/>
+                    <rect class="borehole-cap" x="270" y="96" width="20" height="7" fill="rgba(255,152,0,0.7)"/>
+                    <text class="borehole-label" x="295" y="93" fill="rgba(255,152,0,0.65)">SPT-01 · N=15</text>
+                    <circle class="borehole-tip" cx="280" cy="500" r="3" fill="rgba(127,233,255,1)"/>
                 </g>
                 <g>
                     <line class="borehole borehole--2" x1="700" y1="100" x2="700" y2="445"/>
-                    <rect class="borehole-cap" x="690" y="96" width="20" height="7"/>
-                    <text class="borehole-label" x="715" y="93">SPT-02 · N=22</text>
-                    <circle class="borehole-tip borehole-tip--2" cx="700" cy="445" r="3"/>
+                    <rect class="borehole-cap" x="690" y="96" width="20" height="7" fill="rgba(255,152,0,0.7)"/>
+                    <text class="borehole-label" x="715" y="93" fill="rgba(255,152,0,0.65)">SPT-02 · N=22</text>
+                    <circle class="borehole-tip borehole-tip--2" cx="700" cy="445" r="3" fill="rgba(127,233,255,1)"/>
                 </g>
                 <g>
                     <line class="borehole borehole--3" x1="1080" y1="100" x2="1080" y2="525"/>
-                    <rect class="borehole-cap" x="1070" y="96" width="20" height="7"/>
-                    <text class="borehole-label" x="1095" y="93">SPT-03 · N=8</text>
-                    <circle class="borehole-tip borehole-tip--3" cx="1080" cy="525" r="3"/>
+                    <rect class="borehole-cap" x="1070" y="96" width="20" height="7" fill="rgba(255,152,0,0.7)"/>
+                    <text class="borehole-label" x="1095" y="93" fill="rgba(255,152,0,0.65)">SPT-03 · N=8</text>
+                    <circle class="borehole-tip borehole-tip--3" cx="1080" cy="525" r="3" fill="rgba(127,233,255,1)"/>
                 </g>
 
                 <!-- Línea de escaneo descendente -->
