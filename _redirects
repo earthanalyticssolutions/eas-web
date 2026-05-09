@@ -1,0 +1,9 @@
+# Cloudflare Pages — Redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Redirección www → apex
+https://www.earthas.co/*  https://earthas.co/:splat  301
+
+# Páginas legacy (ajustar si se migra desde Hostinger)
+/index.htm  /  301
+/inicio  /  301
