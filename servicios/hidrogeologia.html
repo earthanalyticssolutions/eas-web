@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EAS · Línea L-04 Hidrogeología. Caracterización de acuíferos, perforaciones de prueba, pruebas de bombeo, calidad de agua subterránea, diseño de pozos y abatimiento de NF.">
-    <meta name="keywords" content="hidrogeología, acuíferos, pozos, pruebas de bombeo, agua subterránea, MODFLOW, EAS Earth Analytics Solutions">
+    <meta name="description" content="EAS · Línea L-04 Aguas subterráneas y acuíferos. Investigación hidrogeológica, perforaciones, pruebas de bombeo, calidad de agua, modelación MODFLOW y diseño de pozos para abastecimiento o abatimiento de NF.">
+    <meta name="keywords" content="aguas subterráneas, acuíferos, hidrogeología, pozos, pruebas de bombeo, MODFLOW, EAS Earth Analytics Solutions">
     <meta name="author" content="Earth Analytics Solutions · EAS">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#050a10">
     <link rel="canonical" href="https://earthas.co/servicios/hidrogeologia.html">
-    <meta property="og:title" content="Hidrogeología · EAS">
-    <meta property="og:description" content="Línea L-04: caracterización de acuíferos, pruebas de bombeo, calidad de agua subterránea y diseño de pozos para abastecimiento o descenso de nivel freático.">
+    <meta property="og:title" content="Aguas subterráneas y acuíferos · EAS">
+    <meta property="og:description" content="Línea L-04: investigación hidrogeológica con MODFLOW, pruebas de bombeo, calidad de agua y diseño de pozos. Para abastecimiento, abatimiento o estudios ambientales.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://earthas.co/servicios/hidrogeologia.html">
-    <title>Hidrogeología · L-04 · EAS</title>
+    <title>Aguas subterráneas y acuíferos · L-04 · EAS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -42,6 +42,59 @@
     </nav>
 
     <section class="line-hero">
+
+        <!-- MOTIF HIDROGEOLÓGICO · napa freática + percolación + cono de pozo -->
+        <div class="line-hero__motif motif-aquifer" aria-hidden="true">
+            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <!-- Capas del subsuelo (zona vadosa, saturada, basamento) -->
+                <rect class="layer layer--soil" x="0" y="180" width="1400" height="120"/>
+                <rect class="layer layer--saturated" x="0" y="300" width="1400" height="200"/>
+                <rect class="layer layer--bedrock" x="0" y="500" width="1400" height="100"/>
+
+                <!-- Etiquetas de capas -->
+                <text class="layer-label" x="40" y="240">ZONA NO SATURADA</text>
+                <text class="layer-label" x="40" y="400" style="fill:rgba(127,233,255,0.55)">ACUÍFERO</text>
+                <text class="layer-label" x="40" y="540">BASAMENTO</text>
+
+                <!-- Línea de la napa freática (water table) ondulada -->
+                <path class="water-table" d="M 0 305 Q 200 300, 400 308 Q 600 314, 800 305 Q 1000 298, 1200 308 T 1400 305"/>
+                <text class="water-table-label" x="1380" y="295" text-anchor="end">NIVEL FREÁTICO</text>
+
+                <!-- 5 gotas de percolación (cayendo desde superficie hacia napa) -->
+                <g>
+                    <ellipse class="drop drop--1" cx="220" cy="195" rx="3" ry="5"/>
+                    <ellipse class="drop drop--2" cx="380" cy="195" rx="3" ry="5"/>
+                    <ellipse class="drop drop--3" cx="540" cy="195" rx="3" ry="5"/>
+                    <ellipse class="drop drop--4" cx="900" cy="195" rx="3" ry="5"/>
+                    <ellipse class="drop drop--5" cx="1100" cy="195" rx="3" ry="5"/>
+                </g>
+
+                <!-- Pozo central con casing y cono de abatimiento -->
+                <g>
+                    <!-- Cono de abatimiento (curva de descenso) -->
+                    <path class="cone" d="M 600 305 Q 700 320, 720 380 L 720 460 L 680 460 L 680 380 Q 685 340, 600 320"/>
+                    <path class="cone" d="M 800 305 Q 700 320, 680 380 L 680 460 L 720 460 L 720 380 Q 715 340, 800 320"/>
+
+                    <!-- Pozo casing -->
+                    <rect class="well-casing" x="688" y="160" width="24" height="320"/>
+                    <line class="well-casing" x1="688" y1="160" x2="712" y2="160" stroke-width="3"/>
+
+                    <!-- Pantalla del pozo (zona ranurada en acuífero) -->
+                    <line class="well-screen" x1="688" y1="320" x2="688" y2="460"/>
+                    <line class="well-screen" x1="712" y1="320" x2="712" y2="460"/>
+
+                    <text class="layer-label" x="730" y="155" style="fill:rgba(255,152,0,0.65)">POZO-01 · 80m</text>
+                </g>
+
+                <!-- Flechas de flujo subterráneo (3 flechas horizontales en el acuífero) -->
+                <g>
+                    <path class="flow-arrow flow-arrow--1" d="M 200 380 L 280 380 L 275 376 M 280 380 L 275 384"/>
+                    <path class="flow-arrow flow-arrow--2" d="M 1050 420 L 1130 420 L 1125 416 M 1130 420 L 1125 424"/>
+                    <path class="flow-arrow flow-arrow--3" d="M 350 460 L 430 460 L 425 456 M 430 460 L 425 464"/>
+                </g>
+            </svg>
+        </div>
+
         <div class="line-hero__inner">
             <div>
                 <nav class="line-hero__breadcrumb" aria-label="Migas de pan">
@@ -58,14 +111,15 @@
                 </div>
 
                 <h1 class="line-hero__title">
-                    <em>Hidro</em>geología
+                    Aguas subterráneas<br>
+                    y <em>acuíferos</em>
                 </h1>
 
                 <p class="line-hero__lead">
-                    Estudiamos el agua que no se ve: la que está bajo el suelo y condiciona excavaciones,
-                    cimentaciones, abastecimiento, contaminación y sostenibilidad. Desde caracterización
-                    de acuíferos hasta diseño de pozos productivos o de abatimiento, con pruebas de
-                    campo y modelación numérica.
+                    Estudiamos el agua que no se ve. Investigación hidrogeológica con perforaciones,
+                    pruebas de bombeo y modelación MODFLOW para <strong>abastecimiento, abatimiento
+                    de nivel freático, contaminación o sostenibilidad</strong>. El recurso estratégico
+                    o el pasivo ambiental — depende de cómo lo midamos.
                 </p>
 
                 <div class="line-hero__actions">
@@ -489,15 +543,15 @@
             <div class="line-related__grid">
                 <a href="hidrologia.html" class="line-related__card">
                     <span>L-03 · AGUAS</span>
-                    <strong>Hidrología e hidráulica</strong>
+                    <strong>Ingeniería de aguas superficiales</strong>
                 </a>
                 <a href="geotecnia.html" class="line-related__card">
                     <span>L-01 · PRINCIPAL</span>
-                    <strong>Geotecnia y suelos</strong>
+                    <strong>Investigación y exploración geotécnica</strong>
                 </a>
                 <a href="riesgo-ambiente.html" class="line-related__card">
                     <span>L-08 · SOSTENIBILIDAD</span>
-                    <strong>Gestión del riesgo y ambiente</strong>
+                    <strong>Gestión geotécnica del riesgo y ambiente</strong>
                 </a>
             </div>
         </div>

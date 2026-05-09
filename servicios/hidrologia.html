@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EAS · Línea L-03 Hidrología e hidráulica. Modelación de cuencas, drenajes pluviales, ríos, llanuras de inundación, obras hidráulicas. HEC-HMS, HEC-RAS, SWMM. Operación LATAM.">
-    <meta name="keywords" content="hidrología, hidráulica, HEC-RAS, HEC-HMS, SWMM, cuencas, drenajes, llanuras de inundación, EAS Earth Analytics Solutions">
+    <meta name="description" content="EAS · Línea L-03 Ingeniería de aguas superficiales. Modelación de cuencas, ríos, drenajes urbanos, llanuras de inundación y obras hidráulicas con HEC-HMS, HEC-RAS y SWMM. Operación LATAM.">
+    <meta name="keywords" content="ingeniería de aguas superficiales, hidrología, hidráulica, HEC-RAS, HEC-HMS, SWMM, cuencas, drenajes, EAS Earth Analytics Solutions">
     <meta name="author" content="Earth Analytics Solutions · EAS">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#050a10">
     <link rel="canonical" href="https://earthas.co/servicios/hidrologia.html">
-    <meta property="og:title" content="Hidrología e hidráulica · EAS">
-    <meta property="og:description" content="Línea L-03: modelación hidrológica e hidráulica con HEC-HMS, HEC-RAS y SWMM para diseño de obras hidráulicas, drenajes y manejo de inundaciones.">
+    <meta property="og:title" content="Ingeniería de aguas superficiales · EAS">
+    <meta property="og:description" content="Línea L-03: modelación hidrológica e hidráulica con HEC-HMS, HEC-RAS y SWMM. Para puentes, alcantarillas, urbanizaciones, POMCA y EIA.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://earthas.co/servicios/hidrologia.html">
-    <title>Hidrología e hidráulica · L-03 · EAS</title>
+    <title>Ingeniería de aguas superficiales · L-03 · EAS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -42,6 +42,48 @@
     </nav>
 
     <section class="line-hero">
+
+        <!-- MOTIF HIDROLÓGICO · ondas fluviales + hidrograma + flujo -->
+        <div class="line-hero__motif motif-hydro" aria-hidden="true">
+            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <!-- Grid de ejes (axis-style) -->
+                <g>
+                    <line class="grid-axis" x1="0" y1="500" x2="1400" y2="500"/>
+                    <line class="grid-tick" x1="0" y1="400" x2="1400" y2="400"/>
+                    <line class="grid-tick" x1="0" y1="300" x2="1400" y2="300"/>
+                    <line class="grid-tick" x1="0" y1="200" x2="1400" y2="200"/>
+                    <line class="grid-tick" x1="900" y1="0" x2="900" y2="500"/>
+                    <line class="grid-tick" x1="1100" y1="0" x2="1100" y2="500"/>
+                </g>
+
+                <!-- Etiquetas de ejes -->
+                <text class="axis-label" x="20" y="495">CAUDAL · m³/s</text>
+                <text class="axis-label" x="1320" y="520" text-anchor="end">TIEMPO →</text>
+
+                <!-- 3 ondas fluviales sinusoidales -->
+                <path class="wave wave--1" d="M -50 230 Q 120 200, 280 230 T 600 230 T 920 230 T 1240 230 T 1560 230"/>
+                <path class="wave wave--2" d="M -50 290 Q 140 260, 320 290 T 660 290 T 980 290 T 1300 290 T 1620 290"/>
+                <path class="wave wave--3" d="M -50 360 Q 160 330, 360 360 T 760 360 T 1100 360 T 1450 360"/>
+                <path class="wave wave--neon" d="M -50 165 Q 200 145, 400 165 T 800 165 T 1200 165 T 1600 165"/>
+
+                <!-- Hidrograma (curva de descarga) en costado derecho -->
+                <path class="hydrograph" d="M 880 500 L 880 460 Q 920 460, 950 380 Q 980 280, 1000 220 Q 1020 280, 1050 380 Q 1080 450, 1120 480 L 1180 490 L 1180 500 Z"/>
+                <circle class="hydrograph-peak" cx="1000" cy="220" r="4"/>
+                <text class="axis-label" x="1000" y="195" text-anchor="middle" style="fill:rgba(255,152,0,0.65)">Q-PICO</text>
+
+                <!-- Partículas de flujo (4 puntos pequeños) -->
+                <g>
+                    <circle class="flow flow--1" cx="200" cy="230" r="2.5"/>
+                    <circle class="flow flow--2" cx="200" cy="290" r="2"/>
+                    <circle class="flow flow--3" cx="200" cy="360" r="2.5"/>
+                    <circle class="flow flow--4" cx="200" cy="165" r="2"/>
+                </g>
+
+                <!-- Etiqueta del hidrograma -->
+                <text class="axis-label" x="1180" y="505" text-anchor="end" style="fill:rgba(255,152,0,0.55)">HIDROGRAMA</text>
+            </svg>
+        </div>
+
         <div class="line-hero__inner">
             <div>
                 <nav class="line-hero__breadcrumb" aria-label="Migas de pan">
@@ -58,14 +100,15 @@
                 </div>
 
                 <h1 class="line-hero__title">
-                    Hidrología<br>
-                    e <em>hidráulica</em>
+                    Ingeniería<br>
+                    de <em>aguas superficiales</em>
                 </h1>
 
                 <p class="line-hero__lead">
-                    Modelamos cómo se comporta el agua en tu proyecto: cuencas, escorrentías, ríos,
-                    llanuras de inundación y drenajes urbanos. Insumos críticos para puentes, alcantarillas,
-                    urbanizaciones y estudios ambientales — con software de referencia internacional.
+                    Modelamos el agua que se ve: cuencas, ríos, escorrentías, drenajes urbanos y
+                    llanuras de inundación. Insumos críticos para <strong>puentes, alcantarillas,
+                    urbanizaciones y POMCA</strong> con software de referencia internacional y
+                    datos hidrometeorológicos verificables.
                 </p>
 
                 <div class="line-hero__actions">
@@ -492,15 +535,15 @@
             <div class="line-related__grid">
                 <a href="hidrogeologia.html" class="line-related__card">
                     <span>L-04 · SUBTERRÁNEAS</span>
-                    <strong>Hidrogeología</strong>
+                    <strong>Aguas subterráneas y acuíferos</strong>
                 </a>
                 <a href="riesgo-ambiente.html" class="line-related__card">
                     <span>L-08 · SOSTENIBILIDAD</span>
-                    <strong>Gestión del riesgo y ambiente</strong>
+                    <strong>Gestión geotécnica del riesgo y ambiente</strong>
                 </a>
                 <a href="topografia-gis.html" class="line-related__card">
                     <span>L-06 · GEOESPACIAL</span>
-                    <strong>Topografía y GIS</strong>
+                    <strong>Topografía digital y análisis geoespacial</strong>
                 </a>
             </div>
         </div>

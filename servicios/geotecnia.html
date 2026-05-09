@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EAS · Línea L-01 Geotecnia y estudios de suelos. Sondeos SPT, apiques, capacidad portante, asentamientos, recomendaciones de cimentación, NSR-10, ASTM D, INV-E. Operación LATAM.">
-    <meta name="keywords" content="estudios de suelos, geotecnia, SPT, capacidad portante, cimentaciones, NSR-10, asentamientos, EAS Earth Analytics Solutions">
+    <meta name="description" content="EAS · Línea L-01 Investigación y exploración geotécnica. Caracterización profunda del subsuelo: sondeos SPT, apiques, capacidad portante, cimentaciones, NSR-10, ASTM D, INV-E. Operación LATAM.">
+    <meta name="keywords" content="exploración geotécnica, investigación geotécnica, estudios de suelos, SPT, capacidad portante, cimentaciones, NSR-10, EAS Earth Analytics Solutions">
     <meta name="author" content="Earth Analytics Solutions · EAS">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#050a10">
     <link rel="canonical" href="https://earthas.co/servicios/geotecnia.html">
-    <meta property="og:title" content="Geotecnia y estudios de suelos · EAS">
-    <meta property="og:description" content="Línea L-01: la base técnica de todo proyecto constructivo. SPT, capacidad portante, cimentaciones y manejo de aguas con respaldo NSR-10.">
+    <meta property="og:title" content="Investigación y exploración geotécnica · EAS">
+    <meta property="og:description" content="Línea L-01: caracterización profunda del subsuelo con SPT, apiques, geofísica, modelación numérica y entrega firmada. La base de toda decisión constructiva.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://earthas.co/servicios/geotecnia.html">
-    <title>Geotecnia y estudios de suelos · L-01 · EAS</title>
+    <title>Investigación y exploración geotécnica · L-01 · EAS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -44,6 +44,60 @@
 
     <!-- HERO de línea -->
     <section class="line-hero">
+
+        <!-- MOTIF GEOTÉCNICO · capas estratigráficas + sondeos pulsantes + scan -->
+        <div class="line-hero__motif motif-geo" aria-hidden="true">
+            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <!-- Grid técnico de fondo -->
+                <g>
+                    <line class="grid-mark" x1="200" y1="0" x2="200" y2="600"/>
+                    <line class="grid-mark" x1="500" y1="0" x2="500" y2="600"/>
+                    <line class="grid-mark" x1="900" y1="0" x2="900" y2="600"/>
+                    <line class="grid-mark" x1="1200" y1="0" x2="1200" y2="600"/>
+                    <line class="grid-mark-strong" x1="0" y1="150" x2="1400" y2="150"/>
+                    <line class="grid-mark-strong" x1="0" y1="450" x2="1400" y2="450"/>
+                </g>
+
+                <!-- Relleno sutil de zona "saturada" -->
+                <path class="stratum--fill" d="M 0 380 Q 350 360, 700 390 T 1400 380 L 1400 600 L 0 600 Z"/>
+
+                <!-- 4 capas estratigráficas onduladas -->
+                <path class="stratum stratum--1" d="M 0 200 Q 350 180, 700 210 T 1400 200"/>
+                <path class="stratum stratum--2" d="M 0 280 Q 350 265, 700 295 T 1400 285"/>
+                <path class="stratum stratum--3" d="M 0 380 Q 350 360, 700 390 T 1400 380"/>
+                <path class="stratum stratum--4" d="M 0 470 Q 350 450, 700 480 T 1400 465"/>
+
+                <!-- Etiquetas de capas (lado derecho) -->
+                <text class="borehole-label" x="1310" y="195" text-anchor="end" style="fill:rgba(127,233,255,0.45)">RELLENO</text>
+                <text class="borehole-label" x="1310" y="275" text-anchor="end" style="fill:rgba(127,233,255,0.45)">ARCILLA · CL</text>
+                <text class="borehole-label" x="1310" y="375" text-anchor="end" style="fill:rgba(255,152,0,0.50)">ARENA · SM</text>
+                <text class="borehole-label" x="1310" y="460" text-anchor="end" style="fill:rgba(127,233,255,0.45)">ROCA</text>
+
+                <!-- 3 sondeos SPT verticales con cap, label y tip pulsante -->
+                <g>
+                    <line class="borehole" x1="280" y1="100" x2="280" y2="500"/>
+                    <rect class="borehole-cap" x="270" y="96" width="20" height="7"/>
+                    <text class="borehole-label" x="295" y="93">SPT-01 · N=15</text>
+                    <circle class="borehole-tip" cx="280" cy="500" r="3"/>
+                </g>
+                <g>
+                    <line class="borehole borehole--2" x1="700" y1="100" x2="700" y2="445"/>
+                    <rect class="borehole-cap" x="690" y="96" width="20" height="7"/>
+                    <text class="borehole-label" x="715" y="93">SPT-02 · N=22</text>
+                    <circle class="borehole-tip borehole-tip--2" cx="700" cy="445" r="3"/>
+                </g>
+                <g>
+                    <line class="borehole borehole--3" x1="1080" y1="100" x2="1080" y2="525"/>
+                    <rect class="borehole-cap" x="1070" y="96" width="20" height="7"/>
+                    <text class="borehole-label" x="1095" y="93">SPT-03 · N=8</text>
+                    <circle class="borehole-tip borehole-tip--3" cx="1080" cy="525" r="3"/>
+                </g>
+
+                <!-- Línea de escaneo descendente -->
+                <line class="scan" x1="0" y1="120" x2="1400" y2="120"/>
+            </svg>
+        </div>
+
         <div class="line-hero__inner">
             <div>
                 <nav class="line-hero__breadcrumb" aria-label="Migas de pan">
@@ -60,14 +114,15 @@
                 </div>
 
                 <h1 class="line-hero__title">
-                    Geotecnia y<br>
-                    estudios de <em>suelos</em>
+                    Investigación y<br>
+                    exploración <em>geotécnica</em>
                 </h1>
 
                 <p class="line-hero__lead">
-                    La base técnica sobre la que se apoya cualquier obra. Caracterizamos el subsuelo
-                    con exploración real, ensayos certificados y análisis numérico, no con suposiciones.
-                    Recomendaciones de cimentación firmadas y defendibles ante cualquier interventor.
+                    Vamos al subsuelo a conseguir certeza. Caracterización con exploración real,
+                    ensayos certificados, modelación numérica y análisis sísmico — no suposiciones.
+                    Recomendaciones de cimentación <strong>firmadas y defendibles</strong> ante
+                    cualquier interventoría o entidad reguladora.
                 </p>
 
                 <div class="line-hero__actions">
@@ -116,10 +171,10 @@
             <!-- 01 ALCANCE -->
             <section id="alcance" class="line-block">
                 <span class="line-block__num">01 · ALCANCE</span>
-                <h2 class="line-block__title">¿Qué decide un buen estudio geotécnico?</h2>
+                <h2 class="line-block__title">¿Qué decide una buena investigación geotécnica?</h2>
                 <p class="line-block__lead">
                     Decide <strong>cómo, sobre qué y a qué profundidad</strong> se cimienta tu proyecto.
-                    Sin un estudio sólido, la única certeza es que estás asumiendo riesgo en silencio.
+                    Sin una investigación sólida, la única certeza es que estás asumiendo riesgo en silencio.
                     En EAS combinamos exploración real con análisis numérico para entregar recomendaciones
                     constructivas <strong>verificables y defendibles</strong>.
                 </p>
@@ -509,15 +564,15 @@
             <div class="line-related__grid">
                 <a href="laboratorio.html" class="line-related__card">
                     <span>L-07 · ENSAYOS</span>
-                    <strong>Laboratorio y control de calidad</strong>
+                    <strong>Laboratorio de geomateriales y control de obra</strong>
                 </a>
                 <a href="hidrogeologia.html" class="line-related__card">
                     <span>L-04 · SUBTERRÁNEAS</span>
-                    <strong>Hidrogeología</strong>
+                    <strong>Aguas subterráneas y acuíferos</strong>
                 </a>
                 <a href="diagnostico.html" class="line-related__card">
                     <span>L-10 · FORENSE</span>
-                    <strong>Diagnóstico de patologías</strong>
+                    <strong>Diagnóstico forense geotécnico</strong>
                 </a>
             </div>
         </div>
