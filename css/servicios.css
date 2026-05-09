@@ -2498,3 +2498,278 @@
     .scroll-band__head { font-size: 9px; left: 20px; right: 20px; }
     .scroll-band__caption { font-size: 9px; left: 20px; right: 20px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   16. MOTIVOS POR LÍNEA · L-02 a L-10
+   Cada uno con su lenguaje visual propio, animaciones suaves.
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes mDrift { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes mPulse { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
+@keyframes mPulseScale { 0%,100% { opacity: .4; transform: scale(1); } 50% { opacity: 1; transform: scale(1.4); } }
+@keyframes mWaveFlow { 0% { stroke-dashoffset: 280; } 100% { stroke-dashoffset: 0; } }
+@keyframes mRipple { 0% { opacity: .5; r: 30; } 100% { opacity: 0; r: 200; } }
+
+/* ── motif-geophys · L-02 Exploración geofísica · ondas sísmicas + geófonos ── */
+
+.motif-geophys .ripple {
+    fill: none;
+    stroke: rgba(127, 233, 255, 0.5);
+    stroke-width: 1.5;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: mRipple 4s ease-out infinite;
+}
+.motif-geophys .ripple--2 { animation-delay: -1.3s; stroke: rgba(127, 233, 255, 0.4); }
+.motif-geophys .ripple--3 { animation-delay: -2.6s; stroke: rgba(255, 152, 0, 0.35); }
+
+.motif-geophys .geophone {
+    stroke: rgba(255, 152, 0, 0.6);
+    stroke-width: 1.5;
+    fill: rgba(255, 152, 0, 0.18);
+}
+
+.motif-geophys .gp-wave {
+    fill: none;
+    stroke-width: 1;
+    stroke-dasharray: 200;
+    animation: mWaveFlow 8s linear infinite;
+}
+.motif-geophys .gp-wave--1 { stroke: rgba(127, 233, 255, 0.4); }
+.motif-geophys .gp-wave--2 { stroke: rgba(255, 152, 0, 0.3); animation-delay: -2s; animation-duration: 10s; }
+
+.motif-geophys .gp-grid { stroke: rgba(255, 255, 255, 0.05); stroke-width: 1; }
+
+.motif-geophys .gp-source {
+    fill: rgba(255, 152, 0, 1);
+    transform-box: fill-box; transform-origin: center;
+    animation: mPulseScale 2.8s ease-in-out infinite;
+}
+
+/* ── motif-pavement · L-05 Pavimentos · capas estructurales ── */
+
+.motif-pavement .pv-layer {
+    fill-opacity: 0.06;
+}
+.motif-pavement .pv-layer--rodadura { fill: rgba(255, 152, 0, 0.18); }
+.motif-pavement .pv-layer--base     { fill: rgba(127, 233, 255, 0.12); }
+.motif-pavement .pv-layer--subbase  { fill: rgba(127, 233, 255, 0.08); }
+
+.motif-pavement .pv-line {
+    stroke-width: 1;
+    fill: none;
+    animation: mDrift 12s ease-in-out infinite;
+}
+.motif-pavement .pv-line--1 { stroke: rgba(255, 152, 0, 0.5); }
+.motif-pavement .pv-line--2 { stroke: rgba(127, 233, 255, 0.4); animation-delay: -2s; }
+.motif-pavement .pv-line--3 { stroke: rgba(127, 233, 255, 0.3); animation-delay: -4s; }
+.motif-pavement .pv-line--4 { stroke: rgba(127, 233, 255, 0.2); animation-delay: -6s; }
+
+.motif-pavement .pv-mark {
+    stroke: rgba(255, 152, 0, 0.6);
+    stroke-width: 2;
+    stroke-dasharray: 12 8;
+    fill: none;
+    animation: mWaveFlow 14s linear infinite;
+    stroke-dashoffset: 20;
+}
+
+.motif-pavement .pv-load {
+    fill: rgba(255, 152, 0, 1);
+    transform-box: fill-box; transform-origin: center;
+    animation: mPulseScale 3s ease-in-out infinite;
+}
+
+.motif-pavement .pv-grid { stroke: rgba(255, 255, 255, 0.05); }
+
+/* ── motif-survey · L-06 Topografía + GIS · grid + waypoints + dron ── */
+
+.motif-survey .sv-grid {
+    stroke: rgba(127, 233, 255, 0.10);
+    stroke-width: 1;
+}
+.motif-survey .sv-grid-strong { stroke: rgba(127, 233, 255, 0.18); }
+
+.motif-survey .sv-iso {
+    fill: none;
+    stroke-width: 1;
+    animation: mDrift 14s ease-in-out infinite;
+}
+.motif-survey .sv-iso--1 { stroke: rgba(127, 233, 255, 0.4); }
+.motif-survey .sv-iso--2 { stroke: rgba(127, 233, 255, 0.3); animation-delay: -3s; }
+.motif-survey .sv-iso--3 { stroke: rgba(127, 233, 255, 0.22); animation-delay: -6s; }
+
+.motif-survey .sv-drone {
+    fill: rgba(255, 152, 0, 0.85);
+    stroke: var(--eas-neon);
+    stroke-width: 1;
+    animation: mDrift 5s ease-in-out infinite;
+}
+
+.motif-survey .sv-beam {
+    stroke: rgba(255, 152, 0, 0.4);
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+    animation: mPulse 2.5s ease-in-out infinite;
+}
+
+.motif-survey .sv-waypoint {
+    fill: rgba(127, 233, 255, 1);
+    stroke: var(--logo-cyan);
+    stroke-width: 2;
+    transform-box: fill-box; transform-origin: center;
+    animation: mPulseScale 3s ease-in-out infinite;
+}
+.motif-survey .sv-waypoint--2 { animation-delay: -1s; }
+.motif-survey .sv-waypoint--3 { animation-delay: -2s; }
+
+/* ── motif-lab · L-07 Laboratorio · tubos + curva granulométrica ── */
+
+.motif-lab .lb-tube-glass {
+    fill: rgba(127, 233, 255, 0.04);
+    stroke: rgba(127, 233, 255, 0.4);
+    stroke-width: 1.5;
+}
+
+.motif-lab .lb-tube-liquid {
+    fill: rgba(255, 152, 0, 0.5);
+    animation: mDrift 6s ease-in-out infinite;
+}
+.motif-lab .lb-tube-liquid--2 { fill: rgba(127, 233, 255, 0.5); animation-delay: -2s; }
+.motif-lab .lb-tube-liquid--3 { fill: rgba(127, 233, 255, 0.35); animation-delay: -4s; }
+
+.motif-lab .lb-bubble {
+    fill: rgba(255, 255, 255, 0.6);
+    transform-box: fill-box; transform-origin: center;
+    animation: mPulseScale 3s ease-in-out infinite;
+}
+.motif-lab .lb-bubble--2 { animation-delay: -1s; }
+
+.motif-lab .lb-curve {
+    fill: none;
+    stroke: rgba(255, 152, 0, 0.5);
+    stroke-width: 1.5;
+    stroke-dasharray: 600;
+    animation: mWaveFlow 12s linear infinite;
+}
+
+.motif-lab .lb-grid { stroke: rgba(127, 233, 255, 0.08); stroke-width: 1; }
+
+.motif-lab .lb-point {
+    fill: rgba(127, 233, 255, 1);
+    transform-box: fill-box; transform-origin: center;
+    animation: mPulseScale 2.5s ease-in-out infinite;
+}
+.motif-lab .lb-point--2 { animation-delay: -.8s; }
+.motif-lab .lb-point--3 { animation-delay: -1.6s; }
+
+/* ── motif-risk · L-08 Riesgo y ambiente · zonas críticas + alerta ── */
+
+.motif-risk .rk-zone {
+    fill-opacity: 0.08;
+    stroke-width: 1.5;
+    animation: mPulse 4s ease-in-out infinite;
+}
+.motif-risk .rk-zone--1 { fill: rgba(255, 152, 0, 0.3); stroke: rgba(255, 152, 0, 0.5); }
+.motif-risk .rk-zone--2 { fill: rgba(255, 152, 0, 0.2); stroke: rgba(255, 152, 0, 0.4); animation-delay: -1.5s; }
+.motif-risk .rk-zone--3 { fill: rgba(127, 233, 255, 0.15); stroke: rgba(127, 233, 255, 0.35); animation-delay: -3s; }
+
+.motif-risk .rk-arrow {
+    stroke: rgba(255, 152, 0, 0.7);
+    stroke-width: 2;
+    fill: rgba(255, 152, 0, 0.7);
+}
+
+.motif-risk .rk-pulse {
+    fill: rgba(255, 152, 0, 1);
+    transform-box: fill-box; transform-origin: center;
+    animation: mPulseScale 1.8s ease-in-out infinite;
+}
+
+.motif-risk .rk-grid { stroke: rgba(255, 255, 255, 0.05); }
+
+.motif-risk .rk-isoline {
+    fill: none;
+    stroke: rgba(127, 233, 255, 0.3);
+    stroke-width: 1;
+    stroke-dasharray: 4 3;
+    animation: mDrift 16s ease-in-out infinite;
+}
+
+/* ── motif-structure · L-09 Estructuras · pórtico + cargas ── */
+
+.motif-structure .st-beam {
+    stroke: rgba(255, 152, 0, 0.55);
+    stroke-width: 3;
+    fill: none;
+}
+
+.motif-structure .st-column {
+    stroke: rgba(255, 152, 0, 0.55);
+    stroke-width: 3;
+    fill: none;
+}
+
+.motif-structure .st-rebar {
+    stroke: rgba(127, 233, 255, 0.35);
+    stroke-width: 1;
+    stroke-dasharray: 4 4;
+    fill: none;
+    animation: mWaveFlow 14s linear infinite;
+}
+
+.motif-structure .st-load {
+    stroke: rgba(127, 233, 255, 0.7);
+    stroke-width: 2;
+    fill: rgba(127, 233, 255, 0.7);
+    animation: mDrift 4s ease-in-out infinite;
+}
+
+.motif-structure .st-joint {
+    fill: rgba(255, 152, 0, 1);
+    transform-box: fill-box; transform-origin: center;
+    animation: mPulseScale 3s ease-in-out infinite;
+}
+.motif-structure .st-joint--2 { animation-delay: -1s; }
+.motif-structure .st-joint--3 { animation-delay: -2s; }
+.motif-structure .st-joint--4 { animation-delay: -.5s; }
+
+.motif-structure .st-grid { stroke: rgba(255, 255, 255, 0.05); }
+
+/* ── motif-diagnostic · L-10 Diagnóstico forense · grietas + lupa ── */
+
+.motif-diagnostic .dg-crack {
+    fill: none;
+    stroke: rgba(255, 152, 0, 0.55);
+    stroke-width: 1.5;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: drawIso 4s ease-out infinite;
+}
+.motif-diagnostic .dg-crack--2 { animation-delay: -1s; stroke: rgba(255, 152, 0, 0.4); }
+.motif-diagnostic .dg-crack--3 { animation-delay: -2s; stroke: rgba(127, 233, 255, 0.35); }
+
+.motif-diagnostic .dg-magnifier {
+    fill: rgba(127, 233, 255, 0.06);
+    stroke: rgba(127, 233, 255, 0.6);
+    stroke-width: 2;
+    animation: mDrift 8s ease-in-out infinite;
+}
+
+.motif-diagnostic .dg-handle {
+    stroke: rgba(127, 233, 255, 0.6);
+    stroke-width: 3;
+    stroke-linecap: round;
+    animation: mDrift 8s ease-in-out infinite;
+}
+
+.motif-diagnostic .dg-marker {
+    fill: rgba(255, 152, 0, 1);
+    transform-box: fill-box; transform-origin: center;
+    animation: mPulseScale 2s ease-in-out infinite;
+}
+.motif-diagnostic .dg-marker--2 { animation-delay: -.7s; }
+.motif-diagnostic .dg-marker--3 { animation-delay: -1.4s; }
+
+.motif-diagnostic .dg-grid { stroke: rgba(255, 255, 255, 0.05); }
+.motif-diagnostic .dg-frame { stroke: rgba(127, 233, 255, 0.2); stroke-width: 1; fill: none; }

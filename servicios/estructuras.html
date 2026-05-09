@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EAS · Línea L-09 Consultoría estructural aplicada. Revisión de diseños, segunda opinión técnica, conceptos estructurales, coordinación con cimentación y patologías.">
+    <meta name="keywords" content="consultoría estructural, revisión de diseños, segunda opinión, NSR-10, EAS Earth Analytics Solutions">
+    <meta name="author" content="Earth Analytics Solutions · EAS">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#050a10">
+    <link rel="canonical" href="https://earthas.co/servicios/estructuras.html">
+    <meta property="og:title" content="Consultoría estructural aplicada · EAS">
+    <meta property="og:description" content="Línea L-09: línea de apoyo a las geociencias. Revisión, segunda opinión, conceptos estructurales coordinados con cimentación.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://earthas.co/servicios/estructuras.html">
+    <title>Consultoría estructural aplicada · L-09 · EAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/servicios.css">
+    <link rel="icon" type="image/png" href="../assets/eas.png">
+</head>
+<body class="page-line">
+
+    <nav class="nav-bar" aria-label="Navegación principal">
+        <a href="../index.html" class="nav-brand">
+            <img src="../assets/eas.png" alt="EAS" class="nav-logo">
+            <span>EAS</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../servicios.html" class="is-current">Servicios</a></li>
+            <li><a href="../index.html#sectores">Sectores</a></li>
+            <li><a href="../index.html#casos">Casos</a></li>
+            <li><a href="../index.html#soluciones">Soluciones</a></li>
+            <li><a href="../index.html#contacto" class="nav-cta">Cotiza · 15min ▶</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <section class="line-hero">
+        <!-- MOTIF STRUCTURE · pórtico (vigas + columnas) + cargas + diagrama -->
+        <div class="line-hero__motif motif-structure" aria-hidden="true">
+            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <line class="st-grid" x1="200" y1="0" x2="200" y2="600"/>
+                <line class="st-grid" x1="700" y1="0" x2="700" y2="600"/>
+                <line class="st-grid" x1="1200" y1="0" x2="1200" y2="600"/>
+                <line class="st-grid" x1="0" y1="200" x2="1400" y2="200"/>
+                <line class="st-grid" x1="0" y1="450" x2="1400" y2="450"/>
+
+                <!-- Pórtico (3 niveles, 3 columnas) -->
+                <g>
+                    <!-- Vigas horizontales -->
+                    <line class="st-beam" x1="380" y1="180" x2="1020" y2="180"/>
+                    <line class="st-beam" x1="380" y1="280" x2="1020" y2="280"/>
+                    <line class="st-beam" x1="380" y1="380" x2="1020" y2="380"/>
+                    <line class="st-beam" x1="380" y1="480" x2="1020" y2="480"/>
+
+                    <!-- Columnas verticales -->
+                    <line class="st-column" x1="380" y1="180" x2="380" y2="480"/>
+                    <line class="st-column" x1="700" y1="180" x2="700" y2="480"/>
+                    <line class="st-column" x1="1020" y1="180" x2="1020" y2="480"/>
+
+                    <!-- Refuerzos diagonales (rebar wireframe) -->
+                    <line class="st-rebar" x1="380" y1="280" x2="700" y2="180" stroke-dasharray="4 4"/>
+                    <line class="st-rebar" x1="700" y1="280" x2="1020" y2="180" stroke-dasharray="4 4"/>
+                    <line class="st-rebar" x1="380" y1="380" x2="700" y2="280" stroke-dasharray="4 4"/>
+                    <line class="st-rebar" x1="700" y1="380" x2="1020" y2="280" stroke-dasharray="4 4"/>
+
+                    <!-- Joints (uniones) pulsantes -->
+                    <circle class="st-joint" cx="380" cy="180" r="5"/>
+                    <circle class="st-joint st-joint--2" cx="700" cy="180" r="5"/>
+                    <circle class="st-joint st-joint--3" cx="1020" cy="180" r="5"/>
+                    <circle class="st-joint st-joint--4" cx="380" cy="280" r="4"/>
+                    <circle class="st-joint" cx="700" cy="280" r="4"/>
+                    <circle class="st-joint st-joint--2" cx="1020" cy="280" r="4"/>
+                    <circle class="st-joint st-joint--3" cx="380" cy="380" r="4"/>
+                    <circle class="st-joint st-joint--4" cx="700" cy="380" r="4"/>
+                    <circle class="st-joint" cx="1020" cy="380" r="4"/>
+                </g>
+
+                <!-- Cargas (flechas hacia abajo sobre vigas superiores) -->
+                <g>
+                    <line class="st-load" x1="500" y1="120" x2="500" y2="170"/>
+                    <polygon class="st-load" points="495,165 505,165 500,178" fill="rgba(127,233,255,0.7)"/>
+                    <line class="st-load" x1="600" y1="120" x2="600" y2="170"/>
+                    <polygon class="st-load" points="595,165 605,165 600,178" fill="rgba(127,233,255,0.7)"/>
+                    <line class="st-load" x1="800" y1="120" x2="800" y2="170"/>
+                    <polygon class="st-load" points="795,165 805,165 800,178" fill="rgba(127,233,255,0.7)"/>
+                    <line class="st-load" x1="900" y1="120" x2="900" y2="170"/>
+                    <polygon class="st-load" points="895,165 905,165 900,178" fill="rgba(127,233,255,0.7)"/>
+                </g>
+
+                <!-- Etiquetas técnicas -->
+                <text x="500" y="100" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(127,233,255,0.7)">q = 5 kN/m²</text>
+                <text x="350" y="495" text-anchor="end" font-family="Orbitron" font-size="9" letter-spacing="1" fill="rgba(255,152,0,0.6)">N-1</text>
+                <text x="350" y="385" text-anchor="end" font-family="Orbitron" font-size="9" letter-spacing="1" fill="rgba(255,152,0,0.6)">N-2</text>
+                <text x="350" y="285" text-anchor="end" font-family="Orbitron" font-size="9" letter-spacing="1" fill="rgba(255,152,0,0.6)">N-3</text>
+                <text x="350" y="185" text-anchor="end" font-family="Orbitron" font-size="9" letter-spacing="1" fill="rgba(255,152,0,0.6)">CUB</text>
+
+                <!-- Diagrama de momento (curva en lado derecho) -->
+                <text x="1050" y="290" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(127,233,255,0.6)">M(x)</text>
+                <path class="st-rebar" d="M 1100 380 Q 1180 350, 1260 380" stroke="rgba(127,233,255,0.45)" stroke-width="1.5"/>
+
+                <!-- Etiquetas pie -->
+                <text x="40" y="540" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(255,152,0,0.5)">▸ NSR-10 · TÍTULO C</text>
+                <text x="1360" y="540" text-anchor="end" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(127,233,255,0.5)">PÓRTICO 3D · L-09</text>
+            </svg>
+        </div>
+
+        <div class="line-hero__inner">
+            <div>
+                <nav class="line-hero__breadcrumb" aria-label="Migas de pan">
+                    <a href="../index.html">EAS</a>
+                    <span class="sep">/</span>
+                    <a href="../servicios.html">Servicios</a>
+                    <span class="sep">/</span>
+                    <span class="current">Estructuras</span>
+                </nav>
+
+                <div class="line-hero__id">
+                    <strong>L-09</strong>
+                    <span>APOYO · INGENIERÍA</span>
+                </div>
+
+                <h1 class="line-hero__title">
+                    Consultoría<br>
+                    <em>estructural</em> aplicada
+                </h1>
+
+                <p class="line-hero__lead">
+                    Línea de apoyo a las geociencias. Revisión de diseños estructurales, segunda
+                    opinión técnica, <strong>conceptos estructurales coordinados con cimentación</strong>
+                    y diagnóstico de patologías. EAS no compite con calculistas — los complementamos
+                    con el lente del terreno.
+                </p>
+
+                <div class="line-hero__actions">
+                    <a href="../index.html#contacto" class="btn-svc btn-svc--primary">COTIZAR ESTA LÍNEA ▶</a>
+                    <a href="#alcance" class="btn-svc btn-svc--ghost">VER ALCANCE</a>
+                </div>
+            </div>
+
+            <aside class="line-hero__panel">
+                <div class="line-hero__panel-head">
+                    <span>FICHA TÉCNICA</span>
+                    <span>L-09 · v.2026</span>
+                </div>
+                <dl>
+                    <div class="line-hero__panel-row"><dt>Código</dt><dd class="neon">EAS-EST-09</dd></div>
+                    <div class="line-hero__panel-row"><dt>Naturaleza</dt><dd>Apoyo · revisión · concepto</dd></div>
+                    <div class="line-hero__panel-row"><dt>Norma base</dt><dd class="cyan">NSR-10 · ACI 318 · AISC</dd></div>
+                    <div class="line-hero__panel-row"><dt>Software</dt><dd>SAP2000 · ETABS · STAAD · CYPECAD</dd></div>
+                    <div class="line-hero__panel-row"><dt>Plazo típico</dt><dd>1-4 semanas</dd></div>
+                    <div class="line-hero__panel-row"><dt>Entregable</dt><dd>Concepto + memoria firmada</dd></div>
+                    <div class="line-hero__panel-row"><dt>Aplica a</dt><dd>Edificación · Industrial · Patología</dd></div>
+                </dl>
+            </aside>
+        </div>
+    </section>
+
+    <div class="line-shell">
+        <aside class="line-side">
+            <span class="line-side__title">EN ESTA PÁGINA</span>
+            <ul class="line-side__list">
+                <li><a href="#alcance" class="is-active">01 · Alcance</a></li>
+                <li><a href="#revision">02 · Revisión de diseños</a></li>
+                <li><a href="#concepto">03 · Conceptos y segunda opinión</a></li>
+                <li><a href="#coordinacion">04 · Coordinación geotécnica</a></li>
+                <li><a href="#proceso">05 · Proceso</a></li>
+                <li><a href="#aplicaciones">06 · Aplicaciones</a></li>
+            </ul>
+        </aside>
+
+        <div class="line-content">
+            <section id="alcance" class="line-block">
+                <span class="line-block__num">01 · ALCANCE</span>
+                <h2 class="line-block__title">Estructuras como apoyo a las geociencias.</h2>
+                <p class="line-block__lead">
+                    EAS es una firma de geociencias y geotecnia. Estructuras es nuestra <strong>línea
+                    de apoyo</strong> — no la principal. Nuestra propuesta de valor está en la interfaz
+                    entre el suelo y la estructura: cimentación, asentamientos, muros, taludes,
+                    diagnóstico de fallas. Coordinamos con calculistas estructurales para entregar
+                    soluciones integrales.
+                </p>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Lo que sí hacemos</h4>
+                        <ul>
+                            <li>Revisión de diseños estructurales existentes</li>
+                            <li>Segunda opinión técnica</li>
+                            <li>Conceptos estructurales para licencia</li>
+                            <li>Coordinación con cimentación</li>
+                            <li>Diagnóstico de patologías estructurales</li>
+                            <li>Acompañamiento al residente en obra</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Lo que NO hacemos</h4>
+                        <ul>
+                            <li>Diseño primario de edificios complejos</li>
+                            <li>Cálculo estructural completo desde cero (excepto casos pequeños)</li>
+                            <li>Supervisión técnica permanente como calculista</li>
+                            <li>Lo derivamos a calculistas asociados de confianza</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="revision" class="line-block">
+                <span class="line-block__num">02 · REVISIÓN DE DISEÑOS</span>
+                <h2 class="line-block__title">Mirada externa, lente geotécnico.</h2>
+                <p class="line-block__lead">
+                    Cuando un cliente recibe un diseño estructural y quiere validarlo antes de
+                    construir, hacemos la revisión técnica con el ojo en la <strong>interacción
+                    suelo-estructura</strong>.
+                </p>
+                <ol class="line-numbered">
+                    <li><strong>Verificación de hipótesis</strong><span>Cargas asumidas, factores de seguridad, métodos de cálculo, normas aplicadas. Validación contra NSR-10 y ACI.</span></li>
+                    <li><strong>Análisis de cimentación</strong><span>Coherencia entre cargas estructurales y capacidad portante del suelo. Asentamientos diferenciales esperados.</span></li>
+                    <li><strong>Análisis sísmico</strong><span>Coherencia con el espectro de diseño del sitio. Verificación contra Vs30 y tipo de suelo NSR-10.</span></li>
+                    <li><strong>Detalles constructivos</strong><span>Refuerzo, anclajes, juntas, dilataciones. Verificación de planos contra memoria de cálculo.</span></li>
+                    <li><strong>Informe de hallazgos</strong><span>Documento técnico con observaciones por categoría: críticas, importantes, menores. Recomendaciones específicas.</span></li>
+                </ol>
+            </section>
+
+            <section id="concepto" class="line-block">
+                <span class="line-block__num">03 · CONCEPTOS Y SEGUNDA OPINIÓN</span>
+                <h2 class="line-block__title">Cuando necesitas un sello técnico independiente.</h2>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Concepto técnico</h4>
+                        <ul>
+                            <li>Para licencia de construcción</li>
+                            <li>Para curaduría urbana</li>
+                            <li>Soporte en trámites técnicos</li>
+                            <li>Validación de pre-existencias</li>
+                            <li>Conceptos sobre demoliciones</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Segunda opinión</h4>
+                        <ul>
+                            <li>Confrontación técnica con calculista original</li>
+                            <li>Resolución de controversias</li>
+                            <li>Soporte en arbitraje técnico</li>
+                            <li>Auditoría de obras existentes</li>
+                            <li>Peritaje técnico (con calculista asociado)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="coordinacion" class="line-block">
+                <span class="line-block__num">04 · COORDINACIÓN GEOTÉCNICA</span>
+                <h2 class="line-block__title">El puente entre estructura y suelo.</h2>
+                <p class="line-block__lead">
+                    Aquí está el <strong>diferencial técnico de EAS</strong>: la mayoría de los
+                    problemas estructurales no son fallas del cálculo, son fallas de la interfaz.
+                    El suelo se asentó más de lo esperado, el muro empujó, el agua subió. EAS
+                    coordina ambos lados.
+                </p>
+                <ol class="line-numbered">
+                    <li><strong>Diseño de cimentación coordinado</strong><span>El estructural diseña su superestructura, EAS diseña la cimentación que la sostiene. Las cargas y geometría se discuten en mesa.</span></li>
+                    <li><strong>Análisis de interacción suelo-estructura</strong><span>Para edificios sensibles a asentamientos diferenciales: hospitales, edificios altos, naves industriales con grúas.</span></li>
+                    <li><strong>Muros de contención coordinados</strong><span>Empujes del suelo, drenaje, anclajes, dimensionamiento estructural. Solución integral.</span></li>
+                    <li><strong>Recomendaciones constructivas</strong><span>Secuencia de excavación, abatimiento de NF, plazos críticos, monitoreo de asentamientos durante construcción.</span></li>
+                </ol>
+            </section>
+
+            <section id="proceso" class="line-block">
+                <span class="line-block__num">05 · PROCESO</span>
+                <h2 class="line-block__title">Trabajo modular.</h2>
+                <ol class="line-numbered">
+                    <li><strong>Diagnóstico — 24-48h</strong><span>Recepción de planos, memoria de cálculo del proyecto. Definición del alcance: ¿solo revisión, segunda opinión, concepto?</span></li>
+                    <li><strong>Análisis técnico — 1-2 semanas</strong><span>Revisión documental, modelación independiente cuando aplique, verificación contra normas, identificación de observaciones.</span></li>
+                    <li><strong>Concepto o memoria</strong><span>Documento firmado con hallazgos, recomendaciones, conclusión técnica. Coordinación con el calculista original si el cliente lo requiere.</span></li>
+                </ol>
+            </section>
+
+            <section id="aplicaciones" class="line-block">
+                <span class="line-block__num">06 · APLICACIONES</span>
+                <h2 class="line-block__title">Dónde aplica esta línea.</h2>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Construcción</h4>
+                        <ul>
+                            <li>Revisión de diseños antes de construir</li>
+                            <li>Cimentación coordinada con cálculo</li>
+                            <li>Muros de contención integrales</li>
+                            <li>Acompañamiento en obra</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Diagnóstico</h4>
+                        <ul>
+                            <li>Edificios con grietas o asentamientos</li>
+                            <li>Estructuras existentes a renovar</li>
+                            <li>Auditoría técnica</li>
+                            <li>Peritaje en disputas técnicas</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="line-final">
+                <div>
+                    <h3>¿Necesitas un sello técnico independiente?</h3>
+                    <p>Revisión, segunda opinión, concepto. Coordinación con tu calculista o con uno asociado.</p>
+                </div>
+                <div><a href="../index.html#contacto" class="btn-svc btn-svc--primary">SOLICITAR ▶</a></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="line-related">
+        <div class="line-related__inner">
+            <h3 class="line-related__head">[ LÍNEAS RELACIONADAS ]</h3>
+            <div class="line-related__grid">
+                <a href="geotecnia.html" class="line-related__card">
+                    <span>L-01 · PRINCIPAL</span>
+                    <strong>Investigación y exploración geotécnica</strong>
+                </a>
+                <a href="diagnostico.html" class="line-related__card">
+                    <span>L-10 · FORENSE</span>
+                    <strong>Diagnóstico forense geotécnico</strong>
+                </a>
+                <a href="laboratorio.html" class="line-related__card">
+                    <span>L-07 · ENSAYOS</span>
+                    <strong>Laboratorio de geomateriales y control de obra</strong>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

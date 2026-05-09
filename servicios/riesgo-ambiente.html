@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EAS · Línea L-08 Gestión geotécnica del riesgo y ambiente. Zonificación de amenazas, riesgos por deslizamientos, inundaciones, cárcavas y erosión. EIA, PMA, mitigación.">
+    <meta name="keywords" content="gestión del riesgo, EIA, PMA, deslizamientos, inundaciones, zonificación de amenazas, mitigación, EAS Earth Analytics Solutions">
+    <meta name="author" content="Earth Analytics Solutions · EAS">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#050a10">
+    <link rel="canonical" href="https://earthas.co/servicios/riesgo-ambiente.html">
+    <meta property="og:title" content="Gestión geotécnica del riesgo y ambiente · EAS">
+    <meta property="og:description" content="Línea L-08: zonificación de amenazas, EIA, PMA y medidas de mitigación. Para licencias, ordenamiento y gestión territorial.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://earthas.co/servicios/riesgo-ambiente.html">
+    <title>Gestión geotécnica del riesgo y ambiente · L-08 · EAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/servicios.css">
+    <link rel="icon" type="image/png" href="../assets/eas.png">
+</head>
+<body class="page-line">
+
+    <nav class="nav-bar" aria-label="Navegación principal">
+        <a href="../index.html" class="nav-brand">
+            <img src="../assets/eas.png" alt="EAS" class="nav-logo">
+            <span>EAS</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../servicios.html" class="is-current">Servicios</a></li>
+            <li><a href="../index.html#sectores">Sectores</a></li>
+            <li><a href="../index.html#casos">Casos</a></li>
+            <li><a href="../index.html#soluciones">Soluciones</a></li>
+            <li><a href="../index.html#contacto" class="nav-cta">Cotiza · 15min ▶</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <section class="line-hero">
+        <!-- MOTIF RIESGO · zonas críticas + flecha de movimiento + alerta -->
+        <div class="line-hero__motif motif-risk" aria-hidden="true">
+            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <line class="rk-grid" x1="200" y1="0" x2="200" y2="600"/>
+                <line class="rk-grid" x1="700" y1="0" x2="700" y2="600"/>
+                <line class="rk-grid" x1="1200" y1="0" x2="1200" y2="600"/>
+                <line class="rk-grid" x1="0" y1="200" x2="1400" y2="200"/>
+                <line class="rk-grid" x1="0" y1="450" x2="1400" y2="450"/>
+
+                <!-- Isolíneas tipo terreno -->
+                <path class="rk-isoline" d="M 0 350 Q 200 320, 400 340 Q 600 360, 800 340 Q 1000 320, 1200 340 T 1400 350"/>
+                <path class="rk-isoline" d="M 0 400 Q 200 380, 400 395 Q 600 410, 800 395 Q 1000 380, 1200 395 T 1400 400"/>
+
+                <!-- Zona crítica 1 (alta amenaza) - polígono naranja intenso -->
+                <polygon class="rk-zone rk-zone--1" points="200,150 360,140 380,210 320,290 220,280 180,210"/>
+                <text x="280" y="220" text-anchor="middle" font-family="Orbitron" font-size="10" letter-spacing="2" fill="rgba(255,152,0,0.85)">ZONA-A</text>
+                <text x="280" y="240" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(255,152,0,0.65)">AMENAZA ALTA</text>
+
+                <!-- Zona crítica 2 (media) -->
+                <polygon class="rk-zone rk-zone--2" points="500,250 660,230 720,300 680,400 580,420 480,360 460,300"/>
+                <text x="590" y="320" text-anchor="middle" font-family="Orbitron" font-size="10" letter-spacing="2" fill="rgba(255,152,0,0.7)">ZONA-B</text>
+                <text x="590" y="340" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(255,152,0,0.5)">AMENAZA MEDIA</text>
+
+                <!-- Zona crítica 3 (baja, cyan) -->
+                <polygon class="rk-zone rk-zone--3" points="900,180 1080,170 1180,260 1140,360 1020,400 920,340 880,260"/>
+                <text x="1020" y="280" text-anchor="middle" font-family="Orbitron" font-size="10" letter-spacing="2" fill="rgba(127,233,255,0.7)">ZONA-C</text>
+                <text x="1020" y="300" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(127,233,255,0.55)">VIGILANCIA</text>
+
+                <!-- Flecha de deslizamiento -->
+                <line class="rk-arrow" x1="280" y1="250" x2="280" y2="430" stroke-width="2"/>
+                <polygon class="rk-arrow" points="270,425 290,425 280,445"/>
+
+                <!-- Punto pulsante de alerta -->
+                <circle class="rk-pulse" cx="280" cy="170" r="6"/>
+
+                <!-- Etiquetas -->
+                <text x="40" y="540" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(255,152,0,0.5)">▸ AMENAZA · DESLIZAMIENTO</text>
+                <text x="1360" y="540" text-anchor="end" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(127,233,255,0.5)">ZONIFICACIÓN · L-08</text>
+            </svg>
+        </div>
+
+        <div class="line-hero__inner">
+            <div>
+                <nav class="line-hero__breadcrumb" aria-label="Migas de pan">
+                    <a href="../index.html">EAS</a>
+                    <span class="sep">/</span>
+                    <a href="../servicios.html">Servicios</a>
+                    <span class="sep">/</span>
+                    <span class="current">Riesgo y Ambiente</span>
+                </nav>
+
+                <div class="line-hero__id">
+                    <strong>L-08</strong>
+                    <span>SOSTENIBILIDAD · TERRITORIO</span>
+                </div>
+
+                <h1 class="line-hero__title">
+                    Gestión geotécnica<br>
+                    del <em>riesgo</em> y ambiente
+                </h1>
+
+                <p class="line-hero__lead">
+                    Zonificación de amenazas, evaluación de riesgos por deslizamientos, inundaciones,
+                    cárcavas y erosión. <strong>EIA, PMA y medidas de mitigación</strong> para licencias
+                    ambientales, ordenamiento territorial y planes de emergencia.
+                </p>
+
+                <div class="line-hero__actions">
+                    <a href="../index.html#contacto" class="btn-svc btn-svc--primary">COTIZAR ESTA LÍNEA ▶</a>
+                    <a href="#alcance" class="btn-svc btn-svc--ghost">VER ALCANCE</a>
+                </div>
+            </div>
+
+            <aside class="line-hero__panel">
+                <div class="line-hero__panel-head">
+                    <span>FICHA TÉCNICA</span>
+                    <span>L-08 · v.2026</span>
+                </div>
+                <dl>
+                    <div class="line-hero__panel-row"><dt>Código</dt><dd class="neon">EAS-RSK-08</dd></div>
+                    <div class="line-hero__panel-row"><dt>Naturaleza</dt><dd>Estudio + plan</dd></div>
+                    <div class="line-hero__panel-row"><dt>Norma base</dt><dd class="cyan">SGC · MADS · ANLA · CAR</dd></div>
+                    <div class="line-hero__panel-row"><dt>Insumos</dt><dd>SIG + geotecnia + hidrología</dd></div>
+                    <div class="line-hero__panel-row"><dt>Plazo típico</dt><dd>4-12 semanas</dd></div>
+                    <div class="line-hero__panel-row"><dt>Entregable</dt><dd>EIA · PMA · zonificación · DSM</dd></div>
+                    <div class="line-hero__panel-row"><dt>Aplica a</dt><dd>POMCA · POT · Licencias · Mineros · Energía</dd></div>
+                </dl>
+            </aside>
+        </div>
+    </section>
+
+    <div class="line-shell">
+        <aside class="line-side">
+            <span class="line-side__title">EN ESTA PÁGINA</span>
+            <ul class="line-side__list">
+                <li><a href="#alcance" class="is-active">01 · Alcance</a></li>
+                <li><a href="#amenazas">02 · Amenazas</a></li>
+                <li><a href="#vulnerabilidad">03 · Vulnerabilidad y riesgo</a></li>
+                <li><a href="#mitigacion">04 · Mitigación y restauración</a></li>
+                <li><a href="#ambiental">05 · Estudios ambientales</a></li>
+                <li><a href="#proceso">06 · Proceso</a></li>
+                <li><a href="#aplicaciones">07 · Aplicaciones</a></li>
+            </ul>
+        </aside>
+
+        <div class="line-content">
+            <section id="alcance" class="line-block">
+                <span class="line-block__num">01 · ALCANCE</span>
+                <h2 class="line-block__title">El terreno que se mueve, el agua que arrasa, el suelo que se va.</h2>
+                <p class="line-block__lead">
+                    Identificar amenazas geomorfológicas y ambientales, cuantificar riesgos y diseñar
+                    medidas de mitigación. <strong>Línea transversal</strong> a todo proyecto que
+                    requiera licencia, ordenamiento territorial o plan de emergencia.
+                </p>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Lo que entregamos</h4>
+                        <ul>
+                            <li>Zonificación de amenaza (alta, media, baja)</li>
+                            <li>Evaluación de vulnerabilidad y riesgo</li>
+                            <li>Mapas SIG con aptitud del suelo</li>
+                            <li>Medidas estructurales y no estructurales</li>
+                            <li>Estudios EIA y planes de manejo (PMA)</li>
+                            <li>Soporte para licencias ANLA / CAR</li>
+                            <li>Planes de emergencia y contingencia</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Cuándo es crítica</h4>
+                        <ul>
+                            <li>POMCA / POT / EOT municipales</li>
+                            <li>Licencia ambiental para infraestructura</li>
+                            <li>Adquisición de lotes en zonas montañosas</li>
+                            <li>Proyectos viales en zonas inestables</li>
+                            <li>Reconstrucción post-desastre</li>
+                            <li>Ordenamiento territorial</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="amenazas" class="line-block">
+                <span class="line-block__num">02 · AMENAZAS</span>
+                <h2 class="line-block__title">Identificar antes de que pase.</h2>
+                <ol class="line-numbered">
+                    <li><strong>Movimientos en masa</strong><span>Deslizamientos, flujos, caída de bloques. Caracterización geomorfológica, identificación de cicatrices, factores detonantes (lluvia, sismo, antrópicos).</span></li>
+                    <li><strong>Inundaciones y avenidas torrenciales</strong><span>Análisis de cuencas, mapas de inundación por período de retorno, detección de zonas en llanura aluvial.</span></li>
+                    <li><strong>Erosión y cárcavas</strong><span>Erosión hídrica laminar, surcos, cárcavas activas. Análisis de uso del suelo, cobertura vegetal, potencial de degradación.</span></li>
+                    <li><strong>Sismo y licuefacción</strong><span>Microzonificación sísmica, identificación de suelos potencialmente licuables, amplificación local.</span></li>
+                    <li><strong>Hundimientos y subsidencia</strong><span>Causas naturales (cavernas, disolución) o antrópicas (extracción de agua, minería). Monitoreo y caracterización.</span></li>
+                </ol>
+            </section>
+
+            <section id="vulnerabilidad" class="line-block">
+                <span class="line-block__num">03 · VULNERABILIDAD Y RIESGO</span>
+                <h2 class="line-block__title">Riesgo = Amenaza × Vulnerabilidad.</h2>
+                <p class="line-block__lead">
+                    No basta con identificar la amenaza. Hay que cuantificar la vulnerabilidad
+                    (qué tan expuesto y frágil es lo que está en la zona) para entender el riesgo
+                    real y priorizar acciones.
+                </p>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Análisis de vulnerabilidad</h4>
+                        <ul>
+                            <li>Inventario de elementos expuestos</li>
+                            <li>Vulnerabilidad física (estructuras)</li>
+                            <li>Vulnerabilidad social (población)</li>
+                            <li>Vulnerabilidad económica</li>
+                            <li>Vulnerabilidad ambiental</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Estimación de riesgo</h4>
+                        <ul>
+                            <li>Riesgo cualitativo (matriz semáforo)</li>
+                            <li>Riesgo cuantitativo (pérdidas esperadas)</li>
+                            <li>Mapas de riesgo por escenario</li>
+                            <li>Aptitud del territorio para usos del suelo</li>
+                            <li>Restricciones constructivas por zona</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="mitigacion" class="line-block">
+                <span class="line-block__num">04 · MITIGACIÓN Y RESTAURACIÓN</span>
+                <h2 class="line-block__title">Reducir el riesgo, recuperar el territorio.</h2>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Medidas estructurales</h4>
+                        <ul>
+                            <li>Estabilización de taludes</li>
+                            <li>Obras de drenaje y subdrenaje</li>
+                            <li>Muros, gaviones, espigones</li>
+                            <li>Diques, jarillones, pondajes</li>
+                            <li>Restauración geomorfológica</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Medidas no estructurales</h4>
+                        <ul>
+                            <li>Ordenamiento del uso del suelo</li>
+                            <li>Reasentamiento de población expuesta</li>
+                            <li>Sistemas de alerta temprana</li>
+                            <li>Educación y planes de emergencia</li>
+                            <li>Bioingeniería (revegetación)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ambiental" class="line-block">
+                <span class="line-block__num">05 · ESTUDIOS AMBIENTALES</span>
+                <h2 class="line-block__title">EIA, PMA y soporte para licencias.</h2>
+                <p class="line-block__lead">
+                    Para infraestructura, minería, hidroeléctricas, industria — los estudios
+                    ambientales son requisito normativo. EAS hace el componente físico
+                    (geomorfología, geología, suelos, hidrología) y articula con biólogos y
+                    sociales.
+                </p>
+                <table class="line-table">
+                    <thead>
+                        <tr><th>Estudio</th><th>Aplicación</th><th>Norma</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>EIA · Estudio de Impacto Ambiental</td><td>Licencia ambiental</td><td><span class="norm-tag">DEC 1076/2015</span></td></tr>
+                        <tr><td>PMA · Plan de Manejo Ambiental</td><td>Mitigación y compensación</td><td><span class="norm-tag">ANLA</span></td></tr>
+                        <tr><td>DAA · Diagnóstico Ambiental de Alternativas</td><td>Selección de alternativa</td><td><span class="norm-tag">ANLA</span></td></tr>
+                        <tr><td>POMCA · Plan de Ordenamiento Cuenca</td><td>Ordenamiento territorial</td><td><span class="norm-tag">DEC 1729/2002</span></td></tr>
+                        <tr><td>POT / EOT</td><td>Ordenamiento municipal</td><td><span class="norm-tag">LEY 388/97</span></td></tr>
+                        <tr><td>PRMV · Plan de Restauración</td><td>Minería</td><td><span class="norm-tag">RES 18-0861/2002</span></td></tr>
+                        <tr><td>PMRRA · Plan de Manejo</td><td>Materiales de construcción</td><td><span class="norm-tag">DEC 2820/2010</span></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="proceso" class="line-block">
+                <span class="line-block__num">06 · PROCESO</span>
+                <h2 class="line-block__title">Del diagnóstico al plan ejecutable.</h2>
+                <ol class="line-numbered">
+                    <li><strong>Información secundaria — 2 semanas</strong><span>Recopilación de información existente: cartografía oficial, geología, hidrología, datos meteorológicos del IDEAM.</span></li>
+                    <li><strong>Trabajo de campo — 2-4 semanas</strong><span>Reconocimiento geomorfológico, levantamiento de zonas críticas, registro fotográfico, geoposicionamiento de puntos.</span></li>
+                    <li><strong>Análisis SIG — 2 semanas</strong><span>Construcción de capas, análisis multicriterio, modelación de amenazas, generación de mapas temáticos.</span></li>
+                    <li><strong>Evaluación de riesgo — 2 semanas</strong><span>Cruce amenaza × vulnerabilidad. Definición de niveles. Identificación de elementos expuestos críticos.</span></li>
+                    <li><strong>Plan de manejo — 2-3 semanas</strong><span>Diseño de medidas estructurales y no estructurales. Cronograma, presupuesto, indicadores de seguimiento.</span></li>
+                    <li><strong>Entrega y sustentación</strong><span>Documento técnico firmado. Sustentamos ante CAR, ANLA, alcaldía o entidad correspondiente.</span></li>
+                </ol>
+            </section>
+
+            <section id="aplicaciones" class="line-block">
+                <span class="line-block__num">07 · APLICACIONES</span>
+                <h2 class="line-block__title">Dónde aplica esta línea.</h2>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Territorial</h4>
+                        <ul>
+                            <li>POMCA y POT municipales</li>
+                            <li>Microzonificación sísmica</li>
+                            <li>Mapas de aptitud del territorio</li>
+                            <li>Reasentamiento de zonas críticas</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Licenciamiento</h4>
+                        <ul>
+                            <li>EIA para infraestructura, vías, minería</li>
+                            <li>PMA con componente físico</li>
+                            <li>Plan de Restauración Ambiental</li>
+                            <li>Trámite ante ANLA o CAR</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Construcción</h4>
+                        <ul>
+                            <li>Aptitud geotécnica de lotes</li>
+                            <li>Diseño de obras de mitigación</li>
+                            <li>Estabilización de taludes en obra</li>
+                            <li>Plan de contingencia para construcción</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Emergencia</h4>
+                        <ul>
+                            <li>Reconstrucción post-desastre</li>
+                            <li>Sistemas de alerta temprana</li>
+                            <li>Planes de evacuación</li>
+                            <li>Diagnóstico de zonas afectadas</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="line-final">
+                <div>
+                    <h3>¿Tu proyecto necesita estudio de riesgo o ambiental?</h3>
+                    <p>Para licencia, ordenamiento o gestión post-emergencia. Cotización en 48h.</p>
+                </div>
+                <div><a href="../index.html#contacto" class="btn-svc btn-svc--primary">SOLICITAR ▶</a></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="line-related">
+        <div class="line-related__inner">
+            <h3 class="line-related__head">[ LÍNEAS RELACIONADAS ]</h3>
+            <div class="line-related__grid">
+                <a href="hidrologia.html" class="line-related__card">
+                    <span>L-03 · AGUAS</span>
+                    <strong>Ingeniería de aguas superficiales</strong>
+                </a>
+                <a href="geotecnia.html" class="line-related__card">
+                    <span>L-01 · PRINCIPAL</span>
+                    <strong>Investigación y exploración geotécnica</strong>
+                </a>
+                <a href="diagnostico.html" class="line-related__card">
+                    <span>L-10 · FORENSE</span>
+                    <strong>Diagnóstico forense geotécnico</strong>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

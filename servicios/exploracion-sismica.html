@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EAS · Línea L-02 Exploración geofísica del subsuelo. Refracción sísmica, MASW, geoeléctrica, ReMi, gravimetría. Imagen no invasiva del subsuelo para caracterización dinámica y detección de fallas.">
+    <meta name="keywords" content="exploración geofísica, refracción sísmica, MASW, geoeléctrica, ReMi, gravimetría, Vs30, fallas activas, EAS Earth Analytics Solutions">
+    <meta name="author" content="Earth Analytics Solutions · EAS">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#050a10">
+    <link rel="canonical" href="https://earthas.co/servicios/exploracion-sismica.html">
+    <meta property="og:title" content="Exploración geofísica del subsuelo · EAS">
+    <meta property="og:description" content="Línea L-02: refracción sísmica, MASW, geoeléctrica y ReMi para caracterización dinámica del subsuelo sin excavar.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://earthas.co/servicios/exploracion-sismica.html">
+    <title>Exploración geofísica del subsuelo · L-02 · EAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/servicios.css">
+    <link rel="icon" type="image/png" href="../assets/eas.png">
+</head>
+<body class="page-line">
+
+    <nav class="nav-bar" aria-label="Navegación principal">
+        <a href="../index.html" class="nav-brand">
+            <img src="../assets/eas.png" alt="EAS" class="nav-logo">
+            <span>EAS</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../servicios.html" class="is-current">Servicios</a></li>
+            <li><a href="../index.html#sectores">Sectores</a></li>
+            <li><a href="../index.html#casos">Casos</a></li>
+            <li><a href="../index.html#soluciones">Soluciones</a></li>
+            <li><a href="../index.html#contacto" class="nav-cta">Cotiza · 15min ▶</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <section class="line-hero">
+        <!-- MOTIF GEOFÍSICA · ondas sísmicas concéntricas + geófonos + fuente -->
+        <div class="line-hero__motif motif-geophys" aria-hidden="true">
+            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <line class="gp-grid" x1="200" y1="0" x2="200" y2="600"/>
+                <line class="gp-grid" x1="700" y1="0" x2="700" y2="600"/>
+                <line class="gp-grid" x1="1200" y1="0" x2="1200" y2="600"/>
+                <line class="gp-grid" x1="0" y1="350" x2="1400" y2="350"/>
+
+                <!-- Línea de superficie -->
+                <line x1="0" y1="350" x2="1400" y2="350" stroke="rgba(255,152,0,0.4)" stroke-width="1.5"/>
+
+                <!-- Fuente de ondas (centro) con ripples concéntricos -->
+                <circle class="ripple" cx="700" cy="350" r="50"/>
+                <circle class="ripple ripple--2" cx="700" cy="350" r="50"/>
+                <circle class="ripple ripple--3" cx="700" cy="350" r="50"/>
+
+                <!-- Fuente activa (martillo / explosivo) -->
+                <circle class="gp-source" cx="700" cy="350" r="6" fill="rgba(255,152,0,1)"/>
+                <text x="700" y="338" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(255,152,0,0.7)">SRC-01</text>
+
+                <!-- 4 geófonos sobre la superficie -->
+                <rect class="geophone" x="290" y="342" width="14" height="14"/>
+                <text x="297" y="375" text-anchor="middle" font-family="Orbitron" font-size="8" letter-spacing="1" fill="rgba(255,152,0,0.55)">G-01</text>
+
+                <rect class="geophone" x="450" y="342" width="14" height="14"/>
+                <text x="457" y="375" text-anchor="middle" font-family="Orbitron" font-size="8" letter-spacing="1" fill="rgba(255,152,0,0.55)">G-02</text>
+
+                <rect class="geophone" x="900" y="342" width="14" height="14"/>
+                <text x="907" y="375" text-anchor="middle" font-family="Orbitron" font-size="8" letter-spacing="1" fill="rgba(255,152,0,0.55)">G-03</text>
+
+                <rect class="geophone" x="1080" y="342" width="14" height="14"/>
+                <text x="1087" y="375" text-anchor="middle" font-family="Orbitron" font-size="8" letter-spacing="1" fill="rgba(255,152,0,0.55)">G-04</text>
+
+                <!-- Ondas que se propagan en el subsuelo -->
+                <path fill="none" class="gp-wave gp-wave--1" d="M 0 420 Q 200 400, 350 420 T 700 420 T 1050 420 T 1400 420"/>
+                <path fill="none" class="gp-wave gp-wave--2" d="M 0 480 Q 200 460, 350 480 T 700 480 T 1050 480 T 1400 480"/>
+                <path fill="none" class="gp-wave gp-wave--1" d="M 0 540 Q 200 520, 350 540 T 700 540 T 1050 540 T 1400 540"/>
+
+                <!-- Etiquetas Vs -->
+                <text x="60" y="430" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(127,233,255,0.45)">Vs 250 m/s</text>
+                <text x="60" y="490" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(127,233,255,0.45)">Vs 480 m/s</text>
+                <text x="60" y="550" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(255,152,0,0.5)">Vs 760 m/s</text>
+            </svg>
+        </div>
+
+        <div class="line-hero__inner">
+            <div>
+                <nav class="line-hero__breadcrumb" aria-label="Migas de pan">
+                    <a href="../index.html">EAS</a>
+                    <span class="sep">/</span>
+                    <a href="../servicios.html">Servicios</a>
+                    <span class="sep">/</span>
+                    <span class="current">Exploración Geofísica</span>
+                </nav>
+
+                <div class="line-hero__id">
+                    <strong>L-02</strong>
+                    <span>GEOFÍSICA · GEOCIENCIAS</span>
+                </div>
+
+                <h1 class="line-hero__title">
+                    Exploración<br>
+                    <em>geofísica</em> del subsuelo
+                </h1>
+
+                <p class="line-hero__lead">
+                    Imagen no invasiva del subsuelo: caracterizamos velocidades, espesores y discontinuidades
+                    sin excavar. Refracción sísmica, MASW, geoeléctrica y gravimetría — la geofísica
+                    aplicada como <strong>complemento crítico</strong> a la exploración convencional.
+                </p>
+
+                <div class="line-hero__actions">
+                    <a href="../index.html#contacto" class="btn-svc btn-svc--primary">COTIZAR ESTA LÍNEA ▶</a>
+                    <a href="#alcance" class="btn-svc btn-svc--ghost">VER ALCANCE</a>
+                </div>
+            </div>
+
+            <aside class="line-hero__panel">
+                <div class="line-hero__panel-head">
+                    <span>FICHA TÉCNICA</span>
+                    <span>L-02 · v.2026</span>
+                </div>
+                <dl>
+                    <div class="line-hero__panel-row"><dt>Código</dt><dd class="neon">EAS-GFS-02</dd></div>
+                    <div class="line-hero__panel-row"><dt>Naturaleza</dt><dd>Imagen + caracterización</dd></div>
+                    <div class="line-hero__panel-row"><dt>Norma base</dt><dd class="cyan">ASTM D5777 · D6431 · NSR-10</dd></div>
+                    <div class="line-hero__panel-row"><dt>Equipo</dt><dd>Sismógrafo 24-canales · resistivímetro</dd></div>
+                    <div class="line-hero__panel-row"><dt>Plazo típico</dt><dd>2-5 semanas</dd></div>
+                    <div class="line-hero__panel-row"><dt>Entregable</dt><dd>Modelo Vs/ρ + memoria firmada</dd></div>
+                    <div class="line-hero__panel-row"><dt>Aplica a</dt><dd>NSR-10 · Vías · Riesgo · Acuíferos</dd></div>
+                </dl>
+            </aside>
+        </div>
+    </section>
+
+    <div class="line-shell">
+        <aside class="line-side">
+            <span class="line-side__title">EN ESTA PÁGINA</span>
+            <ul class="line-side__list">
+                <li><a href="#alcance" class="is-active">01 · Alcance</a></li>
+                <li><a href="#metodos">02 · Métodos sísmicos</a></li>
+                <li><a href="#electrica">03 · Geoeléctrica</a></li>
+                <li><a href="#software">04 · Software y procesamiento</a></li>
+                <li><a href="#proceso">05 · Proceso</a></li>
+                <li><a href="#entregables">06 · Entregables</a></li>
+                <li><a href="#aplicaciones">07 · Aplicaciones</a></li>
+            </ul>
+        </aside>
+
+        <div class="line-content">
+            <section id="alcance" class="line-block">
+                <span class="line-block__num">01 · ALCANCE</span>
+                <h2 class="line-block__title">Ver el subsuelo sin abrirlo.</h2>
+                <p class="line-block__lead">
+                    La exploración geofísica complementa los sondeos directos con una <strong>imagen continua
+                    del subsuelo</strong>. Donde un sondeo da un punto, la geofísica da un perfil completo.
+                    Para proyectos grandes, en zonas urbanas con limitaciones, o para validar exploración
+                    convencional — la geofísica es la mejor inversión técnica.
+                </p>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Lo que entregamos</h4>
+                        <ul>
+                            <li>Perfil de velocidades de onda P y S (Vp / Vs)</li>
+                            <li>Espesores de las unidades del subsuelo</li>
+                            <li>Vs30 para clasificación sísmica NSR-10</li>
+                            <li>Tomografía de resistividad eléctrica 2D</li>
+                            <li>Identificación de fallas, fracturas y cavidades</li>
+                            <li>Detección del nivel freático y cuerpos de agua</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Cuándo es crítica</h4>
+                        <ul>
+                            <li>NSR-10 exige Vs30 medido (no asumido)</li>
+                            <li>Zonas urbanas donde no se puede perforar</li>
+                            <li>Proyectos viales con grandes longitudes</li>
+                            <li>Túneles y obras subterráneas</li>
+                            <li>Estudios de microzonificación sísmica</li>
+                            <li>Detección de cavernas, antiguos rellenos</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="metodos" class="line-block">
+                <span class="line-block__num">02 · MÉTODOS SÍSMICOS</span>
+                <h2 class="line-block__title">Onda P, onda S, ondas superficiales.</h2>
+                <p class="line-block__lead">
+                    Diferentes tipos de onda revelan diferentes propiedades. Combinamos métodos
+                    para tener una caracterización <strong>completa y consistente</strong>.
+                </p>
+                <ol class="line-numbered">
+                    <li>
+                        <strong>Refracción sísmica (onda P)</strong>
+                        <span>Espesor de capas y velocidad de compresión. Norma ASTM D5777. Ideal para detectar el techo de roca, espesor de relleno y nivel freático.</span>
+                    </li>
+                    <li>
+                        <strong>MASW (Multichannel Analysis of Surface Waves)</strong>
+                        <span>Velocidad de onda de corte Vs vs profundidad. Para Vs30 y respuesta sísmica del sitio. Norma ASTM D7400.</span>
+                    </li>
+                    <li>
+                        <strong>ReMi (Refraction Microtremor)</strong>
+                        <span>Vs en zonas urbanas con ruido ambiental. Pasivo, no requiere fuente activa. Útil donde MASW activo no es viable.</span>
+                    </li>
+                    <li>
+                        <strong>HVSR (Nakamura)</strong>
+                        <span>Frecuencia natural del sitio para diseño sísmico. Identifica resonancia y períodos predominantes.</span>
+                    </li>
+                    <li>
+                        <strong>Crosshole / Downhole</strong>
+                        <span>Vs y Vp medidos en pozos. Mayor precisión cuando hay perforaciones disponibles. Norma ASTM D4428.</span>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="electrica" class="line-block">
+                <span class="line-block__num">03 · GEOELÉCTRICA</span>
+                <h2 class="line-block__title">Resistividad como pista del subsuelo.</h2>
+                <p class="line-block__lead">
+                    La resistividad eléctrica del subsuelo cambia con la litología, el contenido de agua,
+                    salinidad y presencia de contaminantes. Es una herramienta poderosa para mapear
+                    el subsuelo de forma <strong>no invasiva</strong>.
+                </p>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Sondeos eléctricos verticales (SEV)</h4>
+                        <ul>
+                            <li>Schlumberger, Wenner, Dipolo-dipolo</li>
+                            <li>Profundidad de investigación variable</li>
+                            <li>Identificación de capas resistivas vs conductivas</li>
+                            <li>Útil en hidrogeología y exploración</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Tomografía eléctrica 2D / 3D</h4>
+                        <ul>
+                            <li>Imagen continua del subsuelo en sección</li>
+                            <li>Detección de plumas de contaminación</li>
+                            <li>Mapeo de cavidades, antiguos rellenos</li>
+                            <li>Caracterización de acuíferos</li>
+                            <li>Estabilidad de taludes</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="software" class="line-block">
+                <span class="line-block__num">04 · SOFTWARE Y PROCESAMIENTO</span>
+                <h2 class="line-block__title">Adquisición + procesamiento + interpretación.</h2>
+                <table class="line-table">
+                    <thead>
+                        <tr><th>Software</th><th>Uso</th><th>Tipo</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>SeisImager / Pickwin</td><td>Refracción sísmica</td><td><span class="norm-tag">GEOMETRICS</span></td></tr>
+                        <tr><td>Surfseis / WaveEq</td><td>MASW · ReMi · HVSR</td><td><span class="norm-tag">KGS</span></td></tr>
+                        <tr><td>RES2DINV / IPI2WIN</td><td>Inversión geoeléctrica 2D</td><td><span class="norm-tag">GEOTOMO</span></td></tr>
+                        <tr><td>Geopsy</td><td>Microtremores / HVSR</td><td><span class="norm-tag">OPEN-SOURCE</span></td></tr>
+                        <tr><td>Refrapy</td><td>Refracción 2D libre</td><td><span class="norm-tag">PYTHON</span></td></tr>
+                        <tr><td>QGIS / GMT</td><td>Cartografía y modelos</td><td><span class="norm-tag">SIG</span></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="proceso" class="line-block">
+                <span class="line-block__num">05 · PROCESO</span>
+                <h2 class="line-block__title">Del campo al modelo del subsuelo.</h2>
+                <ol class="line-numbered">
+                    <li><strong>Diseño de campaña — 1 semana</strong><span>Líneas geofísicas según objetivo: longitud, espaciamiento, profundidad esperada. Selección de método según el problema.</span></li>
+                    <li><strong>Adquisición de campo — 3 a 7 días</strong><span>Despliegue de sismógrafo 24-canales + fuente activa o pasiva. Resistivímetro multielectrodo. Calibración de equipos.</span></li>
+                    <li><strong>Procesamiento — 1 a 2 semanas</strong><span>Picking de primeras llegadas (refracción), análisis dispersivo (MASW), inversión 2D (geoeléctrica). Iteración hasta convergencia.</span></li>
+                    <li><strong>Interpretación — 1 semana</strong><span>Modelo conceptual integrado con geología y exploración convencional. Cálculo Vs30, identificación de unidades, perfil estratigráfico.</span></li>
+                    <li><strong>Memoria firmada</strong><span>Documento técnico con metodología, resultados, conclusiones, recomendaciones. Anexos con datos crudos, archivos de modelo abiertos.</span></li>
+                </ol>
+            </section>
+
+            <section id="entregables" class="line-block">
+                <span class="line-block__num">06 · ENTREGABLES</span>
+                <h2 class="line-block__title">Lo que recibes.</h2>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Memoria geofísica</h4>
+                        <ul>
+                            <li>Metodología y especificaciones técnicas</li>
+                            <li>Tabla de Vp, Vs y resistividad por unidad</li>
+                            <li>Vs30 calculado según NSR-10</li>
+                            <li>Modelo conceptual del subsuelo</li>
+                            <li>Conclusiones y recomendaciones</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Cartografía técnica</h4>
+                        <ul>
+                            <li>Mapa de localización de líneas geofísicas</li>
+                            <li>Perfiles 2D de Vp / Vs</li>
+                            <li>Tomografía eléctrica 2D</li>
+                            <li>Curvas dispersivas y modelos finales</li>
+                            <li>Layouts en QGIS / shapefile</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="aplicaciones" class="line-block">
+                <span class="line-block__num">07 · APLICACIONES</span>
+                <h2 class="line-block__title">Dónde aplica esta línea.</h2>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Sísmico y constructivo</h4>
+                        <ul>
+                            <li>Vs30 para clasificación NSR-10</li>
+                            <li>Microzonificación sísmica</li>
+                            <li>Detección de roca para cimentación profunda</li>
+                            <li>Estudios de respuesta de sitio</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Especiales</h4>
+                        <ul>
+                            <li>Cavidades, túneles antiguos, rellenos</li>
+                            <li>Plumas de contaminación</li>
+                            <li>Mapeo de acuíferos y nivel freático</li>
+                            <li>Estabilidad de taludes</li>
+                            <li>Investigación arqueológica</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="line-final">
+                <div>
+                    <h3>¿Tu proyecto necesita imagen del subsuelo?</h3>
+                    <p>Lo más eficiente cuando los sondeos por sí solos no alcanzan. Cotización en 48h.</p>
+                </div>
+                <div><a href="../index.html#contacto" class="btn-svc btn-svc--primary">SOLICITAR ▶</a></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="line-related">
+        <div class="line-related__inner">
+            <h3 class="line-related__head">[ LÍNEAS RELACIONADAS ]</h3>
+            <div class="line-related__grid">
+                <a href="geotecnia.html" class="line-related__card">
+                    <span>L-01 · PRINCIPAL</span>
+                    <strong>Investigación y exploración geotécnica</strong>
+                </a>
+                <a href="hidrogeologia.html" class="line-related__card">
+                    <span>L-04 · SUBTERRÁNEAS</span>
+                    <strong>Aguas subterráneas y acuíferos</strong>
+                </a>
+                <a href="riesgo-ambiente.html" class="line-related__card">
+                    <span>L-08 · SOSTENIBILIDAD</span>
+                    <strong>Gestión geotécnica del riesgo y ambiente</strong>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

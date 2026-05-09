@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EAS · Línea L-06 Topografía digital y análisis geoespacial. GNSS RTK, fotogrametría con dron RPAS, MDT, ortofotos centimétricas, análisis SIG, mapas temáticos y batimetría.">
+    <meta name="keywords" content="topografía digital, GIS, GNSS RTK, dron RPAS, fotogrametría, MDT, ortofoto, QGIS, ArcGIS, IGAC, EAS Earth Analytics Solutions">
+    <meta name="author" content="Earth Analytics Solutions · EAS">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#050a10">
+    <link rel="canonical" href="https://earthas.co/servicios/topografia-gis.html">
+    <meta property="og:title" content="Topografía digital y análisis geoespacial · EAS">
+    <meta property="og:description" content="Línea L-06: levantamientos GNSS RTK, fotogrametría con dron, MDT, ortofotos y análisis SIG con precisión centimétrica.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://earthas.co/servicios/topografia-gis.html">
+    <title>Topografía digital y análisis geoespacial · L-06 · EAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/servicios.css">
+    <link rel="icon" type="image/png" href="../assets/eas.png">
+</head>
+<body class="page-line">
+
+    <nav class="nav-bar" aria-label="Navegación principal">
+        <a href="../index.html" class="nav-brand">
+            <img src="../assets/eas.png" alt="EAS" class="nav-logo">
+            <span>EAS</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../servicios.html" class="is-current">Servicios</a></li>
+            <li><a href="../index.html#sectores">Sectores</a></li>
+            <li><a href="../index.html#casos">Casos</a></li>
+            <li><a href="../index.html#soluciones">Soluciones</a></li>
+            <li><a href="../index.html#contacto" class="nav-cta">Cotiza · 15min ▶</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <section class="line-hero">
+        <!-- MOTIF SURVEY · grid GIS + dron + waypoints + curvas de nivel -->
+        <div class="line-hero__motif motif-survey" aria-hidden="true">
+            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <!-- Grid GIS de fondo (más denso) -->
+                <line class="sv-grid" x1="100" y1="0" x2="100" y2="600"/>
+                <line class="sv-grid" x1="300" y1="0" x2="300" y2="600"/>
+                <line class="sv-grid" x1="500" y1="0" x2="500" y2="600"/>
+                <line class="sv-grid-strong" x1="700" y1="0" x2="700" y2="600"/>
+                <line class="sv-grid" x1="900" y1="0" x2="900" y2="600"/>
+                <line class="sv-grid" x1="1100" y1="0" x2="1100" y2="600"/>
+                <line class="sv-grid" x1="1300" y1="0" x2="1300" y2="600"/>
+                <line class="sv-grid" x1="0" y1="150" x2="1400" y2="150"/>
+                <line class="sv-grid-strong" x1="0" y1="300" x2="1400" y2="300"/>
+                <line class="sv-grid" x1="0" y1="450" x2="1400" y2="450"/>
+
+                <!-- Curvas de nivel (3 elipses concéntricas en parte derecha) -->
+                <ellipse class="sv-iso sv-iso--3" cx="1050" cy="380" rx="280" ry="120"/>
+                <ellipse class="sv-iso sv-iso--2" cx="1050" cy="380" rx="200" ry="85"/>
+                <ellipse class="sv-iso sv-iso--1" cx="1050" cy="380" rx="120" ry="50"/>
+
+                <!-- Dron volando -->
+                <g class="sv-drone">
+                    <circle cx="400" cy="200" r="6"/>
+                    <line x1="388" y1="194" x2="412" y2="206" stroke="rgba(255,152,0,0.9)" stroke-width="1.5"/>
+                    <line x1="388" y1="206" x2="412" y2="194" stroke="rgba(255,152,0,0.9)" stroke-width="1.5"/>
+                    <circle cx="386" cy="194" r="3" stroke="rgba(255,152,0,0.7)" fill="none"/>
+                    <circle cx="414" cy="194" r="3" stroke="rgba(255,152,0,0.7)" fill="none"/>
+                    <circle cx="386" cy="206" r="3" stroke="rgba(255,152,0,0.7)" fill="none"/>
+                    <circle cx="414" cy="206" r="3" stroke="rgba(255,152,0,0.7)" fill="none"/>
+                </g>
+                <text x="400" y="180" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(255,152,0,0.7)">RPAS-01</text>
+
+                <!-- Beam láser desde dron al suelo -->
+                <line class="sv-beam" x1="400" y1="210" x2="400" y2="450"/>
+
+                <!-- Waypoints en grid -->
+                <circle class="sv-waypoint" cx="200" cy="450" r="5"/>
+                <text x="200" y="475" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(127,233,255,0.6)">WP-01</text>
+
+                <circle class="sv-waypoint sv-waypoint--2" cx="400" cy="450" r="5"/>
+                <text x="400" y="475" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(127,233,255,0.6)">WP-02</text>
+
+                <circle class="sv-waypoint sv-waypoint--3" cx="700" cy="450" r="5"/>
+                <text x="700" y="475" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(127,233,255,0.6)">WP-03</text>
+
+                <!-- Coordenadas técnicas en costado -->
+                <text x="40" y="540" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(255,152,0,0.5)">SIRGAS · ZONA 18N</text>
+                <text x="1360" y="540" text-anchor="end" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(255,152,0,0.5)">RTK · ±1.5cm</text>
+                <text x="40" y="40" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(127,233,255,0.5)">N: 1,234,567</text>
+                <text x="1360" y="40" text-anchor="end" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(127,233,255,0.5)">E: 1,098,765</text>
+            </svg>
+        </div>
+
+        <div class="line-hero__inner">
+            <div>
+                <nav class="line-hero__breadcrumb" aria-label="Migas de pan">
+                    <a href="../index.html">EAS</a>
+                    <span class="sep">/</span>
+                    <a href="../servicios.html">Servicios</a>
+                    <span class="sep">/</span>
+                    <span class="current">Topografía y GIS</span>
+                </nav>
+
+                <div class="line-hero__id">
+                    <strong>L-06</strong>
+                    <span>GEOESPACIAL · DATA</span>
+                </div>
+
+                <h1 class="line-hero__title">
+                    Topografía digital<br>
+                    y <em>análisis geoespacial</em>
+                </h1>
+
+                <p class="line-hero__lead">
+                    Levantamientos centimétricos con GNSS RTK, fotogrametría con dron RPAS y análisis
+                    SIG. <strong>Una geodatabase entregable</strong> con cada proyecto: ortofotos, MDT,
+                    curvas de nivel, mapas temáticos y datos crudos para auditoría.
+                </p>
+
+                <div class="line-hero__actions">
+                    <a href="../index.html#contacto" class="btn-svc btn-svc--primary">COTIZAR ESTA LÍNEA ▶</a>
+                    <a href="#alcance" class="btn-svc btn-svc--ghost">VER ALCANCE</a>
+                </div>
+            </div>
+
+            <aside class="line-hero__panel">
+                <div class="line-hero__panel-head">
+                    <span>FICHA TÉCNICA</span>
+                    <span>L-06 · v.2026</span>
+                </div>
+                <dl>
+                    <div class="line-hero__panel-row"><dt>Código</dt><dd class="neon">EAS-TOP-06</dd></div>
+                    <div class="line-hero__panel-row"><dt>Naturaleza</dt><dd>Levantamiento + análisis</dd></div>
+                    <div class="line-hero__panel-row"><dt>Norma base</dt><dd class="cyan">IGAC · MAGNA-SIRGAS · ASPRS</dd></div>
+                    <div class="line-hero__panel-row"><dt>Equipo</dt><dd>GNSS RTK · dron RPAS · estación total</dd></div>
+                    <div class="line-hero__panel-row"><dt>Plazo típico</dt><dd>1-3 semanas</dd></div>
+                    <div class="line-hero__panel-row"><dt>Entregable</dt><dd>Ortofoto + MDT + GIS + memoria</dd></div>
+                    <div class="line-hero__panel-row"><dt>Aplica a</dt><dd>Lotes · Vías · Predial · Catastro · POMCA</dd></div>
+                </dl>
+            </aside>
+        </div>
+    </section>
+
+    <div class="line-shell">
+        <aside class="line-side">
+            <span class="line-side__title">EN ESTA PÁGINA</span>
+            <ul class="line-side__list">
+                <li><a href="#alcance" class="is-active">01 · Alcance</a></li>
+                <li><a href="#campo">02 · Captura en campo</a></li>
+                <li><a href="#productos">03 · Productos digitales</a></li>
+                <li><a href="#sig">04 · Análisis SIG</a></li>
+                <li><a href="#proceso">05 · Proceso</a></li>
+                <li><a href="#entregables">06 · Entregables</a></li>
+                <li><a href="#aplicaciones">07 · Aplicaciones</a></li>
+            </ul>
+        </aside>
+
+        <div class="line-content">
+            <section id="alcance" class="line-block">
+                <span class="line-block__num">01 · ALCANCE</span>
+                <h2 class="line-block__title">El terreno digital del proyecto.</h2>
+                <p class="line-block__lead">
+                    No vendemos planos sueltos: entregamos un <strong>modelo digital completo</strong>
+                    del proyecto. Ortofoto centimétrica, modelo digital del terreno, curvas de nivel,
+                    mapas de pendientes, base predial, capas SIG. Todo georreferenciado en MAGNA-SIRGAS
+                    y reproducible en QGIS o ArcGIS.
+                </p>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Lo que entregamos</h4>
+                        <ul>
+                            <li>Ortofoto georreferenciada (precisión 2-5 cm)</li>
+                            <li>Modelo Digital del Terreno (MDT)</li>
+                            <li>Modelo Digital de Superficie (MDS)</li>
+                            <li>Curvas de nivel a intervalos del proyecto</li>
+                            <li>Mapas de pendientes y exposición</li>
+                            <li>Capas SIG (puntos, líneas, polígonos)</li>
+                            <li>Geodatabase entregable QGIS / ArcGIS</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Cuándo es crítica</h4>
+                        <ul>
+                            <li>Compra/venta de lote (área real, lindero)</li>
+                            <li>Diseño urbanístico o de vías</li>
+                            <li>Estudios ambientales y POMCA</li>
+                            <li>Replanteo en obra</li>
+                            <li>Inventarios prediales</li>
+                            <li>Análisis de cuencas hidrográficas</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="campo" class="line-block">
+                <span class="line-block__num">02 · CAPTURA EN CAMPO</span>
+                <h2 class="line-block__title">GNSS RTK + dron + estación total.</h2>
+                <p class="line-block__lead">
+                    Combinamos métodos según las condiciones del sitio y la precisión requerida.
+                </p>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>GNSS RTK <span class="badge">±1.5 cm</span></h4>
+                        <ul>
+                            <li>Receptor base + rover RTK doble frecuencia</li>
+                            <li>Vinculación al sistema MAGNA-SIRGAS oficial IGAC</li>
+                            <li>Puntos de control geodésico</li>
+                            <li>Replanteo de obras y verificación</li>
+                            <li>Ideal en zonas abiertas con cielo despejado</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Fotogrametría con dron RPAS</h4>
+                        <ul>
+                            <li>Vuelos con drones permitidos AeroNáutica Civil</li>
+                            <li>Ortofoto de alta resolución (GSD 2-5 cm)</li>
+                            <li>Cubrimiento de hectáreas en horas, no días</li>
+                            <li>MDS y MDT por correlación de imágenes</li>
+                            <li>Puntos de control fotográficos (GCP)</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Estación total</h4>
+                        <ul>
+                            <li>Para zonas con vegetación densa o bajo techo</li>
+                            <li>Replanteo con precisión milimétrica</li>
+                            <li>Levantamiento de estructuras existentes</li>
+                            <li>Túneles y obras subterráneas</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Batimetría</h4>
+                        <ul>
+                            <li>Eco-sondeo monohaz para ríos y embalses</li>
+                            <li>Levantamiento de cauces y secciones</li>
+                            <li>Insumo para hidrología e hidráulica</li>
+                            <li>Cubicación de presas y reservorios</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="productos" class="line-block">
+                <span class="line-block__num">03 · PRODUCTOS DIGITALES</span>
+                <h2 class="line-block__title">Lo que se entrega para el proyecto.</h2>
+                <ol class="line-numbered">
+                    <li><strong>Ortofoto georreferenciada</strong><span>Imagen aérea sin distorsión, escalada, en sistema oficial. Precisión 2-5 cm. Base para diseño urbanístico, planimetría y comunicación visual.</span></li>
+                    <li><strong>Modelo Digital del Terreno (MDT)</strong><span>Superficie del suelo desnudo, sin vegetación ni construcciones. Para estudios hidráulicos, viales, de movimientos de tierra.</span></li>
+                    <li><strong>Modelo Digital de Superficie (MDS)</strong><span>Incluye vegetación y construcciones. Útil para análisis de visibilidad, sombras, volúmenes.</span></li>
+                    <li><strong>Curvas de nivel</strong><span>Generadas del MDT con intervalo apropiado al proyecto (0.5m, 1m, 5m). Suavizadas y editables.</span></li>
+                    <li><strong>Mapas temáticos</strong><span>Pendientes, exposición, hidrografía, drenajes, zonas críticas. Cada uno con simbología y leyenda profesional.</span></li>
+                </ol>
+            </section>
+
+            <section id="sig" class="line-block">
+                <span class="line-block__num">04 · ANÁLISIS SIG</span>
+                <h2 class="line-block__title">El dato espacial transformado en decisión.</h2>
+                <p class="line-block__lead">
+                    Toda la información captada se carga a un sistema SIG donde se cruzan capas,
+                    se hacen análisis espaciales y se generan productos derivados específicos
+                    para el proyecto.
+                </p>
+                <table class="line-table">
+                    <thead>
+                        <tr><th>Software</th><th>Uso</th><th>Tipo</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>QGIS</td><td>SIG vectorial y raster</td><td><span class="norm-tag">OPEN-SOURCE</span></td></tr>
+                        <tr><td>ArcGIS Pro</td><td>SIG profesional</td><td><span class="norm-tag">ESRI</span></td></tr>
+                        <tr><td>Pix4D / Agisoft Metashape</td><td>Procesamiento fotogramétrico</td><td><span class="norm-tag">PHOTOGRAMMETRY</span></td></tr>
+                        <tr><td>Global Mapper</td><td>Modelación 3D y conversiones</td><td><span class="norm-tag">BLUE MARBLE</span></td></tr>
+                        <tr><td>AutoCAD Civil 3D</td><td>Diseño civil sobre el modelo</td><td><span class="norm-tag">AUTODESK</span></td></tr>
+                        <tr><td>Trimble Business Center</td><td>Procesamiento GNSS</td><td><span class="norm-tag">TRIMBLE</span></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="proceso" class="line-block">
+                <span class="line-block__num">05 · PROCESO</span>
+                <h2 class="line-block__title">De la planeación al delivery digital.</h2>
+                <ol class="line-numbered">
+                    <li><strong>Planeación — 24h</strong><span>Definición del alcance, área a cubrir, precisión requerida. Permisos de vuelo si aplica. Cotización con cronograma.</span></li>
+                    <li><strong>Trabajo de campo — 1-5 días</strong><span>Establecimiento de puntos de control, vuelo del dron, mediciones GNSS RTK. Documentación fotográfica.</span></li>
+                    <li><strong>Procesamiento — 1-2 semanas</strong><span>Procesamiento fotogramétrico, generación de ortofotos, MDT/MDS, georreferenciación, control de calidad de productos.</span></li>
+                    <li><strong>Análisis SIG — 1 semana</strong><span>Generación de capas, análisis espaciales, mapas temáticos, layouts. Construcción de la geodatabase entregable.</span></li>
+                    <li><strong>Memoria + delivery</strong><span>Documento técnico con metodología, precisiones obtenidas, productos. Entrega física + digital de todos los archivos.</span></li>
+                </ol>
+            </section>
+
+            <section id="entregables" class="line-block">
+                <span class="line-block__num">06 · ENTREGABLES</span>
+                <h2 class="line-block__title">Lo que recibes.</h2>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Productos cartográficos</h4>
+                        <ul>
+                            <li>Ortofoto en GeoTIFF de alta resolución</li>
+                            <li>MDT y MDS en GeoTIFF / LAS</li>
+                            <li>Curvas de nivel en SHP / DWG</li>
+                            <li>Mapas temáticos (PDF + capa SHP)</li>
+                            <li>Layouts profesionales en QGIS / ArcGIS</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Geodatabase</h4>
+                        <ul>
+                            <li>Carpeta con todas las capas SHP</li>
+                            <li>Proyecto QGIS abierto</li>
+                            <li>Metadatos según norma INV o NTC</li>
+                            <li>Datos crudos GNSS y fotogramétricos</li>
+                            <li>Reproducible por terceros</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="aplicaciones" class="line-block">
+                <span class="line-block__num">07 · APLICACIONES</span>
+                <h2 class="line-block__title">Dónde aplica esta línea.</h2>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Construcción</h4>
+                        <ul>
+                            <li>Levantamiento topográfico de lotes</li>
+                            <li>Replanteo en obra</li>
+                            <li>Volúmenes de movimiento de tierra</li>
+                            <li>Avance de obra (vuelos periódicos)</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Predial y catastral</h4>
+                        <ul>
+                            <li>Levantamiento predial</li>
+                            <li>Linderos, áreas, deslindes</li>
+                            <li>Catastro técnico</li>
+                            <li>Subdivisiones y loteos</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Ambiental y territorial</h4>
+                        <ul>
+                            <li>POMCA / POT / EOT</li>
+                            <li>EIA con componente cartográfico</li>
+                            <li>Inventarios forestales</li>
+                            <li>Monitoreo de minería e impactos</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Especiales</h4>
+                        <ul>
+                            <li>Patrimonio histórico (escaneo 3D)</li>
+                            <li>Investigación arqueológica</li>
+                            <li>Documentación post-desastre</li>
+                            <li>Inspección de infraestructura</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="line-final">
+                <div>
+                    <h3>¿Tu proyecto necesita topografía precisa?</h3>
+                    <p>Una sola jornada de dron puede cubrir hectáreas en centímetros. Cotización en 48h.</p>
+                </div>
+                <div><a href="../index.html#contacto" class="btn-svc btn-svc--primary">SOLICITAR ▶</a></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="line-related">
+        <div class="line-related__inner">
+            <h3 class="line-related__head">[ LÍNEAS RELACIONADAS ]</h3>
+            <div class="line-related__grid">
+                <a href="hidrologia.html" class="line-related__card">
+                    <span>L-03 · AGUAS</span>
+                    <strong>Ingeniería de aguas superficiales</strong>
+                </a>
+                <a href="riesgo-ambiente.html" class="line-related__card">
+                    <span>L-08 · SOSTENIBILIDAD</span>
+                    <strong>Gestión geotécnica del riesgo y ambiente</strong>
+                </a>
+                <a href="diagnostico.html" class="line-related__card">
+                    <span>L-10 · FORENSE</span>
+                    <strong>Diagnóstico forense geotécnico</strong>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

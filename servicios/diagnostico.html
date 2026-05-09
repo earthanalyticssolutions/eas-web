@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EAS · Línea L-10 Diagnóstico forense geotécnico. Investigación de causa raíz de grietas, hundimientos, taludes en movimiento, vías erosionadas y muros desplazados.">
+    <meta name="keywords" content="diagnóstico forense, patologías, grietas, hundimientos, taludes, peritaje, EAS Earth Analytics Solutions">
+    <meta name="author" content="Earth Analytics Solutions · EAS">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#050a10">
+    <link rel="canonical" href="https://earthas.co/servicios/diagnostico.html">
+    <meta property="og:title" content="Diagnóstico forense geotécnico · EAS">
+    <meta property="og:description" content="Línea L-10: investigación de causa raíz antes de proponer la obra correctiva. Peritaje técnico geotécnico-estructural.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://earthas.co/servicios/diagnostico.html">
+    <title>Diagnóstico forense geotécnico · L-10 · EAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/servicios.css">
+    <link rel="icon" type="image/png" href="../assets/eas.png">
+</head>
+<body class="page-line">
+
+    <nav class="nav-bar" aria-label="Navegación principal">
+        <a href="../index.html" class="nav-brand">
+            <img src="../assets/eas.png" alt="EAS" class="nav-logo">
+            <span>EAS</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../servicios.html" class="is-current">Servicios</a></li>
+            <li><a href="../index.html#sectores">Sectores</a></li>
+            <li><a href="../index.html#casos">Casos</a></li>
+            <li><a href="../index.html#soluciones">Soluciones</a></li>
+            <li><a href="../index.html#contacto" class="nav-cta">Cotiza · 15min ▶</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <section class="line-hero">
+        <!-- MOTIF DIAGNOSTIC · grietas + lupa de inspección + marcadores -->
+        <div class="line-hero__motif motif-diagnostic" aria-hidden="true">
+            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <line class="dg-grid" x1="200" y1="0" x2="200" y2="600"/>
+                <line class="dg-grid" x1="700" y1="0" x2="700" y2="600"/>
+                <line class="dg-grid" x1="1200" y1="0" x2="1200" y2="600"/>
+                <line class="dg-grid" x1="0" y1="200" x2="1400" y2="200"/>
+                <line class="dg-grid" x1="0" y1="450" x2="1400" y2="450"/>
+
+                <!-- Marco de pared inspeccionada -->
+                <rect class="dg-frame" x="100" y="120" width="1200" height="380"/>
+
+                <!-- Grieta 1 (diagonal mayor) -->
+                <path class="dg-crack" d="M 250 140 L 320 220 L 380 280 L 420 380 L 380 480"/>
+
+                <!-- Grieta 2 (horizontal con bifurcación) -->
+                <path class="dg-crack dg-crack--2" d="M 600 250 L 720 280 L 850 270 M 720 280 L 760 350 M 720 280 L 680 200"/>
+
+                <!-- Grieta 3 (vertical con quiebres) -->
+                <path class="dg-crack dg-crack--3" d="M 1000 140 L 1020 240 L 1000 320 L 1040 420 L 1020 480"/>
+
+                <!-- Marcadores de daño (puntos pulsantes) -->
+                <circle class="dg-marker" cx="320" cy="220" r="6"/>
+                <text x="335" y="218" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(255,152,0,0.7)">D-01 · 4mm</text>
+
+                <circle class="dg-marker dg-marker--2" cx="720" cy="280" r="6"/>
+                <text x="735" y="278" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(255,152,0,0.7)">D-02 · 7mm</text>
+
+                <circle class="dg-marker dg-marker--3" cx="1020" cy="320" r="6"/>
+                <text x="1035" y="318" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(255,152,0,0.7)">D-03 · 12mm</text>
+
+                <!-- Lupa de inspección -->
+                <g>
+                    <circle class="dg-magnifier" cx="850" cy="380" r="60"/>
+                    <line class="dg-handle" x1="893" y1="423" x2="940" y2="470"/>
+                    <!-- Cruz dentro de la lupa -->
+                    <line x1="822" y1="380" x2="878" y2="380" stroke="rgba(127,233,255,0.4)" stroke-width="1"/>
+                    <line x1="850" y1="352" x2="850" y2="408" stroke="rgba(127,233,255,0.4)" stroke-width="1"/>
+                </g>
+
+                <!-- Etiquetas técnicas -->
+                <text x="120" y="105" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(127,233,255,0.55)">FACHADA NORTE · INSPECCIÓN</text>
+                <text x="40" y="540" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(255,152,0,0.5)">▸ 3 GRIETAS · 12mm MAX</text>
+                <text x="1360" y="540" text-anchor="end" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(127,233,255,0.5)">CASO-01 · L-10</text>
+            </svg>
+        </div>
+
+        <div class="line-hero__inner">
+            <div>
+                <nav class="line-hero__breadcrumb" aria-label="Migas de pan">
+                    <a href="../index.html">EAS</a>
+                    <span class="sep">/</span>
+                    <a href="../servicios.html">Servicios</a>
+                    <span class="sep">/</span>
+                    <span class="current">Diagnóstico Forense</span>
+                </nav>
+
+                <div class="line-hero__id">
+                    <strong>L-10</strong>
+                    <span>FORENSE · INVESTIGACIÓN</span>
+                </div>
+
+                <h1 class="line-hero__title">
+                    Diagnóstico<br>
+                    <em>forense</em> geotécnico
+                </h1>
+
+                <p class="line-hero__lead">
+                    Cuando una grieta aparece, un talud se mueve o un muro se desplaza, hay que
+                    saber <strong>por qué pasó antes de decidir cómo reparar</strong>. EAS investiga
+                    la causa raíz con metodología técnica, no con la primera intuición — porque
+                    arreglar el síntoma equivocado es perder dos veces.
+                </p>
+
+                <div class="line-hero__actions">
+                    <a href="../index.html#contacto" class="btn-svc btn-svc--primary">COTIZAR ESTA LÍNEA ▶</a>
+                    <a href="#alcance" class="btn-svc btn-svc--ghost">VER ALCANCE</a>
+                </div>
+            </div>
+
+            <aside class="line-hero__panel">
+                <div class="line-hero__panel-head">
+                    <span>FICHA TÉCNICA</span>
+                    <span>L-10 · v.2026</span>
+                </div>
+                <dl>
+                    <div class="line-hero__panel-row"><dt>Código</dt><dd class="neon">EAS-DGN-10</dd></div>
+                    <div class="line-hero__panel-row"><dt>Naturaleza</dt><dd>Investigación + peritaje</dd></div>
+                    <div class="line-hero__panel-row"><dt>Norma base</dt><dd class="cyan">ASTM · NSR-10 · ACI 224</dd></div>
+                    <div class="line-hero__panel-row"><dt>Equipo</dt><dd>Inspección visual · campo · lab</dd></div>
+                    <div class="line-hero__panel-row"><dt>Plazo típico</dt><dd>2-6 semanas</dd></div>
+                    <div class="line-hero__panel-row"><dt>Entregable</dt><dd>Hipótesis técnica + plan correctivo</dd></div>
+                    <div class="line-hero__panel-row"><dt>Aplica a</dt><dd>Edificación · Vías · Taludes · Muros · Peritaje</dd></div>
+                </dl>
+            </aside>
+        </div>
+    </section>
+
+    <div class="line-shell">
+        <aside class="line-side">
+            <span class="line-side__title">EN ESTA PÁGINA</span>
+            <ul class="line-side__list">
+                <li><a href="#alcance" class="is-active">01 · Alcance</a></li>
+                <li><a href="#tipos">02 · Tipos de patología</a></li>
+                <li><a href="#metodologia">03 · Metodología forense</a></li>
+                <li><a href="#causas">04 · Causas comunes</a></li>
+                <li><a href="#correctivo">05 · Plan correctivo</a></li>
+                <li><a href="#proceso">06 · Proceso</a></li>
+                <li><a href="#aplicaciones">07 · Aplicaciones</a></li>
+            </ul>
+        </aside>
+
+        <div class="line-content">
+            <section id="alcance" class="line-block">
+                <span class="line-block__num">01 · ALCANCE</span>
+                <h2 class="line-block__title">Investigar antes de reparar.</h2>
+                <p class="line-block__lead">
+                    Una falla geotécnica o estructural <strong>no es un evento, es un síntoma</strong>
+                    de un proceso que viene de meses o años atrás. Reparar sin entender la causa
+                    es maquillar el problema. EAS hace investigación forense para entregar un
+                    diagnóstico técnico defendible y un plan correctivo que ataque la raíz.
+                </p>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Lo que entregamos</h4>
+                        <ul>
+                            <li>Inspección detallada con georreferenciación de daños</li>
+                            <li>Hipótesis técnica de la causa raíz</li>
+                            <li>Verificación con exploración o ensayos cuando aplique</li>
+                            <li>Cuantificación de daño actual</li>
+                            <li>Pronóstico de evolución</li>
+                            <li>Plan correctivo priorizado</li>
+                            <li>Memoria firmada para sustentar peritajes</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Cuándo nos llaman</h4>
+                        <ul>
+                            <li>Grietas en edificación reciente o existente</li>
+                            <li>Hundimientos en pisos o pavimentos</li>
+                            <li>Talud que se mueve o muro desplazado</li>
+                            <li>Muro de contención que falla</li>
+                            <li>Vía con baches recurrentes</li>
+                            <li>Filtraciones inexplicables</li>
+                            <li>Disputa técnica con constructor o vecinos</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tipos" class="line-block">
+                <span class="line-block__num">02 · TIPOS DE PATOLOGÍA</span>
+                <h2 class="line-block__title">Cada falla tiene su firma.</h2>
+                <ol class="line-numbered">
+                    <li><strong>Grietas en muros y losas</strong><span>Asentamiento diferencial, expansión de suelos, retracción del concreto, sobrecarga, falla térmica. La forma, dirección y evolución de la grieta cuenta la historia.</span></li>
+                    <li><strong>Hundimientos y desniveles</strong><span>Asentamiento global o diferencial, colapso del suelo, falla del relleno, cavidades subterráneas. Topografía periódica revela la dinámica.</span></li>
+                    <li><strong>Movimientos de talud</strong><span>Deslizamiento rotacional, traslacional, flujo, caída. Identificación de superficie de falla, factores detonantes, velocidad del movimiento.</span></li>
+                    <li><strong>Falla de muros de contención</strong><span>Volcamiento, deslizamiento, falla por capacidad portante, falla del drenaje. Cuantificación del empuje real vs el de diseño.</span></li>
+                    <li><strong>Pavimentos en falla</strong><span>Ahuellamiento, fisuración, desprendimientos, baches recurrentes. Identificación de la capa que falla (subrasante, base, rodadura).</span></li>
+                    <li><strong>Filtraciones e infiltraciones</strong><span>Origen del agua, ruta, mecanismo. Implicaciones en estabilidad y durabilidad de la estructura.</span></li>
+                </ol>
+            </section>
+
+            <section id="metodologia" class="line-block">
+                <span class="line-block__num">03 · METODOLOGÍA FORENSE</span>
+                <h2 class="line-block__title">Investigar como detective técnico.</h2>
+                <ol class="line-numbered">
+                    <li><strong>Entrevista y antecedentes</strong><span>Historia del proyecto, fechas de construcción, materiales, eventos relevantes (lluvias, sismos, obras vecinas), evolución del daño.</span></li>
+                    <li><strong>Inspección visual detallada</strong><span>Mapeo y cuantificación de daños, registro fotográfico georreferenciado, ancho de grietas, dirección, profundidad. Catálogo de evidencia.</span></li>
+                    <li><strong>Monitoreo</strong><span>Testigos de yeso, fisurómetros, inclinómetros, niveles topográficos. Si el daño es activo, lo medimos en el tiempo.</span></li>
+                    <li><strong>Exploración complementaria</strong><span>Apiques, sondeos, ensayos donde el diagnóstico lo requiera. Geofísica para detectar cavidades. Toma de muestras de materiales sospechosos.</span></li>
+                    <li><strong>Análisis e hipótesis</strong><span>Cruzar evidencia, descartar hipótesis no consistentes, validar la más probable. Cuantificar el mecanismo de falla.</span></li>
+                    <li><strong>Pronóstico</strong><span>Si no se interviene: ¿qué va a pasar? ¿en qué plazo? ¿con qué consecuencias? Cuantificación del riesgo residual.</span></li>
+                </ol>
+            </section>
+
+            <section id="causas" class="line-block">
+                <span class="line-block__num">04 · CAUSAS COMUNES</span>
+                <h2 class="line-block__title">Lo que normalmente está detrás.</h2>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Origen geotécnico</h4>
+                        <ul>
+                            <li>Estudio de suelos deficiente o inexistente</li>
+                            <li>Cimentación subdimensionada</li>
+                            <li>Suelos expansivos no identificados</li>
+                            <li>Rellenos mal compactados</li>
+                            <li>Cambios en el nivel freático</li>
+                            <li>Excavaciones vecinas que afectan</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Origen estructural</h4>
+                        <ul>
+                            <li>Diseño no acorde a NSR-10</li>
+                            <li>Cambio de uso de la edificación</li>
+                            <li>Sobrecarga sostenida</li>
+                            <li>Materiales de baja calidad</li>
+                            <li>Detalles constructivos mal ejecutados</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Origen ambiental / agua</h4>
+                        <ul>
+                            <li>Drenaje superficial deficiente</li>
+                            <li>Filtraciones desde tuberías</li>
+                            <li>Erosión perimetral</li>
+                            <li>Saturación del suelo de fundación</li>
+                            <li>Ciclos humedad-secado en arcillas</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Origen externo / antrópico</h4>
+                        <ul>
+                            <li>Vibraciones de obra cercana</li>
+                            <li>Cargas no previstas en el diseño</li>
+                            <li>Modificaciones no autorizadas</li>
+                            <li>Falta de mantenimiento preventivo</li>
+                            <li>Eventos sísmicos previos no detectados</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="correctivo" class="line-block">
+                <span class="line-block__num">05 · PLAN CORRECTIVO</span>
+                <h2 class="line-block__title">Reparar la causa, no el síntoma.</h2>
+                <p class="line-block__lead">
+                    Una vez se entiende la causa raíz, diseñamos la intervención. La obra correctiva
+                    debe atacar la causa <strong>antes o al mismo tiempo</strong> que el síntoma —
+                    de lo contrario el daño vuelve.
+                </p>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Soluciones típicas</h4>
+                        <ul>
+                            <li>Recalce de cimentación (micropilotes, jet grouting)</li>
+                            <li>Drenaje perimetral profundo</li>
+                            <li>Estabilización de taludes (anclajes, drenajes, bermas)</li>
+                            <li>Reconstrucción de muros con dimensiones correctas</li>
+                            <li>Inyección de grietas y refuerzo estructural</li>
+                            <li>Reemplazo de capas de pavimento que fallan</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Lo que recomendamos primero</h4>
+                        <ul>
+                            <li>Detener el factor detonante (drenaje, agua, sobrecarga)</li>
+                            <li>Monitorear evolución durante intervención</li>
+                            <li>Intervención por etapas con verificación</li>
+                            <li>Mantenimiento posterior con plan claro</li>
+                            <li>Si la zona no es viable, reasentamiento</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="proceso" class="line-block">
+                <span class="line-block__num">06 · PROCESO</span>
+                <h2 class="line-block__title">Del aviso al plan.</h2>
+                <ol class="line-numbered">
+                    <li><strong>Visita inicial — 24-48h</strong><span>Reconocimiento de la situación, levantamiento preliminar, recolección de antecedentes. Cotización con cronograma.</span></li>
+                    <li><strong>Inspección detallada — 1 semana</strong><span>Mapeo completo, monitoreo si aplica, registro fotográfico, georreferenciación.</span></li>
+                    <li><strong>Exploración complementaria — 1-2 semanas</strong><span>Apiques, ensayos, geofísica donde el diagnóstico lo requiera. Recolección de evidencia adicional.</span></li>
+                    <li><strong>Análisis e hipótesis — 1-2 semanas</strong><span>Cruzar información, definir causa raíz, cuantificar mecanismo de falla, generar pronóstico.</span></li>
+                    <li><strong>Plan correctivo — 1 semana</strong><span>Diseño de la intervención, alternativas, presupuesto preliminar, cronograma de obra correctiva.</span></li>
+                    <li><strong>Memoria firmada</strong><span>Documento técnico completo, defendible ante interventoría, peritaje judicial o disputa técnica.</span></li>
+                </ol>
+            </section>
+
+            <section id="aplicaciones" class="line-block">
+                <span class="line-block__num">07 · APLICACIONES</span>
+                <h2 class="line-block__title">Cuándo nos llaman.</h2>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Edificación</h4>
+                        <ul>
+                            <li>Vivienda con grietas no esperadas</li>
+                            <li>Edificación comercial con asentamientos</li>
+                            <li>Bodegas con pisos hundidos</li>
+                            <li>Muros con desplazamiento progresivo</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Infraestructura</h4>
+                        <ul>
+                            <li>Vías con baches recurrentes</li>
+                            <li>Puentes con socavación</li>
+                            <li>Muros de contención fallando</li>
+                            <li>Taludes en obras viales</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Disputa técnica</h4>
+                        <ul>
+                            <li>Peritaje en arbitraje técnico</li>
+                            <li>Soporte para juzgado civil</li>
+                            <li>Resolución entre vecinos</li>
+                            <li>Reclamación a constructor o aseguradora</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Especiales</h4>
+                        <ul>
+                            <li>Patrimonio histórico con daños</li>
+                            <li>Edificios afectados por sismo</li>
+                            <li>Estructuras post-incendio</li>
+                            <li>Reconstrucción post-desastre</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="line-final">
+                <div>
+                    <h3>¿Tu obra muestra señales de problema?</h3>
+                    <p>Te visitamos en 48h, hacemos inspección, identificamos la causa raíz y proponemos la solución correcta.</p>
+                </div>
+                <div><a href="../index.html#contacto" class="btn-svc btn-svc--primary">SOLICITAR ▶</a></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="line-related">
+        <div class="line-related__inner">
+            <h3 class="line-related__head">[ LÍNEAS RELACIONADAS ]</h3>
+            <div class="line-related__grid">
+                <a href="geotecnia.html" class="line-related__card">
+                    <span>L-01 · PRINCIPAL</span>
+                    <strong>Investigación y exploración geotécnica</strong>
+                </a>
+                <a href="estructuras.html" class="line-related__card">
+                    <span>L-09 · APOYO</span>
+                    <strong>Consultoría estructural aplicada</strong>
+                </a>
+                <a href="riesgo-ambiente.html" class="line-related__card">
+                    <span>L-08 · SOSTENIBILIDAD</span>
+                    <strong>Gestión geotécnica del riesgo y ambiente</strong>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

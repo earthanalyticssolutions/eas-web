@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EAS · Línea L-07 Laboratorio de geomateriales y control de obra. Granulometría, Atterberg, Proctor, CBR, densidades, compresión, corte. Cadena de custodia y trazabilidad por proyecto.">
+    <meta name="keywords" content="laboratorio de suelos, ensayos ASTM, INV-E, AASHTO, CBR, Proctor, granulometría, Atterberg, control de obra, EAS Earth Analytics Solutions">
+    <meta name="author" content="Earth Analytics Solutions · EAS">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#050a10">
+    <link rel="canonical" href="https://earthas.co/servicios/laboratorio.html">
+    <meta property="og:title" content="Laboratorio de geomateriales y control de obra · EAS">
+    <meta property="og:description" content="Línea L-07: ensayos certificados con cadena de custodia. ASTM / INV-E / AASHTO. Diseño y control en obra.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://earthas.co/servicios/laboratorio.html">
+    <title>Laboratorio de geomateriales y control de obra · L-07 · EAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/servicios.css">
+    <link rel="icon" type="image/png" href="../assets/eas.png">
+</head>
+<body class="page-line">
+
+    <nav class="nav-bar" aria-label="Navegación principal">
+        <a href="../index.html" class="nav-brand">
+            <img src="../assets/eas.png" alt="EAS" class="nav-logo">
+            <span>EAS</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../servicios.html" class="is-current">Servicios</a></li>
+            <li><a href="../index.html#sectores">Sectores</a></li>
+            <li><a href="../index.html#casos">Casos</a></li>
+            <li><a href="../index.html#soluciones">Soluciones</a></li>
+            <li><a href="../index.html#contacto" class="nav-cta">Cotiza · 15min ▶</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <section class="line-hero">
+        <!-- MOTIF LAB · 3 tubos de ensayo + curva granulométrica -->
+        <div class="line-hero__motif motif-lab" aria-hidden="true">
+            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <line class="lb-grid" x1="0" y1="200" x2="1400" y2="200"/>
+                <line class="lb-grid" x1="0" y1="350" x2="1400" y2="350"/>
+                <line class="lb-grid" x1="0" y1="500" x2="1400" y2="500"/>
+                <line class="lb-grid" x1="200" y1="0" x2="200" y2="600"/>
+                <line class="lb-grid" x1="700" y1="0" x2="700" y2="600"/>
+                <line class="lb-grid" x1="1200" y1="0" x2="1200" y2="600"/>
+
+                <!-- Tubo 1 -->
+                <g>
+                    <path class="lb-tube-glass" d="M 130 150 L 130 480 Q 130 510, 160 510 L 200 510 Q 230 510, 230 480 L 230 150 Z"/>
+                    <rect class="lb-tube-liquid" x="135" y="320" width="90" height="160" rx="0"/>
+                    <circle class="lb-bubble" cx="170" cy="380" r="3"/>
+                    <circle class="lb-bubble lb-bubble--2" cx="195" cy="420" r="2.5"/>
+                    <text x="180" y="135" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(255,152,0,0.7)">M-01 · CBR</text>
+                </g>
+
+                <!-- Tubo 2 -->
+                <g>
+                    <path class="lb-tube-glass" d="M 280 150 L 280 480 Q 280 510, 310 510 L 350 510 Q 380 510, 380 480 L 380 150 Z"/>
+                    <rect class="lb-tube-liquid lb-tube-liquid--2" x="285" y="270" width="90" height="210" rx="0"/>
+                    <circle class="lb-bubble" cx="320" cy="330" r="3"/>
+                    <circle class="lb-bubble lb-bubble--2" cx="345" cy="380" r="2.5"/>
+                    <text x="330" y="135" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(127,233,255,0.7)">M-02 · ATT</text>
+                </g>
+
+                <!-- Tubo 3 -->
+                <g>
+                    <path class="lb-tube-glass" d="M 430 150 L 430 480 Q 430 510, 460 510 L 500 510 Q 530 510, 530 480 L 530 150 Z"/>
+                    <rect class="lb-tube-liquid lb-tube-liquid--3" x="435" y="370" width="90" height="110" rx="0"/>
+                    <circle class="lb-bubble" cx="470" cy="420" r="3"/>
+                    <text x="480" y="135" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(127,233,255,0.6)">M-03 · GR</text>
+                </g>
+
+                <!-- Curva granulométrica en sección derecha -->
+                <g>
+                    <line x1="650" y1="200" x2="650" y2="500" stroke="rgba(127,233,255,0.4)" stroke-width="1"/>
+                    <line x1="650" y1="500" x2="1300" y2="500" stroke="rgba(127,233,255,0.4)" stroke-width="1"/>
+
+                    <text x="640" y="210" text-anchor="end" font-family="Orbitron" font-size="9" letter-spacing="1" fill="rgba(127,233,255,0.5)">100%</text>
+                    <text x="640" y="350" text-anchor="end" font-family="Orbitron" font-size="9" letter-spacing="1" fill="rgba(127,233,255,0.5)">50%</text>
+                    <text x="640" y="510" text-anchor="end" font-family="Orbitron" font-size="9" letter-spacing="1" fill="rgba(127,233,255,0.5)">0</text>
+
+                    <text x="660" y="525" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(255,152,0,0.5)">200</text>
+                    <text x="970" y="525" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(255,152,0,0.5)">40</text>
+                    <text x="1280" y="525" text-anchor="end" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(255,152,0,0.5)">N° 4</text>
+
+                    <!-- Curva tipo S -->
+                    <path class="lb-curve" d="M 650 220 Q 770 240, 870 320 Q 970 410, 1080 460 Q 1180 485, 1300 495"/>
+
+                    <!-- Puntos sobre la curva -->
+                    <circle class="lb-point" cx="770" cy="265" r="4"/>
+                    <circle class="lb-point lb-point--2" cx="970" cy="410" r="4"/>
+                    <circle class="lb-point lb-point--3" cx="1180" cy="485" r="4"/>
+
+                    <text x="690" y="180" font-family="Orbitron" font-size="10" letter-spacing="2" fill="rgba(255,152,0,0.7)">CURVA GRANULOMÉTRICA</text>
+                </g>
+            </svg>
+        </div>
+
+        <div class="line-hero__inner">
+            <div>
+                <nav class="line-hero__breadcrumb" aria-label="Migas de pan">
+                    <a href="../index.html">EAS</a>
+                    <span class="sep">/</span>
+                    <a href="../servicios.html">Servicios</a>
+                    <span class="sep">/</span>
+                    <span class="current">Laboratorio</span>
+                </nav>
+
+                <div class="line-hero__id">
+                    <strong>L-07</strong>
+                    <span>ENSAYOS · CONTROL</span>
+                </div>
+
+                <h1 class="line-hero__title">
+                    Laboratorio de<br>
+                    <em>geomateriales</em> y control de obra
+                </h1>
+
+                <p class="line-hero__lead">
+                    Ensayos certificados con cadena de custodia desde el campo hasta el resultado
+                    firmado. <strong>ASTM, INV-E y AASHTO</strong> según corresponda. Para diseño,
+                    para control en obra y para sustentación ante interventoría — sin atajos ni
+                    "criterios de la casa".
+                </p>
+
+                <div class="line-hero__actions">
+                    <a href="../index.html#contacto" class="btn-svc btn-svc--primary">COTIZAR ESTA LÍNEA ▶</a>
+                    <a href="#alcance" class="btn-svc btn-svc--ghost">VER ALCANCE</a>
+                </div>
+            </div>
+
+            <aside class="line-hero__panel">
+                <div class="line-hero__panel-head">
+                    <span>FICHA TÉCNICA</span>
+                    <span>L-07 · v.2026</span>
+                </div>
+                <dl>
+                    <div class="line-hero__panel-row"><dt>Código</dt><dd class="neon">EAS-LAB-07</dd></div>
+                    <div class="line-hero__panel-row"><dt>Naturaleza</dt><dd>Ensayos + control</dd></div>
+                    <div class="line-hero__panel-row"><dt>Norma base</dt><dd class="cyan">ASTM D · INV-E · AASHTO</dd></div>
+                    <div class="line-hero__panel-row"><dt>Equipo</dt><dd>Lab calibrado · cadena custodia</dd></div>
+                    <div class="line-hero__panel-row"><dt>Plazo típico</dt><dd>1-3 semanas según ensayos</dd></div>
+                    <div class="line-hero__panel-row"><dt>Entregable</dt><dd>Resultados firmados + trazabilidad</dd></div>
+                    <div class="line-hero__panel-row"><dt>Aplica a</dt><dd>Diseño · Obra · Interventoría · Auditoría</dd></div>
+                </dl>
+            </aside>
+        </div>
+    </section>
+
+    <div class="line-shell">
+        <aside class="line-side">
+            <span class="line-side__title">EN ESTA PÁGINA</span>
+            <ul class="line-side__list">
+                <li><a href="#alcance" class="is-active">01 · Alcance</a></li>
+                <li><a href="#fisicos">02 · Ensayos físicos</a></li>
+                <li><a href="#mecanicos">03 · Ensayos mecánicos</a></li>
+                <li><a href="#campo">04 · Control en obra</a></li>
+                <li><a href="#tabla">05 · Tabla de ensayos · normas</a></li>
+                <li><a href="#proceso">06 · Proceso</a></li>
+                <li><a href="#aplicaciones">07 · Aplicaciones</a></li>
+            </ul>
+        </aside>
+
+        <div class="line-content">
+            <section id="alcance" class="line-block">
+                <span class="line-block__num">01 · ALCANCE</span>
+                <h2 class="line-block__title">Sin laboratorio no hay ingeniería confiable.</h2>
+                <p class="line-block__lead">
+                    El laboratorio es donde la ingeniería se vuelve <strong>verificable</strong>.
+                    Cada muestra entra con cadena de custodia, cada equipo está calibrado, cada
+                    resultado está firmado por el responsable técnico. Sin esto, el diseño es
+                    suposición y el control en obra es papel mojado.
+                </p>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Lo que entregamos</h4>
+                        <ul>
+                            <li>Ensayos físicos: humedad, granulometría, Atterberg</li>
+                            <li>Ensayos mecánicos: Proctor, CBR, compresión, corte</li>
+                            <li>Control en obra: densidad de campo, compactación</li>
+                            <li>Cadena de custodia trazable</li>
+                            <li>Resultados firmados por ingeniero responsable</li>
+                            <li>Datos crudos para auditoría</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Cuándo es crítico</h4>
+                        <ul>
+                            <li>Estudios de suelos para licencia</li>
+                            <li>Diseño de pavimentos vial</li>
+                            <li>Control de compactación en obra</li>
+                            <li>Calidad de agregados de cantera</li>
+                            <li>Auditoría técnica a obras existentes</li>
+                            <li>Sustentación ante interventoría</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="fisicos" class="line-block">
+                <span class="line-block__num">02 · ENSAYOS FÍSICOS</span>
+                <h2 class="line-block__title">Caracterización del material.</h2>
+                <p class="line-block__lead">
+                    Identificamos qué es el suelo: granulometría, plasticidad, humedad,
+                    densidad relativa. La base para clasificar y predecir el comportamiento.
+                </p>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Caracterización básica</h4>
+                        <ul>
+                            <li>Humedad natural (INV E-122)</li>
+                            <li>Granulometría por tamizado (D-422)</li>
+                            <li>Hidrometría (D-422 / E-123)</li>
+                            <li>Gravedad específica (D-854)</li>
+                            <li>Contenido orgánico</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Plasticidad y clasificación</h4>
+                        <ul>
+                            <li>Límite líquido (D-4318)</li>
+                            <li>Límite plástico (D-4318)</li>
+                            <li>Índice de plasticidad</li>
+                            <li>Clasificación SUCS / AASHTO</li>
+                            <li>Identificación de suelos expansivos</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="mecanicos" class="line-block">
+                <span class="line-block__num">03 · ENSAYOS MECÁNICOS</span>
+                <h2 class="line-block__title">Resistencia, compactación y deformación.</h2>
+                <ol class="line-numbered">
+                    <li><strong>Proctor estándar y modificado (D-698 / D-1557)</strong><span>Determinación de la densidad seca máxima y humedad óptima. Base para control de compactación en obra.</span></li>
+                    <li><strong>CBR sumergido (D-1883)</strong><span>Resistencia para diseño de pavimentos. 1, 4, 7 días según protocolo. Punto crítico para diseño vial.</span></li>
+                    <li><strong>Compresión inconfinada (D-2166)</strong><span>Resistencia rápida en arcillas. Útil para análisis preliminares y consultoría.</span></li>
+                    <li><strong>Corte directo CD/CU/UU (D-3080)</strong><span>Parámetros de resistencia c y φ. Para análisis de estabilidad de taludes y muros.</span></li>
+                    <li><strong>Triaxial CU (D-4767)</strong><span>Suelos cohesivos saturados con medición de presión de poros. Análisis sísmicos avanzados.</span></li>
+                    <li><strong>Consolidación unidimensional (D-2435)</strong><span>Asentamientos por consolidación primaria y secundaria. Crítico en arcillas blandas.</span></li>
+                </ol>
+            </section>
+
+            <section id="campo" class="line-block">
+                <span class="line-block__num">04 · CONTROL EN OBRA</span>
+                <h2 class="line-block__title">El laboratorio que viaja al sitio.</h2>
+                <p class="line-block__lead">
+                    Cuando la obra está activa, el laboratorio se mueve al sitio: control de
+                    compactación día a día, verificación de materiales, detección oportuna de
+                    desviaciones.
+                </p>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Densidad de campo</h4>
+                        <ul>
+                            <li>Cono de arena (INV E-161)</li>
+                            <li>Densímetro nuclear</li>
+                            <li>Verificación contra Proctor de referencia</li>
+                            <li>Reporte diario al residente y dirección</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Otros controles</h4>
+                        <ul>
+                            <li>Granulometría rápida en obra</li>
+                            <li>Humedad de campo</li>
+                            <li>Cono dinámico DCP</li>
+                            <li>Inspección visual con criterio técnico</li>
+                            <li>Recomendaciones inmediatas si falla</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tabla" class="line-block">
+                <span class="line-block__num">05 · TABLA DE ENSAYOS · NORMAS</span>
+                <h2 class="line-block__title">Cada ensayo con su código exacto.</h2>
+                <table class="line-table">
+                    <thead>
+                        <tr><th>Ensayo</th><th>Aplicación</th><th>Norma</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Humedad natural</td><td>Caracterización física</td><td><span class="norm-tag">INV E-122</span> <span class="norm-tag">D-2216</span></td></tr>
+                        <tr><td>Granulometría tamizado</td><td>Caracterización física</td><td><span class="norm-tag">INV E-123</span> <span class="norm-tag">D-422</span></td></tr>
+                        <tr><td>Hidrometría</td><td>Suelos finos</td><td><span class="norm-tag">INV E-124</span></td></tr>
+                        <tr><td>Atterberg LL/LP</td><td>Plasticidad</td><td><span class="norm-tag">INV E-125/126</span> <span class="norm-tag">D-4318</span></td></tr>
+                        <tr><td>Proctor estándar</td><td>Compactación referencia</td><td><span class="norm-tag">INV E-141</span> <span class="norm-tag">D-698</span></td></tr>
+                        <tr><td>Proctor modificado</td><td>Compactación referencia</td><td><span class="norm-tag">INV E-142</span> <span class="norm-tag">D-1557</span></td></tr>
+                        <tr><td>CBR</td><td>Diseño vial</td><td><span class="norm-tag">INV E-148</span> <span class="norm-tag">D-1883</span></td></tr>
+                        <tr><td>Densidad campo (cono)</td><td>Control compactación</td><td><span class="norm-tag">INV E-161</span> <span class="norm-tag">D-1556</span></td></tr>
+                        <tr><td>Compresión inconfinada</td><td>Resistencia arcillas</td><td><span class="norm-tag">INV E-152</span> <span class="norm-tag">D-2166</span></td></tr>
+                        <tr><td>Corte directo</td><td>Parámetros c, φ</td><td><span class="norm-tag">INV E-154</span> <span class="norm-tag">D-3080</span></td></tr>
+                        <tr><td>Triaxial CU</td><td>Suelos saturados</td><td><span class="norm-tag">INV E-153</span> <span class="norm-tag">D-4767</span></td></tr>
+                        <tr><td>Consolidación 1D</td><td>Asentamientos</td><td><span class="norm-tag">INV E-151</span> <span class="norm-tag">D-2435</span></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="proceso" class="line-block">
+                <span class="line-block__num">06 · PROCESO</span>
+                <h2 class="line-block__title">De la muestra al resultado firmado.</h2>
+                <ol class="line-numbered">
+                    <li><strong>Recepción y custodia</strong><span>Cada muestra se etiqueta con sondeo, profundidad, fecha, operador. Registro fotográfico. Asignación de código interno.</span></li>
+                    <li><strong>Acondicionamiento</strong><span>Almacenamiento controlado, preparación según protocolo del ensayo, secado o saturación según corresponda.</span></li>
+                    <li><strong>Ejecución del ensayo</strong><span>Equipos calibrados, técnico certificado, registro continuo. Repetición si los resultados son inconsistentes.</span></li>
+                    <li><strong>Análisis y reporte</strong><span>Cálculos según norma, gráficas, comparación con valores de referencia, conclusiones técnicas.</span></li>
+                    <li><strong>Firma del responsable</strong><span>Ingeniero responsable revisa, firma con matrícula profesional, asume responsabilidad técnica.</span></li>
+                </ol>
+            </section>
+
+            <section id="aplicaciones" class="line-block">
+                <span class="line-block__num">07 · APLICACIONES</span>
+                <h2 class="line-block__title">Cuándo necesitas laboratorio.</h2>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Diseño</h4>
+                        <ul>
+                            <li>Estudios geotécnicos</li>
+                            <li>Diseño de pavimentos (CBR)</li>
+                            <li>Análisis de estabilidad</li>
+                            <li>Cálculo de asentamientos</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Obra</h4>
+                        <ul>
+                            <li>Control de compactación en rellenos</li>
+                            <li>Verificación de subrasante en vías</li>
+                            <li>Calidad de canteras</li>
+                            <li>Auditoría técnica para interventoría</li>
+                            <li>Soporte técnico al residente</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="line-final">
+                <div>
+                    <h3>¿Necesitas ensayos certificados?</h3>
+                    <p>Cadena de custodia desde el campo y resultados firmados con responsabilidad técnica.</p>
+                </div>
+                <div><a href="../index.html#contacto" class="btn-svc btn-svc--primary">SOLICITAR ▶</a></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="line-related">
+        <div class="line-related__inner">
+            <h3 class="line-related__head">[ LÍNEAS RELACIONADAS ]</h3>
+            <div class="line-related__grid">
+                <a href="geotecnia.html" class="line-related__card">
+                    <span>L-01 · PRINCIPAL</span>
+                    <strong>Investigación y exploración geotécnica</strong>
+                </a>
+                <a href="pavimentos.html" class="line-related__card">
+                    <span>L-05 · VIAL</span>
+                    <strong>Diseño de pavimentos e infraestructura vial</strong>
+                </a>
+                <a href="diagnostico.html" class="line-related__card">
+                    <span>L-10 · FORENSE</span>
+                    <strong>Diagnóstico forense geotécnico</strong>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>
