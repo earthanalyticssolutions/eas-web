@@ -64,6 +64,22 @@
         revealEls.forEach((el) => el.classList.add('is-visible'));
     }
 
+    // ── 2.b SCROLL-BANDS · activan animación SVG al entrar viewport
+    const scrollBands = document.querySelectorAll('.scroll-band');
+    if (scrollBands.length && 'IntersectionObserver' in window) {
+        const bandObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    bandObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.25, rootMargin: '0px 0px -40px 0px' });
+        scrollBands.forEach((b) => bandObserver.observe(b));
+    } else {
+        scrollBands.forEach((b) => b.classList.add('is-visible'));
+    }
+
     // ── 3. ACTIVE SECTION en nav ───────────────────────────────
     const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
     const sections = document.querySelectorAll('section[id]');

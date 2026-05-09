@@ -2186,3 +2186,315 @@
 @media (prefers-reduced-motion: reduce) {
     .line-side-deco * { animation: none !important; }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   15. SCROLL-BANDS · bandas SVG técnicas que se animan al entrar
+   en viewport. Mismo lenguaje del motif del hero (capas, sondeos,
+   isolíneas, scan) pero como interludios entre bloques de texto.
+   Background sutil, no protagonista.
+   ═══════════════════════════════════════════════════════════════ */
+
+.scroll-band {
+    position: relative;
+    height: 200px;
+    margin: 64px 0;
+    overflow: hidden;
+    background: linear-gradient(180deg, #0a141d 0%, #050a10 50%, #0a141d 100%);
+    border-top: 1px solid rgba(255, 152, 0, 0.18);
+    border-bottom: 1px solid rgba(255, 152, 0, 0.18);
+    border-radius: 4px;
+    isolation: isolate;
+}
+
+.scroll-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(127, 233, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(127, 233, 255, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.scroll-band__svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Esquinas técnicas */
+.scroll-band__corner {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid rgba(255, 152, 0, 0.6);
+    z-index: 3;
+}
+.scroll-band__corner.tl { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+.scroll-band__corner.tr { top: 8px; right: 8px; border-left: none; border-bottom: none; }
+.scroll-band__corner.bl { bottom: 8px; left: 8px; border-right: none; border-top: none; }
+.scroll-band__corner.br { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+
+/* Etiquetas técnicas (header de la banda) */
+.scroll-band__head {
+    position: absolute;
+    top: 18px;
+    left: 28px;
+    right: 28px;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-display);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.scroll-band__head .label {
+    color: rgba(127, 233, 255, 0.7);
+}
+
+.scroll-band__head .id {
+    color: rgba(255, 152, 0, 0.7);
+}
+
+.scroll-band__caption {
+    position: absolute;
+    bottom: 18px;
+    left: 28px;
+    right: 28px;
+    z-index: 3;
+    font-family: var(--font-display);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    text-align: right;
+}
+
+/* Estilo base de elementos dentro de la banda — todos parten ocultos */
+.scroll-band .reveal {
+    opacity: 0;
+    transition: opacity .8s ease;
+}
+
+.scroll-band.is-visible .reveal {
+    opacity: 1;
+}
+
+/* ── 15.1 BANDA TRANSECT · cross-section del subsuelo (capas + sondeos) ── */
+
+.scroll-band--transect .stratum-r {
+    fill: none;
+    stroke-width: 1;
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+}
+
+.scroll-band--transect.is-visible .stratum-r {
+    animation: drawStratum 1.8s cubic-bezier(.2,.9,.3,1) forwards;
+}
+.scroll-band--transect.is-visible .stratum-r--2 { animation-delay: .15s; }
+.scroll-band--transect.is-visible .stratum-r--3 { animation-delay: .3s; }
+.scroll-band--transect.is-visible .stratum-r--4 { animation-delay: .45s; }
+
+@keyframes drawStratum {
+    0% { stroke-dashoffset: 1500; opacity: 0; }
+    20% { opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+.scroll-band--transect .borehole-r {
+    stroke-width: 1;
+    stroke-dasharray: 4 4;
+    transform-origin: top;
+    transform: scaleY(0);
+}
+
+.scroll-band--transect.is-visible .borehole-r {
+    animation: dropBorehole 1.2s cubic-bezier(.5,0,.2,1) forwards;
+    animation-delay: .8s;
+}
+.scroll-band--transect.is-visible .borehole-r--2 { animation-delay: 1s; }
+.scroll-band--transect.is-visible .borehole-r--3 { animation-delay: 1.2s; }
+.scroll-band--transect.is-visible .borehole-r--4 { animation-delay: 1.4s; }
+.scroll-band--transect.is-visible .borehole-r--5 { animation-delay: 1.6s; }
+
+@keyframes dropBorehole {
+    0% { transform: scaleY(0); opacity: 0; }
+    100% { transform: scaleY(1); opacity: 1; }
+}
+
+.scroll-band--transect .tip-r {
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: scale(0);
+}
+
+.scroll-band--transect.is-visible .tip-r {
+    animation: popTip 0.5s cubic-bezier(.2,.9,.3,1.4) forwards, tipPulse 2.5s ease-in-out infinite;
+    animation-delay: 1.6s, 2.1s;
+}
+.scroll-band--transect.is-visible .tip-r--2 { animation-delay: 1.8s, 2.3s; }
+.scroll-band--transect.is-visible .tip-r--3 { animation-delay: 2s, 2.5s; }
+.scroll-band--transect.is-visible .tip-r--4 { animation-delay: 2.2s, 2.7s; }
+.scroll-band--transect.is-visible .tip-r--5 { animation-delay: 2.4s, 2.9s; }
+
+@keyframes popTip {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* ── 15.2 BANDA TOPO · isolíneas concéntricas animadas ── */
+
+.scroll-band--topo .iso {
+    fill: none;
+    stroke-width: 1;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+}
+
+.scroll-band--topo.is-visible .iso {
+    animation: drawIso 2.4s cubic-bezier(.2,.9,.3,1) forwards;
+}
+.scroll-band--topo.is-visible .iso--1 { animation-delay: 0s; stroke: rgba(127, 233, 255, 0.5); }
+.scroll-band--topo.is-visible .iso--2 { animation-delay: .15s; stroke: rgba(127, 233, 255, 0.4); }
+.scroll-band--topo.is-visible .iso--3 { animation-delay: .3s; stroke: rgba(127, 233, 255, 0.32); }
+.scroll-band--topo.is-visible .iso--4 { animation-delay: .45s; stroke: rgba(127, 233, 255, 0.24); }
+.scroll-band--topo.is-visible .iso--5 { animation-delay: .6s; stroke: rgba(255, 152, 0, 0.4); }
+.scroll-band--topo.is-visible .iso--6 { animation-delay: .75s; stroke: rgba(255, 152, 0, 0.3); }
+
+@keyframes drawIso {
+    0% { stroke-dashoffset: 2000; opacity: 0; }
+    20% { opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+.scroll-band--topo .topo-peak {
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: scale(0);
+}
+
+.scroll-band--topo.is-visible .topo-peak {
+    animation: popTip .6s cubic-bezier(.2,.9,.3,1.4) forwards, tipPulse 2.8s ease-in-out infinite 1.5s;
+    animation-delay: 1s;
+}
+
+/* ── 15.3 BANDA DATA · líneas verticales tipo monitoreo ── */
+
+.scroll-band--data .data-bar {
+    transform-origin: bottom;
+    transform: scaleY(0);
+}
+
+.scroll-band--data.is-visible .data-bar {
+    animation: barRise 1s cubic-bezier(.2,.9,.3,1) forwards;
+}
+.scroll-band--data.is-visible .data-bar:nth-child(1) { animation-delay: 0.05s; }
+.scroll-band--data.is-visible .data-bar:nth-child(2) { animation-delay: 0.1s; }
+.scroll-band--data.is-visible .data-bar:nth-child(3) { animation-delay: 0.15s; }
+.scroll-band--data.is-visible .data-bar:nth-child(4) { animation-delay: 0.2s; }
+.scroll-band--data.is-visible .data-bar:nth-child(5) { animation-delay: 0.25s; }
+.scroll-band--data.is-visible .data-bar:nth-child(6) { animation-delay: 0.3s; }
+.scroll-band--data.is-visible .data-bar:nth-child(7) { animation-delay: 0.35s; }
+.scroll-band--data.is-visible .data-bar:nth-child(8) { animation-delay: 0.4s; }
+.scroll-band--data.is-visible .data-bar:nth-child(9) { animation-delay: 0.45s; }
+.scroll-band--data.is-visible .data-bar:nth-child(10) { animation-delay: 0.5s; }
+.scroll-band--data.is-visible .data-bar:nth-child(11) { animation-delay: 0.55s; }
+.scroll-band--data.is-visible .data-bar:nth-child(12) { animation-delay: 0.6s; }
+
+@keyframes barRise {
+    0% { transform: scaleY(0); opacity: 0; }
+    100% { transform: scaleY(1); opacity: 1; }
+}
+
+.scroll-band--data .data-line {
+    fill: none;
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+}
+
+.scroll-band--data.is-visible .data-line {
+    animation: drawIso 2s cubic-bezier(.2,.9,.3,1) forwards;
+    animation-delay: 0.7s;
+}
+
+/* ── 15.4 BANDA SCAN · radar/grilla con barrido cyan ── */
+
+.scroll-band--scan .scan-grid {
+    fill: none;
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+}
+
+.scroll-band--scan.is-visible .scan-grid {
+    animation: drawIso 1.6s ease-out forwards;
+}
+
+.scroll-band--scan .scan-radar {
+    fill: none;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+}
+
+.scroll-band--scan.is-visible .scan-radar {
+    animation: drawIso 1.8s ease-out forwards;
+}
+.scroll-band--scan.is-visible .scan-radar--1 { animation-delay: .2s; }
+.scroll-band--scan.is-visible .scan-radar--2 { animation-delay: .35s; }
+.scroll-band--scan.is-visible .scan-radar--3 { animation-delay: .5s; }
+
+.scroll-band--scan .scan-sweep {
+    transform-origin: 50% 50%;
+}
+
+.scroll-band--scan.is-visible .scan-sweep {
+    animation: sweepRotate 4s linear infinite;
+    animation-delay: 1.5s;
+}
+
+@keyframes sweepRotate {
+    0% { transform: rotate(-30deg); opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { transform: rotate(30deg); opacity: 0.6; }
+}
+
+.scroll-band--scan .scan-target {
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: scale(0);
+}
+
+.scroll-band--scan.is-visible .scan-target {
+    animation: popTip .5s cubic-bezier(.2,.9,.3,1.4) forwards, tipPulse 2.5s ease-in-out infinite 1.5s;
+    animation-delay: 1.2s;
+}
+.scroll-band--scan.is-visible .scan-target--2 { animation-delay: 1.4s; }
+.scroll-band--scan.is-visible .scan-target--3 { animation-delay: 1.6s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-band .reveal,
+    .scroll-band [class*="--"],
+    .scroll-band [class*="-r"],
+    .scroll-band [class*="iso"],
+    .scroll-band [class*="data"],
+    .scroll-band [class*="scan"],
+    .scroll-band [class*="topo"] {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        stroke-dashoffset: 0 !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .scroll-band { height: 160px; margin: 40px 0; }
+    .scroll-band__head { font-size: 9px; left: 20px; right: 20px; }
+    .scroll-band__caption { font-size: 9px; left: 20px; right: 20px; }
+}
