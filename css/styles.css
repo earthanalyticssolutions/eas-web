@@ -3907,3 +3907,346 @@ input, select, textarea { font: inherit; color: inherit; }
     text-transform: uppercase;
     color: var(--ink-muted, #6b7280);
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE-PRO · optimizaciones agresivas para móviles
+   Aplicar último para que sobrescriba todo lo anterior.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Base · cubre notch de iPhone, evita zoom de inputs, scroll suave */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    -webkit-tap-highlight-color: rgba(255, 152, 0, 0.18);
+    overscroll-behavior-y: none;
+}
+
+/* Inputs siempre 16px en mobile (evita zoom auto en iOS) */
+@media (max-width: 768px) {
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* Safe area insets para iPhone con notch */
+@supports (padding: max(0px)) {
+    .nav-bar {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+    .site-footer {
+        padding-bottom: max(24px, env(safe-area-inset-bottom));
+    }
+}
+
+/* ── BREAKPOINT TABLETA ≤ 900px ───────────────────────────── */
+
+@media (max-width: 900px) {
+    /* Nav móvil con toggle */
+    .nav-links {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(5, 10, 16, 0.98);
+        backdrop-filter: blur(12px);
+        padding: 24px;
+        gap: 8px;
+        transform: translateY(-100%);
+        transition: transform 0.3s cubic-bezier(.2,.9,.3,1);
+        border-bottom: 2px solid var(--eas-neon);
+        z-index: 99;
+    }
+    .nav-links.is-open { transform: translateY(0); }
+    .nav-links li { width: 100%; }
+    .nav-links a {
+        display: block;
+        padding: 14px 16px;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-toggle { display: flex; flex-direction: column; gap: 5px; padding: 8px; }
+    .nav-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #fff;
+        transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+
+@media (min-width: 901px) {
+    .nav-toggle { display: none; }
+}
+
+/* ── BREAKPOINT MÓVIL ≤ 768px · refuerzos ───────────────── */
+
+@media (max-width: 768px) {
+    /* Hero del index */
+    .hero--command {
+        padding: 80px 20px 40px;
+    }
+    .hero-title {
+        font-size: clamp(32px, 8vw, 48px) !important;
+        letter-spacing: -1px !important;
+        line-height: 1 !important;
+    }
+    .hero-subtitle {
+        font-size: 15px;
+        line-height: 1.55;
+    }
+    .command-body {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+    .command-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    .command-stats li {
+        padding: 12px !important;
+    }
+    .command-stats strong {
+        font-size: 22px !important;
+    }
+    .command-stats span {
+        font-size: 9px !important;
+        letter-spacing: 1.5px !important;
+    }
+    .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .hero-actions .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    .sector-chip {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    /* Monitor del hero · más compacto */
+    .command-monitor { display: none; }
+
+    /* Sobre EAS v2 · ajustes mobile */
+    .about-band-v2 {
+        padding: 60px 20px 50px !important;
+    }
+    .about-watermark {
+        font-size: clamp(180px, 50vw, 280px) !important;
+        letter-spacing: -8px !important;
+    }
+    .about-corner { display: none !important; }
+    .about-chapter {
+        flex-wrap: wrap;
+        gap: 10px !important;
+        margin-bottom: 24px !important;
+    }
+    .about-chapter__line {
+        width: 30px !important;
+    }
+    .about-chapter__label {
+        font-size: 9px !important;
+        letter-spacing: 2px !important;
+    }
+    .about-headline {
+        margin-bottom: 36px !important;
+        letter-spacing: -1px !important;
+    }
+    .about-headline__pre {
+        font-size: clamp(36px, 12vw, 56px) !important;
+    }
+    .about-headline__main {
+        font-size: clamp(56px, 18vw, 90px) !important;
+        margin-top: -4px !important;
+    }
+    .about-headline__sub {
+        font-size: 11px !important;
+        letter-spacing: 2px !important;
+        margin-top: 14px !important;
+    }
+    .about-main {
+        gap: 28px !important;
+        margin-bottom: 48px !important;
+    }
+    .about-lead-block {
+        padding-left: 24px !important;
+    }
+    .about-lead-text {
+        font-size: 16px !important;
+    }
+    .about-bigstats {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    .about-bigstats li {
+        padding: 16px 14px !important;
+    }
+    .about-bigstats__num {
+        font-size: 22px !important;
+    }
+    .about-bigstats__lbl {
+        font-size: 8px !important;
+        letter-spacing: 1.5px !important;
+    }
+    .about-quote {
+        margin: 0 0 48px !important;
+        padding: 24px 0 24px 24px !important;
+    }
+    .about-quote__mark {
+        font-size: 100px !important;
+        left: 12px !important;
+        top: -12px !important;
+    }
+    .about-quote p {
+        font-size: clamp(22px, 6vw, 36px) !important;
+        line-height: 1.1 !important;
+    }
+    .about-pillars-v2 {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+    .about-tile {
+        padding: 22px 18px !important;
+    }
+    .about-tile__title {
+        font-size: 16px !important;
+    }
+    .about-strip {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 18px !important;
+    }
+    .about-strip__data {
+        flex-direction: column;
+        gap: 6px;
+    }
+    .about-strip__sep {
+        display: none;
+    }
+
+    /* Servicios del home · 10 cards en 2 col mobile */
+    .services-grid--5 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    .home-line-card {
+        padding: 16px !important;
+        min-height: 180px !important;
+    }
+    .home-line-card h3 {
+        font-size: 12px !important;
+        min-height: 40px !important;
+    }
+    .home-line-card p {
+        font-size: 12px !important;
+    }
+    .home-line-card .service-icon {
+        width: 30px !important;
+        height: 30px !important;
+        margin-bottom: 10px !important;
+    }
+    .home-lines-cta {
+        margin-top: 32px !important;
+    }
+    .home-lines-cta .btn--xl {
+        width: 100%;
+        font-size: 12px !important;
+        padding: 16px !important;
+        letter-spacing: 1.5px !important;
+    }
+    .home-lines-cta__note {
+        font-size: 10px !important;
+        letter-spacing: 1px !important;
+    }
+
+    /* Section heads · más compactas */
+    .section-title {
+        font-size: clamp(24px, 6vw, 36px) !important;
+        line-height: 1.1 !important;
+    }
+    .section-lead {
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+    }
+    .pre-title {
+        font-size: 10px !important;
+        letter-spacing: 2px !important;
+    }
+
+    /* Bandas · padding reducido */
+    .band {
+        padding: 60px 20px !important;
+    }
+
+    /* Botones touch-friendly */
+    .btn {
+        min-height: 48px;
+        padding: 14px 20px !important;
+    }
+
+    /* Footer */
+    .site-footer {
+        padding: 40px 20px 30px !important;
+    }
+
+    /* Form */
+    .form-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        font-size: 16px !important;
+        padding: 14px !important;
+    }
+    .form-submit .btn {
+        width: 100%;
+    }
+}
+
+/* ── BREAKPOINT MÓVIL PEQUEÑO ≤ 480px ──────────────────────── */
+
+@media (max-width: 480px) {
+    .container { padding: 0 16px; }
+
+    .hero-title {
+        font-size: clamp(28px, 9vw, 38px) !important;
+    }
+    .command-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+    .command-stats strong {
+        font-size: 20px !important;
+    }
+
+    /* About */
+    .about-headline__pre {
+        font-size: clamp(32px, 11vw, 44px) !important;
+    }
+    .about-headline__main {
+        font-size: clamp(48px, 16vw, 70px) !important;
+    }
+    .about-bigstats {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Servicios cards · 1 col en pantallas muy pequeñas */
+    .services-grid--5 {
+        grid-template-columns: 1fr !important;
+    }
+    .home-line-card {
+        min-height: auto !important;
+    }
+    .home-line-card h3 {
+        min-height: auto !important;
+    }
+}

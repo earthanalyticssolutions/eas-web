@@ -9,15 +9,16 @@
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   X-XSS-Protection: 1; mode=block
 
-# Assets con cache largo (1 año)
+# Assets binarios con cache largo (imágenes/fonts no cambian)
 /assets/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=604800, must-revalidate
 
+# CSS y JS con cache moderado (deben revalidar para reflejar cambios)
 /css/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=300, must-revalidate
 
 /js/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=300, must-revalidate
 
 # HTML siempre fresco
 /*.html
