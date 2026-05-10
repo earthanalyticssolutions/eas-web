@@ -287,25 +287,88 @@
     .svc-index__grid--3 { grid-template-columns: 1fr !important; }
 }
 
-/* Tag categórico (sin numeración rígida) */
-.svc-card__num--tag {
-    font-family: var(--font-display);
+/* ── Variante de card con tag categórico (sin numeración rígida) ──
+   Cuando una card lleva la clase .svc-card--tagged, replantea el
+   grid: el tag ocupa toda la fila superior como banda, debajo va
+   título + descripción y el icono se queda al lado derecho. */
+
+.svc-card--tagged {
+    grid-template-columns: 1fr 56px !important;
+    grid-template-rows: auto auto auto auto auto !important;
+    gap: 14px 20px !important;
+}
+
+.svc-card--tagged .svc-card__num--tag {
+    grid-column: 1 / -1 !important;
+    grid-row: 1 !important;
+    justify-self: start;
+    align-self: start;
+    font-family: var(--font-display) !important;
     font-weight: 600 !important;
     font-size: 11px !important;
     letter-spacing: 2.5px !important;
     color: var(--eas-neon) !important;
-    background: rgba(255, 152, 0, 0.06);
-    border: 1px solid rgba(255, 152, 0, 0.28);
-    border-radius: 2px;
-    padding: 8px 14px !important;
-    width: fit-content;
+    background: rgba(255, 152, 0, 0.06) !important;
+    border: 1px solid rgba(255, 152, 0, 0.28) !important;
+    border-right: 1px solid rgba(255, 152, 0, 0.28) !important;
+    border-radius: 2px !important;
+    padding: 7px 12px !important;
+    width: auto !important;
+    max-width: fit-content !important;
     text-transform: uppercase;
-    line-height: 1 !important;
-    margin-bottom: 16px;
+    line-height: 1.2 !important;
+    margin-bottom: 0 !important;
 }
 
-.svc-card__num--tag small {
+.svc-card--tagged .svc-card__num--tag small {
     display: none !important;
+}
+
+.svc-card--tagged .svc-card__icon {
+    grid-column: 2 !important;
+    grid-row: 2 / span 2 !important;
+    align-self: start;
+}
+
+.svc-card--tagged .svc-card__title {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    margin-top: 0 !important;
+}
+
+.svc-card--tagged .svc-card__lead {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+    margin-top: 0 !important;
+}
+
+.svc-card--tagged .svc-card__tags {
+    grid-column: 1 / -1 !important;
+    grid-row: 4 !important;
+}
+
+.svc-card--tagged .svc-card__cta {
+    grid-column: 1 / -1 !important;
+    grid-row: 5 !important;
+}
+
+@media (max-width: 600px) {
+    .svc-card--tagged {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+    .svc-card--tagged .svc-card__icon {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+    }
+    .svc-card--tagged .svc-card__title {
+        grid-row: 3 !important;
+    }
+    .svc-card--tagged .svc-card__lead {
+        grid-row: 4 !important;
+    }
+    .svc-card--tagged .svc-card__tags { grid-row: 5 !important; }
+    .svc-card--tagged .svc-card__cta { grid-row: 6 !important; }
 }
 
 @media (max-width: 900px) {
