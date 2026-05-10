@@ -2487,7 +2487,7 @@ input, select, textarea { font: inherit; color: inherit; }
     .cap-headline h3 { font-size: 16px; }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
     .nav-bar { padding: 0 16px; }
 
     .nav-links {
@@ -2495,8 +2495,8 @@ input, select, textarea { font: inherit; color: inherit; }
         top: 64px;
         right: 0;
         bottom: 0;
-        width: 75%;
-        max-width: 300px;
+        width: 78%;
+        max-width: 320px;
         background: var(--eas-void);
         border-left: 2px solid var(--eas-neon);
         flex-direction: column;
@@ -2504,16 +2504,18 @@ input, select, textarea { font: inherit; color: inherit; }
         gap: 0;
         padding: var(--space-l);
         transform: translateX(100%);
-        transition: transform 0.3s;
+        transition: transform 0.3s cubic-bezier(.2,.9,.3,1);
         overflow-y: auto;
+        z-index: 99;
+        box-shadow: -12px 0 32px rgba(0,0,0,0.4);
     }
 
     .nav-links.is-open { transform: translateX(0); }
-    .nav-links li { width: 100%; padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-    .nav-links a { font-size: 12px; }
-    .nav-links .nav-cta { padding: 12px 18px !important; }
+    .nav-links li { width: 100%; padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+    .nav-links a { font-size: 13px; display: block; padding: 6px 0; }
+    .nav-links .nav-cta { padding: 14px 18px !important; margin-top: 12px; text-align: center; }
 
-    .nav-toggle { display: flex; }
+    .nav-toggle { display: flex !important; }
     .nav-toggle.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
     .nav-toggle.is-open span:nth-child(2) { opacity: 0; }
     .nav-toggle.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
@@ -3942,48 +3944,16 @@ body {
     }
 }
 
-/* ── BREAKPOINT TABLETA ≤ 900px ───────────────────────────── */
+/* ── HERO · ocultar decoraciones que se ven feas en mobile ─── */
 
 @media (max-width: 900px) {
-    /* Nav móvil con toggle */
-    .nav-links {
-        position: fixed;
-        top: 64px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: rgba(5, 10, 16, 0.98);
-        backdrop-filter: blur(12px);
-        padding: 24px;
-        gap: 8px;
-        transform: translateY(-100%);
-        transition: transform 0.3s cubic-bezier(.2,.9,.3,1);
-        border-bottom: 2px solid var(--eas-neon);
-        z-index: 99;
-    }
-    .nav-links.is-open { transform: translateY(0); }
-    .nav-links li { width: 100%; }
-    .nav-links a {
-        display: block;
-        padding: 14px 16px;
-        font-size: 14px;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .nav-toggle { display: flex; flex-direction: column; gap: 5px; padding: 8px; }
-    .nav-toggle span {
-        display: block;
-        width: 22px;
-        height: 2px;
-        background: #fff;
-        transition: transform 0.3s, opacity 0.3s;
-    }
-    .nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-toggle.is-open span:nth-child(2) { opacity: 0; }
-    .nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-}
-
-@media (min-width: 901px) {
-    .nav-toggle { display: none; }
+    /* La línea vertical decorativa (cyan→naranja) se ve fea en mobile */
+    .oscura-strip { display: none !important; }
+    /* La banda diagonal blurred también es invasiva en mobile */
+    .stream-band { display: none !important; }
+    /* Sidebar vertical rotada (texto OFFICIAL DOCUMENT) si aparece */
+    .sidebar { display: none !important; }
+    /* El scanline horizontal SÍ se queda — es la animación que el usuario quiere */
 }
 
 /* ── BREAKPOINT MÓVIL ≤ 768px · refuerzos ───────────────── */
