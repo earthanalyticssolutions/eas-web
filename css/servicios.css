@@ -287,6 +287,27 @@
     .svc-index__grid--3 { grid-template-columns: 1fr !important; }
 }
 
+/* Tag categórico (sin numeración rígida) */
+.svc-card__num--tag {
+    font-family: var(--font-display);
+    font-weight: 600 !important;
+    font-size: 11px !important;
+    letter-spacing: 2.5px !important;
+    color: var(--eas-neon) !important;
+    background: rgba(255, 152, 0, 0.06);
+    border: 1px solid rgba(255, 152, 0, 0.28);
+    border-radius: 2px;
+    padding: 8px 14px !important;
+    width: fit-content;
+    text-transform: uppercase;
+    line-height: 1 !important;
+    margin-bottom: 16px;
+}
+
+.svc-card__num--tag small {
+    display: none !important;
+}
+
 @media (max-width: 900px) {
     .svc-index { padding: 60px 24px; }
     .svc-index__head { grid-template-columns: 1fr; gap: 16px; }
