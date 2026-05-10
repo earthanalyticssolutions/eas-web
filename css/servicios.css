@@ -275,6 +275,18 @@
     gap: 16px;
 }
 
+.svc-index__grid--3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px !important;
+}
+
+@media (max-width: 1100px) {
+    .svc-index__grid--3 { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 700px) {
+    .svc-index__grid--3 { grid-template-columns: 1fr !important; }
+}
+
 @media (max-width: 900px) {
     .svc-index { padding: 60px 24px; }
     .svc-index__head { grid-template-columns: 1fr; gap: 16px; }
