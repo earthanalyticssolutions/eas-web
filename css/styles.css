@@ -3802,23 +3802,17 @@ input, select, textarea { font: inherit; color: inherit; }
 .section-head--wide { max-width: 920px; }
 .section-head--wide .section-title em { color: var(--eas-neon); font-style: normal; }
 
-.services-grid--5 {
+.services-grid--3 {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
 }
 
-@media (max-width: 1200px) {
-    .services-grid--5 { grid-template-columns: repeat(4, 1fr); }
-}
 @media (max-width: 1000px) {
-    .services-grid--5 { grid-template-columns: repeat(3, 1fr); }
+    .services-grid--3 { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 700px) {
-    .services-grid--5 { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 480px) {
-    .services-grid--5 { grid-template-columns: 1fr; }
+@media (max-width: 600px) {
+    .services-grid--3 { grid-template-columns: 1fr; }
 }
 
 /* Card compacta especial para home (sin bullets, más densa) */
@@ -4103,8 +4097,8 @@ body {
         display: none;
     }
 
-    /* Servicios del home · 10 cards en 2 col mobile */
-    .services-grid--5 {
+    /* Servicios del home · 9 cards en 2 col tablet/mobile */
+    .services-grid--3 {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 10px !important;
     }
@@ -4210,7 +4204,7 @@ body {
     }
 
     /* Servicios cards · 1 col en pantallas muy pequeñas */
-    .services-grid--5 {
+    .services-grid--3 {
         grid-template-columns: 1fr !important;
     }
     .home-line-card {
