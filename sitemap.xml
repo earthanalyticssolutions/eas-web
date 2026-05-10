@@ -18,6 +18,15 @@
         <changefreq>monthly</changefreq>
         <priority>0.92</priority>
     </url>
+    <url><loc>https://earthas.co/sectores/edificacion.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/infraestructura-vial.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/inmobiliario.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/industria-logistica.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/mineria-energia.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/agroindustria.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/catastro-geoespacial.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/sector-publico.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/profesionales.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
     <url>
         <loc>https://earthas.co/soluciones.html</loc>
         <lastmod>2026-05-09</lastmod>
