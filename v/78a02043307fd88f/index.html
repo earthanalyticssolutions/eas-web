@@ -51,30 +51,6 @@
 
     h2 { font-family:'Orbitron',sans-serif; font-size: 13.5px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(127,233,255,0.95); margin: 22px 0 12px; }
 
-    /* Visor PDF embebido — principal */
-    .pdf-viewer {
-      width: 100%;
-      height: 80vh; min-height: 520px;
-      border: 1px solid rgba(127,233,255,0.45);
-      border-radius: 4px;
-      background: #050a10;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-      margin-bottom: 8px;
-    }
-    .pdf-viewer-actions { display:flex; gap: 10px; flex-wrap:wrap; margin-bottom: 24px; }
-    .btn {
-      display:inline-flex; align-items:center; gap:6px;
-      padding: 9px 16px; text-decoration: none;
-      font-family:'Orbitron',sans-serif; font-size: 11px;
-      letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700;
-      border-radius: 3px;
-      transition: all 0.15s ease;
-    }
-    .btn-primary { background: #ff9800; color: #0a1418; }
-    .btn-primary:hover { background: #ffa826; transform: translateY(-1px); }
-    .btn-secondary { background: rgba(127,233,255,0.1); color: #7fe9ff; border: 1px solid rgba(127,233,255,0.5); }
-    .btn-secondary:hover { background: rgba(127,233,255,0.2); }
-
     .data {
       background: rgba(3,15,22,0.65);
       border: 1px solid rgba(127,233,255,0.35);
@@ -111,7 +87,6 @@
     /* Móvil */
     @media (max-width: 640px) {
       h1 { font-size: 21px; }
-      .pdf-viewer { height: 65vh; min-height: 380px; }
       .data .row { flex-direction: column; align-items: flex-start; gap: 4px; padding: 9px 14px; }
       .data .row .lbl { width: auto; }
     }
@@ -138,19 +113,6 @@
       directamente en el visor de abajo o abrirlo en pantalla completa.
     </div>
 
-    <h2>Informe técnico geotécnico · Visor online</h2>
-    <object
-      class="pdf-viewer"
-      data="informe_completo.pdf#view=FitH&toolbar=1"
-      type="application/pdf">
-      <iframe src="https://docs.google.com/viewer?url=https://earthas.co/v/78a02043307fd88f/informe_completo.pdf&embedded=true"
-              style="width:100%;height:100%;border:0;"></iframe>
-    </object>
-    <div class="pdf-viewer-actions">
-      <a class="btn btn-primary" href="informe_completo.pdf" target="_blank" rel="noopener">Abrir a pantalla completa</a>
-      <a class="btn btn-secondary" href="informe_completo.pdf" download>Descargar PDF</a>
-    </div>
-
     <h2>Identificación del estudio</h2>
     <div class="data">
       <div class="row"><div class="lbl">Proyecto</div><div class="val">Raíces BAS' Espiguero</div></div>
@@ -164,17 +126,22 @@
       <div class="row"><div class="lbl">Sistema de gestión</div><div class="val">EAS-SGC v1.0</div></div>
     </div>
 
-    <h2>Documentos complementarios</h2>
+    <h2>Documentos institucionales online</h2>
+    <p style="font-size:13px;color:rgba(255,255,255,0.78);line-height:1.55;margin-bottom:14px;">
+      Estos documentos forman parte del sistema de gestión de calidad EAS-SGC y respaldan
+      la ejecución del estudio. El informe técnico completo se entrega directamente al
+      cliente como expediente del proyecto.
+    </p>
     <div class="docs">
       <a class="doc-card" href="certificado.pdf" target="_blank" rel="noopener">
         <div class="titulo">Certificado del estudio</div>
         <div class="desc">Certificación oficial de ejecución del estudio geotécnico avanzado conforme al SGC institucional EAS.</div>
-        <div class="meta">Abrir PDF</div>
+        <div class="meta">Ver PDF online</div>
       </a>
       <a class="doc-card" href="memorial.pdf" target="_blank" rel="noopener">
         <div class="titulo">Memorial de responsabilidad</div>
         <div class="desc">Alcance técnico, limitaciones reconocidas, vigencia y deslinde de competencias entre las partes.</div>
-        <div class="meta">Abrir PDF</div>
+        <div class="meta">Ver PDF online</div>
       </a>
     </div>
 
