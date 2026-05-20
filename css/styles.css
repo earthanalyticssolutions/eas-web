@@ -3538,7 +3538,7 @@ input, select, textarea { font: inherit; color: inherit; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   HOME · UPGRADE · sobre EAS + 10 líneas
+   HOME · UPGRADE · sobre EAS + 9 líneas
    ═══════════════════════════════════════════════════════════════ */
 
 /* Utility · texto naranja inline */
@@ -3797,7 +3797,7 @@ input, select, textarea { font: inherit; color: inherit; }
     .about-pillars { grid-template-columns: 1fr; }
 }
 
-/* ── HOME · 10 LÍNEAS · grid 5 col + cards compactas ─────────── */
+/* ── HOME · 9 LÍNEAS · grid 3 col + cards compactas ─────────── */
 
 .section-head--wide { max-width: 920px; }
 .section-head--wide .section-title em { color: var(--eas-neon); font-style: normal; }
@@ -3882,7 +3882,7 @@ input, select, textarea { font: inherit; color: inherit; }
     border-style: dashed;
 }
 
-/* CTA al final de las 10 líneas */
+/* CTA al final de las 9 líneas */
 
 .home-lines-cta {
     margin-top: 48px;
