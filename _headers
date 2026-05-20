@@ -26,3 +26,17 @@
 
 /
   Cache-Control: public, max-age=0, must-revalidate
+
+# Portal privado de verificación · PDFs servidos INLINE para que se abran
+# directamente en el navegador del celular en vez de descargarse.
+/v/*.pdf
+  Content-Type: application/pdf
+  Content-Disposition: inline
+  X-Frame-Options: SAMEORIGIN
+  Cache-Control: public, max-age=300, must-revalidate
+
+# El index.html del portal de verificación debe servirse como HTML normal
+/v/*/
+  Content-Type: text/html; charset=utf-8
+  X-Frame-Options: SAMEORIGIN
+  Cache-Control: public, max-age=60, must-revalidate
