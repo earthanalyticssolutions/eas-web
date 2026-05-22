@@ -3171,3 +3171,940 @@
         text-align: left !important;
     }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   SOLUCIONES · ALCANCES (3 cards) · v2026.5.21
+   Reemplaza estructura rota con $2 literal
+   ═══════════════════════════════════════════════════════════════════ */
+
+.svc-card--alcance {
+    cursor: default !important;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 28px 24px 24px;
+    overflow: visible;
+}
+
+.svc-card--inicial {
+    background: linear-gradient(180deg, rgba(127, 233, 255, 0.04) 0%, rgba(127, 233, 255, 0.02) 100%);
+    border: 1px solid rgba(127, 233, 255, 0.18);
+}
+
+.svc-card--intermedio {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.svc-card--avanzado {
+    background: linear-gradient(180deg, rgba(255, 152, 0, 0.06) 0%, rgba(255, 152, 0, 0.02) 100%);
+    border: 1.5px solid rgba(255, 152, 0, 0.45);
+    box-shadow: 0 8px 32px rgba(255, 152, 0, 0.08);
+}
+
+/* Pill superior (chip que dice ALCANCE INICIAL/INTERMEDIO/AVANZADO) */
+.svc-card__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-start;
+    font-family: var(--font-display, 'Orbitron', monospace);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    text-transform: uppercase;
+}
+
+.svc-card__pill--cyan {
+    color: var(--logo-cyan, #7fe9ff);
+    background: rgba(127, 233, 255, 0.06);
+    border-color: rgba(127, 233, 255, 0.32);
+}
+
+.svc-card__pill--neon {
+    color: #050a10;
+    background: var(--eas-neon, #ff9800);
+    border-color: var(--eas-neon, #ff9800);
+}
+
+/* Ribbon diagonal "RECOMENDADO" para Avanzado */
+.svc-card__ribbon {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    font-family: var(--font-display, 'Orbitron', monospace);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+    color: #050a10;
+    background: var(--eas-neon, #ff9800);
+    padding: 5px 12px;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.35);
+}
+
+/* CTA inferior (texto que indica "PERFIL DE SEGURIDAD ↓") */
+.svc-card__cta {
+    font-family: var(--font-display, 'Orbitron', monospace);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.svc-card__cta--cyan { color: var(--logo-cyan, #7fe9ff); }
+.svc-card__cta--neon { color: var(--eas-neon, #ff9800); }
+
+/* SVG icon centrado y respirado */
+.svc-card--alcance .svc-card__icon {
+    width: 56px;
+    height: 56px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 4px;
+}
+.svc-card--inicial .svc-card__icon { color: var(--logo-cyan, #7fe9ff); }
+.svc-card--avanzado .svc-card__icon { color: var(--eas-neon, #ff9800); }
+
+/* Mobile: stack vertical */
+@media (max-width: 760px) {
+    .svc-index__grid--3 { grid-template-columns: 1fr !important; gap: 16px; }
+    .svc-card__ribbon { font-size: 8px; padding: 4px 10px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SOLUCIONES · TARJETAS ZIG-ZAG (v2 · cada alcance en su propia card)
+   v2026.5.21
+   ═══════════════════════════════════════════════════════════════════ */
+
+.alcances-section {
+    background: linear-gradient(180deg, #050a10 0%, #0a1828 50%, #050a10 100%);
+    padding: 100px 0 120px;
+    color: #fff;
+    position: relative;
+}
+
+.alcances-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(127, 233, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(127, 233, 255, 0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 90%);
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 90%);
+    pointer-events: none;
+}
+
+.alcances-section__inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.alcances-section__head {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 72px;
+}
+.alcances-section__pre {
+    display: inline-block;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 4.5px;
+    color: rgba(127, 233, 255, 0.7);
+    margin-bottom: 18px;
+}
+.alcances-section__title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(28px, 4.2vw, 52px);
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.06;
+}
+.alcances-section__title em {
+    font-style: normal;
+    background: linear-gradient(135deg, #fff 0%, #7fe9ff 60%, #ff9800 120%);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+.alcances-section__lead {
+    margin-top: 22px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: rgba(230, 243, 255, 0.72);
+}
+
+.alcances-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+/* ═══ TARJETA BASE ═══ */
+.alcance-card {
+    display: grid;
+    grid-template-columns: 0.82fr 1fr;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(127, 233, 255, 0.12);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.alcance-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(127, 233, 255, 0.3);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.4);
+}
+
+/* Reversed: invierte orden (visual a la derecha en zig-zag) */
+.alcance-card--reversed { grid-template-columns: 1fr 0.82fr; }
+.alcance-card--reversed .alcance-card__visual { order: 2; }
+.alcance-card--reversed .alcance-card__body { order: 1; }
+
+/* ═══ VISUAL (cubierta lateral con número, pill, ícono, objetivo) ═══ */
+.alcance-card__visual {
+    padding: 52px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+    position: relative;
+    background: linear-gradient(135deg, rgba(127, 233, 255, 0.05) 0%, rgba(127, 233, 255, 0.01) 100%);
+    border-right: 1px solid rgba(127, 233, 255, 0.1);
+}
+.alcance-card--reversed .alcance-card__visual {
+    border-right: none;
+    border-left: 1px solid rgba(127, 233, 255, 0.1);
+    background: linear-gradient(225deg, rgba(127, 233, 255, 0.05) 0%, rgba(127, 233, 255, 0.01) 100%);
+}
+
+.alcance-card__num {
+    font-family: 'Orbitron', monospace;
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(127, 233, 255, 0.28);
+    letter-spacing: -3px;
+}
+
+.alcance-card__lvl {
+    display: inline-block;
+    align-self: flex-start;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: var(--logo-cyan);
+    padding: 8px 14px;
+    border: 1px solid rgba(127, 233, 255, 0.36);
+    background: rgba(127, 233, 255, 0.05);
+}
+
+.alcance-card__icon {
+    width: 90px;
+    height: 90px;
+    color: var(--logo-cyan);
+    opacity: 0.85;
+    margin: 12px 0 8px;
+}
+
+.alcance-card__obj {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: rgba(230, 243, 255, 0.55);
+    padding-top: 14px;
+    border-top: 1px solid rgba(127, 233, 255, 0.14);
+    text-transform: uppercase;
+}
+
+/* ═══ BODY ═══ */
+.alcance-card__body {
+    padding: 48px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.alcance-card__title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.05;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.alcance-card__lead {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: rgba(230, 243, 255, 0.78);
+    margin: 0;
+}
+
+.alcance-card__col h4 {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--logo-cyan);
+    margin: 0 0 14px;
+    text-transform: uppercase;
+}
+
+.alcance-card__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+.alcance-card__list li {
+    position: relative;
+    padding-left: 24px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(230, 243, 255, 0.85);
+}
+.alcance-card__list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    top: -1px;
+    color: var(--logo-cyan);
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+.alcance-card__list li strong { color: #fff; font-weight: 700; }
+
+.alcance-card__foot {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 10px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(127, 233, 255, 0.12);
+}
+.alcance-card__perfil-lbl {
+    display: block;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: var(--logo-cyan);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+.alcance-card__perfil p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: rgba(230, 243, 255, 0.68);
+    margin: 0;
+}
+.alcance-card__perfil p strong { color: #fff; font-weight: 700; }
+
+/* ═══ VARIANTE INICIAL · CYAN ═══ */
+.alcance-card--inicial { border-left: 3px solid var(--logo-cyan); }
+.alcance-card--inicial:hover { border-color: rgba(127, 233, 255, 0.45); }
+
+/* ═══ VARIANTE INTERMEDIO · BLANCO/NEUTRO ═══ */
+.alcance-card--intermedio {
+    border-left: 3px solid rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.025);
+}
+.alcance-card--intermedio:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+.alcance-card--intermedio .alcance-card__visual {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border-left-color: rgba(255, 255, 255, 0.1);
+    border-right-color: rgba(255, 255, 255, 0.1);
+}
+.alcance-card--intermedio .alcance-card__num { color: rgba(255, 255, 255, 0.22); }
+.alcance-card--intermedio .alcance-card__lvl {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.06);
+}
+.alcance-card--intermedio .alcance-card__icon { color: rgba(255, 255, 255, 0.78); }
+.alcance-card--intermedio .alcance-card__obj { border-top-color: rgba(255, 255, 255, 0.14); }
+.alcance-card--intermedio .alcance-card__col h4 { color: #fff; }
+.alcance-card--intermedio .alcance-card__list li::before { color: rgba(255, 255, 255, 0.9); }
+.alcance-card--intermedio .alcance-card__foot { border-top-color: rgba(255, 255, 255, 0.14); }
+.alcance-card--intermedio .alcance-card__perfil-lbl { color: #fff; }
+
+/* ═══ VARIANTE AVANZADO · NEÓN NARANJA ═══ */
+.alcance-card--avanzado {
+    border-left: 3px solid var(--eas-neon);
+    background: rgba(255, 152, 0, 0.025);
+    box-shadow: 0 14px 40px rgba(255, 152, 0, 0.08);
+}
+.alcance-card--avanzado:hover {
+    border-color: rgba(255, 152, 0, 0.55);
+    box-shadow: 0 32px 80px rgba(255, 152, 0, 0.16);
+}
+.alcance-card--avanzado .alcance-card__visual {
+    background: linear-gradient(135deg, rgba(255, 152, 0, 0.07) 0%, rgba(255, 152, 0, 0.01) 100%);
+    border-right-color: rgba(255, 152, 0, 0.2);
+}
+.alcance-card--avanzado.alcance-card--reversed .alcance-card__visual {
+    border-left-color: rgba(255, 152, 0, 0.2);
+    background: linear-gradient(225deg, rgba(255, 152, 0, 0.07) 0%, rgba(255, 152, 0, 0.01) 100%);
+}
+.alcance-card--avanzado .alcance-card__num { color: rgba(255, 152, 0, 0.34); }
+.alcance-card--avanzado .alcance-card__lvl {
+    color: var(--eas-neon);
+    border-color: rgba(255, 152, 0, 0.5);
+    background: rgba(255, 152, 0, 0.06);
+}
+.alcance-card--avanzado .alcance-card__icon { color: var(--eas-neon); }
+.alcance-card--avanzado .alcance-card__obj { border-top-color: rgba(255, 152, 0, 0.2); }
+.alcance-card--avanzado .alcance-card__col h4 { color: var(--eas-neon); }
+.alcance-card--avanzado .alcance-card__list li::before { color: var(--eas-neon); }
+.alcance-card--avanzado .alcance-card__foot { border-top-color: rgba(255, 152, 0, 0.2); }
+.alcance-card--avanzado .alcance-card__perfil-lbl { color: var(--eas-neon); }
+
+/* Ribbon "RECOMENDADO" en Avanzado */
+.alcance-card__ribbon {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 3;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 2.8px;
+    padding: 6px 14px;
+    background: var(--eas-neon);
+    color: #050a10;
+    box-shadow: 0 6px 18px rgba(255, 152, 0, 0.4);
+}
+
+/* Mobile · stack vertical, visual primero */
+@media (max-width: 900px) {
+    .alcances-section { padding: 60px 0 80px; }
+    .alcances-section__head { margin-bottom: 48px; }
+    .alcances-stack { gap: 32px; }
+    .alcance-card,
+    .alcance-card--reversed { grid-template-columns: 1fr; }
+    .alcance-card--reversed .alcance-card__visual { order: 1; }
+    .alcance-card--reversed .alcance-card__body { order: 2; }
+    .alcance-card__visual {
+        padding: 32px 28px;
+        border-right: none !important;
+        border-left: none !important;
+        border-bottom: 1px solid rgba(127, 233, 255, 0.1);
+    }
+    .alcance-card--intermedio .alcance-card__visual { border-bottom-color: rgba(255,255,255,0.1); }
+    .alcance-card--avanzado .alcance-card__visual { border-bottom-color: rgba(255,152,0,0.2); }
+    .alcance-card__body { padding: 32px 28px; gap: 18px; }
+    .alcance-card__num { font-size: 4rem; }
+    .alcance-card__icon { width: 64px; height: 64px; }
+    .alcance-card__foot { grid-template-columns: 1fr; gap: 18px; padding-top: 18px; }
+    .alcance-card__ribbon { top: 16px; right: 16px; font-size: 0.55rem; padding: 4px 10px; }
+}
+
+/* Addon label "(adicional al básico/intermedio)" — refuerza escalera */
+.alcance-card__col h4 .alcance-card__addon {
+    display: inline-block;
+    margin-left: 10px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: rgba(230, 243, 255, 0.5);
+    text-transform: none;
+}
+.alcance-card--intermedio .alcance-card__col h4 .alcance-card__addon { color: rgba(255, 255, 255, 0.5); }
+.alcance-card--avanzado .alcance-card__col h4 .alcance-card__addon { color: rgba(255, 152, 0, 0.55); }
+@media (max-width: 700px) {
+    .alcance-card__col h4 .alcance-card__addon {
+        display: block;
+        margin-left: 0;
+        margin-top: 4px;
+        font-size: 0.75rem;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ALCANCES · VISUAL CON IMAGEN REAL · v2026.5.21
+   La imagen ocupa todo el panel lateral; los textos van encima con overlay
+   ═══════════════════════════════════════════════════════════════════ */
+
+.alcance-card__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    filter: saturate(0.95) contrast(1.05);
+}
+
+.alcance-card__shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(135deg, rgba(5, 10, 16, 0.85) 0%, rgba(5, 10, 16, 0.55) 45%, rgba(5, 10, 16, 0.25) 100%),
+        linear-gradient(180deg, rgba(127, 233, 255, 0.06) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.alcance-card--reversed .alcance-card__shade {
+    background:
+        linear-gradient(225deg, rgba(5, 10, 16, 0.85) 0%, rgba(5, 10, 16, 0.55) 45%, rgba(5, 10, 16, 0.25) 100%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
+}
+
+.alcance-card__shade--neutral {
+    background:
+        linear-gradient(135deg, rgba(5, 10, 16, 0.85) 0%, rgba(5, 10, 16, 0.55) 45%, rgba(5, 10, 16, 0.25) 100%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 60%) !important;
+}
+
+.alcance-card--avanzado .alcance-card__shade,
+.alcance-card__shade--neon {
+    background:
+        linear-gradient(135deg, rgba(5, 10, 16, 0.88) 0%, rgba(5, 10, 16, 0.55) 45%, rgba(20, 12, 5, 0.3) 100%),
+        linear-gradient(180deg, rgba(255, 152, 0, 0.10) 0%, transparent 60%);
+}
+
+/* Texto del visual queda encima */
+.alcance-card__visual {
+    overflow: hidden; /* recorta la imagen al frame */
+}
+.alcance-card__visual > *:not(.alcance-card__image):not(.alcance-card__shade) {
+    position: relative;
+    z-index: 2;
+}
+
+/* Refuerza legibilidad del numero y el lvl encima de la imagen */
+.alcance-card__num {
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+}
+.alcance-card__lvl {
+    -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+    background: rgba(5, 10, 16, 0.55);
+}
+.alcance-card--intermedio .alcance-card__lvl {
+    background: rgba(5, 10, 16, 0.6);
+}
+.alcance-card--avanzado .alcance-card__lvl {
+    background: rgba(20, 12, 5, 0.7);
+}
+
+.alcance-card__obj {
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+    background: rgba(5, 10, 16, 0.4);
+    padding: 12px 14px 10px;
+    margin-top: 8px;
+}
+
+/* Borde sutil dentro de la imagen para "encajarla" en la card */
+.alcance-card__visual::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+    z-index: 3;
+}
+.alcance-card--avanzado .alcance-card__visual::after {
+    border-color: rgba(255, 152, 0, 0.15);
+}
+
+/* Mobile: la imagen sigue como fondo pero el panel reduce alto */
+@media (max-width: 900px) {
+    .alcance-card__visual {
+        min-height: 280px;
+        padding: 32px 28px 28px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ALCANCES · MOTIFS ANIMADOS SVG · v2026.5.21
+   Reemplaza las imágenes JPG con SVG animados (capas + sondeos + scan)
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Ocultar imagen vieja (queda como fallback en caso de no soportar SVG) */
+.alcance-card__image,
+.alcance-card__shade { display: none !important; }
+
+.alcance-card__motif {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at center, rgba(127, 233, 255, 0.04) 0%, transparent 70%),
+        linear-gradient(135deg, rgba(5, 10, 16, 0.95) 0%, rgba(10, 24, 40, 0.92) 50%, rgba(5, 10, 16, 0.95) 100%);
+}
+.alcance-card__motif svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Borde inset sutil dentro del motif */
+.alcance-card__visual::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Asegurar textos del visual encima del motif */
+.alcance-card__visual {
+    overflow: hidden;
+}
+.alcance-card__visual > *:not(.alcance-card__motif) {
+    position: relative;
+    z-index: 2;
+}
+.alcance-card__num { text-shadow: 0 4px 24px rgba(0, 0, 0, 0.7); }
+.alcance-card__lvl {
+    -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+    background: rgba(5, 10, 16, 0.55);
+}
+.alcance-card__obj {
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+    background: rgba(5, 10, 16, 0.4);
+    padding: 12px 14px 10px;
+    margin-top: 8px;
+}
+
+/* ═══ GRID TÉCNICO COMÚN ═══ */
+.alcance-card__motif .motif-grid line {
+    stroke: rgba(127, 233, 255, 0.10);
+    stroke-width: 1;
+}
+.alcance-card--avanzado .alcance-card__motif .motif-grid line {
+    stroke: rgba(255, 152, 0, 0.10);
+}
+
+/* ═══ ETIQUETAS COMUNES ═══ */
+.alcance-card__motif text {
+    font-family: 'Orbitron', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+.motif-lbl { fill: rgba(127, 233, 255, 0.4); }
+.motif-lbl--key { fill: rgba(255, 152, 0, 0.7); font-size: 11px; }
+.motif-lbl--accent { fill: rgba(255, 152, 0, 0.55); }
+.alcance-card--intermedio .motif-lbl { fill: rgba(255, 255, 255, 0.45); }
+.alcance-card--avanzado .motif-lbl { fill: rgba(255, 152, 0, 0.45); }
+.alcance-card--avanzado .motif-lbl--accent { fill: rgba(255, 152, 0, 0.7); }
+.alcance-card--avanzado .motif-lbl--key { fill: rgba(255, 200, 100, 0.85); }
+
+/* ═══ CAPAS ESTRATIGRÁFICAS (con dash animado) ═══ */
+.alcance-card__motif .stratum {
+    stroke-width: 1.5;
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+    fill: none;
+    animation: motif-draw 6s ease-out infinite;
+}
+.alcance-card__motif .stratum--a { stroke: rgba(127, 233, 255, 0.55); animation-delay: 0s; }
+.alcance-card__motif .stratum--b { stroke: rgba(127, 233, 255, 0.4); animation-delay: 0.5s; }
+.alcance-card__motif .stratum--c { stroke: rgba(255, 152, 0, 0.45); animation-delay: 1s; }
+.alcance-card__motif .stratum--d { stroke: rgba(127, 233, 255, 0.32); animation-delay: 1.5s; }
+.alcance-card--intermedio .alcance-card__motif .stratum { stroke: rgba(255, 255, 255, 0.45); }
+.alcance-card--intermedio .alcance-card__motif .stratum--c { stroke: rgba(255, 255, 255, 0.55); }
+.alcance-card--avanzado .alcance-card__motif .stratum { stroke: rgba(255, 152, 0, 0.4); }
+
+@keyframes motif-draw {
+    0%, 5% { stroke-dashoffset: 1200; }
+    35%, 75% { stroke-dashoffset: 0; }
+    95%, 100% { stroke-dashoffset: -1200; }
+}
+
+/* ═══ APIQUE (motif 01 básico) ═══ */
+.motif-basico .apique rect {
+    stroke: rgba(127, 233, 255, 0.75);
+    fill: rgba(127, 233, 255, 0.06);
+    animation: motif-pulse 3s ease-in-out infinite;
+}
+.motif-basico .apique line { stroke: rgba(127, 233, 255, 0.4); }
+@keyframes motif-pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* ═══ SONDEOS SPT (motif 02 intermedio) ═══ */
+.alcance-card__motif .borehole line {
+    stroke: rgba(127, 233, 255, 0.6);
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: motif-drill 5s ease-out infinite;
+}
+.alcance-card__motif .borehole--2 line { animation-delay: 0.6s; }
+.alcance-card__motif .borehole--3 line { animation-delay: 1.2s; }
+.alcance-card__motif .borehole rect { fill: rgba(255, 152, 0, 0.75); }
+.alcance-card__motif .borehole-tip {
+    fill: rgba(127, 233, 255, 0.95);
+    opacity: 0;
+    animation: motif-tip 5s ease-in-out infinite;
+}
+.alcance-card__motif .borehole--2 .borehole-tip { animation-delay: 0.6s; }
+.alcance-card__motif .borehole--3 .borehole-tip { animation-delay: 1.2s; }
+.alcance-card--intermedio .alcance-card__motif .borehole line { stroke: rgba(255, 255, 255, 0.55); }
+
+@keyframes motif-drill {
+    0%, 5% { stroke-dashoffset: 400; }
+    40%, 75% { stroke-dashoffset: 0; }
+    95%, 100% { stroke-dashoffset: 400; }
+}
+@keyframes motif-tip {
+    0%, 35% { opacity: 0; transform: scale(0.5); }
+    50%, 70% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 6px rgba(127,233,255,0.8)); }
+    85%, 100% { opacity: 0; }
+}
+
+/* ═══ MOTIF 03 DETALLADO · cargas, mesh, iso-líneas, instrumentación ═══ */
+.motif-detallado .motif-loads line { stroke: rgba(255, 152, 0, 0.7); }
+.motif-detallado .motif-loads polygon { fill: rgba(255, 152, 0, 0.7); }
+.motif-detallado .motif-body {
+    stroke: rgba(255, 152, 0, 0.7);
+    fill: rgba(255, 152, 0, 0.04);
+}
+.motif-detallado .motif-mesh line {
+    stroke: rgba(255, 152, 0, 0.32);
+    stroke-width: 0.7;
+    animation: motif-mesh-glow 4s ease-in-out infinite;
+}
+@keyframes motif-mesh-glow {
+    0%, 100% { stroke: rgba(255, 152, 0, 0.22); }
+    50% { stroke: rgba(255, 200, 100, 0.55); }
+}
+.motif-detallado .iso-line {
+    stroke-width: 1.4;
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+    fill: none;
+    animation: motif-draw 6s ease-out infinite;
+}
+.motif-detallado .iso-line--1 { stroke: rgba(255, 200, 100, 0.6); animation-delay: 0.3s; }
+.motif-detallado .iso-line--2 { stroke: rgba(255, 152, 0, 0.55); animation-delay: 0.9s; }
+.motif-detallado .iso-line--3 { stroke: rgba(255, 152, 0, 0.4); animation-delay: 1.5s; }
+.motif-detallado .iso-line--4 { stroke: rgba(255, 152, 0, 0.28); animation-delay: 2.1s; }
+.motif-detallado .borehole--inst line { stroke: rgba(255, 200, 100, 0.7); stroke-dasharray: 0; }
+.motif-detallado .instrument {
+    fill: rgba(255, 200, 100, 0.9);
+    animation: motif-pulse 2.4s ease-in-out infinite;
+}
+.motif-detallado .instrument:nth-of-type(2) { animation-delay: 0.4s; }
+.motif-detallado .instrument:nth-of-type(3) { animation-delay: 0.8s; }
+
+/* ═══ SCAN LINE COMÚN (descendente con glow) ═══ */
+.alcance-card__motif .motif-scan {
+    stroke-width: 1.2;
+    stroke: rgba(127, 233, 255, 0.6);
+    animation: motif-scan 6s linear infinite;
+    filter: drop-shadow(0 0 6px rgba(127, 233, 255, 0.5));
+}
+.alcance-card--intermedio .alcance-card__motif .motif-scan { stroke: rgba(255, 255, 255, 0.55); filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4)); }
+.alcance-card--avanzado .alcance-card__motif .motif-scan { stroke: rgba(255, 152, 0, 0.7); filter: drop-shadow(0 0 8px rgba(255, 152, 0, 0.6)); }
+
+@keyframes motif-scan {
+    0%   { transform: translateY(0); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translateY(450px); opacity: 0; }
+}
+
+/* Respetar reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .alcance-card__motif * { animation: none !important; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CASOS · DOSSIERS EXPANDIDOS (EL PROYECTO + EL ALCANCE + ENTREGABLES)
+   v2026.5.21k
+   ═══════════════════════════════════════════════════════════════════ */
+
+.casos-band { padding: 80px 0 120px; }
+
+/* Card expandida: imagen sticky a la izq, contenido extenso a la der */
+.case-card--full {
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: stretch;
+}
+.case-card--full .case-image {
+    min-height: 100%;
+    position: relative;
+}
+.case-card--full .case-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.case-card--full .case-data {
+    padding: 36px 44px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* Header del dossier: ID + título + meta */
+.case-head { display: flex; flex-direction: column; gap: 12px; padding-bottom: 4px; }
+.case-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.88rem;
+    color: rgba(230, 243, 255, 0.7);
+}
+.case-meta span strong {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 2.5px;
+    color: var(--logo-cyan);
+    margin-right: 6px;
+    font-weight: 700;
+}
+
+/* Bloque (EL PROYECTO / EL ALCANCE / PRODUCTOS) */
+.case-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(127, 233, 255, 0.10);
+}
+.case-block__lbl {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: var(--eas-neon);
+    text-transform: uppercase;
+}
+.case-block p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(230, 243, 255, 0.82);
+    margin: 0;
+}
+.case-block p strong { color: #fff; font-weight: 700; }
+
+/* Lista de productos entregados */
+.case-deliv {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.case-deliv li {
+    position: relative;
+    padding-left: 22px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.96rem;
+    line-height: 1.5;
+    color: rgba(230, 243, 255, 0.85);
+}
+.case-deliv li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--logo-cyan);
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+.case-deliv li strong { color: #fff; font-weight: 700; }
+
+/* Link inferior · ya existe .case-link en styles.css, lo refuerzo */
+.case-card--full .case-link {
+    margin-top: 8px;
+    align-self: flex-start;
+}
+
+/* Tag flotante un poco más grande */
+.case-card--full .case-tag {
+    top: 18px;
+    left: 18px;
+    padding: 8px 14px;
+}
+
+/* Mobile · stack vertical */
+@media (max-width: 900px) {
+    .case-card--full { grid-template-columns: 1fr; }
+    .case-card--full .case-image { min-height: 260px; }
+    .case-card--full .case-data { padding: 28px 24px 32px; gap: 18px; }
+    .case-meta { font-size: 0.82rem; gap: 6px 16px; }
+    .case-block p { font-size: 0.95rem; }
+    .case-deliv li { font-size: 0.92rem; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CASOS · AJUSTE TAMAÑO FOTOS · v2026.5.21l
+   Foto más pequeña (35% en lugar de ~45%), más texto, contain en algunas
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Foto más estrecha: 0.55fr / 1.45fr en lugar de 0.85fr / 1.15fr */
+.case-card--full {
+    grid-template-columns: 0.55fr 1.45fr;
+}
+
+/* Para que las imágenes muy horizontales (curva SPT, modelaciones) no se vean
+   recortadas, las dejo en object-fit: cover pero con limitación de aspect-ratio */
+.case-card--full .case-image {
+    min-height: 320px;
+    max-height: 480px;
+    align-self: stretch;
+}
+
+/* Tag más compacto */
+.case-card--full .case-tag {
+    font-size: 9px;
+    padding: 6px 10px;
+    letter-spacing: 2px;
+}
+
+/* En tablet la foto vuelve a 50/50 para legibilidad */
+@media (max-width: 1100px) and (min-width: 901px) {
+    .case-card--full { grid-template-columns: 0.7fr 1.3fr; }
+}
+
+/* En mobile mantiene stack vertical pero la foto NO tan alta */
+@media (max-width: 900px) {
+    .case-card--full { grid-template-columns: 1fr; }
+    .case-card--full .case-image { min-height: 220px; max-height: 280px; }
+}

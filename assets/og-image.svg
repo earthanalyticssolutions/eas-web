@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050a10"/>
+      <stop offset="55%" stop-color="#0b1822"/>
+      <stop offset="100%" stop-color="#142b3a"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff7a00"/>
+      <stop offset="100%" stop-color="#ffb347"/>
+    </linearGradient>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a3142" stroke-width="0.6" opacity="0.6"/>
+    </pattern>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Línea naranja superior (acento marca) -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#orange)"/>
+
+  <!-- Logo monograma -->
+  <g transform="translate(80, 110)">
+    <rect x="0" y="0" width="92" height="92" fill="none" stroke="#ff9800" stroke-width="3"/>
+    <text x="46" y="68" font-family="Arial Black, sans-serif" font-size="56" font-weight="900" fill="#ff9800" text-anchor="middle">E</text>
+  </g>
+
+  <!-- Etiqueta -->
+  <text x="200" y="138" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#a0b3c2" letter-spacing="6">EARTH ANALYTICS SOLUTIONS</text>
+  <text x="200" y="180" font-family="Arial Black, sans-serif" font-size="58" font-weight="900" fill="#ffffff" letter-spacing="-1">EAS</text>
+
+  <!-- Frase principal -->
+  <text x="80" y="320" font-family="Arial, sans-serif" font-size="62" font-weight="800" fill="#ffffff" letter-spacing="-1.5">Construye con la</text>
+  <text x="80" y="395" font-family="Arial, sans-serif" font-size="62" font-weight="800" fill="#ff9800" letter-spacing="-1.5">certeza del terreno.</text>
+
+  <!-- Subtítulo -->
+  <text x="80" y="460" font-family="Arial, sans-serif" font-size="26" font-weight="500" fill="#c0d0dc">Geotecnia · Pavimentos · Topografía · Diagnóstico</text>
+  <text x="80" y="496" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#8aa0b0">Consultoría técnica en ingeniería civil — Norte de Santander</text>
+
+  <!-- Footer URL -->
+  <rect x="0" y="580" width="1200" height="50" fill="#000000" opacity="0.55"/>
+  <text x="80" y="612" font-family="Arial Black, sans-serif" font-size="22" font-weight="900" fill="#ff9800" letter-spacing="3">EARTHAS.CO</text>
+  <text x="1120" y="612" font-family="Arial, sans-serif" font-size="16" font-weight="500" fill="#a0b3c2" text-anchor="end" letter-spacing="2">GERENCIA@EARTHAS.CO</text>
+
+  <!-- Detalle decorativo (líneas geológicas estilizadas) -->
+  <g opacity="0.18" transform="translate(720, 90)">
+    <path d="M 0 100 Q 80 20 180 80 T 360 60 T 460 110" fill="none" stroke="#ff9800" stroke-width="2"/>
+    <path d="M 0 160 Q 100 100 200 150 T 380 130 T 460 170" fill="none" stroke="#ff9800" stroke-width="2"/>
+    <path d="M 0 220 Q 90 180 200 200 T 380 200 T 460 230" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+    <path d="M 0 280 Q 110 240 220 270 T 400 260 T 460 290" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+    <path d="M 0 340 Q 120 310 240 330 T 410 320 T 460 350" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  </g>
+</svg>
