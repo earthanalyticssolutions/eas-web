@@ -10,19 +10,41 @@
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
 
+    const closeNav = () => {
+        navLinks.classList.remove('is-open');
+        navToggle.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-open');
+    };
+
     if (navToggle && navLinks) {
         navToggle.addEventListener('click', () => {
             const isOpen = navLinks.classList.toggle('is-open');
             navToggle.classList.toggle('is-open', isOpen);
             navToggle.setAttribute('aria-expanded', String(isOpen));
+            document.body.classList.toggle('nav-open', isOpen);
         });
 
+        // Cerrar al click en un link del menú
         navLinks.addEventListener('click', (e) => {
-            if (e.target.matches('a')) {
-                navLinks.classList.remove('is-open');
-                navToggle.classList.remove('is-open');
-                navToggle.setAttribute('aria-expanded', 'false');
-            }
+            if (e.target.matches('a')) closeNav();
+        });
+
+        // Cerrar al click en el backdrop (fuera del menú)
+        document.addEventListener('click', (e) => {
+            if (!document.body.classList.contains('nav-open')) return;
+            if (navLinks.contains(e.target) || navToggle.contains(e.target)) return;
+            closeNav();
+        });
+
+        // Cerrar con ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && document.body.classList.contains('nav-open')) closeNav();
+        });
+
+        // Cerrar al redimensionar a desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 900 && document.body.classList.contains('nav-open')) closeNav();
         });
     }
 

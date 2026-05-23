@@ -2,115 +2,60 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://earthas.co/</loc>
-        <lastmod>2026-05-09</lastmod>
+        <lastmod>2026-05-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://earthas.co/servicios.html</loc>
-        <lastmod>2026-05-09</lastmod>
+        <lastmod>2026-05-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.95</priority>
     </url>
     <url>
         <loc>https://earthas.co/sectores.html</loc>
-        <lastmod>2026-05-09</lastmod>
+        <lastmod>2026-05-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.92</priority>
     </url>
-    <url><loc>https://earthas.co/sectores/edificacion.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://earthas.co/sectores/infraestructura-vial.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://earthas.co/sectores/inmobiliario.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://earthas.co/sectores/industria-logistica.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://earthas.co/sectores/mineria-energia.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://earthas.co/sectores/agroindustria.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://earthas.co/sectores/catastro-geoespacial.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://earthas.co/sectores/sector-publico.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://earthas.co/sectores/profesionales.html</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
     <url>
         <loc>https://earthas.co/soluciones.html</loc>
-        <lastmod>2026-05-09</lastmod>
+        <lastmod>2026-05-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.92</priority>
+    </url>
+    <url>
+        <loc>https://earthas.co/casos.html</loc>
+        <lastmod>2026-05-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.92</priority>
     </url>
     <url>
         <loc>https://earthas.co/cotiza.html</loc>
-        <lastmod>2026-05-10</lastmod>
+        <lastmod>2026-05-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.95</priority>
     </url>
-    <url>
-        <loc>https://earthas.co/servicios/geotecnia.html</loc>
-        <lastmod>2026-05-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://earthas.co/servicios/exploracion-sismica.html</loc>
-        <lastmod>2026-05-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://earthas.co/servicios/hidrologia.html</loc>
-        <lastmod>2026-05-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://earthas.co/servicios/hidrogeologia.html</loc>
-        <lastmod>2026-05-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://earthas.co/servicios/pavimentos.html</loc>
-        <lastmod>2026-05-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://earthas.co/servicios/topografia-gis.html</loc>
-        <lastmod>2026-05-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://earthas.co/servicios/laboratorio.html</loc>
-        <lastmod>2026-05-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://earthas.co/servicios/riesgo-ambiente.html</loc>
-        <lastmod>2026-05-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://earthas.co/servicios/diagnostico.html</loc>
-        <lastmod>2026-05-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://earthas.co/#sectores</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://earthas.co/#casos</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://earthas.co/#soluciones</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://earthas.co/#contacto</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.7</priority>
-    </url>
+
+    <!-- ═══ Sub-páginas SERVICIOS (9 líneas técnicas) ═══ -->
+    <url><loc>https://earthas.co/servicios/geotecnia.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/servicios/exploracion-sismica.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/servicios/hidrologia.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/servicios/hidrogeologia.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/servicios/pavimentos.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/servicios/topografia-gis.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/servicios/laboratorio.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/servicios/riesgo-ambiente.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/servicios/diagnostico.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+    <!-- ═══ Sub-páginas SECTORES (9 sectores) ═══ -->
+    <url><loc>https://earthas.co/sectores/edificacion.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/infraestructura-vial.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/inmobiliario.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/industria-logistica.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/mineria-energia.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/agroindustria.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/catastro-geoespacial.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/sector-publico.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://earthas.co/sectores/profesionales.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
 </urlset>
