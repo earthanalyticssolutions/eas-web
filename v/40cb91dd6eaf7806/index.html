@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow, noarchive"/>
+  <meta name="googlebot" content="noindex, nofollow"/>
+  <title>Verificación · EAS-GEO-2026-029 · Earth Analytics Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; min-height:100vh; }
+    body {
+      font-family: 'Rajdhani', sans-serif; color: #fff;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(127,233,255,0.18), transparent 50%),
+        radial-gradient(circle at 12% 90%, rgba(255,152,0,0.13), transparent 55%),
+        linear-gradient(160deg, #062430 0%, #0a2a36 45%, #061419 100%) fixed;
+      min-height: 100vh; padding: 20px 16px 40px;
+    }
+    .grid-bg {
+      position: fixed; inset: 0; pointer-events: none; opacity: 0.35; z-index:0;
+      background-image:
+        linear-gradient(rgba(127,233,255,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(127,233,255,0.07) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; position: relative; z-index: 1; }
+    header { display:flex; justify-content:space-between; align-items:center; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid rgba(127,233,255,0.3); flex-wrap: wrap; gap: 10px; }
+    header .brand { font-family: 'Orbitron', sans-serif; font-weight: 900; letter-spacing: 3px; font-size: 18px; }
+    header .brand span { color: #ff9800; }
+    header .ref { font-family:'Orbitron',sans-serif; font-size:9.5px; letter-spacing:2px; color: rgba(127,233,255,0.85); text-align:right; line-height:1.6; }
+    header .ref strong { color: #ff9800; }
+    h1 { font-family: 'Orbitron', sans-serif; font-size: 26px; font-weight: 900; letter-spacing: 1.3px; text-transform: uppercase; line-height: 1.1; border-left: 5px solid #ff9800; padding-left: 16px; margin: 16px 0 6px 0; }
+    .sub { color: rgba(127,233,255,0.95); font-family:'Orbitron',sans-serif; font-size: 10.5px; letter-spacing:2.5px; font-weight: 700; text-transform: uppercase; margin-bottom: 22px; padding-left: 21px; }
+    .alert { background: rgba(46,168,96,0.15); border: 1px solid rgba(80,220,130,0.55); padding: 11px 15px; border-radius: 4px; font-size: 13px; line-height: 1.55; margin-bottom: 22px; }
+    .alert strong { color: #5cd791; font-family:'Orbitron',sans-serif; letter-spacing: 1.3px; }
+    .alert.reservado { background: rgba(255,152,0,0.14); border-color: rgba(255,152,0,0.6); }
+    .alert.reservado strong { color: #ff9800; }
+    h2 { font-family:'Orbitron',sans-serif; font-size: 13.5px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(127,233,255,0.95); margin: 22px 0 12px; }
+    .data { background: rgba(3,15,22,0.65); border: 1px solid rgba(127,233,255,0.35); padding: 6px 0; margin-bottom: 26px; }
+    .data .row { display:flex; padding: 9px 18px; border-bottom: 1px solid rgba(127,233,255,0.15); font-size: 13px; gap: 14px; align-items: center; }
+    .data .row:last-child { border-bottom: none; }
+    .data .row .lbl { font-family:'Orbitron',sans-serif; font-size:9.5px; letter-spacing:1.8px; color: rgba(127,233,255,0.75); text-transform:uppercase; width: 170px; flex-shrink:0; font-weight:700; }
+    .data .row .val { color: #fff; font-weight: 600; }
+    .data .row .val.codigo { color: #ff9800; font-family:'Orbitron',sans-serif; }
+    .docs { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-bottom: 28px; }
+    .doc-card { background: rgba(3,15,22,0.7); border: 1px solid rgba(127,233,255,0.35); border-left: 4px solid #ff9800; padding: 14px 16px; text-decoration: none; color: inherit; transition: transform 0.15s ease, border-color 0.15s ease; display: flex; flex-direction: column; gap: 5px; }
+    .doc-card:hover { transform: translateY(-2px); border-left-color:#7fe9ff; }
+    .doc-card .titulo { font-family:'Orbitron',sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: 1.3px; color: #fff; text-transform: uppercase; }
+    .doc-card .desc { font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+    .doc-card .meta { font-family:'Orbitron',sans-serif; font-size: 10px; letter-spacing: 1.3px; color: #ff9800; margin-top: 3px; }
+    footer { border-top: 1px solid rgba(127,233,255,0.25); padding-top: 16px; margin-top: 26px; display: flex; justify-content: space-between; align-items: flex-end; gap: 18px; flex-wrap: wrap; }
+    footer .empresa .nombre { font-family:'Orbitron',sans-serif; font-weight: 800; letter-spacing: 1.4px; }
+    footer .empresa { font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.55; }
+    footer .empresa .web { color: #ff9800; font-weight: 700; letter-spacing: 1.3px; }
+    footer .sello { font-family:'Orbitron',sans-serif; font-size: 9.5px; letter-spacing:1.8px; text-align:right; color: rgba(127,233,255,0.85); line-height: 1.7; }
+    footer .sello strong { color: #ff9800; }
+    @media (max-width: 640px) {
+      h1 { font-size: 21px; }
+      .data .row { flex-direction: column; align-items: flex-start; gap: 4px; padding: 9px 14px; }
+      .data .row .lbl { width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="wrap">
+
+    <header>
+      <div class="brand">EARTH ANALYTICS SOLUTIONS<span> ·</span></div>
+      <div class="ref">
+        VERIFICACIÓN INSTITUCIONAL<br/>
+        <strong>EAS-GEO-2026-029</strong>
+      </div>
+    </header>
+
+    <h1>Estudio geotécnico base</h1>
+    <div class="sub">Villa Luciana — Lote 1, Iscalá Lotes · EAS-SGC v1.0</div>
+
+    <div class="alert"><strong>VERIFICADO.</strong> Este estudio fue ejecutado por Earth Analytics Solutions y se encuentra registrado en el sistema institucional de calidad. Los documentos que lo respaldan se consultan abajo.</div>
+
+    <h2>Identificación del documento</h2>
+    <div class="data">
+      <div class="row"><div class="lbl">Proyecto</div><div class="val">Villa Luciana — Lote 1, Iscalá Lotes</div></div>
+      <div class="row"><div class="lbl">Cliente</div><div class="val">Proyecto Iscalá Lotes</div></div>
+      <div class="row"><div class="lbl">Sector</div><div class="val">Vereda Iscalá</div></div>
+      <div class="row"><div class="lbl">Ubicación</div><div class="val">Chinácota, Norte de Santander</div></div>
+      <div class="row"><div class="lbl">Código</div><div class="val codigo">EAS-GEO-2026-029</div></div>
+      <div class="row"><div class="lbl">Norma de referencia</div><div class="val">NSR-10 Título H (Estudios Geotécnicos) · INVÍAS E-122/E-123/E-125/E-126/E-172</div></div>
+      <div class="row"><div class="lbl">Fecha de emisión</div><div class="val">Agosto de 2026</div></div>
+      <div class="row"><div class="lbl">Versión / Revisión</div><div class="val">01</div></div>
+      <div class="row"><div class="lbl">Sistema de gestión</div><div class="val">EAS-SGC v1.0</div></div>
+    </div>
+
+    <h2>Documentos institucionales online</h2>
+    <p style="font-size:13px;color:rgba(255,255,255,0.78);line-height:1.55;margin-bottom:14px;">
+      Estos documentos forman parte del sistema de gestión de calidad EAS-SGC y respaldan
+      la ejecución del trabajo. El informe técnico completo se entrega directamente al
+      cliente como expediente del proyecto y <strong>no se publica en este portal</strong>.
+    </p>
+    <div class="docs">
+      <a class="doc-card" href="certificado.pdf" target="_blank" rel="noopener">
+        <div class="titulo">Certificado del estudio</div>
+        <div class="desc">Certificación oficial de ejecución conforme al SGC institucional EAS.</div>
+        <div class="meta">Ver PDF online</div>
+      </a>
+      <a class="doc-card" href="memorial.pdf" target="_blank" rel="noopener">
+        <div class="titulo">Memorial de responsabilidad</div>
+        <div class="desc">Alcance técnico, limitaciones reconocidas, vigencia y deslinde de competencias entre las partes.</div>
+        <div class="meta">Ver PDF online</div>
+      </a>
+    </div>
+
+    <footer>
+      <div class="empresa">
+        <div class="nombre">EARTH ANALYTICS SOLUTIONS</div>
+        Ingeniería de Precisión &amp; Geociencias<br/>
+        <span class="web">www.earthas.co</span>
+      </div>
+      <div class="sello">
+        VERIFICADO<br/>
+        <strong>EAS-SGC v1.0</strong><br/>
+        TOKEN · 40cb91dd6eaf7806
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
