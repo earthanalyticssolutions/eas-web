@@ -1,3 +1,5 @@
+/* Idioma de la página: los mensajes del formulario salen en inglés en /en/ */
+const EAS_EN = (document.documentElement.lang || '').toLowerCase().startsWith('en');
 /* ═══════════════════════════════════════════════════════════════
    EAS · main.js
    Nav, scroll reveals, menu móvil, submit del formulario
@@ -165,11 +167,11 @@
                     console.info('[lead-form] Sin webhook configurado. Datos:', data);
                 }
 
-                showStatus('success', '✓ SOLICITUD ENVIADA. TE CONTACTAREMOS EN MENOS DE 24H HÁBILES.');
+                showStatus('success', EAS_EN ? '✓ REQUEST SENT. WE WILL CONTACT YOU WITHIN 24 BUSINESS HOURS.' : '✓ SOLICITUD ENVIADA. TE CONTACTAREMOS EN MENOS DE 24H HÁBILES.');
                 form.reset();
             } catch (err) {
                 console.error(err);
-                showStatus('error', '✗ NO PUDIMOS ENVIAR LA SOLICITUD. ESCRÍBENOS A GERENCIA@EARTHAS.CO');
+                showStatus('error', EAS_EN ? '✗ WE COULD NOT SEND YOUR REQUEST. WRITE TO GERENCIA@EARTHAS.CO' : '✗ NO PUDIMOS ENVIAR LA SOLICITUD. ESCRÍBENOS A GERENCIA@EARTHAS.CO');
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
@@ -267,13 +269,13 @@
 
                 if (expressStatus) {
                     expressStatus.className = 'mini-form-status success';
-                    expressStatus.textContent = '✓ SOLICITUD ENVIADA · TE LLEGARÁ ESTIMACIÓN EN <15 MIN';
+                    expressStatus.textContent = EAS_EN ? '✓ REQUEST SENT · YOUR ESTIMATE ARRIVES IN <15 MIN' : '✓ SOLICITUD ENVIADA · TE LLEGARÁ ESTIMACIÓN EN <15 MIN';
                 }
                 expressForm.reset();
             } catch (err) {
                 if (expressStatus) {
                     expressStatus.className = 'mini-form-status error';
-                    expressStatus.textContent = '✗ ERROR · ESCRÍBENOS A GERENCIA@EARTHAS.CO';
+                    expressStatus.textContent = EAS_EN ? '✗ ERROR · WRITE TO GERENCIA@EARTHAS.CO' : '✗ ERROR · ESCRÍBENOS A GERENCIA@EARTHAS.CO';
                 }
             } finally {
                 submitBtn.disabled = false;

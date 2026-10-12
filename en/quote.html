@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EAS · Get a quote in 15 minutes. Answer 5 questions and receive a technical proposal with three possible scopes by WhatsApp or email.">
+    <meta name="keywords" content="EAS quote, soil investigation quote, geotechnical technical proposal, Earth Analytics Solutions">
+    <meta name="author" content="Earth Analytics Solutions · EAS">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#050a10">
+    <link rel="canonical" href="https://earthas.co/en/quote.html">
+    <link rel="alternate" hreflang="es" href="https://earthas.co/cotiza.html">
+    <link rel="alternate" hreflang="en" href="https://earthas.co/en/quote.html">
+    <link rel="alternate" hreflang="x-default" href="https://earthas.co/cotiza.html">
+    <meta property="og:title" content="Get a quote in 15 minutes · EAS">
+    <meta property="og:description" content="Answer 5 questions and receive a technical proposal with three scopes in less than 24h.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://earthas.co/en/quote.html">
+    <meta property="og:locale" content="en_US">
+    <title>Get a quote in 15 minutes · EAS Earth Analytics Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css?v=2026.5.22">
+    <link rel="stylesheet" href="../css/servicios.css?v=2026.5.22">
+    <link rel="icon" type="image/png" href="../assets/eas.png">
+    <link rel="apple-touch-icon" href="../assets/eas.png">
+    <style>
+        /* ── QUIZ STYLES (embedded · solo se usan en esta página) ── */
+        .quiz-wrap {
+            background: linear-gradient(160deg, var(--eas-void) 0%, #0a1925 50%, var(--eas-void) 100%);
+            color: #fff;
+            min-height: calc(100vh - 64px);
+            padding: 100px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .quiz-wrap::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(127,233,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(127,233,255,0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.85), transparent 80%);
+            pointer-events: none;
+        }
+        .quiz-container {
+            max-width: 820px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .quiz-header .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            border: 1px solid rgba(127,233,255,0.4);
+            border-radius: 999px;
+            background: rgba(1,77,90,0.18);
+            font-family: var(--font-display);
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: var(--logo-cyan);
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .quiz-header h1 {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: clamp(36px, 6vw, 64px);
+            line-height: 0.95;
+            letter-spacing: -1.5px;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .quiz-header h1 em { font-style: normal; color: var(--eas-neon); }
+        .quiz-header p {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.55;
+            color: rgba(255,255,255,0.75);
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        /* Progress bar */
+        .quiz-progress {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 40px;
+            justify-content: center;
+        }
+        .quiz-progress__step {
+            flex: 1;
+            max-width: 80px;
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+            transition: background .3s;
+        }
+        .quiz-progress__step.is-active { background: var(--eas-neon); }
+        .quiz-progress__step.is-done { background: rgba(255,152,0,0.5); }
+
+        /* Step */
+        .quiz-step {
+            display: none;
+            animation: stepFadeIn .4s cubic-bezier(.2,.9,.3,1);
+        }
+        .quiz-step.is-active { display: block; }
+        @keyframes stepFadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .quiz-step__num {
+            font-family: var(--font-display);
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: var(--eas-neon);
+            margin-bottom: 12px;
+        }
+        .quiz-step__question {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(26px, 4vw, 40px);
+            line-height: 1.1;
+            color: #fff;
+            margin-bottom: 32px;
+            letter-spacing: -0.5px;
+        }
+
+        /* Options grid */
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 600px) {
+            .quiz-options { grid-template-columns: 1fr; }
+        }
+        .quiz-option {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 24px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all .25s cubic-bezier(.2,.9,.3,1);
+            font-family: var(--font-body);
+            color: rgba(255,255,255,0.85);
+        }
+        .quiz-option:hover {
+            background: rgba(255,152,0,0.06);
+            border-color: var(--eas-neon);
+            transform: translateY(-2px);
+        }
+        .quiz-option.is-selected {
+            background: rgba(255,152,0,0.12);
+            border-color: var(--eas-neon);
+            color: #fff;
+        }
+        .quiz-option__marker {
+            width: 22px;
+            height: 22px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .quiz-option.is-selected .quiz-option__marker {
+            border-color: var(--eas-neon);
+            background: var(--eas-neon);
+        }
+        .quiz-option.is-selected .quiz-option__marker::after {
+            content: "✓";
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--eas-void);
+            font-weight: 800;
+            font-size: 14px;
+        }
+        .quiz-option__text {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        /* Optional field (text input · ej presupuesto) */
+        .quiz-field {
+            margin-bottom: 40px;
+        }
+        .quiz-field label {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: rgba(127,233,255,0.7);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .quiz-field input,
+        .quiz-field textarea {
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 4px;
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 16px;
+            transition: border-color .25s;
+        }
+        .quiz-field input:focus,
+        .quiz-field textarea:focus {
+            outline: none;
+            border-color: var(--eas-neon);
+            background: rgba(255,152,0,0.04);
+        }
+        .quiz-field input::placeholder,
+        .quiz-field textarea::placeholder {
+            color: rgba(255,255,255,0.35);
+        }
+
+        /* Selects de ubicación · tema oscuro EAS */
+        .quiz-field select {
+            width: 100%;
+            padding: 16px 44px 16px 20px;
+            background-color: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 4px;
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 16px;
+            cursor: pointer;
+            transition: border-color .25s;
+            -webkit-appearance: none; -moz-appearance: none; appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23ff9800' stroke-width='3'><path d='M6 9l6 6 6-6'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+        .quiz-field select:focus {
+            outline: none;
+            border-color: var(--eas-neon);
+            background-color: rgba(255,152,0,0.04);
+        }
+        .quiz-field select:disabled { opacity: .45; cursor: not-allowed; }
+        /* el menú desplegable nativo (las opciones) */
+        .quiz-field select option {
+            background: #0a1622 !important;
+            color: #fff !important;
+            padding: 12px;
+        }
+        .quiz-field select option:checked,
+        .quiz-field select option:hover {
+            background: #122433 !important;
+            color: var(--eas-neon) !important;
+        }
+
+        /* Nav buttons */
+        .quiz-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        .quiz-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 28px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all .25s;
+            border: none;
+            text-decoration: none;
+        }
+        .quiz-btn--ghost {
+            background: transparent;
+            color: rgba(255,255,255,0.6);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .quiz-btn--ghost:hover {
+            color: #fff;
+            border-color: var(--logo-cyan);
+        }
+        .quiz-btn--primary {
+            background: var(--eas-neon);
+            color: var(--eas-void);
+        }
+        .quiz-btn--primary:hover { background: var(--eas-neon-soft); transform: translateY(-2px); box-shadow: var(--shadow-neon); }
+        .quiz-btn--primary:disabled {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.3);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Resumen final */
+        .quiz-summary {
+            display: none;
+            animation: stepFadeIn .5s cubic-bezier(.2,.9,.3,1);
+        }
+        .quiz-summary.is-active { display: block; }
+        .quiz-summary__title {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(28px, 4.5vw, 44px);
+            line-height: 1.05;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        .quiz-summary__title em { font-style: normal; color: var(--eas-neon); }
+        .quiz-summary__lead {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.55;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 32px;
+            max-width: 620px;
+        }
+        .quiz-recap {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(127,233,255,0.18);
+            border-left: 3px solid var(--logo-cyan);
+            padding: 24px 28px;
+            border-radius: 4px;
+            margin-bottom: 32px;
+        }
+        .quiz-recap h3 {
+            font-family: var(--font-display);
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: var(--logo-cyan);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .quiz-recap dl {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 10px 18px;
+            font-family: var(--font-body);
+            font-size: 15px;
+        }
+        .quiz-recap dt {
+            font-family: var(--font-display);
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.45);
+            text-transform: uppercase;
+        }
+        .quiz-recap dd { color: #fff; font-weight: 500; }
+
+        /* Form contacto al final */
+        .quiz-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        @media (max-width: 600px) {
+            .quiz-form { grid-template-columns: 1fr; }
+        }
+        .quiz-form .quiz-field { margin-bottom: 0; }
+        .quiz-form .quiz-field--full { grid-column: 1 / -1; }
+
+        /* Botones finales · WhatsApp + Correo */
+        .quiz-cta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+        @media (max-width: 600px) {
+            .quiz-cta { grid-template-columns: 1fr; }
+        }
+        .quiz-cta__btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 20px 24px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all .25s;
+            text-decoration: none;
+            border: none;
+        }
+        .quiz-cta__btn--wa {
+            background: #25d366;
+            color: #fff;
+        }
+        .quiz-cta__btn--wa:hover { background: #1ebe5a; transform: translateY(-2px); box-shadow: 0 12px 28px rgba(37,211,102,0.35); }
+        .quiz-cta__btn--mail {
+            background: var(--eas-neon);
+            color: var(--eas-void);
+        }
+        .quiz-cta__btn--mail:hover { background: var(--eas-neon-soft); transform: translateY(-2px); box-shadow: var(--shadow-neon); }
+
+        .quiz-cta__note {
+            text-align: center;
+            font-family: var(--font-display);
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.45);
+            text-transform: uppercase;
+        }
+
+        /* Status feedback */
+        .quiz-status {
+            margin-top: 16px;
+            padding: 14px 18px;
+            border-radius: 3px;
+            font-family: var(--font-display);
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-align: center;
+            display: none;
+        }
+        .quiz-status.is-success { display: block; background: rgba(74,222,128,0.12); border: 1px solid rgba(74,222,128,0.3); color: var(--logo-green); }
+        .quiz-status.is-error { display: block; background: rgba(255,80,80,0.12); border: 1px solid rgba(255,80,80,0.3); color: #ff8a8a; }
+    </style>
+</head>
+<body class="page-cotiza">
+
+    <nav class="nav-bar" aria-label="Main navigation">
+        <a href="index.html" class="nav-brand">
+            <img src="../assets/eas.png" alt="EAS" class="nav-logo">
+            <span>EAS</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="quote.html" class="nav-cta is-current">Quote · 15min ▶</a></li>
+            <li><a class="lang-switch" href="../cotiza.html" hreflang="es" lang="es">ES</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <section class="quiz-wrap">
+        <div class="quiz-container">
+
+            <header class="quiz-header">
+                <div class="chip">▸ EXPRESS QUOTE · 15 MIN</div>
+                <h1>Tell us<br>in <em>5 steps</em>.</h1>
+                <p>
+                    No long forms. No filling in details before you know what it costs. Answer
+                    five questions and you will receive a technical proposal with <strong>three possible
+                    scopes</strong>.
+                </p>
+            </header>
+
+            <!-- Progress bar -->
+            <div class="quiz-progress" id="progress">
+                <div class="quiz-progress__step is-active" data-step="1"></div>
+                <div class="quiz-progress__step" data-step="2"></div>
+                <div class="quiz-progress__step" data-step="3"></div>
+                <div class="quiz-progress__step" data-step="4"></div>
+            </div>
+
+            <!-- STEP 1 · TIPO DE PROYECTO (define la rama) -->
+            <div class="quiz-step is-active" data-step="1">
+                <div class="quiz-step__num">QUESTION 01 / 04</div>
+                <h2 class="quiz-step__question">What do you need for your project?</h2>
+                <div class="quiz-options" data-field="proyecto">
+                    <div class="quiz-option" data-value="Vivienda o edificación">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">House or building</div>
+                    </div>
+                    <div class="quiz-option" data-value="Lote · urbanización / parcelación">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Lot · subdivision / land parceling</div>
+                    </div>
+                    <div class="quiz-option" data-value="Estudio de suelos / geotecnia">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Soil investigation / geotechnics</div>
+                    </div>
+                    <div class="quiz-option" data-value="Exploración geofísica / sísmica">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Geophysical / seismic exploration</div>
+                    </div>
+                    <div class="quiz-option" data-value="Topografía / dron / GIS">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Surveying / drone / GIS</div>
+                    </div>
+                    <div class="quiz-option" data-value="Vía, puente o pavimento">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Road, bridge or pavement</div>
+                    </div>
+                    <div class="quiz-option" data-value="Hidrología · aguas superficiales (ríos, drenajes)">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Hydrology · rivers, drainage, floods</div>
+                    </div>
+                    <div class="quiz-option" data-value="Hidrogeología · agua subterránea / pozos">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Water well / groundwater</div>
+                    </div>
+                    <div class="quiz-option" data-value="Laboratorio / control de obra">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Laboratory / construction quality control</div>
+                    </div>
+                    <div class="quiz-option" data-value="Riesgo y ambiente (taludes, licencias)">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Risk and environment · slopes, permits</div>
+                    </div>
+                    <div class="quiz-option" data-value="Mi obra tiene un problema (grietas, taludes, falla)">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Diagnosis · my structure has a problem</div>
+                    </div>
+                    <div class="quiz-option" data-value="Minero / energético">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Mining / energy</div>
+                    </div>
+                    <div class="quiz-option" data-value="Otro (lo explico al final)">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Other (I'll explain at the end)</div>
+                    </div>
+                </div>
+                <div class="quiz-nav">
+                    <span></span>
+                    <button class="quiz-btn quiz-btn--primary" data-next disabled>Next ▶</button>
+                </div>
+            </div>
+
+            <!-- STEP 2 · DETALLES (dinámico según la rama elegida) -->
+            <div class="quiz-step" data-step="2">
+                <div class="quiz-step__num">QUESTION 02 / 04</div>
+                <h2 class="quiz-step__question" id="step2-title">Tell us about the project</h2>
+                <p style="font-family:var(--font-body);font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.55;">
+                    Answer what you know. Fields marked <span style="color:var(--eas-neon)">*</span> are needed for an accurate quote.
+                </p>
+                <div id="dynamic-fields"></div>
+                <div class="quiz-nav">
+                    <button class="quiz-btn quiz-btn--ghost" data-prev>◀ Back</button>
+                    <button class="quiz-btn quiz-btn--primary" data-next disabled>Next ▶</button>
+                </div>
+            </div>
+
+            <!-- STEP 3 · UBICACIÓN (país / depto / municipio / dirección) -->
+            <div class="quiz-step" data-step="3">
+                <div class="quiz-step__num">QUESTION 03 / 04</div>
+                <h2 class="quiz-step__question">Where is the project located?</h2>
+                <p style="font-family:var(--font-body);font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.55;">
+                    Is your project in Colombia or elsewhere in LATAM?
+                </p>
+                <div class="quiz-options" data-field="zona" id="zona-toggle">
+                    <div class="quiz-option" data-value="Colombia">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">In Colombia</div>
+                    </div>
+                    <div class="quiz-option" data-value="Otra parte de LATAM">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Elsewhere in LATAM</div>
+                    </div>
+                </div>
+
+                <!-- Bloque COLOMBIA -->
+                <div id="ubic-co" class="quiz-form" style="display:none;margin-top:8px;">
+                    <div class="quiz-field">
+                        <label for="q-departamento">Department *</label>
+                        <select id="q-departamento" disabled><option value="">Loading…</option></select>
+                    </div>
+                    <div class="quiz-field">
+                        <label for="q-municipio">Municipality *</label>
+                        <select id="q-municipio" disabled><option value="">Select a department first…</option></select>
+                    </div>
+                </div>
+
+                <!-- Bloque INTERNACIONAL -->
+                <div id="ubic-int" class="quiz-form" style="display:none;margin-top:8px;">
+                    <div class="quiz-field">
+                        <label for="q-pais-int">Country *</label>
+                        <select id="q-pais-int"><option value="">Select…</option></select>
+                    </div>
+                    <div class="quiz-field" id="wrap-pais-otro" style="display:none;">
+                        <label for="q-pais-txt">Which country?</label>
+                        <input type="text" id="q-pais-txt" placeholder="Type the country" autocomplete="off">
+                    </div>
+                    <div class="quiz-field">
+                        <label for="q-estado">State / Province / Department *</label>
+                        <select id="q-estado" disabled><option value="">Select a country first…</option></select>
+                        <input type="text" id="q-estado-txt" placeholder="Type the state / province" style="display:none;" autocomplete="off">
+                    </div>
+                    <div class="quiz-field">
+                        <label for="q-ciudad">City *</label>
+                        <input type="text" id="q-ciudad" placeholder="Type the city" autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- Dirección (común) -->
+                <div id="ubic-dir" class="quiz-field quiz-field--full" style="display:none;">
+                    <label for="q-direccion">Address / rural area / landmark</label>
+                    <input type="text" id="q-direccion" placeholder="E.g. El Roble rural area, km 3 on the road to..." autocomplete="off">
+                </div>
+
+                <div class="quiz-nav">
+                    <button class="quiz-btn quiz-btn--ghost" data-prev>◀ Back</button>
+                    <button class="quiz-btn quiz-btn--primary" data-next disabled>Next ▶</button>
+                </div>
+            </div>
+
+            <!-- STEP 4 · NECESIDAD (párrafo libre) -->
+            <div class="quiz-step" data-step="4">
+                <div class="quiz-step__num">QUESTION 04 / 04</div>
+                <h2 class="quiz-step__question">Tell us what you need</h2>
+                <p style="font-family:var(--font-body);font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.55;">
+                    In a short paragraph, describe the need you want to solve with our services.
+                    The clearer it is, the better we can help you.
+                </p>
+                <div class="quiz-field quiz-field--full">
+                    <label for="q-necesidad">Your need *</label>
+                    <textarea id="q-necesidad" data-field="necesidad" rows="5" placeholder="E.g. I want to build my cabin-style house but I don't know if the ground can take two floors and a pool. I need the soil investigation and the designs to get the building permit." autocomplete="off"></textarea>
+                </div>
+                <div class="quiz-nav">
+                    <button class="quiz-btn quiz-btn--ghost" data-prev>◀ Back</button>
+                    <button class="quiz-btn quiz-btn--primary" data-next disabled>See summary ▶</button>
+                </div>
+            </div>
+
+            <!-- RESUMEN -->
+            <div class="quiz-summary" id="summary">
+                <h2 class="quiz-summary__title">Done. <em>Tell us who you are.</em></h2>
+                <p class="quiz-summary__lead">
+                    This is what we understood. If everything looks right, enter your name and contact
+                    details, and choose whether you prefer to continue on WhatsApp or wait for a reply by
+                    email within 24h.
+                </p>
+
+                <div class="quiz-recap">
+                    <h3>▸ YOUR PROJECT SUMMARY</h3>
+                    <dl id="recap-list"></dl>
+                </div>
+
+                <form id="lead-form" class="quiz-form" novalidate>
+                    <div class="quiz-field">
+                        <label for="nombre">Full name *</label>
+                        <input type="text" id="nombre" name="nombre" required autocomplete="name" placeholder="E.g. John Smith">
+                    </div>
+                    <div class="quiz-field">
+                        <label for="telefono">WhatsApp / Phone *</label>
+                        <input type="tel" id="telefono" name="telefono" required autocomplete="tel" placeholder="E.g. +57 313 753 1833">
+                    </div>
+                    <div class="quiz-field">
+                        <label for="correo">Email *</label>
+                        <input type="email" id="correo" name="correo" required autocomplete="email" placeholder="you@email.com">
+                    </div>
+                    <div class="quiz-field">
+                        <label for="empresa">Company (optional)</label>
+                        <input type="text" id="empresa" name="empresa" autocomplete="organization" placeholder="E.g. XYZ Builders">
+                    </div>
+                    <div class="quiz-field quiz-field--full">
+                        <label for="mensaje">Anything else? (optional)</label>
+                        <textarea id="mensaje" name="mensaje" rows="3" placeholder="Deadlines, specific details, anything you want to add."></textarea>
+                    </div>
+                </form>
+
+                <div class="quiz-cta">
+                    <a id="btn-wa" class="quiz-cta__btn quiz-cta__btn--wa" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.8-.7-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.4 5L2 22l5.1-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+                        Send via WhatsApp
+                    </a>
+                    <button id="btn-mail" class="quiz-cta__btn quiz-cta__btn--mail" type="button">
+                        Get the proposal by email ▶
+                    </button>
+                </div>
+
+                <p class="quiz-cta__note">▸ We reply in less than 24 business hours</p>
+                <div id="status" class="quiz-status"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer compacto -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-block">
+                    <a href="index.html" class="footer-brand">
+                        <img src="../assets/eas.png" alt="EAS">
+                        <span>EAS</span>
+                    </a>
+                    <p>Earth Analytics Solutions · Geosciences, geotechnical and ground engineering from Colombia for LATAM.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>BROWSE</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>CONTACT</h4>
+                    <ul>
+                        <li><a href="mailto:gerencia@earthas.co">gerencia@earthas.co</a></li>
+                        <li><a href="https://wa.me/573137531833">+57 313 753 1833</a></li>
+                        <li>Norte de Santander · CO</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Earth Analytics Solutions · EAS · All rights reserved</span>
+                <span class="footer-tag">EARTHAS.CO · EXPRESS QUOTE</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // ═══════════════════════════════════════════════════════════════
+    // QUIZ LOGIC · step-by-step + WhatsApp prearmado + webhook n8n
+    // (versión EN: los data-value del paso 1 y del paso 3 se conservan en español
+    //  porque RAMAS y la lógica de ubicación dependen de ellos; lo visible va en inglés)
+    // ═══════════════════════════════════════════════════════════════
+
+    // CONFIGURACIÓN
+    const WHATSAPP_NUMBER = '573137531833';
+    // n8n workflow: EAS · wf-leads-web (ID: vDE1XMauKBjeDNSt)
+    const WEBHOOK_URL = 'https://molina0922.app.n8n.cloud/webhook/leads-web';
+
+    // ESTADO
+    const state = {
+        currentStep: 1,
+        totalSteps: 4,
+        answers: {
+            proyecto: '',
+            pais: '',
+            departamento: '',
+            municipio: '',
+            direccion: '',
+            necesidad: ''
+        },
+        detalles: {}   // respuestas dinámicas según la rama
+    };
+
+    // ═══ UBICACIÓN: toggle Colombia (api-colombia) / LATAM (countriesnow) ═══
+    const PAISES_LATAM = {
+        "Mexico":"Mexico", "Argentina":"Argentina", "Peru":"Peru", "Chile":"Chile",
+        "Ecuador":"Ecuador", "Venezuela":"Venezuela", "Bolivia":"Bolivia", "Paraguay":"Paraguay",
+        "Uruguay":"Uruguay", "Brazil":"Brazil", "Panama":"Panama", "Costa Rica":"Costa Rica",
+        "Guatemala":"Guatemala", "Honduras":"Honduras", "El Salvador":"El Salvador",
+        "Nicaragua":"Nicaragua", "Dominican Republic":"Dominican Republic", "Cuba":"Cuba",
+        "Puerto Rico":"Puerto Rico", "Other country":"__OTRO__"
+    };
+
+    function initUbicacion() {
+        const toggle = document.getElementById('zona-toggle');
+        if (!toggle || toggle.dataset.ready) return;
+        toggle.dataset.ready = '1';
+
+        const blkCO  = document.getElementById('ubic-co');
+        const blkINT = document.getElementById('ubic-int');
+        const blkDIR = document.getElementById('ubic-dir');
+        const selDep = document.getElementById('q-departamento');
+        const selMun = document.getElementById('q-municipio');
+        const selPais= document.getElementById('q-pais-int');
+        const wrapOtro = document.getElementById('wrap-pais-otro');
+        const txtPais= document.getElementById('q-pais-txt');
+        const selEst = document.getElementById('q-estado');
+        const txtEst = document.getElementById('q-estado-txt');
+        const txtCiu = document.getElementById('q-ciudad');
+        const nextBtn = toggle.closest('.quiz-step').querySelector('[data-next]');
+
+        const validar = () => {
+            const a = state.answers;
+            if (nextBtn) nextBtn.disabled = !(a.pais && a.departamento && a.municipio);
+        };
+
+        // poblar países LATAM
+        Object.keys(PAISES_LATAM).forEach(p => {
+            const o = document.createElement('option'); o.value = p; o.textContent = p; selPais.appendChild(o);
+        });
+
+        // ── Toggle Colombia / Internacional ──
+        toggle.querySelectorAll('.quiz-option').forEach(opt => {
+            opt.addEventListener('click', () => {
+                toggle.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('is-selected'));
+                opt.classList.add('is-selected');
+                state.answers.zona = opt.dataset.value;
+                state.answers.pais = ''; state.answers.departamento = ''; state.answers.municipio = '';
+                blkDIR.style.display = 'block';
+                if (opt.dataset.value === 'Colombia') {
+                    state.answers.pais = 'Colombia';
+                    blkCO.style.display = 'grid'; blkINT.style.display = 'none';
+                    cargarDeptosCO();
+                } else {
+                    blkCO.style.display = 'none'; blkINT.style.display = 'grid';
+                    selPais.value = ''; wrapOtro.style.display = 'none';
+                    selEst.style.display = 'block'; selEst.innerHTML = '<option value="">Select a country first…</option>'; selEst.disabled = true;
+                    txtEst.style.display = 'none'; txtCiu.value = '';
+                }
+                validar();
+            });
+        });
+
+        // ── COLOMBIA ──
+        async function cargarDeptosCO() {
+            selDep.innerHTML = '<option value="">Loading…</option>'; selDep.disabled = true;
+            selMun.innerHTML = '<option value="">Select a department first…</option>'; selMun.disabled = true;
+            try {
+                const r = await fetch('https://api-colombia.com/api/v1/Department');
+                const deps = (await r.json()).sort((a,b)=>a.name.localeCompare(b.name));
+                selDep.innerHTML = '<option value="">Select…</option>';
+                deps.forEach(d => { const o=document.createElement('option'); o.value=d.name; o.dataset.id=d.id; o.textContent=d.name; selDep.appendChild(o); });
+                selDep.disabled = false;
+            } catch(e) {
+                const inp = document.createElement('input');
+                inp.type='text'; inp.placeholder='Type the department';
+                inp.oninput = () => { state.answers.departamento = inp.value.trim(); validar(); };
+                selDep.replaceWith(inp);
+            }
+        }
+        selDep.addEventListener('change', async () => {
+            state.answers.departamento = selDep.value; state.answers.municipio = '';
+            const depId = selDep.selectedOptions[0]?.dataset.id;
+            selMun.innerHTML = '<option value="">Loading…</option>'; selMun.disabled = true;
+            if (depId) {
+                try {
+                    const r = await fetch(`https://api-colombia.com/api/v1/Department/${depId}/cities`);
+                    const cities = (await r.json()).sort((a,b)=>a.name.localeCompare(b.name));
+                    selMun.innerHTML = '<option value="">Select…</option>';
+                    cities.forEach(c => { const o=document.createElement('option'); o.value=c.name; o.textContent=c.name; selMun.appendChild(o); });
+                    selMun.disabled = false;
+                } catch(e) {
+                    const inp = document.createElement('input');
+                    inp.type='text'; inp.placeholder='Type the municipality';
+                    inp.oninput = () => { state.answers.municipio = inp.value.trim(); validar(); };
+                    selMun.replaceWith(inp);
+                }
+            }
+            validar();
+        });
+        selMun.addEventListener('change', () => { state.answers.municipio = selMun.value; validar(); });
+
+        // ── INTERNACIONAL ──
+        selPais.addEventListener('change', async () => {
+            const display = selPais.value;
+            state.answers.departamento = ''; state.answers.municipio = ''; txtCiu.value = '';
+            if (display === 'Other country') {
+                wrapOtro.style.display = 'block';
+                txtPais.oninput = () => { state.answers.pais = txtPais.value.trim(); validar(); };
+                selEst.style.display = 'none'; txtEst.style.display = 'block';
+                txtEst.oninput = () => { state.answers.departamento = txtEst.value.trim(); validar(); };
+                state.answers.pais = txtPais.value.trim();
+                validar(); return;
+            }
+            wrapOtro.style.display = 'none';
+            state.answers.pais = display;
+            selEst.style.display = 'block'; txtEst.style.display = 'none';
+            selEst.innerHTML = '<option value="">Loading…</option>'; selEst.disabled = true;
+            try {
+                const r = await fetch('https://countriesnow.space/api/v0.1/countries/states', {
+                    method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({ country: PAISES_LATAM[display] })
+                });
+                const states = ((await r.json()).data?.states || []).sort((a,b)=>a.name.localeCompare(b.name));
+                if (!states.length) throw new Error('sin estados');
+                selEst.innerHTML = '<option value="">Select…</option>';
+                states.forEach(s => { const o=document.createElement('option'); o.value=s.name; o.textContent=s.name; selEst.appendChild(o); });
+                selEst.disabled = false;
+            } catch(e) {
+                selEst.style.display = 'none'; txtEst.style.display = 'block';
+                txtEst.oninput = () => { state.answers.departamento = txtEst.value.trim(); validar(); };
+            }
+            validar();
+        });
+        selEst.addEventListener('change', () => { state.answers.departamento = selEst.value; validar(); });
+        txtCiu.addEventListener('input', () => { state.answers.municipio = txtCiu.value.trim(); validar(); });
+
+        // ── Dirección (común, opcional) ──
+        const dir = document.getElementById('q-direccion');
+        if (dir) dir.addEventListener('input', () => { state.answers.direccion = dir.value.trim(); });
+
+        // ── Necesidad (paso 4, obligatorio) ──
+        const nec = document.getElementById('q-necesidad');
+        if (nec) nec.addEventListener('input', () => {
+            state.answers.necesidad = nec.value.trim();
+            const stepN = nec.closest('.quiz-step');
+            const nb = stepN.querySelector('[data-next]');
+            if (nb) nb.disabled = nec.value.trim().length < 10;
+        });
+    }
+
+    // ═══ PREGUNTAS DINÁMICAS POR TIPO DE PROYECTO (paso 2) ═══
+    // Cada campo: { key, label, type:'select', opts:[...], req:true }
+    // TODO en RANGOS para sistematizar cotizaciones (cada combinación → precio base)
+    const ESTUDIOS_OPTS  = ["No, none exist yet", "Yes, previous studies exist", "Some / partial"];
+    // Rangos reutilizables (el cliente elige rango; EAS calcula lo técnico)
+    const R_AREA_LOTE    = ["Up to 500 m²", "500 – 1,000 m²", "1,000 – 5,000 m²", "0.5 – 2 ha", "2 – 10 ha", "More than 10 ha"];
+    const R_LONGITUD     = ["Up to 100 m", "100 – 500 m", "500 m – 1 km", "1 – 5 km", "More than 5 km"];
+    const R_NUM_LOTES    = ["Up to 5", "5 – 20", "20 – 50", "50 – 100", "More than 100"];
+    const R_PISOS        = ["1 level", "2 levels", "3 levels", "4 – 5 levels", "6 or more levels"];
+    // (Por sentido común: no preguntamos presupuesto, plazo, área a construir, n.° de mojones,
+    //  tamaño de cuenca ni caudal — eso lo calcula/define EAS al resolver el estudio.)
+
+    const RAMAS = {
+        "Vivienda o edificación": {
+            titulo: "Tell us about the building",
+            campos: [
+                { key: "area_lote",  label: "Lot / project area", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "pisos",      label: "No. of floors / levels", type:"select", opts:R_PISOS, req:true },
+                { key: "uso_edif",   label: "Building use", type:"select", opts:["Single-family home","Multifamily housing","Commercial / offices","Mixed use","Institutional","Other"], req:true },
+                { key: "extras",     label: "Does it include special spaces?", type:"select", opts:["Nothing special","Basement","Pool","Terrace / BBQ","Pool + terrace + BBQ","Several (I'll detail at the end)"], req:true },
+                { key: "estudios",   label: "Is there already a soil investigation?", type:"select", opts:ESTUDIOS_OPTS, req:true }
+            ]
+        },
+        "Lote · urbanización / parcelación": {
+            titulo: "Tell us about the lot / subdivision",
+            campos: [
+                { key: "area_lote",  label: "Total lot area", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "num_lotes",  label: "No. of lots / units (approx.)", type:"select", opts:R_NUM_LOTES, req:true },
+                { key: "uso",        label: "Intended use", type:"select", opts:["Country homes","Urban housing","Commercial / mixed use","Industrial / warehouses","Other"], req:true },
+                { key: "servicios",  label: "Does it need roads and utilities?", type:"select", opts:["Yes, roads + utilities (water/sewer)","Internal roads only","Utilities only","Not sure yet"], req:true },
+                { key: "topografia", label: "Is there already a survey of the lot?", type:"select", opts:ESTUDIOS_OPTS, req:true }
+            ]
+        },
+        "Estudio de suelos / geotecnia": {
+            titulo: "Tell us about the soil investigation",
+            campos: [
+                { key: "area_lote", label: "Lot / project area", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "pisos",     label: "No. of floors planned", type:"select", opts:[...R_PISOS,"Not defined yet"], req:true },
+                { key: "uso",       label: "Building use", type:"select", opts:["Housing","Commercial / offices","Warehouse / industrial","Institutional","Other"], req:true },
+                { key: "terreno",   label: "What is the ground like?", type:"select", opts:["Flat / normal","Steep slope / hillside","Fill / previously worked lot","Near water / damp","Not sure"], req:true }
+            ]
+        },
+        "Exploración geofísica / sísmica": {
+            titulo: "Tell us about the geophysical exploration",
+            campos: [
+                { key: "area_lote",  label: "Project area / extent", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "objetivo",   label: "What do you want to detect?", type:"select", opts:["Depth to rock","Water table / water","Cavities / voids","Layer thickness","Not sure"], req:true },
+                { key: "uso",        label: "Related project", type:"select", opts:["Foundations / building","Road / infrastructure","Mining","Groundwater","Other"], req:true },
+                { key: "estudios",   label: "Are there previous borings or studies?", type:"select", opts:ESTUDIOS_OPTS, req:true }
+            ]
+        },
+        "Topografía / dron / GIS": {
+            titulo: "Tell us about the survey",
+            campos: [
+                { key: "area_lote", label: "Lot / project area", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "uso",       label: "What do you need it for?", type:"select", opts:["Permit / paperwork","Construction staking","Buying / selling the lot","Project design","Other"], req:true },
+                { key: "relieve",   label: "What is the terrain like?", type:"select", opts:["Flat","Rolling","Mountainous / rugged","Not sure"], req:true }
+            ]
+        },
+        "Vía, puente o pavimento": {
+            titulo: "Tell us about the road / works",
+            campos: [
+                { key: "tipo_obra", label: "Type of works", type:"select", opts:["Concrete wheel tracks (placa huella)","Rigid pavement (concrete)","Flexible pavement (asphalt)","Bridge / box culvert","Gravel road","Not sure"], req:true },
+                { key: "longitud",  label: "Approximate length", type:"select", opts:R_LONGITUD, req:true },
+                { key: "ancho",     label: "How wide is it?", type:"select", opts:["One lane (up to 4 m)","Two lanes (4 – 8 m)","More than 8 m","Not sure"], req:true },
+                { key: "estudios",  label: "Are there previous studies?", type:"select", opts:ESTUDIOS_OPTS, req:true }
+            ]
+        },
+        "Hidrología · aguas superficiales (ríos, drenajes)": {
+            titulo: "Tell us about the hydrology project",
+            campos: [
+                { key: "objetivo",  label: "What do you need to solve?", type:"select", opts:["Flood / flooding","Drainage structure (box, culvert)","Scour / bank protection","Riparian buffer / watershed plan (POMCA)","Not sure"], req:true },
+                { key: "extras",    label: "Is a structure or property at risk?", type:"select", opts:["Yes, a house/property at risk","Yes, a road / structure","No, it is preventive","Not sure"], req:true },
+                { key: "estudios",  label: "Are there previous studies?", type:"select", opts:ESTUDIOS_OPTS, req:true }
+            ]
+        },
+        "Hidrogeología · agua subterránea / pozos": {
+            titulo: "Tell us about the groundwater project",
+            campos: [
+                { key: "objetivo",  label: "What do you need?", type:"select", opts:["Study for a deep well","Water use permit (CAR)","Prospecting / feasibility","Assessment of an existing well","Not sure"], req:true },
+                { key: "uso",       label: "Water use", type:"select", opts:["Domestic","Agricultural / irrigation","Industrial","Livestock","Other"], req:true },
+                { key: "area_lote", label: "Property size", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "estudios",  label: "Are there nearby wells or studies?", type:"select", opts:ESTUDIOS_OPTS, req:true }
+            ]
+        },
+        "Laboratorio / control de obra": {
+            titulo: "Tell us about the testing / control",
+            campos: [
+                { key: "ensayos",   label: "Which tests do you need?", type:"select", opts:["Compaction / density","CBR","Grain size / limits","Concrete (cylinders)","Several / not sure"], req:true },
+                { key: "cantidad",  label: "Estimated quantity", type:"select", opts:["Up to 10 tests","10 – 50 tests","50 – 200 tests","More than 200","Recurring / monthly"], req:true },
+                { key: "uso",       label: "On which works / material?", type:"select", opts:["Embankment / road","Concrete / structure","Foundations","Site development","Other"], req:true },
+                { key: "personal",  label: "Do you need staff on site?", type:"select", opts:["Yes, a full-time lab technician","No, just sample drop-off","Not sure yet"], req:true }
+            ]
+        },
+        "Riesgo y ambiente (taludes, licencias)": {
+            titulo: "Tell us about the risk / environmental study",
+            campos: [
+                { key: "objetivo",  label: "What do you need?", type:"select", opts:["Slope / hillside stability","Hazard / risk study","EIA / EMP (environmental)","Design of mitigation works","Not sure"], req:true },
+                { key: "area_lote", label: "Area / extent", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "entidad",   label: "For which agency / procedure?", type:"select", opts:["ANLA","CAR / regional environmental authority","Municipality / permit office (curaduría)","Private / internal","Not sure"], req:true },
+                { key: "situacion", label: "Current situation", type:"select", opts:["Preventive / planning","There are signs of instability","There is already an active landslide","Not sure"], req:true }
+            ]
+        },
+        "Minero / energético": {
+            titulo: "Tell us about the mining / energy project",
+            campos: [
+                { key: "objetivo",  label: "What do you need?", type:"select", opts:["Geotechnics (waste dump/slope/dam)","Mine closure","Permitting studies","Geophysics / exploration","Not sure"], req:true },
+                { key: "area_lote", label: "Area / extent", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "uso",       label: "Project type", type:"select", opts:["Quarry / mining","Solar / photovoltaic","Substation / line","Hydropower","Other"], req:true },
+                { key: "etapa",     label: "Project stage", type:"select", opts:["Exploration / prefeasibility","Design","Construction","Operation","Closure"], req:true }
+            ]
+        },
+        "Mi obra tiene un problema (grietas, taludes, falla)": {
+            titulo: "Tell us about the problem",
+            campos: [
+                { key: "problema",       label: "What is happening?", type:"select", opts:["Cracks in walls / floors","Settlement / sinking","Cracked slope or hillside","Retaining wall failing","Leaks / dampness","Other"], req:true },
+                { key: "tipo_estructura",label: "On what type of structure?", type:"select", opts:["House","Building","Retaining wall","Road / slope","Other"], req:true },
+                { key: "antiguedad",     label: "When did it appear?", type:"select", opts:["This week","Less than a month ago","Several months ago","More than a year ago","Not sure"], req:true },
+                { key: "evolucion",      label: "Is it getting worse?", type:"select", opts:["Yes, quickly","Yes, slowly","It seems stable","Not sure"], req:true },
+                { key: "riesgo",         label: "Is there a risk to people?", type:"select", opts:["Yes, occupied house/building","Yes, nearby neighbors","Not for now","Not sure"], req:true }
+            ]
+        },
+        "Otro (lo explico al final)": {
+            titulo: "Tell us what you need",
+            campos: [
+                { key: "descripcion", label: "Briefly describe your need", type:"text", ph: "Tell us in a few words", req:true },
+                { key: "area_lote",   label: "Approximate size (if applicable)", type:"select", opts:[...R_AREA_LOTE,"Not applicable"], req:false }
+            ]
+        }
+    };
+
+    // Etiquetas legibles de los campos dinámicos (resumen y mensaje de WhatsApp)
+    const LABELS_DYN = {
+        area_lote:'Lot area', pisos:'No. of floors',
+        extras:'Special spaces', num_lotes:'No. of lots', uso:'Use', uso_edif:'Use', servicios:'Utilities',
+        longitud:'Length', ancho:'Width', tipo_obra:'Type of works', problema:'Problem',
+        tipo_estructura:'Type of structure', evolucion:'Progression', riesgo:'Risk', antiguedad:'Age',
+        descripcion:'Description', objetivo:'Objective', estudios:'Previous studies', topografia:'Survey',
+        terreno:'Ground', relieve:'Terrain', situacion:'Situation', etapa:'Stage', personal:'Staff',
+        ensayos:'Tests', cantidad:'Quantity', entidad:'Agency/procedure'
+    };
+
+    // Texto visible (en inglés) de la opción elegida en el paso 1
+    function proyectoLabel() {
+        const t = document.querySelector('.quiz-options[data-field="proyecto"] .quiz-option.is-selected .quiz-option__text');
+        return t ? t.textContent.trim() : state.answers.proyecto;
+    }
+
+    // valida si el paso 2 está completo (todos los req llenos)
+    function validarPaso2() {
+        const tipo = state.answers.proyecto;
+        const rama = RAMAS[tipo]; if (!rama) return;
+        const ok = rama.campos.filter(c => c.req).every(c => (state.detalles[c.key] || '').trim().length > 0);
+        const step = document.querySelector('.quiz-step[data-step="2"]');
+        const nb = step?.querySelector('[data-next]');
+        if (nb) nb.disabled = !ok;
+    }
+
+    // Renderiza los campos del paso 2 según la rama elegida (text o select, con obligatorios)
+    function renderDynamicFields(tipo) {
+        const cont = document.getElementById('dynamic-fields');
+        const titleEl = document.getElementById('step2-title');
+        const rama = RAMAS[tipo] || RAMAS["Otro (lo explico al final)"];
+        if (titleEl) titleEl.textContent = rama.titulo;
+        state.detalles = {};
+        cont.className = 'quiz-form';
+        cont.innerHTML = rama.campos.map((c, i) => {
+            const full = (rama.campos.length % 2 === 1 && i === rama.campos.length - 1) ? ' quiz-field--full' : '';
+            const star = c.req ? ' *' : '';
+            let control;
+            if (c.type === 'select') {
+                const opts = ['<option value="">Select…</option>']
+                    .concat(c.opts.map(o => `<option value="${o}">${o}</option>`)).join('');
+                control = `<select id="dyn-${c.key}" class="quiz-dyn" data-key="${c.key}" data-req="${!!c.req}">${opts}</select>`;
+            } else {
+                control = `<input type="text" id="dyn-${c.key}" class="quiz-dyn" data-key="${c.key}" data-req="${!!c.req}" placeholder="${c.ph||''}" autocomplete="off">`;
+            }
+            return `<div class="quiz-field${full}"><label for="dyn-${c.key}">${c.label}${star}</label>${control}</div>`;
+        }).join('');
+        cont.querySelectorAll('.quiz-dyn').forEach((el) => {
+            const ev = el.tagName === 'SELECT' ? 'change' : 'input';
+            el.addEventListener(ev, () => {
+                state.detalles[el.dataset.key] = el.value.trim();
+                validarPaso2();
+            });
+        });
+        validarPaso2();
+    }
+
+    // ARRANQUE de la cascada de ubicación (país/depto/municipio) + necesidad
+    initUbicacion();
+
+    // SELECTORES
+    const steps = document.querySelectorAll('.quiz-step');
+    const progressSteps = document.querySelectorAll('.quiz-progress__step');
+    const summary = document.getElementById('summary');
+    const recapList = document.getElementById('recap-list');
+    const btnWA = document.getElementById('btn-wa');
+    const btnMail = document.getElementById('btn-mail');
+    const form = document.getElementById('lead-form');
+    const status = document.getElementById('status');
+
+    // SELECCIÓN DE OPCIÓN
+    document.querySelectorAll('.quiz-options').forEach((group) => {
+        const field = group.dataset.field;
+        group.querySelectorAll('.quiz-option').forEach((opt) => {
+            opt.addEventListener('click', () => {
+                group.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('is-selected'));
+                opt.classList.add('is-selected');
+                state.answers[field] = opt.dataset.value;
+                // si es el paso 1 (tipo de proyecto), renderiza preguntas dinámicas del paso 2
+                if (field === 'proyecto') renderDynamicFields(opt.dataset.value);
+                // habilitar botón Siguiente
+                const step = opt.closest('.quiz-step');
+                const nextBtn = step.querySelector('[data-next]');
+                if (nextBtn) nextBtn.disabled = false;
+            });
+        });
+    });
+
+    // CAMPOS DE TEXTO DENTRO DE LOS PASOS (ubicación / área)
+    document.querySelectorAll('.quiz-text').forEach((input) => {
+        const field = input.dataset.field;
+        const step = input.closest('.quiz-step');
+        const nextBtn = step.querySelector('[data-next]');
+        // ¿este paso tiene algún campo OBLIGATORIO? (los de área son opcionales)
+        const required = step.querySelector('label')?.textContent.includes('*');
+        input.addEventListener('input', () => {
+            state.answers[field] = input.value.trim();
+            if (nextBtn && required) {
+                nextBtn.disabled = input.value.trim().length < 2;
+            }
+        });
+    });
+
+    // NAVEGACIÓN
+    document.querySelectorAll('[data-next]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            if (state.currentStep < state.totalSteps) {
+                goToStep(state.currentStep + 1);
+            } else {
+                showSummary();
+            }
+        });
+    });
+    document.querySelectorAll('[data-prev]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            if (state.currentStep > 1) goToStep(state.currentStep - 1);
+        });
+    });
+
+    function goToStep(n) {
+        steps.forEach(s => s.classList.remove('is-active'));
+        const target = document.querySelector(`.quiz-step[data-step="${n}"]`);
+        if (target) target.classList.add('is-active');
+
+        progressSteps.forEach((p, i) => {
+            const num = i + 1;
+            p.classList.remove('is-active', 'is-done');
+            if (num < n) p.classList.add('is-done');
+            else if (num === n) p.classList.add('is-active');
+        });
+
+        state.currentStep = n;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // MOSTRAR RESUMEN
+    function showSummary() {
+        steps.forEach(s => s.classList.remove('is-active'));
+        summary.classList.add('is-active');
+        progressSteps.forEach(p => p.classList.add('is-done'));
+
+        // pintar recap: necesidad → detalles dinámicos → ubicación → alcance
+        recapList.innerHTML = '';
+        const addRow = (label, val) => {
+            if (!val) return;
+            const dt = document.createElement('dt'); dt.textContent = label;
+            const dd = document.createElement('dd'); dd.textContent = val;
+            recapList.appendChild(dt); recapList.appendChild(dd);
+        };
+        addRow('Need', proyectoLabel());
+        Object.keys(state.detalles).forEach(k => addRow(LABELS_DYN[k] || k, state.detalles[k]));
+        const ubic = [state.answers.municipio, state.answers.departamento, state.answers.pais].filter(Boolean).join(', ');
+        addRow('Location', ubic);
+        addRow('Address', state.answers.direccion);
+        addRow('What is needed', state.answers.necesidad);
+
+        // construir mensaje WhatsApp
+        buildWhatsAppLink();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // helpers de contacto
+    const gv = (id) => (document.getElementById(id)?.value || '').trim();
+    const emailOK = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+    const telOK = (t) => t.replace(/[^0-9]/g,'').length >= 7;
+
+    // validación del bloque de contacto → habilita botones de envío
+    function validarContacto() {
+        const ok = gv('nombre').length >= 3 && telOK(gv('telefono')) && emailOK(gv('correo'));
+        if (btnWA) { btnWA.style.pointerEvents = ok ? 'auto' : 'none'; btnWA.style.opacity = ok ? '1' : '.45'; }
+        if (btnMail) btnMail.disabled = !ok;
+        if (ok) buildWhatsAppLink();
+        return ok;
+    }
+
+    // CONSTRUCCIÓN DEL LINK WHATSAPP
+    function buildWhatsAppLink() {
+        const nombre = gv('nombre') || '[no name]';
+        const tel = gv('telefono'); const correo = gv('correo'); const empresa = gv('empresa');
+        const mensaje = gv('mensaje');
+
+        let text = `Hi EAS · I'd like to request a proposal\n\n`;
+        text += `▸ NAME: ${nombre}\n`;
+        text += `▸ WHATSAPP/PHONE: ${tel}\n`;
+        text += `▸ EMAIL: ${correo}\n`;
+        if (empresa) text += `▸ COMPANY: ${empresa}\n`;
+        text += `\nPROJECT SUMMARY\n`;
+        text += `• Need: ${proyectoLabel() || 'n/a'}\n`;
+        Object.keys(state.detalles).forEach(k => {
+            if (state.detalles[k]) text += `• ${LABELS_DYN[k] || k.replace(/_/g,' ')}: ${state.detalles[k]}\n`;
+        });
+        const ubic = [state.answers.municipio, state.answers.departamento, state.answers.pais].filter(Boolean).join(', ');
+        text += `• Location: ${ubic || 'n/a'}\n`;
+        if (state.answers.direccion) text += `• Address: ${state.answers.direccion}\n`;
+        text += `\nWHAT IS NEEDED:\n${state.answers.necesidad || 'n/a'}\n`;
+        if (mensaje) text += `\nADDITIONAL DETAILS:\n${mensaje}\n`;
+        text += `\nSent from earthas.co/en/quote`;
+
+        btnWA.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    }
+
+    // VALIDAR CONTACTO EN VIVO
+    ['nombre', 'telefono', 'correo', 'empresa', 'mensaje'].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('input', validarContacto);
+    });
+    validarContacto();
+
+    // ENVIAR A WEBHOOK + ABRIR WHATSAPP (botón WA)
+    btnWA.addEventListener('click', (e) => {
+        if (!validarContacto()) {
+            e.preventDefault();
+            showStatus('Please enter a valid name, WhatsApp number and email.', 'error');
+            return;
+        }
+        sendToWebhook('whatsapp');
+    });
+
+    // ENVIAR SOLO POR CORREO (botón correo)
+    btnMail.addEventListener('click', () => {
+        if (!validarContacto()) {
+            showStatus('Please enter a valid name, WhatsApp number and email.', 'error');
+            return;
+        }
+        btnMail.disabled = true;
+        btnMail.textContent = 'Sending...';
+        sendToWebhook('correo')
+            .then((ok) => {
+                if (ok) {
+                    showStatus('✓ Received. We will reply in less than 24 business hours.', 'success');
+                    btnMail.textContent = '✓ Sent';
+                } else {
+                    showStatus('We could not send it. Please try WhatsApp above.', 'error');
+                    btnMail.disabled = false;
+                    btnMail.textContent = 'Get the proposal by email ▶';
+                }
+            });
+    });
+
+    // POST AL WEBHOOK N8N
+    async function sendToWebhook(canal) {
+        const payload = {
+            fuente: 'web-cotiza-quiz',
+            timestamp: new Date().toISOString(),
+            canal_preferido: canal, // 'whatsapp' o 'correo'
+            nombre: gv('nombre'),
+            telefono: gv('telefono'),
+            correo: gv('correo'),
+            empresa: gv('empresa'),
+            mensaje: gv('mensaje'),
+            proyecto: state.answers.proyecto,
+            pais: state.answers.pais,
+            departamento: state.answers.departamento,
+            municipio: state.answers.municipio,
+            direccion: state.answers.direccion,
+            ubicacion: [state.answers.municipio, state.answers.departamento, state.answers.pais].filter(Boolean).join(', '),
+            necesidad: state.answers.necesidad,
+            detalles: state.detalles,   // objeto con las respuestas dinámicas según la rama
+            user_agent: navigator.userAgent,
+            referrer: document.referrer || 'directo'
+        };
+
+        if (!WEBHOOK_URL) {
+            console.log('[EAS quiz] webhook no configurado · payload:', payload);
+            return true; // simulamos OK · cuando el usuario tenga n8n listo, este return desaparece
+        }
+
+        try {
+            const res = await fetch(WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+                keepalive: true
+            });
+            return res.ok;
+        } catch (err) {
+            console.error('[EAS quiz] error webhook:', err);
+            return false;
+        }
+    }
+
+    function showStatus(msg, type) {
+        status.textContent = msg;
+        status.classList.remove('is-success', 'is-error');
+        status.classList.add(type === 'success' ? 'is-success' : 'is-error');
+    }
+
+    // MENU MÓVIL (hereda de main.js · igual reactivamos aquí por si acaso)
+    document.querySelector('.nav-toggle')?.addEventListener('click', () => {
+        document.querySelector('.nav-links')?.classList.toggle('is-open');
+    });
+    </script>
+</body>
+</html>

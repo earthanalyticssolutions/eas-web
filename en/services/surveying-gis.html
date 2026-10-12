@@ -1,0 +1,448 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EAS · Line L-06 Digital surveying and geospatial analysis. GNSS RTK, RPAS drone photogrammetry, DTM, centimeter-level orthophotos, GIS analysis, thematic maps and bathymetry.">
+    <meta name="keywords" content="digital surveying, GIS, GNSS RTK, RPAS drone, photogrammetry, DTM, orthophoto, QGIS, ArcGIS, IGAC, EAS Earth Analytics Solutions">
+    <meta name="author" content="Earth Analytics Solutions · EAS">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#050a10">
+    <link rel="canonical" href="https://earthas.co/en/services/surveying-gis.html">
+    <link rel="alternate" hreflang="es" href="https://earthas.co/servicios/topografia-gis.html">
+    <link rel="alternate" hreflang="en" href="https://earthas.co/en/services/surveying-gis.html">
+    <link rel="alternate" hreflang="x-default" href="https://earthas.co/servicios/topografia-gis.html">
+    <meta property="og:title" content="Digital surveying and geospatial analysis · EAS">
+    <meta property="og:description" content="Line L-06: GNSS RTK surveys, drone photogrammetry, DTM, orthophotos and GIS analysis with centimeter-level accuracy.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://earthas.co/en/services/surveying-gis.html">
+    <meta property="og:locale" content="en_US">
+    <title>Digital surveying and geospatial analysis · L-06 · EAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css?v=2026.5.22">
+    <link rel="stylesheet" href="../../css/servicios.css?v=2026.5.22">
+    <link rel="icon" type="image/png" href="../../assets/eas.png">
+</head>
+<body class="page-line">
+
+    <nav class="nav-bar" aria-label="Main navigation">
+        <a href="../index.html" class="nav-brand">
+            <img src="../../assets/eas.png" alt="EAS" class="nav-logo">
+            <span>EAS</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html" class="is-current">Services</a></li>
+            <li><a href="../industries.html">Industries</a></li>
+            <li><a href="../solutions.html">Solutions</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+            <li><a href="../quote.html" class="nav-cta">Quote · 15min ▶</a></li>
+            <li><a class="lang-switch" href="../../servicios/topografia-gis.html" hreflang="es" lang="es">ES</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <section class="line-hero">
+        <!-- MOTIF SURVEY · grid GIS + dron + waypoints + curvas de nivel -->
+        <div class="line-hero__motif motif-survey" aria-hidden="true">
+            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <!-- Grid GIS de fondo (más denso) -->
+                <line class="sv-grid" x1="100" y1="0" x2="100" y2="600"/>
+                <line class="sv-grid" x1="300" y1="0" x2="300" y2="600"/>
+                <line class="sv-grid" x1="500" y1="0" x2="500" y2="600"/>
+                <line class="sv-grid-strong" x1="700" y1="0" x2="700" y2="600"/>
+                <line class="sv-grid" x1="900" y1="0" x2="900" y2="600"/>
+                <line class="sv-grid" x1="1100" y1="0" x2="1100" y2="600"/>
+                <line class="sv-grid" x1="1300" y1="0" x2="1300" y2="600"/>
+                <line class="sv-grid" x1="0" y1="150" x2="1400" y2="150"/>
+                <line class="sv-grid-strong" x1="0" y1="300" x2="1400" y2="300"/>
+                <line class="sv-grid" x1="0" y1="450" x2="1400" y2="450"/>
+
+                <!-- Curvas de nivel (3 elipses concéntricas en parte derecha) -->
+                <ellipse class="sv-iso sv-iso--3" cx="1050" cy="380" rx="280" ry="120"/>
+                <ellipse class="sv-iso sv-iso--2" cx="1050" cy="380" rx="200" ry="85"/>
+                <ellipse class="sv-iso sv-iso--1" cx="1050" cy="380" rx="120" ry="50"/>
+
+                <!-- Dron volando -->
+                <g class="sv-drone">
+                    <circle cx="400" cy="200" r="6"/>
+                    <line x1="388" y1="194" x2="412" y2="206" stroke="rgba(255,152,0,0.9)" stroke-width="1.5"/>
+                    <line x1="388" y1="206" x2="412" y2="194" stroke="rgba(255,152,0,0.9)" stroke-width="1.5"/>
+                    <circle cx="386" cy="194" r="3" stroke="rgba(255,152,0,0.7)" fill="none"/>
+                    <circle cx="414" cy="194" r="3" stroke="rgba(255,152,0,0.7)" fill="none"/>
+                    <circle cx="386" cy="206" r="3" stroke="rgba(255,152,0,0.7)" fill="none"/>
+                    <circle cx="414" cy="206" r="3" stroke="rgba(255,152,0,0.7)" fill="none"/>
+                </g>
+                <text x="400" y="180" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(255,152,0,0.7)">RPAS-01</text>
+
+                <!-- Beam láser desde dron al suelo -->
+                <line class="sv-beam" x1="400" y1="210" x2="400" y2="450"/>
+
+                <!-- Waypoints en grid -->
+                <circle class="sv-waypoint" cx="200" cy="450" r="5"/>
+                <text x="200" y="475" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(127,233,255,0.6)">WP-01</text>
+
+                <circle class="sv-waypoint sv-waypoint--2" cx="400" cy="450" r="5"/>
+                <text x="400" y="475" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(127,233,255,0.6)">WP-02</text>
+
+                <circle class="sv-waypoint sv-waypoint--3" cx="700" cy="450" r="5"/>
+                <text x="700" y="475" text-anchor="middle" font-family="Orbitron" font-size="9" letter-spacing="1.5" fill="rgba(127,233,255,0.6)">WP-03</text>
+
+                <!-- Coordenadas técnicas en costado -->
+                <text x="40" y="540" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(255,152,0,0.5)">SIRGAS · ZONE 18N</text>
+                <text x="1360" y="540" text-anchor="end" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(255,152,0,0.5)">RTK · ±1.5cm</text>
+                <text x="40" y="40" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(127,233,255,0.5)">N: 1,234,567</text>
+                <text x="1360" y="40" text-anchor="end" font-family="Orbitron" font-size="9" letter-spacing="2" fill="rgba(127,233,255,0.5)">E: 1,098,765</text>
+            </svg>
+        </div>
+
+        <div class="line-hero__inner">
+            <div>
+                <nav class="line-hero__breadcrumb" aria-label="Breadcrumb">
+                    <a href="../index.html">EAS</a>
+                    <span class="sep">/</span>
+                    <a href="../services.html">Services</a>
+                    <span class="sep">/</span>
+                    <span class="current">Surveying and GIS</span>
+                </nav>
+
+                <div class="line-hero__id">
+                    <strong>L-06</strong>
+                    <span>GEOSPATIAL · DATA</span>
+                </div>
+
+                <h1 class="line-hero__title">
+                    Digital surveying<br>
+                    and <em>geospatial analysis</em>
+                </h1>
+
+                <p class="line-hero__lead">
+                    Centimeter-level surveys with GNSS RTK, RPAS drone photogrammetry and GIS
+                    analysis. <strong>A geodatabase delivered</strong> with every project: orthophotos, DTM,
+                    contour lines, thematic maps and raw data for audit.
+                </p>
+
+                <div class="line-hero__actions">
+                    <a href="../quote.html" class="btn-svc btn-svc--primary">QUOTE THIS LINE ▶</a>
+                    <a href="#alcance" class="btn-svc btn-svc--ghost">VIEW SCOPE</a>
+                </div>
+            </div>
+
+            <aside class="line-hero__panel">
+                <div class="line-hero__panel-head">
+                    <span>SPEC SHEET</span>
+                    <span>L-06 · v.2026</span>
+                </div>
+                <dl>
+                    <div class="line-hero__panel-row"><dt>Code</dt><dd class="neon">EAS-TOP-06</dd></div>
+                    <div class="line-hero__panel-row"><dt>Type</dt><dd>Survey + analysis</dd></div>
+                    <div class="line-hero__panel-row"><dt>Core standards</dt><dd class="cyan">IGAC · MAGNA-SIRGAS · ASPRS</dd></div>
+                    <div class="line-hero__panel-row"><dt>Equipment</dt><dd>GNSS RTK · RPAS drone · total station</dd></div>
+                    <div class="line-hero__panel-row"><dt>Typical timeline</dt><dd>1-3 weeks</dd></div>
+                    <div class="line-hero__panel-row"><dt>Output</dt><dd>Orthophoto + DTM + GIS + report</dd></div>
+                    <div class="line-hero__panel-row"><dt>Applies to</dt><dd>Lots · Roads · Property · Cadastre · POMCA</dd></div>
+                </dl>
+            </aside>
+        </div>
+    </section>
+
+    <div class="line-shell">
+        <aside class="line-side">
+            <span class="line-side__title">ON THIS PAGE</span>
+            <ul class="line-side__list">
+                <li><a href="#alcance" class="is-active">01 · Scope</a></li>
+                <li><a href="#campo">02 · Field data capture</a></li>
+                <li><a href="#productos">03 · Digital products</a></li>
+                <li><a href="#sig">04 · GIS analysis</a></li>
+                <li><a href="#proceso">05 · Process</a></li>
+                <li><a href="#entregables">06 · Deliverables</a></li>
+                <li><a href="#aplicaciones">07 · Applications</a></li>
+            </ul>
+        </aside>
+
+        <div class="line-content">
+            <section id="alcance" class="line-block">
+                <span class="line-block__num">01 · SCOPE</span>
+                <h2 class="line-block__title">The project's digital terrain.</h2>
+                <p class="line-block__lead">
+                    We do not sell loose drawings: we deliver a <strong>complete digital model</strong>
+                    of the project. Centimeter-level orthophoto, digital terrain model, contour lines,
+                    slope maps, property base map, GIS layers. All georeferenced to MAGNA-SIRGAS
+                    (Colombia's official geodetic datum) and reproducible in QGIS or ArcGIS.
+                </p>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>What we deliver</h4>
+                        <ul>
+                            <li>Georeferenced orthophoto (2-5 cm accuracy)</li>
+                            <li>Digital Terrain Model (DTM)</li>
+                            <li>Digital Surface Model (DSM)</li>
+                            <li>Contour lines at project-specific intervals</li>
+                            <li>Slope and aspect maps</li>
+                            <li>GIS layers (points, lines, polygons)</li>
+                            <li>QGIS / ArcGIS geodatabase delivered</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>When it is critical</h4>
+                        <ul>
+                            <li>Lot purchase or sale (actual area, boundary)</li>
+                            <li>Urban or road design</li>
+                            <li>Environmental studies and POMCA</li>
+                            <li>Construction staking</li>
+                            <li>Property inventories</li>
+                            <li>Watershed analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="campo" class="line-block">
+                <span class="line-block__num">02 · FIELD DATA CAPTURE</span>
+                <h2 class="line-block__title">GNSS RTK + drone + total station.</h2>
+                <p class="line-block__lead">
+                    We combine methods according to site conditions and the required accuracy.
+                </p>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>GNSS RTK <span class="badge">±1.5 cm</span></h4>
+                        <ul>
+                            <li>Dual-frequency RTK base + rover receivers</li>
+                            <li>Tied to IGAC's official MAGNA-SIRGAS reference system</li>
+                            <li>Geodetic control points</li>
+                            <li>Construction staking and verification</li>
+                            <li>Ideal in open areas with clear sky view</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>RPAS drone photogrammetry</h4>
+                        <ul>
+                            <li>Flights with drones authorized by the Colombian Civil Aviation Authority</li>
+                            <li>High-resolution orthophoto (GSD 2-5 cm)</li>
+                            <li>Hectares covered in hours, not days</li>
+                            <li>DSM and DTM by image matching</li>
+                            <li>Ground control points (GCP)</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Total station</h4>
+                        <ul>
+                            <li>For areas with dense vegetation or under cover</li>
+                            <li>Staking with millimeter accuracy</li>
+                            <li>Survey of existing structures</li>
+                            <li>Tunnels and underground works</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Bathymetry</h4>
+                        <ul>
+                            <li>Single-beam echo sounding for rivers and reservoirs</li>
+                            <li>Survey of channels and cross sections</li>
+                            <li>Input for hydrology and hydraulics</li>
+                            <li>Volume computation for dams and reservoirs</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="productos" class="line-block">
+                <span class="line-block__num">03 · DIGITAL PRODUCTS</span>
+                <h2 class="line-block__title">What is delivered for the project.</h2>
+                <ol class="line-numbered">
+                    <li><strong>Georeferenced orthophoto</strong><span>Distortion-free, scaled aerial image in the official reference system. 2-5 cm accuracy. Base for urban design, planimetry and visual communication.</span></li>
+                    <li><strong>Digital Terrain Model (DTM)</strong><span>Bare-earth surface, without vegetation or buildings. For hydraulic, road and earthworks studies.</span></li>
+                    <li><strong>Digital Surface Model (DSM)</strong><span>Includes vegetation and buildings. Useful for visibility, shading and volume analysis.</span></li>
+                    <li><strong>Contour lines</strong><span>Generated from the DTM at an interval suited to the project (0.5m, 1m, 5m). Smoothed and editable.</span></li>
+                    <li><strong>Thematic maps</strong><span>Slope, aspect, hydrography, drainage, critical zones. Each with professional symbology and legend.</span></li>
+                </ol>
+            </section>
+
+            <section id="sig" class="line-block">
+                <span class="line-block__num">04 · GIS ANALYSIS</span>
+                <h2 class="line-block__title">Spatial data turned into decisions.</h2>
+                <p class="line-block__lead">
+                    All captured information is loaded into a GIS where layers are overlaid,
+                    spatial analyses are run and derived products specific to the project
+                    are generated.
+                </p>
+                <table class="line-table">
+                    <thead>
+                        <tr><th>Software</th><th>Use</th><th>Type</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>QGIS</td><td>Vector and raster GIS</td><td><span class="norm-tag">OPEN-SOURCE</span></td></tr>
+                        <tr><td>ArcGIS Pro</td><td>Professional GIS</td><td><span class="norm-tag">ESRI</span></td></tr>
+                        <tr><td>Pix4D / Agisoft Metashape</td><td>Photogrammetric processing</td><td><span class="norm-tag">PHOTOGRAMMETRY</span></td></tr>
+                        <tr><td>Global Mapper</td><td>3D modeling and conversions</td><td><span class="norm-tag">BLUE MARBLE</span></td></tr>
+                        <tr><td>AutoCAD Civil 3D</td><td>Civil design on the model</td><td><span class="norm-tag">AUTODESK</span></td></tr>
+                        <tr><td>Trimble Business Center</td><td>GNSS processing</td><td><span class="norm-tag">TRIMBLE</span></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="proceso" class="line-block">
+                <span class="line-block__num">05 · PROCESS</span>
+                <h2 class="line-block__title">From planning to digital delivery.</h2>
+                <ol class="line-numbered">
+                    <li><strong>Planning · 24h</strong><span>Scope definition, area to cover, required accuracy. Flight permits if applicable. Quote with schedule.</span></li>
+                    <li><strong>Field work · 1-5 days</strong><span>Setting control points, drone flight, GNSS RTK measurements. Photo documentation.</span></li>
+                    <li><strong>Processing · 1-2 weeks</strong><span>Photogrammetric processing, orthophoto generation, DTM/DSM, georeferencing, product quality control.</span></li>
+                    <li><strong>GIS analysis · 1 week</strong><span>Layer generation, spatial analysis, thematic maps, layouts. Building the deliverable geodatabase.</span></li>
+                    <li><strong>Report + delivery</strong><span>Technical document with methodology, achieved accuracies and products. Printed + digital delivery of all files.</span></li>
+                </ol>
+            </section>
+
+            <section id="entregables" class="line-block">
+                <span class="line-block__num">06 · DELIVERABLES</span>
+                <h2 class="line-block__title">What you receive.</h2>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Cartographic products</h4>
+                        <ul>
+                            <li>High-resolution GeoTIFF orthophoto</li>
+                            <li>DTM and DSM in GeoTIFF / LAS</li>
+                            <li>Contour lines in SHP / DWG</li>
+                            <li>Thematic maps (PDF + SHP layer)</li>
+                            <li>Professional layouts in QGIS / ArcGIS</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Geodatabase</h4>
+                        <ul>
+                            <li>Folder with all SHP layers</li>
+                            <li>Open QGIS project</li>
+                            <li>Metadata per INV or NTC standards</li>
+                            <li>Raw GNSS and photogrammetric data</li>
+                            <li>Reproducible by third parties</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="aplicaciones" class="line-block">
+                <span class="line-block__num">07 · APPLICATIONS</span>
+                <h2 class="line-block__title">Where this line applies.</h2>
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Construction</h4>
+                        <ul>
+                            <li>Topographic surveys of lots</li>
+                            <li>Construction staking</li>
+                            <li>Earthwork volumes</li>
+                            <li>Construction progress (periodic flights)</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Property and cadastral</h4>
+                        <ul>
+                            <li>Property survey</li>
+                            <li>Boundaries, areas, boundary demarcation</li>
+                            <li>Technical cadastre</li>
+                            <li>Subdivisions and lot layouts</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Environmental and land planning</h4>
+                        <ul>
+                            <li>POMCA / POT / EOT (watershed and land-use plans)</li>
+                            <li>EIA with a mapping component</li>
+                            <li>Forest inventories</li>
+                            <li>Monitoring of mining and its impacts</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Special cases</h4>
+                        <ul>
+                            <li>Historic heritage (3D scanning)</li>
+                            <li>Archaeological investigation</li>
+                            <li>Post-disaster documentation</li>
+                            <li>Infrastructure inspection</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="line-final">
+                <div>
+                    <h3>Does your project need accurate surveying?</h3>
+                    <p>A single day of drone work can cover hectares at centimeter accuracy. Quote within 48h.</p>
+                </div>
+                <div><a href="../quote.html" class="btn-svc btn-svc--primary">REQUEST A QUOTE ▶</a></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="line-related">
+        <div class="line-related__inner">
+            <h3 class="line-related__head">[ RELATED LINES ]</h3>
+            <div class="line-related__grid">
+                <a href="surface-water-hydrology.html" class="line-related__card">
+                    <span>L-03 · WATER</span>
+                    <strong>Surface water engineering</strong>
+                </a>
+                <a href="geohazard-risk-environment.html" class="line-related__card">
+                    <span>L-08 · SUSTAINABILITY</span>
+                    <strong>Geotechnical risk and environmental management</strong>
+                </a>
+                <a href="forensic-geotechnics.html" class="line-related__card">
+                    <span>L-09 · FORENSIC</span>
+                    <strong>Forensic geotechnical diagnostics</strong>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- ═══════════════════════════════════════════════════════════════
+         FOOTER · compacto, consistente con index
+         ═══════════════════════════════════════════════════════════════ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-block">
+                    <a href="../index.html" class="footer-brand">
+                        <img src="../../assets/eas.png" alt="EAS">
+                        <span>EAS</span>
+                    </a>
+                    <p>Earth Analytics Solutions · Geosciences, geotechnics and ground engineering from Colombia for LATAM.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/573137531833" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.8-.7-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.4 5L2 22l5.1-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
+                        <a href="mailto:gerencia@earthas.co" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg></a>
+                        
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>NAVIGATE</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../services.html">Services</a></li>
+                        <li><a href="../industries.html">Industries</a></li>
+                        <li><a href="../solutions.html">Solutions</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>CONTACT</h4>
+                    <ul>
+                        <li><a href="mailto:gerencia@earthas.co">gerencia@earthas.co</a></li>
+                        <li><a href="https://wa.me/573137531833">+57 313 753 1833</a></li>
+                        <li>Norte de Santander · CO</li>
+                        <li><a href="../quote.html">Request a quote</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Earth Analytics Solutions · EAS · All rights reserved</span>
+                <span class="footer-tag">EARTHAS.CO · PRECISION ENGINEERING &amp; GEOSCIENCES</span>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/573137531833" class="float-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.8-.7-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.4 5L2 22l5.1-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
+<script src="../../js/main.js?v=2026.5.22" defer></script>
+</body>
+</html>

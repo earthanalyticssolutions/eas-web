@@ -1,0 +1,607 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EAS · Line L-03 Surface water engineering. Modeling of watersheds, rivers, urban drainage, floodplains and hydraulic structures with HEC-HMS, HEC-RAS and SWMM. Operating across Latin America.">
+    <meta name="keywords" content="surface water engineering, hydrology, hydraulics, HEC-RAS, HEC-HMS, SWMM, watersheds, drainage, EAS Earth Analytics Solutions">
+    <meta name="author" content="Earth Analytics Solutions · EAS">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#050a10">
+    <link rel="canonical" href="https://earthas.co/en/services/surface-water-hydrology.html">
+    <link rel="alternate" hreflang="es" href="https://earthas.co/servicios/hidrologia.html">
+    <link rel="alternate" hreflang="en" href="https://earthas.co/en/services/surface-water-hydrology.html">
+    <link rel="alternate" hreflang="x-default" href="https://earthas.co/servicios/hidrologia.html">
+    <meta property="og:title" content="Surface water engineering · EAS">
+    <meta property="og:description" content="Line L-03: hydrologic and hydraulic modeling with HEC-HMS, HEC-RAS and SWMM. For bridges, culverts, land developments, POMCA watershed plans and EIA.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://earthas.co/en/services/surface-water-hydrology.html">
+    <meta property="og:locale" content="en_US">
+    <title>Surface water engineering · L-03 · EAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css?v=2026.5.22">
+    <link rel="stylesheet" href="../../css/servicios.css?v=2026.5.22">
+    <link rel="icon" type="image/png" href="../../assets/eas.png">
+    <link rel="apple-touch-icon" href="../../assets/eas.png">
+</head>
+<body class="page-line">
+
+    <nav class="nav-bar" aria-label="Main navigation">
+        <a href="../index.html" class="nav-brand">
+            <img src="../../assets/eas.png" alt="EAS" class="nav-logo">
+            <span>EAS</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html" class="is-current">Services</a></li>
+            <li><a href="../industries.html">Industries</a></li>
+            <li><a href="../solutions.html">Solutions</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+            <li><a href="../quote.html" class="nav-cta">Quote · 15min ▶</a></li>
+            <li><a class="lang-switch" href="../../servicios/hidrologia.html" hreflang="es" lang="es">ES</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <section class="line-hero">
+
+        <!-- MOTIF HIDROLÓGICO · ondas fluviales + hidrograma + flujo -->
+        <div class="line-hero__motif motif-hydro" aria-hidden="true">
+            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <!-- Grid de ejes (axis-style) -->
+                <g>
+                    <line class="grid-axis" x1="0" y1="500" x2="1400" y2="500"/>
+                    <line class="grid-tick" x1="0" y1="400" x2="1400" y2="400"/>
+                    <line class="grid-tick" x1="0" y1="300" x2="1400" y2="300"/>
+                    <line class="grid-tick" x1="0" y1="200" x2="1400" y2="200"/>
+                    <line class="grid-tick" x1="900" y1="0" x2="900" y2="500"/>
+                    <line class="grid-tick" x1="1100" y1="0" x2="1100" y2="500"/>
+                </g>
+
+                <!-- Etiquetas de ejes -->
+                <text class="axis-label" x="20" y="495" fill="rgba(127,233,255,0.4)">DISCHARGE · m³/s</text>
+                <text class="axis-label" x="1320" y="520" text-anchor="end" fill="rgba(127,233,255,0.4)">TIME →</text>
+
+                <!-- 4 ondas fluviales sinusoidales (solo stroke) -->
+                <path fill="none" class="wave wave--1" d="M -50 230 Q 120 200, 280 230 T 600 230 T 920 230 T 1240 230 T 1560 230"/>
+                <path fill="none" class="wave wave--2" d="M -50 290 Q 140 260, 320 290 T 660 290 T 980 290 T 1300 290 T 1620 290"/>
+                <path fill="none" class="wave wave--3" d="M -50 360 Q 160 330, 360 360 T 760 360 T 1100 360 T 1450 360"/>
+                <path fill="none" class="wave wave--neon" d="M -50 165 Q 200 145, 400 165 T 800 165 T 1200 165 T 1600 165"/>
+
+                <!-- Hidrograma (curva de descarga) — solo stroke, sin fill area -->
+                <path fill="none" class="hydrograph" d="M 880 480 Q 920 480, 950 400 Q 980 300, 1000 240 Q 1020 300, 1050 400 Q 1080 460, 1120 485 L 1180 488"/>
+                <circle class="hydrograph-peak" cx="1000" cy="240" r="4" fill="rgba(255,152,0,1)"/>
+                <text class="axis-label" x="1000" y="220" text-anchor="middle" fill="rgba(255,152,0,0.6)">Q-PEAK</text>
+
+                <!-- Partículas de flujo (4 puntos pequeños) -->
+                <g>
+                    <circle class="flow flow--1" cx="200" cy="230" r="2.5" fill="rgba(127,233,255,1)"/>
+                    <circle class="flow flow--2" cx="200" cy="290" r="2" fill="rgba(127,233,255,1)"/>
+                    <circle class="flow flow--3" cx="200" cy="360" r="2.5" fill="rgba(127,233,255,1)"/>
+                    <circle class="flow flow--4" cx="200" cy="165" r="2" fill="rgba(127,233,255,1)"/>
+                </g>
+
+                <!-- Etiqueta del hidrograma -->
+                <text class="axis-label" x="1180" y="505" text-anchor="end" fill="rgba(255,152,0,0.5)">HYDROGRAPH</text>
+            </svg>
+        </div>
+
+        <div class="line-hero__inner">
+            <div>
+                <nav class="line-hero__breadcrumb" aria-label="Breadcrumb">
+                    <a href="../index.html">EAS</a>
+                    <span class="sep">/</span>
+                    <a href="../services.html">Services</a>
+                    <span class="sep">/</span>
+                    <span class="current">Hydrology</span>
+                </nav>
+
+                <div class="line-hero__id">
+                    <strong>L-03</strong>
+                    <span>WATER · GEOSCIENCES</span>
+                </div>
+
+                <h1 class="line-hero__title">
+                    Engineering<br>
+                    for <em>surface water</em>
+                </h1>
+
+                <p class="line-hero__lead">
+                    We model the water you can see: watersheds, rivers, runoff, urban drainage and
+                    floodplains. Critical inputs for <strong>bridges, culverts,
+                    land developments and POMCA (watershed management plans)</strong> using internationally
+                    recognized software and verifiable hydrometeorological data.
+                </p>
+
+                <div class="line-hero__actions">
+                    <a href="../quote.html" class="btn-svc btn-svc--primary">QUOTE THIS LINE ▶</a>
+                    <a href="#alcance" class="btn-svc btn-svc--ghost">VIEW SCOPE</a>
+                </div>
+            </div>
+
+            <aside class="line-hero__panel" aria-label="Service line technical data">
+                <div class="line-hero__panel-head">
+                    <span>SPEC SHEET</span>
+                    <span>L-03 · v.2026</span>
+                </div>
+                <dl>
+                    <div class="line-hero__panel-row"><dt>Code</dt><dd class="neon">EAS-HID-03</dd></div>
+                    <div class="line-hero__panel-row"><dt>Type</dt><dd>Modeling + study</dd></div>
+                    <div class="line-hero__panel-row"><dt>Core standards</dt><dd class="cyan">RAS-2017 · INVIAS · IDEAM</dd></div>
+                    <div class="line-hero__panel-row"><dt>Software</dt><dd>HEC-HMS · HEC-RAS · SWMM · QGIS</dd></div>
+                    <div class="line-hero__panel-row"><dt>Typical timeline</dt><dd>3-6 weeks</dd></div>
+                    <div class="line-hero__panel-row"><dt>Output</dt><dd>Study + models + drawings</dd></div>
+                    <div class="line-hero__panel-row"><dt>Applies to</dt><dd>Hydraulic structures · POMCA · Land developments</dd></div>
+                </dl>
+            </aside>
+        </div>
+    </section>
+
+    <div class="line-shell">
+        <aside class="line-side" aria-label="On this page">
+            <span class="line-side__title">ON THIS PAGE</span>
+            <ul class="line-side__list">
+                <li><a href="#alcance" class="is-active">01 · Scope</a></li>
+                <li><a href="#hidrologia">02 · Hydrology</a></li>
+                <li><a href="#hidraulica">03 · Hydraulics</a></li>
+                <li><a href="#drenajes">04 · Urban drainage</a></li>
+                <li><a href="#modelacion">05 · Modeling software</a></li>
+                <li><a href="#proceso">06 · Process</a></li>
+                <li><a href="#entregables">07 · Deliverables</a></li>
+                <li><a href="#aplicaciones">08 · Applications</a></li>
+            </ul>
+        </aside>
+
+        <div class="line-content">
+
+            <section id="alcance" class="line-block">
+                <span class="line-block__num">01 · SCOPE</span>
+                <h2 class="line-block__title">Water rules. So does modeling it.</h2>
+                <p class="line-block__lead">
+                    Before installing a culvert, sizing a bridge, developing a lot near
+                    a river or applying for an environmental permit, you need to know <strong>how much water arrives, when
+                    it arrives and how it moves</strong>. EAS models hydrologic and hydraulic behavior
+                    with industry-standard software and verifiable hydrometeorological data from IDEAM (Colombian Institute of Hydrology, Meteorology and Environmental Studies).
+                </p>
+
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>What we deliver</h4>
+                        <ul>
+                            <li>Design discharges by return period</li>
+                            <li>Flood maps and hazard extents</li>
+                            <li>Hydraulic design of structures (bridges, box culverts)</li>
+                            <li>Urban drainage sizing</li>
+                            <li>Studies for environmental permits</li>
+                            <li>Construction-phase water management</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Why it matters</h4>
+                        <ul>
+                            <li>An undersized culvert means a collapsed road</li>
+                            <li>A bridge without a hydraulic study is a civil liability</li>
+                            <li>A developer without a flood study loses the permit</li>
+                            <li>POMCA and EIA require verifiable models</li>
+                            <li>Climate adaptation is already a regulatory requirement</li>
+                            <li>Designing by eye costs more when it rains</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="hidrologia" class="line-block">
+                <span class="line-block__num">02 · HYDROLOGY</span>
+                <h2 class="line-block__title">How much water arrives?</h2>
+                <p class="line-block__lead">
+                    We characterize your project's watershed and calculate the expected discharges for
+                    each return period. IDEAM data, hydrologic modeling and cross-validation.
+                </p>
+
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Watershed analysis <span class="badge">GIS</span></h4>
+                        <ul>
+                            <li>Delineation with a high-resolution DEM</li>
+                            <li>Morphometric parameters (area, slope, length)</li>
+                            <li>Time of concentration (Kirpich, Témez, Giandotti)</li>
+                            <li>Land cover, land use, infiltration (CN)</li>
+                            <li>Thematic maps in QGIS / ArcGIS</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Hydrometeorological analysis</h4>
+                        <ul>
+                            <li>Nearby IDEAM stations and historical records</li>
+                            <li>IDF curves (Intensity-Duration-Frequency)</li>
+                            <li>Frequency analysis (Gumbel, Log-Pearson III)</li>
+                            <li>Return periods of 2 / 5 / 10 / 25 / 50 / 100 years</li>
+                            <li>Design hyetographs (SCS, alternating block)</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Rainfall-runoff modeling <span class="badge">HEC-HMS</span></h4>
+                        <ul>
+                            <li>SCS method (CN)</li>
+                            <li>Synthetic unit hydrograph</li>
+                            <li>Flood routing</li>
+                            <li>Calibration with observed events (when data exist)</li>
+                            <li>Sensitivity analysis</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Design discharges</h4>
+                        <ul>
+                            <li>Rational method for small watersheds</li>
+                            <li>HEC-HMS modeling for medium and large watersheds</li>
+                            <li>Cross-validation between methods</li>
+                            <li>Table of Q vs T<sub>r</sub> with uncertainty analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="hidraulica" class="line-block">
+                <span class="line-block__num">03 · HYDRAULICS</span>
+                <h2 class="line-block__title">How does the water move?</h2>
+                <p class="line-block__lead">
+                    Once we have the discharges, we model the hydraulic behavior: water
+                    levels, velocities, shear stress, submergence and scour.
+                </p>
+
+                <ol class="line-numbered">
+                    <li>
+                        <strong>1D modeling of rivers and channels</strong>
+                        <span>One-dimensional HEC-RAS for flood routing, gradually varied flow profiles and flood extents along the channel.</span>
+                    </li>
+                    <li>
+                        <strong>2D floodplain modeling</strong>
+                        <span>HEC-RAS 2D for flat terrain, deltas and deltaic plains, developments near rivers. Accurate depth, velocity and hazard maps.</span>
+                    </li>
+                    <li>
+                        <strong>Hydraulic design of crossing structures</strong>
+                        <span>Box culverts, pipe culverts, bridges. Capacity check, submergence, allowable velocities, backwater control.</span>
+                    </li>
+                    <li>
+                        <strong>Scour analysis</strong>
+                        <span>General and local scour at piers and abutments. Lischtvan-Lebediev and Maza-Echavarría methods, HEC-18 (Pier and Abutment Scour).</span>
+                    </li>
+                    <li>
+                        <strong>Design of control structures</strong>
+                        <span>Energy dissipators, gabions, groynes, levees, detention ponds, overflow spillways.</span>
+                    </li>
+                    <li>
+                        <strong>Flood studies</strong>
+                        <span>Flood extents by return period for POMCA, EIA, emergency plans and land-use restrictions.</span>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="drenajes" class="line-block">
+                <span class="line-block__num">04 · URBAN DRAINAGE</span>
+                <h2 class="line-block__title">When the rain reaches the city.</h2>
+                <p class="line-block__lead">
+                    We design stormwater drainage systems for land developments, urban roads and
+                    large-footprint projects, considering the capacity of existing networks and the
+                    hydrodynamic behavior of the complete system.
+                </p>
+
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Capacity analysis <span class="badge">SWMM</span></h4>
+                        <ul>
+                            <li>Hydrodynamic EPA SWMM modeling</li>
+                            <li>Check of pipes, channels and inlets</li>
+                            <li>Identification of overflow points</li>
+                            <li>Cost-benefit analysis of upgrades</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Network design</h4>
+                        <ul>
+                            <li>Optimal layout and sizing</li>
+                            <li>Inlets (transverse, curb, combination)</li>
+                            <li>Junction chambers and manholes</li>
+                            <li>Materials and specifications</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>SUDS · Sustainable drainage</h4>
+                        <ul>
+                            <li>Permeable pavements</li>
+                            <li>Bioretention and vegetated swales</li>
+                            <li>Stormwater storage tanks</li>
+                            <li>Green roofs</li>
+                            <li>Peak flow reduction</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Construction-phase water management</h4>
+                        <ul>
+                            <li>Temporary water capture during construction</li>
+                            <li>Sediment basins and traps</li>
+                            <li>Perimeter ditch design</li>
+                            <li>Compliance with Resolution 631 (wastewater discharges)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="modelacion" class="line-block">
+                <span class="line-block__num">05 · MODELING SOFTWARE</span>
+                <h2 class="line-block__title">The tools we use.</h2>
+                <p class="line-block__lead">
+                    Industry-standard software, widely accepted by regulatory agencies
+                    in Colombia and Latin America. Verifiable and reproducible results.
+                </p>
+
+                <table class="line-table">
+                    <thead>
+                        <tr>
+                            <th>Software</th>
+                            <th>Use</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HEC-HMS</td>
+                            <td>Rainfall-runoff hydrologic modeling</td>
+                            <td><span class="norm-tag">USACE</span></td>
+                        </tr>
+                        <tr>
+                            <td>HEC-RAS 1D / 2D</td>
+                            <td>Hydraulic modeling of rivers and floodplains</td>
+                            <td><span class="norm-tag">USACE</span></td>
+                        </tr>
+                        <tr>
+                            <td>EPA SWMM</td>
+                            <td>Hydrodynamic urban drainage</td>
+                            <td><span class="norm-tag">EPA · USA</span></td>
+                        </tr>
+                        <tr>
+                            <td>QGIS / ArcGIS Pro</td>
+                            <td>Spatial analysis, DEM, watersheds</td>
+                            <td><span class="norm-tag">GIS</span></td>
+                        </tr>
+                        <tr>
+                            <td>HydroOffice / R</td>
+                            <td>Hydrologic statistical analysis</td>
+                            <td><span class="norm-tag">OPEN-SOURCE</span></td>
+                        </tr>
+                        <tr>
+                            <td>HY-8</td>
+                            <td>Culvert design</td>
+                            <td><span class="norm-tag">FHWA · USA</span></td>
+                        </tr>
+                        <tr>
+                            <td>StormCAD / SewerCAD</td>
+                            <td>Storm and sanitary sewer design</td>
+                            <td><span class="norm-tag">BENTLEY</span></td>
+                        </tr>
+                        <tr>
+                            <td>Iber</td>
+                            <td>2D surface flow modeling</td>
+                            <td><span class="norm-tag">CIMNE / FLUMEN</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="proceso" class="line-block">
+                <span class="line-block__num">06 · PROCESS</span>
+                <h2 class="line-block__title">From data to flood extents.</h2>
+                <p class="line-block__lead">
+                    The timeline depends on the watershed and the level of detail, but the process is always
+                    the same. No shortcuts.
+                </p>
+
+                <ol class="line-numbered">
+                    <li>
+                        <strong>Data collection · 1 to 2 weeks</strong>
+                        <span>IDEAM data, DEM, official cartography, nearby stations, historical rainfall and discharge records, existing bathymetry.</span>
+                    </li>
+                    <li>
+                        <strong>Reconnaissance visit · 1 day</strong>
+                        <span>Inspection of the channel, control sections, high-water marks, existing structures and critical points. Complementary topographic survey if applicable.</span>
+                    </li>
+                    <li>
+                        <strong>Hydrologic analysis · 1 week</strong>
+                        <span>Watershed characterization, IDF analysis, HEC-HMS modeling, discharge validation with the rational method where applicable.</span>
+                    </li>
+                    <li>
+                        <strong>Hydraulic modeling · 2 to 3 weeks</strong>
+                        <span>Building a 1D or 2D model as needed, calibration, simulation for all return periods, flood maps, scour analysis.</span>
+                    </li>
+                    <li>
+                        <strong>Design and report · 1 week</strong>
+                        <span>Sizing of hydraulic structures, drawings, technical report, appendices. Internal peer review.</span>
+                    </li>
+                    <li>
+                        <strong>Technical defense</strong>
+                        <span>We defend the study before the regional environmental authority (CAR), independent oversight and the contracting agency. Support for permits and filings.</span>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="entregables" class="line-block">
+                <span class="line-block__num">07 · DELIVERABLES</span>
+                <h2 class="line-block__title">What you receive.</h2>
+
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Hydrologic-hydraulic study</h4>
+                        <ul>
+                            <li>Signed technical report</li>
+                            <li>Justification of assumptions and methods</li>
+                            <li>Table of discharges by return period</li>
+                            <li>Hydraulic results (levels, velocities)</li>
+                            <li>Scour analysis</li>
+                            <li>Conclusions and recommendations</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Technical mapping</h4>
+                        <ul>
+                            <li>Map of the delineated watershed</li>
+                            <li>Flood maps by T<sub>r</sub></li>
+                            <li>Velocity and depth maps</li>
+                            <li>Longitudinal channel profiles</li>
+                            <li>Modeled cross sections</li>
+                            <li>Layout in QGIS / shapefile</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Model files</h4>
+                        <ul>
+                            <li>Open HEC-HMS project</li>
+                            <li>Open HEC-RAS project</li>
+                            <li>SWMM model if applicable</li>
+                            <li>Raw data for audit</li>
+                            <li>Any third party can reproduce the results</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Hydraulic designs</h4>
+                        <ul>
+                            <li>Drawings of hydraulic structures</li>
+                            <li>Technical specifications</li>
+                            <li>Bill of quantities</li>
+                            <li>Unit price analysis (APU) and preliminary budget</li>
+                            <li>Construction details</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="aplicaciones" class="line-block">
+                <span class="line-block__num">08 · APPLICATIONS</span>
+                <h2 class="line-block__title">When you need this line.</h2>
+
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Road infrastructure</h4>
+                        <ul>
+                            <li>Hydraulic study for bridges</li>
+                            <li>Culvert sizing</li>
+                            <li>Box culverts and small bridges</li>
+                            <li>Longitudinal and cross drainage</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Land development</h4>
+                        <ul>
+                            <li>Stormwater drainage for urban projects</li>
+                            <li>Flood studies for permits</li>
+                            <li>Water management in rural subdivisions</li>
+                            <li>Detention ponds</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Environmental and land planning</h4>
+                        <ul>
+                            <li>POMCA and POT (land-use plan)</li>
+                            <li>EIA and management plans</li>
+                            <li>Channel occupation permit</li>
+                            <li>Surface water concessions</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Special cases</h4>
+                        <ul>
+                            <li>Post-flood reconstruction</li>
+                            <li>Diagnostics of existing hydraulic structures</li>
+                            <li>Studies for risk management</li>
+                            <li>Early warning systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="line-final">
+                <div>
+                    <h3>Does your project involve water?</h3>
+                    <p>Tell us about the watershed, the channel or the urban development. We reply with a quote in less than 48h.</p>
+                </div>
+                <div>
+                    <a href="../quote.html" class="btn-svc btn-svc--primary">REQUEST A QUOTE ▶</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <section class="line-related">
+        <div class="line-related__inner">
+            <h3 class="line-related__head">[ RELATED LINES ]</h3>
+            <div class="line-related__grid">
+                <a href="hydrogeology.html" class="line-related__card">
+                    <span>L-04 · GROUNDWATER</span>
+                    <strong>Groundwater and aquifers</strong>
+                </a>
+                <a href="geohazard-risk-environment.html" class="line-related__card">
+                    <span>L-08 · SUSTAINABILITY</span>
+                    <strong>Geotechnical risk and environmental management</strong>
+                </a>
+                <a href="surveying-gis.html" class="line-related__card">
+                    <span>L-06 · GEOSPATIAL</span>
+                    <strong>Digital surveying and geospatial analysis</strong>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- ═══════════════════════════════════════════════════════════════
+         FOOTER · compacto, consistente con index
+         ═══════════════════════════════════════════════════════════════ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-block">
+                    <a href="../index.html" class="footer-brand">
+                        <img src="../../assets/eas.png" alt="EAS">
+                        <span>EAS</span>
+                    </a>
+                    <p>Earth Analytics Solutions · Geosciences, geotechnics and ground engineering from Colombia for LATAM.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/573137531833" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.8-.7-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.4 5L2 22l5.1-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
+                        <a href="mailto:gerencia@earthas.co" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg></a>
+                        
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>NAVIGATE</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../services.html">Services</a></li>
+                        <li><a href="../industries.html">Industries</a></li>
+                        <li><a href="../solutions.html">Solutions</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>CONTACT</h4>
+                    <ul>
+                        <li><a href="mailto:gerencia@earthas.co">gerencia@earthas.co</a></li>
+                        <li><a href="https://wa.me/573137531833">+57 313 753 1833</a></li>
+                        <li>Norte de Santander · CO</li>
+                        <li><a href="../quote.html">Request a quote</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Earth Analytics Solutions · EAS · All rights reserved</span>
+                <span class="footer-tag">EARTHAS.CO · PRECISION ENGINEERING &amp; GEOSCIENCES</span>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/573137531833" class="float-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.8-.7-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.4 5L2 22l5.1-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
+<script src="../../js/main.js?v=2026.5.22" defer></script>
+</body>
+</html>

@@ -1,0 +1,615 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EAS · Line L-04 Groundwater and aquifers. Hydrogeological investigation, drilling, pumping tests, water quality, MODFLOW modeling and well design for water supply or water table drawdown.">
+    <meta name="keywords" content="groundwater, aquifers, hydrogeology, wells, pumping tests, MODFLOW, EAS Earth Analytics Solutions">
+    <meta name="author" content="Earth Analytics Solutions · EAS">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#050a10">
+    <link rel="canonical" href="https://earthas.co/en/services/hydrogeology.html">
+    <link rel="alternate" hreflang="es" href="https://earthas.co/servicios/hidrogeologia.html">
+    <link rel="alternate" hreflang="en" href="https://earthas.co/en/services/hydrogeology.html">
+    <link rel="alternate" hreflang="x-default" href="https://earthas.co/servicios/hidrogeologia.html">
+    <meta property="og:title" content="Groundwater and aquifers · EAS">
+    <meta property="og:description" content="Line L-04: hydrogeological investigation with MODFLOW, pumping tests, water quality and well design. For water supply, dewatering or environmental studies.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://earthas.co/en/services/hydrogeology.html">
+    <meta property="og:locale" content="en_US">
+    <title>Groundwater and aquifers · L-04 · EAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css?v=2026.5.22">
+    <link rel="stylesheet" href="../../css/servicios.css?v=2026.5.22">
+    <link rel="icon" type="image/png" href="../../assets/eas.png">
+    <link rel="apple-touch-icon" href="../../assets/eas.png">
+</head>
+<body class="page-line">
+
+    <nav class="nav-bar" aria-label="Main navigation">
+        <a href="../index.html" class="nav-brand">
+            <img src="../../assets/eas.png" alt="EAS" class="nav-logo">
+            <span>EAS</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html" class="is-current">Services</a></li>
+            <li><a href="../industries.html">Industries</a></li>
+            <li><a href="../solutions.html">Solutions</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+            <li><a href="../quote.html" class="nav-cta">Quote · 15min ▶</a></li>
+            <li><a class="lang-switch" href="../../servicios/hidrogeologia.html" hreflang="es" lang="es">ES</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <section class="line-hero">
+
+        <!-- MOTIF HIDROGEOLÓGICO · napa freática + percolación + cono de pozo -->
+        <div class="line-hero__motif motif-aquifer" aria-hidden="true">
+            <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <!-- Capas del subsuelo (rect con fill explícito, muy sutil) -->
+                <rect class="layer layer--saturated" x="0" y="300" width="1400" height="200" fill="rgba(127,233,255,0.04)"/>
+
+                <!-- Etiquetas de capas -->
+                <text class="layer-label" x="40" y="240" fill="rgba(255,255,255,0.32)">UNSATURATED ZONE</text>
+                <text class="layer-label" x="40" y="400" fill="rgba(127,233,255,0.5)">AQUIFER</text>
+                <text class="layer-label" x="40" y="540" fill="rgba(255,255,255,0.32)">BEDROCK</text>
+
+                <!-- Línea de la napa freática (water table) ondulada — solo stroke -->
+                <path fill="none" class="water-table" d="M 0 305 Q 200 300, 400 308 Q 600 314, 800 305 Q 1000 298, 1200 308 T 1400 305"/>
+                <text class="water-table-label" x="1380" y="295" text-anchor="end" fill="rgba(127,233,255,0.6)">WATER TABLE</text>
+
+                <!-- 5 gotas de percolación (ellipse con fill cyan) -->
+                <g>
+                    <ellipse class="drop drop--1" cx="220" cy="195" rx="3" ry="5" fill="rgba(127,233,255,1)"/>
+                    <ellipse class="drop drop--2" cx="380" cy="195" rx="3" ry="5" fill="rgba(127,233,255,1)"/>
+                    <ellipse class="drop drop--3" cx="540" cy="195" rx="3" ry="5" fill="rgba(127,233,255,1)"/>
+                    <ellipse class="drop drop--4" cx="900" cy="195" rx="3" ry="5" fill="rgba(127,233,255,1)"/>
+                    <ellipse class="drop drop--5" cx="1100" cy="195" rx="3" ry="5" fill="rgba(127,233,255,1)"/>
+                </g>
+
+                <!-- Pozo central con casing y cono de abatimiento -->
+                <g>
+                    <!-- Cono de abatimiento (V invertida punteada) — solo stroke -->
+                    <path fill="none" class="cone" d="M 600 305 L 690 460"/>
+                    <path fill="none" class="cone" d="M 800 305 L 710 460"/>
+
+                    <!-- Pozo casing (rect con fill muy tenue) -->
+                    <rect class="well-casing" x="694" y="160" width="12" height="300" fill="rgba(255,152,0,0.08)" stroke="rgba(255,152,0,0.55)" stroke-width="1.5"/>
+
+                    <!-- Pantalla del pozo (líneas verticales ranuradas) -->
+                    <line class="well-screen" x1="694" y1="320" x2="694" y2="460"/>
+                    <line class="well-screen" x1="706" y1="320" x2="706" y2="460"/>
+
+                    <text class="layer-label" x="720" y="155" fill="rgba(255,152,0,0.6)">WELL-01 · 80m</text>
+                </g>
+
+                <!-- Flechas de flujo subterráneo (líneas + triangulitos) -->
+                <g>
+                    <line class="flow-arrow flow-arrow--1" x1="200" y1="380" x2="280" y2="380" stroke-width="1"/>
+                    <polygon class="flow-arrow flow-arrow--1" points="280,377 286,380 280,383" fill="rgba(127,233,255,0.5)"/>
+                    <line class="flow-arrow flow-arrow--2" x1="1050" y1="420" x2="1130" y2="420" stroke-width="1"/>
+                    <polygon class="flow-arrow flow-arrow--2" points="1130,417 1136,420 1130,423" fill="rgba(127,233,255,0.5)"/>
+                    <line class="flow-arrow flow-arrow--3" x1="350" y1="460" x2="430" y2="460" stroke-width="1"/>
+                    <polygon class="flow-arrow flow-arrow--3" points="430,457 436,460 430,463" fill="rgba(127,233,255,0.5)"/>
+                </g>
+            </svg>
+        </div>
+
+        <div class="line-hero__inner">
+            <div>
+                <nav class="line-hero__breadcrumb" aria-label="Breadcrumb">
+                    <a href="../index.html">EAS</a>
+                    <span class="sep">/</span>
+                    <a href="../services.html">Services</a>
+                    <span class="sep">/</span>
+                    <span class="current">Hydrogeology</span>
+                </nav>
+
+                <div class="line-hero__id">
+                    <strong>L-04</strong>
+                    <span>GROUNDWATER · GEOSCIENCES</span>
+                </div>
+
+                <h1 class="line-hero__title">
+                    Groundwater<br>
+                    and <em>aquifers</em>
+                </h1>
+
+                <p class="line-hero__lead">
+                    We study the water you cannot see. Hydrogeological investigation with drilling,
+                    pumping tests and MODFLOW modeling for <strong>water supply, water table
+                    drawdown, contamination or sustainability</strong>. A strategic resource
+                    or an environmental liability: it depends on how we measure it.
+                </p>
+
+                <div class="line-hero__actions">
+                    <a href="../quote.html" class="btn-svc btn-svc--primary">QUOTE THIS LINE ▶</a>
+                    <a href="#alcance" class="btn-svc btn-svc--ghost">VIEW SCOPE</a>
+                </div>
+            </div>
+
+            <aside class="line-hero__panel" aria-label="Service line technical data">
+                <div class="line-hero__panel-head">
+                    <span>SPEC SHEET</span>
+                    <span>L-04 · v.2026</span>
+                </div>
+                <dl>
+                    <div class="line-hero__panel-row"><dt>Code</dt><dd class="neon">EAS-HGE-04</dd></div>
+                    <div class="line-hero__panel-row"><dt>Type</dt><dd>Study + design</dd></div>
+                    <div class="line-hero__panel-row"><dt>Core standards</dt><dd class="cyan">RAS-2017 · ANA · IDEAM</dd></div>
+                    <div class="line-hero__panel-row"><dt>Software</dt><dd>MODFLOW · AquiferTest · Diver-Office</dd></div>
+                    <div class="line-hero__panel-row"><dt>Typical timeline</dt><dd>4-8 weeks</dd></div>
+                    <div class="line-hero__panel-row"><dt>Output</dt><dd>Study + models + design</dd></div>
+                    <div class="line-hero__panel-row"><dt>Applies to</dt><dd>Wells · Excavations · Water concessions · EIA</dd></div>
+                </dl>
+            </aside>
+        </div>
+    </section>
+
+    <div class="line-shell">
+        <aside class="line-side" aria-label="On this page">
+            <span class="line-side__title">ON THIS PAGE</span>
+            <ul class="line-side__list">
+                <li><a href="#alcance" class="is-active">01 · Scope</a></li>
+                <li><a href="#caracterizacion">02 · Characterization</a></li>
+                <li><a href="#pozos">03 · Well design</a></li>
+                <li><a href="#calidad">04 · Water quality</a></li>
+                <li><a href="#modelacion">05 · Numerical modeling</a></li>
+                <li><a href="#proceso">06 · Process</a></li>
+                <li><a href="#entregables">07 · Deliverables</a></li>
+                <li><a href="#aplicaciones">08 · Applications</a></li>
+            </ul>
+        </aside>
+
+        <div class="line-content">
+
+            <section id="alcance" class="line-block">
+                <span class="line-block__num">01 · SCOPE</span>
+                <h2 class="line-block__title">The water you cannot see also shapes the project.</h2>
+                <p class="line-block__lead">
+                    A high water table can flood excavations, compromise foundations,
+                    invalidate road designs or alter slope stability. And an aquifer
+                    can be a <strong>strategic resource or an environmental liability</strong>. Hydrogeology
+                    answers these questions with verifiable data.
+                </p>
+
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>What we deliver</h4>
+                        <ul>
+                            <li>Aquifer characterization (type, thickness, conductivity)</li>
+                            <li>Piezometric levels and flow direction</li>
+                            <li>Pumping tests and hydrogeological parameters</li>
+                            <li>Physicochemical quality of groundwater</li>
+                            <li>Design of production or dewatering wells</li>
+                            <li>Flow and transport modeling in MODFLOW</li>
+                            <li>Studies for groundwater concessions</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>When it is critical</h4>
+                        <ul>
+                            <li>Deep excavations with a high water table</li>
+                            <li>Basements over shallow aquifers</li>
+                            <li>Construction near water bodies</li>
+                            <li>Need for water supply from a well</li>
+                            <li>Suspected soil or water contamination</li>
+                            <li>Concession permit from ANA / environmental authority</li>
+                            <li>Environmental impact studies with a water component</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="caracterizacion" class="line-block">
+                <span class="line-block__num">02 · HYDROGEOLOGICAL CHARACTERIZATION</span>
+                <h2 class="line-block__title">We map the water in the subsurface.</h2>
+                <p class="line-block__lead">
+                    We combine regional geological information with test drilling, in-situ
+                    tests and piezometric monitoring to define the hydrogeological model of the site.
+                </p>
+
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Inventory and exploration <span class="badge">FIELD</span></h4>
+                        <ul>
+                            <li>Inventory of nearby wells, springs and dug wells</li>
+                            <li>Test drilling with sampling</li>
+                            <li>Continuous lithological logging</li>
+                            <li>Identification of hydrogeological units</li>
+                            <li>Aquifer depth and thickness</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Piezometric monitoring</h4>
+                        <ul>
+                            <li>Piezometers with automatic dataloggers</li>
+                            <li>Water table time series</li>
+                            <li>Seasonal variability analysis</li>
+                            <li>Groundwater flow directions</li>
+                            <li>Hydraulic gradients</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Field tests <span class="badge">FIELD</span></h4>
+                        <ul>
+                            <li>Pumping tests (Theis, Cooper-Jacob, Neuman)</li>
+                            <li>Slug tests for hydraulic conductivity</li>
+                            <li>Injection or recovery tests</li>
+                            <li>Flow gauging at existing intakes</li>
+                            <li>Tracer tests where applicable</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Complementary geophysics</h4>
+                        <ul>
+                            <li>Vertical electrical soundings (VES)</li>
+                            <li>2D / 3D electrical resistivity tomography</li>
+                            <li>Proton magnetic resonance</li>
+                            <li>Detection of contaminant plumes</li>
+                            <li>Mapping of saturated zones</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pozos" class="line-block">
+                <span class="line-block__num">03 · WELL DESIGN</span>
+                <h2 class="line-block__title">Production, dewatering or monitoring wells.</h2>
+                <p class="line-block__lead">
+                    Each type of well has its own design logic. We handle the sizing, the
+                    technical specifications and the follow-up during drilling and well development.
+                </p>
+
+                <ol class="line-numbered">
+                    <li>
+                        <strong>Deep wells for water supply</strong>
+                        <span>Hydraulic design, screen and gravel pack selection, casing, yield test, pumping equipment, sanitary seal, maintenance plan.</span>
+                    </li>
+                    <li>
+                        <strong>Dewatering wells (well-points and deep wells)</strong>
+                        <span>For excavations below the water table: required pumping rate, system layout, cone of depression modeling, real-time monitoring.</span>
+                    </li>
+                    <li>
+                        <strong>Monitoring wells and piezometers</strong>
+                        <span>To track the water table, water quality and contaminant plumes. Specifications per ASTM standards and environmental guidelines.</span>
+                    </li>
+                    <li>
+                        <strong>Dug wells and hand-dug wells</strong>
+                        <span>Technical design for rural areas or countryside developments for domestic use. Compliance with minimum depth, sanitary seal and setback from contamination sources.</span>
+                    </li>
+                    <li>
+                        <strong>Injection or managed recharge wells</strong>
+                        <span>For sustainable aquifer management: artificial recharge, saltwater intrusion control, closing the treated-water loop.</span>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="calidad" class="line-block">
+                <span class="line-block__num">04 · GROUNDWATER QUALITY</span>
+                <h2 class="line-block__title">Having water is not enough. It has to be usable.</h2>
+                <p class="line-block__lead">
+                    Physicochemical and bacteriological analysis to determine whether the water is fit for
+                    human consumption, irrigation, industrial or environmental use. Traceable sampling and an
+                    accredited laboratory.
+                </p>
+
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Physicochemical parameters</h4>
+                        <ul>
+                            <li>Electrical conductivity, pH, temperature</li>
+                            <li>Total dissolved solids (TDS)</li>
+                            <li>Major ions: Ca, Mg, Na, K, HCO₃, SO₄, Cl</li>
+                            <li>Nitrates, nitrites, ammonium</li>
+                            <li>Iron, manganese, hardness</li>
+                            <li>Piper / Stiff / Schoeller diagrams</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Microbiological</h4>
+                        <ul>
+                            <li>Total and fecal coliforms</li>
+                            <li>E. coli</li>
+                            <li>Heterotrophic bacteria</li>
+                            <li>Pseudomonas (where applicable)</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Specific contaminants</h4>
+                        <ul>
+                            <li>Heavy metals (As, Pb, Cd, Cr, Hg)</li>
+                            <li>Total hydrocarbons and BTEX</li>
+                            <li>Organochlorine / organophosphate pesticides</li>
+                            <li>Isotopic tracers where applicable</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Regulatory application</h4>
+                        <ul>
+                            <li>Resolution 2115/2007 (drinking water · Colombia)</li>
+                            <li>Decree 1594/1984 (water use)</li>
+                            <li>WHO / EPA for international benchmarks</li>
+                            <li>Comparison with reference values</li>
+                            <li>Conclusions on water fitness for use</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="modelacion" class="line-block">
+                <span class="line-block__num">05 · NUMERICAL MODELING</span>
+                <h2 class="line-block__title">Aquifer behavior in a digital model.</h2>
+                <p class="line-block__lead">
+                    When the problem warrants it, we build numerical models in MODFLOW to
+                    simulate groundwater flow, contaminant transport or abstraction
+                    scenarios.
+                </p>
+
+                <table class="line-table">
+                    <thead>
+                        <tr>
+                            <th>Software</th>
+                            <th>Use</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MODFLOW</td>
+                            <td>3D groundwater flow, steady state and transient</td>
+                            <td><span class="norm-tag">USGS</span></td>
+                        </tr>
+                        <tr>
+                            <td>MT3DMS / MT3D-USGS</td>
+                            <td>Solute and contaminant transport</td>
+                            <td><span class="norm-tag">USGS</span></td>
+                        </tr>
+                        <tr>
+                            <td>SEAWAT</td>
+                            <td>Variable-density flow (saltwater intrusion)</td>
+                            <td><span class="norm-tag">USGS</span></td>
+                        </tr>
+                        <tr>
+                            <td>AquiferTest</td>
+                            <td>Pumping test analysis</td>
+                            <td><span class="norm-tag">SCHLUMBERGER</span></td>
+                        </tr>
+                        <tr>
+                            <td>Diver-Office</td>
+                            <td>Piezometric level data management</td>
+                            <td><span class="norm-tag">VAN ESSEN</span></td>
+                        </tr>
+                        <tr>
+                            <td>Visual MODFLOW Flex</td>
+                            <td>Graphical interface for 3D modeling</td>
+                            <td><span class="norm-tag">WHI</span></td>
+                        </tr>
+                        <tr>
+                            <td>QGIS / ArcGIS</td>
+                            <td>Spatial pre- and post-processing</td>
+                            <td><span class="norm-tag">GIS</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="proceso" class="line-block">
+                <span class="line-block__num">06 · PROCESS</span>
+                <h2 class="line-block__title">From inventory to model.</h2>
+
+                <ol class="line-numbered">
+                    <li>
+                        <strong>Regional data collection · 2 weeks</strong>
+                        <span>Information from IDEAM, ANLA, IGAC and the local environmental authority. Inventory of surrounding wells, regional hydrogeological data.</span>
+                    </li>
+                    <li>
+                        <strong>Field work · 2 to 4 weeks</strong>
+                        <span>Test drilling, piezometer installation, monitoring, pumping tests, geophysics. All under chain of custody.</span>
+                    </li>
+                    <li>
+                        <strong>Laboratory · 2 to 3 weeks</strong>
+                        <span>Physicochemical and microbiological analyses in an IDEAM-accredited laboratory. Certified results backed by chain of custody.</span>
+                    </li>
+                    <li>
+                        <strong>Analysis and interpretation · 2 weeks</strong>
+                        <span>Building the hydrogeological conceptual model, parameter calculation, water quality interpretation, fitness-for-use assessment, recommendations.</span>
+                    </li>
+                    <li>
+                        <strong>Numerical modeling · 2 to 4 weeks (if applicable)</strong>
+                        <span>MODFLOW model construction, calibration with field data, scenario simulation (abstraction, dewatering, contaminant transport).</span>
+                    </li>
+                    <li>
+                        <strong>Report, drawings and support</strong>
+                        <span>Delivery of the signed technical report, drawings, appendices and open model files. Technical defense before the environmental authority when required.</span>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="entregables" class="line-block">
+                <span class="line-block__num">07 · DELIVERABLES</span>
+                <h2 class="line-block__title">What you receive.</h2>
+
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Hydrogeological study</h4>
+                        <ul>
+                            <li>Signed technical report</li>
+                            <li>Conceptual model of the system</li>
+                            <li>Hydrogeological parameters (K, T, S)</li>
+                            <li>Piezometric maps</li>
+                            <li>Water quality assessment</li>
+                            <li>Conclusions and recommendations</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Technical mapping</h4>
+                        <ul>
+                            <li>Map of hydrogeological units</li>
+                            <li>Piezometric maps (seasonal)</li>
+                            <li>Water quality maps</li>
+                            <li>Aquifer vulnerability map</li>
+                            <li>Hydrogeological cross sections</li>
+                            <li>GIS layout delivered</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Technical designs (if applicable)</h4>
+                        <ul>
+                            <li>Production well design</li>
+                            <li>Dewatering system</li>
+                            <li>Monitoring plan</li>
+                            <li>Drilling specifications</li>
+                            <li>Operation and maintenance plan</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Numerical model (if applicable)</h4>
+                        <ul>
+                            <li>Open MODFLOW project</li>
+                            <li>Calibration documentation</li>
+                            <li>Results by scenario</li>
+                            <li>Raw data for audit</li>
+                            <li>Reproducible by third parties</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="aplicaciones" class="line-block">
+                <span class="line-block__num">08 · APPLICATIONS</span>
+                <h2 class="line-block__title">When you need hydrogeology.</h2>
+
+                <div class="line-grid-2">
+                    <div class="line-tech-card">
+                        <h4>Construction</h4>
+                        <ul>
+                            <li>Deep excavations with a high water table</li>
+                            <li>Basements over shallow aquifers</li>
+                            <li>Foundations below the water table</li>
+                            <li>Deep drainage design</li>
+                            <li>Stabilization of saturated slopes</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Water supply</h4>
+                        <ul>
+                            <li>Wells for homes, farms, hotels</li>
+                            <li>Industrial water intake</li>
+                            <li>Supply for countryside developments</li>
+                            <li>Groundwater concession</li>
+                            <li>Renewal of existing concessions</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Environmental</h4>
+                        <ul>
+                            <li>Environmental impact assessments (EIA)</li>
+                            <li>Environmental management plan (PMA)</li>
+                            <li>Hydrogeological model for permitting</li>
+                            <li>Investigation of environmental liabilities</li>
+                            <li>Characterization of contaminated soils</li>
+                        </ul>
+                    </div>
+                    <div class="line-tech-card">
+                        <h4>Special cases</h4>
+                        <ul>
+                            <li>Leak detection in dams or reservoirs</li>
+                            <li>Forensic contamination investigation</li>
+                            <li>Studies for mining and oil and gas</li>
+                            <li>Managed aquifer recharge</li>
+                            <li>Climate change adaptation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="line-final">
+                <div>
+                    <h3>Is there groundwater on your project?</h3>
+                    <p>Or do you need to drill for it, draw it down, assess it or understand it? Tell us the context and we reply in less than 48h.</p>
+                </div>
+                <div>
+                    <a href="../quote.html" class="btn-svc btn-svc--primary">REQUEST A QUOTE ▶</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <section class="line-related">
+        <div class="line-related__inner">
+            <h3 class="line-related__head">[ RELATED LINES ]</h3>
+            <div class="line-related__grid">
+                <a href="surface-water-hydrology.html" class="line-related__card">
+                    <span>L-03 · WATER</span>
+                    <strong>Surface water engineering</strong>
+                </a>
+                <a href="geotechnical-investigation.html" class="line-related__card">
+                    <span>L-01 · CORE</span>
+                    <strong>Geotechnical investigation and exploration</strong>
+                </a>
+                <a href="geohazard-risk-environment.html" class="line-related__card">
+                    <span>L-08 · SUSTAINABILITY</span>
+                    <strong>Geotechnical risk and environmental management</strong>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- ═══════════════════════════════════════════════════════════════
+         FOOTER · compacto, consistente con index
+         ═══════════════════════════════════════════════════════════════ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-block">
+                    <a href="../index.html" class="footer-brand">
+                        <img src="../../assets/eas.png" alt="EAS">
+                        <span>EAS</span>
+                    </a>
+                    <p>Earth Analytics Solutions · Geosciences, geotechnics and ground engineering from Colombia for LATAM.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/573137531833" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.8-.7-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.4 5L2 22l5.1-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
+                        <a href="mailto:gerencia@earthas.co" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg></a>
+                        
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>NAVIGATE</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../services.html">Services</a></li>
+                        <li><a href="../industries.html">Industries</a></li>
+                        <li><a href="../solutions.html">Solutions</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>CONTACT</h4>
+                    <ul>
+                        <li><a href="mailto:gerencia@earthas.co">gerencia@earthas.co</a></li>
+                        <li><a href="https://wa.me/573137531833">+57 313 753 1833</a></li>
+                        <li>Norte de Santander · CO</li>
+                        <li><a href="../quote.html">Request a quote</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Earth Analytics Solutions · EAS · All rights reserved</span>
+                <span class="footer-tag">EARTHAS.CO · PRECISION ENGINEERING &amp; GEOSCIENCES</span>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/573137531833" class="float-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.8-.7-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.4 5L2 22l5.1-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
+<script src="../../js/main.js?v=2026.5.22" defer></script>
+</body>
+</html>

@@ -233,6 +233,41 @@
             color: rgba(255,255,255,0.35);
         }
 
+        /* Selects de ubicación · tema oscuro EAS */
+        .quiz-field select {
+            width: 100%;
+            padding: 16px 44px 16px 20px;
+            background-color: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 4px;
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 16px;
+            cursor: pointer;
+            transition: border-color .25s;
+            -webkit-appearance: none; -moz-appearance: none; appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23ff9800' stroke-width='3'><path d='M6 9l6 6 6-6'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+        .quiz-field select:focus {
+            outline: none;
+            border-color: var(--eas-neon);
+            background-color: rgba(255,152,0,0.04);
+        }
+        .quiz-field select:disabled { opacity: .45; cursor: not-allowed; }
+        /* el menú desplegable nativo (las opciones) */
+        .quiz-field select option {
+            background: #0a1622 !important;
+            color: #fff !important;
+            padding: 12px;
+        }
+        .quiz-field select option:checked,
+        .quiz-field select option:hover {
+            background: #122433 !important;
+            color: var(--eas-neon) !important;
+        }
+
         /* Nav buttons */
         .quiz-nav {
             display: flex;
@@ -409,6 +444,9 @@
         .quiz-status.is-success { display: block; background: rgba(74,222,128,0.12); border: 1px solid rgba(74,222,128,0.3); color: var(--logo-green); }
         .quiz-status.is-error { display: block; background: rgba(255,80,80,0.12); border: 1px solid rgba(255,80,80,0.3); color: #ff8a8a; }
     </style>
+    <link rel="alternate" hreflang="es" href="https://earthas.co/cotiza.html">
+    <link rel="alternate" hreflang="en" href="https://earthas.co/en/quote.html">
+    <link rel="alternate" hreflang="x-default" href="https://earthas.co/cotiza.html">
 </head>
 <body class="page-cotiza">
 
@@ -424,6 +462,7 @@
             <li><a href="soluciones.html">Soluciones</a></li>
             <li><a href="casos.html">Casos</a></li>
             <li><a href="cotiza.html" class="nav-cta is-current">Cotiza · 15min ▶</a></li>
+            <li><a class="lang-switch" href="en/quote.html" hreflang="en" lang="en">EN</a></li>
         </ul>
         <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
             <span></span><span></span><span></span>
@@ -449,33 +488,60 @@
                 <div class="quiz-progress__step" data-step="2"></div>
                 <div class="quiz-progress__step" data-step="3"></div>
                 <div class="quiz-progress__step" data-step="4"></div>
-                <div class="quiz-progress__step" data-step="5"></div>
             </div>
 
-            <!-- STEP 1 · TIPO DE PROYECTO -->
+            <!-- STEP 1 · TIPO DE PROYECTO (define la rama) -->
             <div class="quiz-step is-active" data-step="1">
-                <div class="quiz-step__num">PREGUNTA 01 / 05</div>
-                <h2 class="quiz-step__question">¿Qué tipo de proyecto manejas?</h2>
+                <div class="quiz-step__num">PREGUNTA 01 / 04</div>
+                <h2 class="quiz-step__question">¿Qué necesitas para tu proyecto?</h2>
                 <div class="quiz-options" data-field="proyecto">
                     <div class="quiz-option" data-value="Vivienda o edificación">
                         <div class="quiz-option__marker"></div>
                         <div class="quiz-option__text">Vivienda o edificación</div>
                     </div>
+                    <div class="quiz-option" data-value="Lote · urbanización / parcelación">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Lote · urbanización / parcelación</div>
+                    </div>
+                    <div class="quiz-option" data-value="Estudio de suelos / geotecnia">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Estudio de suelos / geotecnia</div>
+                    </div>
+                    <div class="quiz-option" data-value="Exploración geofísica / sísmica">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Exploración geofísica / sísmica</div>
+                    </div>
+                    <div class="quiz-option" data-value="Topografía / dron / GIS">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Topografía / dron / GIS</div>
+                    </div>
                     <div class="quiz-option" data-value="Vía, puente o pavimento">
                         <div class="quiz-option__marker"></div>
                         <div class="quiz-option__text">Vía, puente o pavimento</div>
                     </div>
-                    <div class="quiz-option" data-value="Lote (comprar / urbanizar)">
+                    <div class="quiz-option" data-value="Hidrología · aguas superficiales (ríos, drenajes)">
                         <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Lote (comprar / urbanizar)</div>
+                        <div class="quiz-option__text">Hidrología · ríos, drenajes, crecientes</div>
+                    </div>
+                    <div class="quiz-option" data-value="Hidrogeología · agua subterránea / pozos">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Pozo de agua / aguas subterráneas</div>
+                    </div>
+                    <div class="quiz-option" data-value="Laboratorio / control de obra">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Laboratorio / control de obra</div>
+                    </div>
+                    <div class="quiz-option" data-value="Riesgo y ambiente (taludes, licencias)">
+                        <div class="quiz-option__marker"></div>
+                        <div class="quiz-option__text">Riesgo y ambiente · taludes, licencias</div>
                     </div>
                     <div class="quiz-option" data-value="Mi obra tiene un problema (grietas, taludes, falla)">
                         <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Mi obra tiene un problema</div>
+                        <div class="quiz-option__text">Diagnóstico · mi obra tiene un problema</div>
                     </div>
-                    <div class="quiz-option" data-value="Pozo de agua / drenaje / hidrogeología">
+                    <div class="quiz-option" data-value="Minero / energético">
                         <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Pozo de agua / drenaje</div>
+                        <div class="quiz-option__text">Minero / energético</div>
                     </div>
                     <div class="quiz-option" data-value="Otro (lo explico al final)">
                         <div class="quiz-option__marker"></div>
@@ -488,127 +554,98 @@
                 </div>
             </div>
 
-            <!-- STEP 2 · FASE -->
+            <!-- STEP 2 · DETALLES (dinámico según la rama elegida) -->
             <div class="quiz-step" data-step="2">
-                <div class="quiz-step__num">PREGUNTA 02 / 05</div>
-                <h2 class="quiz-step__question">¿En qué fase está hoy?</h2>
-                <div class="quiz-options" data-field="fase">
-                    <div class="quiz-option" data-value="Evaluando · todavía no decido">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Evaluando · todavía no decido</div>
-                    </div>
-                    <div class="quiz-option" data-value="Tengo presupuesto y voy a empezar">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Tengo presupuesto, voy a empezar</div>
-                    </div>
-                    <div class="quiz-option" data-value="Ya empecé y hay un problema">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Ya empecé y hay un problema</div>
-                    </div>
-                    <div class="quiz-option" data-value="Necesito sustentar (interventoría / curaduría)">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Necesito sustentar (interventoría)</div>
-                    </div>
-                </div>
-                <div class="quiz-nav">
-                    <button class="quiz-btn quiz-btn--ghost" data-prev>◀ Atrás</button>
-                    <button class="quiz-btn quiz-btn--primary" data-next disabled>Siguiente ▶</button>
-                </div>
-            </div>
-
-            <!-- STEP 3 · UBICACIÓN -->
-            <div class="quiz-step" data-step="3">
-                <div class="quiz-step__num">PREGUNTA 03 / 05</div>
-                <h2 class="quiz-step__question">¿Dónde queda tu proyecto?</h2>
-                <div class="quiz-options" data-field="ubicacion">
-                    <div class="quiz-option" data-value="Norte de Santander (Cúcuta y alrededores)">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Norte de Santander · Cúcuta</div>
-                    </div>
-                    <div class="quiz-option" data-value="Otra parte de Colombia">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Otra parte de Colombia</div>
-                    </div>
-                    <div class="quiz-option" data-value="Otro país de LATAM">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Otro país de LATAM</div>
-                    </div>
-                    <div class="quiz-option" data-value="Aún por definir">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Aún por definir</div>
-                    </div>
-                </div>
-                <div class="quiz-nav">
-                    <button class="quiz-btn quiz-btn--ghost" data-prev>◀ Atrás</button>
-                    <button class="quiz-btn quiz-btn--primary" data-next disabled>Siguiente ▶</button>
-                </div>
-            </div>
-
-            <!-- STEP 4 · URGENCIA -->
-            <div class="quiz-step" data-step="4">
-                <div class="quiz-step__num">PREGUNTA 04 / 05</div>
-                <h2 class="quiz-step__question">¿Qué tan urgente es?</h2>
-                <div class="quiz-options" data-field="urgencia">
-                    <div class="quiz-option" data-value="Esta semana (urgente)">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Esta semana (urgente)</div>
-                    </div>
-                    <div class="quiz-option" data-value="Este mes">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Este mes</div>
-                    </div>
-                    <div class="quiz-option" data-value="En 1 a 3 meses">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">En 1 a 3 meses</div>
-                    </div>
-                    <div class="quiz-option" data-value="Sin prisa · estoy explorando">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Sin prisa · explorando</div>
-                    </div>
-                </div>
-                <div class="quiz-nav">
-                    <button class="quiz-btn quiz-btn--ghost" data-prev>◀ Atrás</button>
-                    <button class="quiz-btn quiz-btn--primary" data-next disabled>Siguiente ▶</button>
-                </div>
-            </div>
-
-            <!-- STEP 5 · PRESUPUESTO (opcional) -->
-            <div class="quiz-step" data-step="5">
-                <div class="quiz-step__num">PREGUNTA 05 / 05 · OPCIONAL</div>
-                <h2 class="quiz-step__question">¿Rango de presupuesto?</h2>
-                <p style="font-family:var(--font-body);font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:24px;line-height:1.55;">
-                    Esto nos ayuda a recomendarte el alcance adecuado (Inicial / Intermedio / Avanzado).
-                    Si prefieres no contestar, sigue al resumen.
+                <div class="quiz-step__num">PREGUNTA 02 / 04</div>
+                <h2 class="quiz-step__question" id="step2-title">Cuéntanos del proyecto</h2>
+                <p style="font-family:var(--font-body);font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.55;">
+                    Responde lo que sepas. Los campos con <span style="color:var(--eas-neon)">*</span> son necesarios para cotizar bien.
                 </p>
-                <div class="quiz-options" data-field="presupuesto">
-                    <div class="quiz-option" data-value="Menos de $5M COP">
+                <div id="dynamic-fields"></div>
+                <div class="quiz-nav">
+                    <button class="quiz-btn quiz-btn--ghost" data-prev>◀ Atrás</button>
+                    <button class="quiz-btn quiz-btn--primary" data-next disabled>Siguiente ▶</button>
+                </div>
+            </div>
+
+            <!-- STEP 3 · UBICACIÓN (país / depto / municipio / dirección) -->
+            <div class="quiz-step" data-step="3">
+                <div class="quiz-step__num">PREGUNTA 03 / 04</div>
+                <h2 class="quiz-step__question">¿Dónde queda el proyecto?</h2>
+                <p style="font-family:var(--font-body);font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.55;">
+                    ¿Tu proyecto es en Colombia o en otra parte de LATAM?
+                </p>
+                <div class="quiz-options" data-field="zona" id="zona-toggle">
+                    <div class="quiz-option" data-value="Colombia">
                         <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Menos de $5M COP</div>
+                        <div class="quiz-option__text">En Colombia</div>
                     </div>
-                    <div class="quiz-option" data-value="$5M – $15M COP">
+                    <div class="quiz-option" data-value="Otra parte de LATAM">
                         <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">$5M – $15M COP</div>
+                        <div class="quiz-option__text">En otra parte de LATAM</div>
                     </div>
-                    <div class="quiz-option" data-value="$15M – $50M COP">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">$15M – $50M COP</div>
+                </div>
+
+                <!-- Bloque COLOMBIA -->
+                <div id="ubic-co" class="quiz-form" style="display:none;margin-top:8px;">
+                    <div class="quiz-field">
+                        <label for="q-departamento">Departamento *</label>
+                        <select id="q-departamento" disabled><option value="">Cargando…</option></select>
                     </div>
-                    <div class="quiz-option" data-value="Más de $50M COP">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Más de $50M COP</div>
+                    <div class="quiz-field">
+                        <label for="q-municipio">Municipio *</label>
+                        <select id="q-municipio" disabled><option value="">Selecciona departamento…</option></select>
                     </div>
-                    <div class="quiz-option" data-value="Aún por definir">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Aún por definir</div>
+                </div>
+
+                <!-- Bloque INTERNACIONAL -->
+                <div id="ubic-int" class="quiz-form" style="display:none;margin-top:8px;">
+                    <div class="quiz-field">
+                        <label for="q-pais-int">País *</label>
+                        <select id="q-pais-int"><option value="">Selecciona…</option></select>
                     </div>
-                    <div class="quiz-option" data-value="Prefiero no decirlo">
-                        <div class="quiz-option__marker"></div>
-                        <div class="quiz-option__text">Prefiero no decirlo</div>
+                    <div class="quiz-field" id="wrap-pais-otro" style="display:none;">
+                        <label for="q-pais-txt">¿Cuál país?</label>
+                        <input type="text" id="q-pais-txt" placeholder="Escribe el país" autocomplete="off">
                     </div>
+                    <div class="quiz-field">
+                        <label for="q-estado">Estado / Provincia / Departamento *</label>
+                        <select id="q-estado" disabled><option value="">Selecciona país…</option></select>
+                        <input type="text" id="q-estado-txt" placeholder="Escribe estado / provincia" style="display:none;" autocomplete="off">
+                    </div>
+                    <div class="quiz-field">
+                        <label for="q-ciudad">Ciudad *</label>
+                        <input type="text" id="q-ciudad" placeholder="Escribe la ciudad" autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- Dirección (común) -->
+                <div id="ubic-dir" class="quiz-field quiz-field--full" style="display:none;">
+                    <label for="q-direccion">Dirección / vereda / referencia</label>
+                    <input type="text" id="q-direccion" placeholder="Ej: vereda El Roble, km 3 vía..." autocomplete="off">
+                </div>
+
+                <div class="quiz-nav">
+                    <button class="quiz-btn quiz-btn--ghost" data-prev>◀ Atrás</button>
+                    <button class="quiz-btn quiz-btn--primary" data-next disabled>Siguiente ▶</button>
+                </div>
+            </div>
+
+            <!-- STEP 4 · NECESIDAD (párrafo libre) -->
+            <div class="quiz-step" data-step="4">
+                <div class="quiz-step__num">PREGUNTA 04 / 04</div>
+                <h2 class="quiz-step__question">Cuéntanos qué necesitas</h2>
+                <p style="font-family:var(--font-body);font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.55;">
+                    En un párrafo breve, describe la necesidad que quieres resolver con nuestros servicios.
+                    Mientras más claro, mejor podemos ayudarte.
+                </p>
+                <div class="quiz-field quiz-field--full">
+                    <label for="q-necesidad">Tu necesidad *</label>
+                    <textarea id="q-necesidad" data-field="necesidad" rows="5" placeholder="Ej: Quiero construir mi casa-cabaña pero no sé si el terreno aguanta dos pisos y piscina. Necesito el estudio de suelos y los diseños para sacar la licencia." autocomplete="off"></textarea>
                 </div>
                 <div class="quiz-nav">
                     <button class="quiz-btn quiz-btn--ghost" data-prev>◀ Atrás</button>
-                    <button class="quiz-btn quiz-btn--primary" data-next>Ver resumen ▶</button>
+                    <button class="quiz-btn quiz-btn--primary" data-next disabled>Ver resumen ▶</button>
                 </div>
             </div>
 
@@ -628,16 +665,24 @@
 
                 <form id="lead-form" class="quiz-form" novalidate>
                     <div class="quiz-field">
-                        <label for="nombre">Tu nombre *</label>
+                        <label for="nombre">Nombre completo *</label>
                         <input type="text" id="nombre" name="nombre" required autocomplete="name" placeholder="Ej: Juan Pérez">
                     </div>
                     <div class="quiz-field">
-                        <label for="contacto">Teléfono o correo *</label>
-                        <input type="text" id="contacto" name="contacto" required placeholder="+57 313 ... o tu@correo.com">
+                        <label for="telefono">WhatsApp / Teléfono *</label>
+                        <input type="tel" id="telefono" name="telefono" required autocomplete="tel" placeholder="Ej: +57 313 753 1833">
+                    </div>
+                    <div class="quiz-field">
+                        <label for="correo">Correo electrónico *</label>
+                        <input type="email" id="correo" name="correo" required autocomplete="email" placeholder="tu@correo.com">
+                    </div>
+                    <div class="quiz-field">
+                        <label for="empresa">Empresa (opcional)</label>
+                        <input type="text" id="empresa" name="empresa" autocomplete="organization" placeholder="Ej: Constructora XYZ">
                     </div>
                     <div class="quiz-field quiz-field--full">
                         <label for="mensaje">¿Algo adicional? (opcional)</label>
-                        <textarea id="mensaje" name="mensaje" rows="3" placeholder="Detalles de tu proyecto, ubicación específica, plazos, etc."></textarea>
+                        <textarea id="mensaje" name="mensaje" rows="3" placeholder="Plazos, detalles específicos, lo que quieras agregar."></textarea>
                     </div>
                 </form>
 
@@ -707,15 +752,340 @@
     // ESTADO
     const state = {
         currentStep: 1,
-        totalSteps: 5,
+        totalSteps: 4,
         answers: {
             proyecto: '',
-            fase: '',
-            ubicacion: '',
-            urgencia: '',
-            presupuesto: ''
+            pais: '',
+            departamento: '',
+            municipio: '',
+            direccion: '',
+            necesidad: ''
+        },
+        detalles: {}   // respuestas dinámicas según la rama
+    };
+
+    // ═══ UBICACIÓN: toggle Colombia (api-colombia) / LATAM (countriesnow) ═══
+    const PAISES_LATAM = {
+        "México":"Mexico", "Argentina":"Argentina", "Perú":"Peru", "Chile":"Chile",
+        "Ecuador":"Ecuador", "Venezuela":"Venezuela", "Bolivia":"Bolivia", "Paraguay":"Paraguay",
+        "Uruguay":"Uruguay", "Brasil":"Brazil", "Panamá":"Panama", "Costa Rica":"Costa Rica",
+        "Guatemala":"Guatemala", "Honduras":"Honduras", "El Salvador":"El Salvador",
+        "Nicaragua":"Nicaragua", "República Dominicana":"Dominican Republic", "Cuba":"Cuba",
+        "Puerto Rico":"Puerto Rico", "Otro país":"__OTRO__"
+    };
+
+    function initUbicacion() {
+        const toggle = document.getElementById('zona-toggle');
+        if (!toggle || toggle.dataset.ready) return;
+        toggle.dataset.ready = '1';
+
+        const blkCO  = document.getElementById('ubic-co');
+        const blkINT = document.getElementById('ubic-int');
+        const blkDIR = document.getElementById('ubic-dir');
+        const selDep = document.getElementById('q-departamento');
+        const selMun = document.getElementById('q-municipio');
+        const selPais= document.getElementById('q-pais-int');
+        const wrapOtro = document.getElementById('wrap-pais-otro');
+        const txtPais= document.getElementById('q-pais-txt');
+        const selEst = document.getElementById('q-estado');
+        const txtEst = document.getElementById('q-estado-txt');
+        const txtCiu = document.getElementById('q-ciudad');
+        const nextBtn = toggle.closest('.quiz-step').querySelector('[data-next]');
+
+        const validar = () => {
+            const a = state.answers;
+            if (nextBtn) nextBtn.disabled = !(a.pais && a.departamento && a.municipio);
+        };
+
+        // poblar países LATAM
+        Object.keys(PAISES_LATAM).forEach(p => {
+            const o = document.createElement('option'); o.value = p; o.textContent = p; selPais.appendChild(o);
+        });
+
+        // ── Toggle Colombia / Internacional ──
+        toggle.querySelectorAll('.quiz-option').forEach(opt => {
+            opt.addEventListener('click', () => {
+                toggle.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('is-selected'));
+                opt.classList.add('is-selected');
+                state.answers.zona = opt.dataset.value;
+                state.answers.pais = ''; state.answers.departamento = ''; state.answers.municipio = '';
+                blkDIR.style.display = 'block';
+                if (opt.dataset.value === 'Colombia') {
+                    state.answers.pais = 'Colombia';
+                    blkCO.style.display = 'grid'; blkINT.style.display = 'none';
+                    cargarDeptosCO();
+                } else {
+                    blkCO.style.display = 'none'; blkINT.style.display = 'grid';
+                    selPais.value = ''; wrapOtro.style.display = 'none';
+                    selEst.style.display = 'block'; selEst.innerHTML = '<option value="">Selecciona país…</option>'; selEst.disabled = true;
+                    txtEst.style.display = 'none'; txtCiu.value = '';
+                }
+                validar();
+            });
+        });
+
+        // ── COLOMBIA ──
+        async function cargarDeptosCO() {
+            selDep.innerHTML = '<option value="">Cargando…</option>'; selDep.disabled = true;
+            selMun.innerHTML = '<option value="">Selecciona departamento…</option>'; selMun.disabled = true;
+            try {
+                const r = await fetch('https://api-colombia.com/api/v1/Department');
+                const deps = (await r.json()).sort((a,b)=>a.name.localeCompare(b.name));
+                selDep.innerHTML = '<option value="">Selecciona…</option>';
+                deps.forEach(d => { const o=document.createElement('option'); o.value=d.name; o.dataset.id=d.id; o.textContent=d.name; selDep.appendChild(o); });
+                selDep.disabled = false;
+            } catch(e) {
+                const inp = document.createElement('input');
+                inp.type='text'; inp.placeholder='Escribe el departamento';
+                inp.oninput = () => { state.answers.departamento = inp.value.trim(); validar(); };
+                selDep.replaceWith(inp);
+            }
+        }
+        selDep.addEventListener('change', async () => {
+            state.answers.departamento = selDep.value; state.answers.municipio = '';
+            const depId = selDep.selectedOptions[0]?.dataset.id;
+            selMun.innerHTML = '<option value="">Cargando…</option>'; selMun.disabled = true;
+            if (depId) {
+                try {
+                    const r = await fetch(`https://api-colombia.com/api/v1/Department/${depId}/cities`);
+                    const cities = (await r.json()).sort((a,b)=>a.name.localeCompare(b.name));
+                    selMun.innerHTML = '<option value="">Selecciona…</option>';
+                    cities.forEach(c => { const o=document.createElement('option'); o.value=c.name; o.textContent=c.name; selMun.appendChild(o); });
+                    selMun.disabled = false;
+                } catch(e) {
+                    const inp = document.createElement('input');
+                    inp.type='text'; inp.placeholder='Escribe el municipio';
+                    inp.oninput = () => { state.answers.municipio = inp.value.trim(); validar(); };
+                    selMun.replaceWith(inp);
+                }
+            }
+            validar();
+        });
+        selMun.addEventListener('change', () => { state.answers.municipio = selMun.value; validar(); });
+
+        // ── INTERNACIONAL ──
+        selPais.addEventListener('change', async () => {
+            const display = selPais.value;
+            state.answers.departamento = ''; state.answers.municipio = ''; txtCiu.value = '';
+            if (display === 'Otro país') {
+                wrapOtro.style.display = 'block';
+                txtPais.oninput = () => { state.answers.pais = txtPais.value.trim(); validar(); };
+                selEst.style.display = 'none'; txtEst.style.display = 'block';
+                txtEst.oninput = () => { state.answers.departamento = txtEst.value.trim(); validar(); };
+                state.answers.pais = txtPais.value.trim();
+                validar(); return;
+            }
+            wrapOtro.style.display = 'none';
+            state.answers.pais = display;
+            selEst.style.display = 'block'; txtEst.style.display = 'none';
+            selEst.innerHTML = '<option value="">Cargando…</option>'; selEst.disabled = true;
+            try {
+                const r = await fetch('https://countriesnow.space/api/v0.1/countries/states', {
+                    method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({ country: PAISES_LATAM[display] })
+                });
+                const states = ((await r.json()).data?.states || []).sort((a,b)=>a.name.localeCompare(b.name));
+                if (!states.length) throw new Error('sin estados');
+                selEst.innerHTML = '<option value="">Selecciona…</option>';
+                states.forEach(s => { const o=document.createElement('option'); o.value=s.name; o.textContent=s.name; selEst.appendChild(o); });
+                selEst.disabled = false;
+            } catch(e) {
+                selEst.style.display = 'none'; txtEst.style.display = 'block';
+                txtEst.oninput = () => { state.answers.departamento = txtEst.value.trim(); validar(); };
+            }
+            validar();
+        });
+        selEst.addEventListener('change', () => { state.answers.departamento = selEst.value; validar(); });
+        txtCiu.addEventListener('input', () => { state.answers.municipio = txtCiu.value.trim(); validar(); });
+
+        // ── Dirección (común, opcional) ──
+        const dir = document.getElementById('q-direccion');
+        if (dir) dir.addEventListener('input', () => { state.answers.direccion = dir.value.trim(); });
+
+        // ── Necesidad (paso 4, obligatorio) ──
+        const nec = document.getElementById('q-necesidad');
+        if (nec) nec.addEventListener('input', () => {
+            state.answers.necesidad = nec.value.trim();
+            const stepN = nec.closest('.quiz-step');
+            const nb = stepN.querySelector('[data-next]');
+            if (nb) nb.disabled = nec.value.trim().length < 10;
+        });
+    }
+
+    // ═══ PREGUNTAS DINÁMICAS POR TIPO DE PROYECTO (paso 2) ═══
+    // Cada campo: { key, label, type:'select', opts:[...], req:true }
+    // TODO en RANGOS para sistematizar cotizaciones (cada combinación → precio base)
+    const ESTUDIOS_OPTS  = ["No, aún no existen", "Sí, ya existen estudios previos", "Algunos / parciales"];
+    // Rangos reutilizables (el cliente elige rango; EAS calcula lo técnico)
+    const R_AREA_LOTE    = ["Hasta 500 m²", "500 – 1.000 m²", "1.000 – 5.000 m²", "0,5 – 2 ha", "2 – 10 ha", "Más de 10 ha"];
+    const R_LONGITUD     = ["Hasta 100 m", "100 – 500 m", "500 m – 1 km", "1 – 5 km", "Más de 5 km"];
+    const R_NUM_LOTES    = ["Hasta 5", "5 – 20", "20 – 50", "50 – 100", "Más de 100"];
+    const R_PISOS        = ["1 nivel", "2 niveles", "3 niveles", "4 – 5 niveles", "6 o más niveles"];
+    // (Por sentido común: no preguntamos presupuesto, plazo, área a construir, n.° de mojones,
+    //  tamaño de cuenca ni caudal — eso lo calcula/define EAS al resolver el estudio.)
+
+    const RAMAS = {
+        "Vivienda o edificación": {
+            titulo: "Cuéntanos de la edificación",
+            campos: [
+                { key: "area_lote",  label: "Área del lote / proyecto", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "pisos",      label: "N.° de pisos / niveles", type:"select", opts:R_PISOS, req:true },
+                { key: "uso_edif",   label: "Uso de la edificación", type:"select", opts:["Vivienda unifamiliar","Vivienda multifamiliar","Comercial / oficinas","Mixto","Institucional","Otro"], req:true },
+                { key: "extras",     label: "¿Incluye espacios especiales?", type:"select", opts:["Ninguno especial","Sótano","Piscina","Terraza / BBQ","Piscina + terraza + BBQ","Varios (lo detallo al final)"], req:true },
+                { key: "estudios",   label: "¿Ya tiene estudio de suelos?", type:"select", opts:ESTUDIOS_OPTS, req:true }
+            ]
+        },
+        "Lote · urbanización / parcelación": {
+            titulo: "Cuéntanos del lote / urbanización",
+            campos: [
+                { key: "area_lote",  label: "Área total del lote", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "num_lotes",  label: "N.° de lotes / unidades (aprox.)", type:"select", opts:R_NUM_LOTES, req:true },
+                { key: "uso",        label: "Uso previsto", type:"select", opts:["Vivienda campestre","Vivienda urbana","Comercial / mixto","Industrial / bodegas","Otro"], req:true },
+                { key: "servicios",  label: "¿Requiere vías y redes?", type:"select", opts:["Sí, vías + redes (acueducto/alcantarillado)","Solo vías internas","Solo redes","Aún no sé"], req:true },
+                { key: "topografia", label: "¿Ya tiene topografía del lote?", type:"select", opts:ESTUDIOS_OPTS, req:true }
+            ]
+        },
+        "Estudio de suelos / geotecnia": {
+            titulo: "Cuéntanos del estudio de suelos",
+            campos: [
+                { key: "area_lote", label: "Área del lote / proyecto", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "pisos",     label: "N.° de pisos previstos", type:"select", opts:[...R_PISOS,"Aún no definido"], req:true },
+                { key: "uso",       label: "Uso de la edificación", type:"select", opts:["Vivienda","Comercial / oficinas","Bodega / industrial","Institucional","Otro"], req:true },
+                { key: "terreno",   label: "¿Cómo es el terreno?", type:"select", opts:["Plano / normal","Pendiente fuerte / ladera","Relleno / lote intervenido","Cerca de agua / humedad","No estoy seguro"], req:true }
+            ]
+        },
+        "Exploración geofísica / sísmica": {
+            titulo: "Cuéntanos de la exploración geofísica",
+            campos: [
+                { key: "area_lote",  label: "Área / extensión del proyecto", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "objetivo",   label: "¿Qué quieres detectar?", type:"select", opts:["Profundidad de roca","Nivel freático / agua","Cavidades / vacíos","Espesor de capas","No estoy seguro"], req:true },
+                { key: "uso",        label: "Proyecto asociado", type:"select", opts:["Cimentación / edificación","Vía / infraestructura","Minería","Agua subterránea","Otro"], req:true },
+                { key: "estudios",   label: "¿Hay sondeos o estudios previos?", type:"select", opts:ESTUDIOS_OPTS, req:true }
+            ]
+        },
+        "Topografía / dron / GIS": {
+            titulo: "Cuéntanos del levantamiento",
+            campos: [
+                { key: "area_lote", label: "Área del lote / proyecto", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "uso",       label: "¿Para qué lo necesitas?", type:"select", opts:["Licencia / trámite","Replanteo de obra","Compra / venta del lote","Diseño de proyecto","Otro"], req:true },
+                { key: "relieve",   label: "¿Cómo es el relieve?", type:"select", opts:["Plano","Ondulado","Montañoso / quebrado","No estoy seguro"], req:true }
+            ]
+        },
+        "Vía, puente o pavimento": {
+            titulo: "Cuéntanos de la vía / obra",
+            campos: [
+                { key: "tipo_obra", label: "Tipo de obra", type:"select", opts:["Placa huella","Pavimento rígido (concreto)","Pavimento flexible (asfalto)","Puente / box culvert","Vía en afirmado","No estoy seguro"], req:true },
+                { key: "longitud",  label: "Longitud aproximada", type:"select", opts:R_LONGITUD, req:true },
+                { key: "ancho",     label: "¿Qué tan ancha?", type:"select", opts:["Un carril (hasta 4 m)","Dos carriles (4 – 8 m)","Más de 8 m","No estoy seguro"], req:true },
+                { key: "estudios",  label: "¿Hay estudios previos?", type:"select", opts:ESTUDIOS_OPTS, req:true }
+            ]
+        },
+        "Hidrología · aguas superficiales (ríos, drenajes)": {
+            titulo: "Cuéntanos del proyecto hidrológico",
+            campos: [
+                { key: "objetivo",  label: "¿Qué necesitas resolver?", type:"select", opts:["Creciente / inundación","Obra de drenaje (box, alcantarilla)","Socavación / protección de margen","Ronda hídrica / POMCA","No estoy seguro"], req:true },
+                { key: "extras",    label: "¿Hay obra o predio en riesgo?", type:"select", opts:["Sí, vivienda/predio en riesgo","Sí, una vía / obra","No, es preventivo","No estoy seguro"], req:true },
+                { key: "estudios",  label: "¿Hay estudios previos?", type:"select", opts:ESTUDIOS_OPTS, req:true }
+            ]
+        },
+        "Hidrogeología · agua subterránea / pozos": {
+            titulo: "Cuéntanos del proyecto de agua subterránea",
+            campos: [
+                { key: "objetivo",  label: "¿Qué necesitas?", type:"select", opts:["Estudio para pozo profundo","Concesión de aguas (CAR)","Prospección / viabilidad","Diagnóstico de pozo existente","No estoy seguro"], req:true },
+                { key: "uso",       label: "Uso del agua", type:"select", opts:["Doméstico","Agrícola / riego","Industrial","Pecuario","Otro"], req:true },
+                { key: "area_lote", label: "Tamaño del predio", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "estudios",  label: "¿Hay pozos vecinos o estudios?", type:"select", opts:ESTUDIOS_OPTS, req:true }
+            ]
+        },
+        "Laboratorio / control de obra": {
+            titulo: "Cuéntanos del ensayo / control",
+            campos: [
+                { key: "ensayos",   label: "¿Qué ensayos necesitas?", type:"select", opts:["Compactación / densidad","CBR","Granulometría / límites","Concreto (cilindros)","Varios / no estoy seguro"], req:true },
+                { key: "cantidad",  label: "Cantidad estimada", type:"select", opts:["Hasta 10 ensayos","10 – 50 ensayos","50 – 200 ensayos","Más de 200","Recurrente / por mes"], req:true },
+                { key: "uso",       label: "¿En qué obra / material?", type:"select", opts:["Terraplén / vía","Concreto / estructura","Cimentación","Urbanismo","Otro"], req:true },
+                { key: "personal",  label: "¿Requiere personal en sitio?", type:"select", opts:["Sí, laboratorista de planta","No, solo recibir muestras","Aún no sé"], req:true }
+            ]
+        },
+        "Riesgo y ambiente (taludes, licencias)": {
+            titulo: "Cuéntanos del estudio de riesgo / ambiental",
+            campos: [
+                { key: "objetivo",  label: "¿Qué necesitas?", type:"select", opts:["Estabilidad de talud / ladera","Estudio de amenaza / riesgo","EIA / PMA (ambiental)","Diseño de obras de mitigación","No estoy seguro"], req:true },
+                { key: "area_lote", label: "Área / extensión", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "entidad",   label: "¿Para qué entidad / trámite?", type:"select", opts:["ANLA","CAR / corporación regional","Alcaldía / curaduría","Privado / interno","No estoy seguro"], req:true },
+                { key: "situacion", label: "Situación actual", type:"select", opts:["Preventivo / planeación","Hay señales de inestabilidad","Ya hay un deslizamiento activo","No estoy seguro"], req:true }
+            ]
+        },
+        "Minero / energético": {
+            titulo: "Cuéntanos del proyecto minero / energético",
+            campos: [
+                { key: "objetivo",  label: "¿Qué necesitas?", type:"select", opts:["Geotecnia (botadero/talud/presa)","Cierre minero","Estudios para licencia","Geofísica / exploración","No estoy seguro"], req:true },
+                { key: "area_lote", label: "Área / extensión", type:"select", opts:R_AREA_LOTE, req:true },
+                { key: "uso",       label: "Tipo de proyecto", type:"select", opts:["Cantera / minería","Solar / fotovoltaico","Subestación / línea","Hidroeléctrica","Otro"], req:true },
+                { key: "etapa",     label: "Etapa del proyecto", type:"select", opts:["Exploración / prefactibilidad","Diseño","Construcción","Operación","Cierre"], req:true }
+            ]
+        },
+        "Mi obra tiene un problema (grietas, taludes, falla)": {
+            titulo: "Cuéntanos del problema",
+            campos: [
+                { key: "problema",       label: "¿Qué está pasando?", type:"select", opts:["Grietas en muros / pisos","Asentamiento / hundimiento","Talud o ladera agrietada","Muro de contención fallando","Filtraciones / humedad","Otro"], req:true },
+                { key: "tipo_estructura",label: "¿En qué tipo de obra?", type:"select", opts:["Vivienda","Edificio","Muro de contención","Vía / talud","Otro"], req:true },
+                { key: "antiguedad",     label: "¿Hace cuánto apareció?", type:"select", opts:["Esta semana","Hace menos de un mes","Hace varios meses","Hace más de un año","No estoy seguro"], req:true },
+                { key: "evolucion",      label: "¿Está empeorando?", type:"select", opts:["Sí, rápido","Sí, lentamente","Parece estable","No estoy seguro"], req:true },
+                { key: "riesgo",         label: "¿Hay riesgo a personas?", type:"select", opts:["Sí, casa/edificio habitado","Sí, vecinos cercanos","No por ahora","No estoy seguro"], req:true }
+            ]
+        },
+        "Otro (lo explico al final)": {
+            titulo: "Cuéntanos qué necesitas",
+            campos: [
+                { key: "descripcion", label: "Describe brevemente tu necesidad", type:"text", ph: "Cuéntanos en pocas palabras", req:true },
+                { key: "area_lote",   label: "Tamaño aproximado (si aplica)", type:"select", opts:[...R_AREA_LOTE,"No aplica"], req:false }
+            ]
         }
     };
+
+    // valida si el paso 2 está completo (todos los req llenos)
+    function validarPaso2() {
+        const tipo = state.answers.proyecto;
+        const rama = RAMAS[tipo]; if (!rama) return;
+        const ok = rama.campos.filter(c => c.req).every(c => (state.detalles[c.key] || '').trim().length > 0);
+        const step = document.querySelector('.quiz-step[data-step="2"]');
+        const nb = step?.querySelector('[data-next]');
+        if (nb) nb.disabled = !ok;
+    }
+
+    // Renderiza los campos del paso 2 según la rama elegida (text o select, con obligatorios)
+    function renderDynamicFields(tipo) {
+        const cont = document.getElementById('dynamic-fields');
+        const titleEl = document.getElementById('step2-title');
+        const rama = RAMAS[tipo] || RAMAS["Otro (lo explico al final)"];
+        if (titleEl) titleEl.textContent = rama.titulo;
+        state.detalles = {};
+        cont.className = 'quiz-form';
+        cont.innerHTML = rama.campos.map((c, i) => {
+            const full = (rama.campos.length % 2 === 1 && i === rama.campos.length - 1) ? ' quiz-field--full' : '';
+            const star = c.req ? ' *' : '';
+            let control;
+            if (c.type === 'select') {
+                const opts = ['<option value="">Selecciona…</option>']
+                    .concat(c.opts.map(o => `<option value="${o}">${o}</option>`)).join('');
+                control = `<select id="dyn-${c.key}" class="quiz-dyn" data-key="${c.key}" data-req="${!!c.req}">${opts}</select>`;
+            } else {
+                control = `<input type="text" id="dyn-${c.key}" class="quiz-dyn" data-key="${c.key}" data-req="${!!c.req}" placeholder="${c.ph||''}" autocomplete="off">`;
+            }
+            return `<div class="quiz-field${full}"><label for="dyn-${c.key}">${c.label}${star}</label>${control}</div>`;
+        }).join('');
+        cont.querySelectorAll('.quiz-dyn').forEach((el) => {
+            const ev = el.tagName === 'SELECT' ? 'change' : 'input';
+            el.addEventListener(ev, () => {
+                state.detalles[el.dataset.key] = el.value.trim();
+                validarPaso2();
+            });
+        });
+        validarPaso2();
+    }
+
+    // ARRANQUE de la cascada de ubicación (país/depto/municipio) + necesidad
+    initUbicacion();
 
     // SELECTORES
     const steps = document.querySelectorAll('.quiz-step');
@@ -735,11 +1105,28 @@
                 group.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('is-selected'));
                 opt.classList.add('is-selected');
                 state.answers[field] = opt.dataset.value;
+                // si es el paso 1 (tipo de proyecto), renderiza preguntas dinámicas del paso 2
+                if (field === 'proyecto') renderDynamicFields(opt.dataset.value);
                 // habilitar botón Siguiente
                 const step = opt.closest('.quiz-step');
                 const nextBtn = step.querySelector('[data-next]');
                 if (nextBtn) nextBtn.disabled = false;
             });
+        });
+    });
+
+    // CAMPOS DE TEXTO DENTRO DE LOS PASOS (ubicación / área)
+    document.querySelectorAll('.quiz-text').forEach((input) => {
+        const field = input.dataset.field;
+        const step = input.closest('.quiz-step');
+        const nextBtn = step.querySelector('[data-next]');
+        // ¿este paso tiene algún campo OBLIGATORIO? (los de área son opcionales)
+        const required = step.querySelector('label')?.textContent.includes('*');
+        input.addEventListener('input', () => {
+            state.answers[field] = input.value.trim();
+            if (nextBtn && required) {
+                nextBtn.disabled = input.value.trim().length < 2;
+            }
         });
     });
 
@@ -781,71 +1168,96 @@
         summary.classList.add('is-active');
         progressSteps.forEach(p => p.classList.add('is-done'));
 
-        // pintar recap
-        const labels = {
-            proyecto: 'Proyecto',
-            fase: 'Fase',
-            ubicacion: 'Ubicación',
-            urgencia: 'Urgencia',
-            presupuesto: 'Presupuesto'
+        // pintar recap: necesidad → detalles dinámicos → ubicación → alcance
+        const labelsDyn = {
+            area_lote:'Área del lote', pisos:'N.° de pisos',
+            extras:'Espacios especiales', num_lotes:'N.° de lotes', uso:'Uso', uso_edif:'Uso', servicios:'Servicios',
+            longitud:'Longitud', ancho:'Ancho', tipo_obra:'Tipo de obra', problema:'Problema',
+            tipo_estructura:'Tipo de obra', evolucion:'Evolución', riesgo:'Riesgo', antiguedad:'Antigüedad',
+            descripcion:'Descripción', objetivo:'Objetivo', estudios:'Estudios previos', topografia:'Topografía',
+            terreno:'Terreno', relieve:'Relieve', situacion:'Situación', etapa:'Etapa', personal:'Personal',
+            ensayos:'Ensayos', cantidad:'Cantidad', entidad:'Entidad/trámite'
         };
         recapList.innerHTML = '';
-        Object.keys(state.answers).forEach((key) => {
-            if (state.answers[key]) {
-                const dt = document.createElement('dt');
-                dt.textContent = labels[key];
-                const dd = document.createElement('dd');
-                dd.textContent = state.answers[key];
-                recapList.appendChild(dt);
-                recapList.appendChild(dd);
-            }
-        });
+        const addRow = (label, val) => {
+            if (!val) return;
+            const dt = document.createElement('dt'); dt.textContent = label;
+            const dd = document.createElement('dd'); dd.textContent = val;
+            recapList.appendChild(dt); recapList.appendChild(dd);
+        };
+        addRow('Necesidad', state.answers.proyecto);
+        Object.keys(state.detalles).forEach(k => addRow(labelsDyn[k] || k, state.detalles[k]));
+        const ubic = [state.answers.municipio, state.answers.departamento, state.answers.pais].filter(Boolean).join(', ');
+        addRow('Ubicación', ubic);
+        addRow('Dirección', state.answers.direccion);
+        addRow('Lo que necesita', state.answers.necesidad);
 
         // construir mensaje WhatsApp
         buildWhatsAppLink();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    // helpers de contacto
+    const gv = (id) => (document.getElementById(id)?.value || '').trim();
+    const emailOK = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+    const telOK = (t) => t.replace(/[^0-9]/g,'').length >= 7;
+
+    // validación del bloque de contacto → habilita botones de envío
+    function validarContacto() {
+        const ok = gv('nombre').length >= 3 && telOK(gv('telefono')) && emailOK(gv('correo'));
+        if (btnWA) { btnWA.style.pointerEvents = ok ? 'auto' : 'none'; btnWA.style.opacity = ok ? '1' : '.45'; }
+        if (btnMail) btnMail.disabled = !ok;
+        if (ok) buildWhatsAppLink();
+        return ok;
+    }
+
     // CONSTRUCCIÓN DEL LINK WHATSAPP
     function buildWhatsAppLink() {
-        const nombre = document.getElementById('nombre').value || '[sin nombre]';
-        const contacto = document.getElementById('contacto').value || '[sin contacto]';
-        const mensaje = document.getElementById('mensaje').value;
+        const nombre = gv('nombre') || '[sin nombre]';
+        const tel = gv('telefono'); const correo = gv('correo'); const empresa = gv('empresa');
+        const mensaje = gv('mensaje');
 
-        let text = `Hola EAS · solicito cotización express\n\n`;
+        let text = `Hola EAS · solicito una propuesta\n\n`;
         text += `▸ NOMBRE: ${nombre}\n`;
-        text += `▸ CONTACTO: ${contacto}\n\n`;
-        text += `RESUMEN DEL PROYECTO\n`;
-        text += `• Tipo: ${state.answers.proyecto || '—'}\n`;
-        text += `• Fase: ${state.answers.fase || '—'}\n`;
-        text += `• Ubicación: ${state.answers.ubicacion || '—'}\n`;
-        text += `• Urgencia: ${state.answers.urgencia || '—'}\n`;
-        if (state.answers.presupuesto) text += `• Presupuesto: ${state.answers.presupuesto}\n`;
-        if (mensaje) text += `\nMENSAJE ADICIONAL:\n${mensaje}\n`;
+        text += `▸ WHATSAPP/TEL: ${tel}\n`;
+        text += `▸ CORREO: ${correo}\n`;
+        if (empresa) text += `▸ EMPRESA: ${empresa}\n`;
+        text += `\nRESUMEN DEL PROYECTO\n`;
+        text += `• Necesidad: ${state.answers.proyecto || '—'}\n`;
+        Object.keys(state.detalles).forEach(k => {
+            if (state.detalles[k]) text += `• ${k.replace(/_/g,' ')}: ${state.detalles[k]}\n`;
+        });
+        const ubic = [state.answers.municipio, state.answers.departamento, state.answers.pais].filter(Boolean).join(', ');
+        text += `• Ubicación: ${ubic || '—'}\n`;
+        if (state.answers.direccion) text += `• Dirección: ${state.answers.direccion}\n`;
+        text += `\nLO QUE NECESITA:\n${state.answers.necesidad || '—'}\n`;
+        if (mensaje) text += `\nDETALLE ADICIONAL:\n${mensaje}\n`;
         text += `\n— Enviado desde earthas.co/cotiza`;
 
         btnWA.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
     }
 
-    // ACTUALIZAR LINK WHATSAPP CUANDO EL USUARIO LLENA EL FORM
-    ['nombre', 'contacto', 'mensaje'].forEach((id) => {
+    // VALIDAR CONTACTO EN VIVO
+    ['nombre', 'telefono', 'correo', 'empresa', 'mensaje'].forEach((id) => {
         const el = document.getElementById(id);
-        if (el) el.addEventListener('input', buildWhatsAppLink);
+        if (el) el.addEventListener('input', validarContacto);
     });
+    validarContacto();
 
     // ENVIAR A WEBHOOK + ABRIR WHATSAPP (botón WA)
     btnWA.addEventListener('click', (e) => {
-        // siempre envía al webhook EN PARALELO (no bloquea la apertura de WA)
+        if (!validarContacto()) {
+            e.preventDefault();
+            showStatus('Completa nombre, WhatsApp y correo válidos.', 'error');
+            return;
+        }
         sendToWebhook('whatsapp');
-        // dejamos que el link wa.me se abra normalmente
     });
 
     // ENVIAR SOLO POR CORREO (botón correo)
     btnMail.addEventListener('click', () => {
-        const nombre = document.getElementById('nombre').value.trim();
-        const contacto = document.getElementById('contacto').value.trim();
-        if (!nombre || !contacto) {
-            showStatus('Por favor escribe tu nombre y un dato de contacto.', 'error');
+        if (!validarContacto()) {
+            showStatus('Completa nombre, WhatsApp y correo válidos.', 'error');
             return;
         }
         btnMail.disabled = true;
@@ -869,14 +1281,19 @@
             fuente: 'web-cotiza-quiz',
             timestamp: new Date().toISOString(),
             canal_preferido: canal, // 'whatsapp' o 'correo'
-            nombre: document.getElementById('nombre').value.trim(),
-            contacto: document.getElementById('contacto').value.trim(),
-            mensaje: document.getElementById('mensaje').value.trim(),
+            nombre: gv('nombre'),
+            telefono: gv('telefono'),
+            correo: gv('correo'),
+            empresa: gv('empresa'),
+            mensaje: gv('mensaje'),
             proyecto: state.answers.proyecto,
-            fase: state.answers.fase,
-            ubicacion: state.answers.ubicacion,
-            urgencia: state.answers.urgencia,
-            presupuesto: state.answers.presupuesto,
+            pais: state.answers.pais,
+            departamento: state.answers.departamento,
+            municipio: state.answers.municipio,
+            direccion: state.answers.direccion,
+            ubicacion: [state.answers.municipio, state.answers.departamento, state.answers.pais].filter(Boolean).join(', '),
+            necesidad: state.answers.necesidad,
+            detalles: state.detalles,   // objeto con las respuestas dinámicas según la rama
             user_agent: navigator.userAgent,
             referrer: document.referrer || 'directo'
         };
